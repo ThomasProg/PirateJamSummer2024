@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkbbatow8vo2p"
-path.s3tc="res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_NormalGL.jpg-289f35eb7d3fed09e201dc816781dbcb.s3tc.ctex"
+uid="uid://ddp0ucwqsg6yk"
+path.s3tc="res://.godot/imported/player-hut-mk2_ThatchedRoof002A_1K-JPG_Roughness.webp-bc5b327a32e239cf6940380ed4ed31ed.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "27f46cd34afacfbbf862ac3d108d8a8c"
+"md5": "d4ea12c1915c221e0cbb2b08a2c67ccb"
 }
 
 [deps]
 
-source_file="res://art/playerHut/player-hut-mk2_Planks030A_1K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_NormalGL.jpg-289f35eb7d3fed09e201dc816781dbcb.s3tc.ctex"]
+source_file="res://art/playerHut/player-hut-mk2_ThatchedRoof002A_1K-JPG_Roughness.webp"
+dest_files=["res://.godot/imported/player-hut-mk2_ThatchedRoof002A_1K-JPG_Roughness.webp-bc5b327a32e239cf6940380ed4ed31ed.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://art/playerHut/player-hut-mk2_Planks030A_1K-JPG_NormalGL.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ipl1j8s5sh4"
-path.s3tc="res://.godot/imported/player-hut-mk2_ThatchedRoof002A_1K-JPG_Roughness.png-492f3c807c4184e0f217dfb9956b5158.s3tc.ctex"
+uid="uid://cbgu6fhb8fmfq"
+path.s3tc="res://.godot/imported/player-hut-mk2_ThatchedRoof002A_1K-JPG_Color.webp-65274e1fa69fe35062ed34071e447688.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b9a6bc15c46e3698f731b87a198bc76b"
+"md5": "7a12edf9dcf424e0c1d1d812733f913f"
 }
 
 [deps]
 
-source_file="res://art/playerHut/player-hut-mk2_ThatchedRoof002A_1K-JPG_Roughness.png"
-dest_files=["res://.godot/imported/player-hut-mk2_ThatchedRoof002A_1K-JPG_Roughness.png-492f3c807c4184e0f217dfb9956b5158.s3tc.ctex"]
+source_file="res://art/playerHut/player-hut-mk2_ThatchedRoof002A_1K-JPG_Color.webp"
+dest_files=["res://.godot/imported/player-hut-mk2_ThatchedRoof002A_1K-JPG_Color.webp-65274e1fa69fe35062ed34071e447688.s3tc.ctex"]
 
 [params]
 

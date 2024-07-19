@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qq03mi3kf25g"
-path.s3tc="res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.jpg-d2282ffaf9a48bb3dc7349cfe19e1ef3.s3tc.ctex"
+uid="uid://d2klnpcbdslpt"
+path.s3tc="res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.webp-6bbbe55761ced26dcdecdccdefa10842.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "97e79ef02ca22cdc719e16d0935cc1cf"
+"md5": "cfbaaaa2daffd8be37303847ef0aeaec"
 }
 
 [deps]
 
-source_file="res://art/playerHut/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.jpg-d2282ffaf9a48bb3dc7349cfe19e1ef3.s3tc.ctex"]
+source_file="res://art/playerHut/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.webp"
+dest_files=["res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.webp-6bbbe55761ced26dcdecdccdefa10842.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://art/playerHut/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.jpg"
+roughness/src_normal="res://art/playerHut/player-hut-mk2_PaintedWood008C_1K-JPG_NormalGL.webp"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

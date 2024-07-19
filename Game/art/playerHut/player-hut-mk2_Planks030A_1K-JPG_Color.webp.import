@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e0dj6vdxu80m"
-path.s3tc="res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_Color.jpg-a1965bb161193ac082745aa1e8cde9e1.s3tc.ctex"
+uid="uid://dqes45e0sv4w0"
+path.s3tc="res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_Color.webp-0fd5479e53fad82d94c8d203485060ca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ab54b042f7f8a7f8507dbfa74e0f51bc"
+"md5": "2b9d0fb245d6feb6e990e398f9e65c88"
 }
 
 [deps]
 
-source_file="res://art/playerHut/player-hut-mk2_Planks030A_1K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_Color.jpg-a1965bb161193ac082745aa1e8cde9e1.s3tc.ctex"]
+source_file="res://art/playerHut/player-hut-mk2_Planks030A_1K-JPG_Color.webp"
+dest_files=["res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_Color.webp-0fd5479e53fad82d94c8d203485060ca.s3tc.ctex"]
 
 [params]
 

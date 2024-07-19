@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqggqvl3iygt0"
-path.s3tc="res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_Metalness-Planks030A_1K-JPG_Roughness.png-d20b98f1406e53d0e0bed65f6e5c3ce1.s3tc.ctex"
+uid="uid://daxdx725m87i0"
+path.s3tc="res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_Roughness.webp-ed5ee1560c8125b697cc0636e5d00f8e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0d03eef6287bade486a19948343218c2"
+"md5": "a94806d757bb73ee564dee833191e0ca"
 }
 
 [deps]
 
-source_file="res://art/playerHut/player-hut-mk2_Planks030A_1K-JPG_Metalness-Planks030A_1K-JPG_Roughness.png"
-dest_files=["res://.godot/imported/player-hut-mk2_Planks030A_1K-JPG_Metalness-Planks030A_1K-JPG_Roughness.png-d20b98f1406e53d0e0bed65f6e5c3ce1.s3tc.ctex"]
+source_file="res://art/playerHut/player-hut-mk2_PaintedWood008C_1K-JPG_Roughness.webp"
+dest_files=["res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_Roughness.webp-ed5ee1560c8125b697cc0636e5d00f8e.s3tc.ctex"]
 
 [params]
 

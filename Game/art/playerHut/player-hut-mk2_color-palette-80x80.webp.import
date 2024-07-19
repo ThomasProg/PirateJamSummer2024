@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2nee14neufr8"
-path.s3tc="res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_Roughness.png-bda3bfa2330047adbab8c018da6f26fd.s3tc.ctex"
+uid="uid://d12k4juwh3rj1"
+path.s3tc="res://.godot/imported/player-hut-mk2_color-palette-80x80.webp-eb0913ed0bb61a00b3d5c508f8ccb678.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cf6511a472bfebf643120f2b7cbf334f"
+"md5": "d725e308b0083872b83d0c3758adf28c"
 }
 
 [deps]
 
-source_file="res://art/playerHut/player-hut-mk2_PaintedWood008C_1K-JPG_Roughness.png"
-dest_files=["res://.godot/imported/player-hut-mk2_PaintedWood008C_1K-JPG_Roughness.png-bda3bfa2330047adbab8c018da6f26fd.s3tc.ctex"]
+source_file="res://art/playerHut/player-hut-mk2_color-palette-80x80.webp"
+dest_files=["res://.godot/imported/player-hut-mk2_color-palette-80x80.webp-eb0913ed0bb61a00b3d5c508f8ccb678.s3tc.ctex"]
 
 [params]
 
