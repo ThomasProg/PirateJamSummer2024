@@ -5,6 +5,7 @@ extends CharacterBody3D
 
 @export var speed = 5.0
 @export var jumpVelocity = 4.5
+@export var invertMouseY = false;
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -15,8 +16,9 @@ func _ready():
 func _input(event):
 	print(Input.mouse_mode)
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		var eventRelativeY = event.relative.y if invertMouseY else -event.relative.y
 		rotate_y(-event.relative.x * mouseSensitivity)
-		camera.rotate_x(-event.relative.y * mouseSensitivity)
+		camera.rotate_x(eventRelativeY * mouseSensitivity)
 		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 		
 	if event is InputEventKey:
