@@ -15,6 +15,10 @@ func _ready():
 	nightTimer.onNightEnd.connect(func():
 		print("End of the night: you survive")
 		)
+		
+	wolf.onWolfLeave.connect(func():
+		print("End of the night: the wolf went away")
+		)
 	
 	wolf.onWolfWin.connect(func(): 
 		print("Game Over")

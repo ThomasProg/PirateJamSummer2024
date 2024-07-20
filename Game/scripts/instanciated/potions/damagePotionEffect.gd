@@ -13,8 +13,9 @@ func runEffect():
 func _on_area_entered(area):
 	if area is Wolf:
 		if area.visible and area.eyeColor == workingAgainstEyeColor:
+			print("Damaging potion threw to the Wolf!")
 			area.aggro -= potionDamage
 			area.onAggroUpdated()
 			area.disappear()
 			area.setRandomEyeColor()
-			print("Wolf attacked!")
+			

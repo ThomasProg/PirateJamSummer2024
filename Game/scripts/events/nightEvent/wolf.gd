@@ -21,6 +21,7 @@ enum EyeColor{RED, YELLOW}
 var raycasts:Array[RayCast3D]
 
 signal onWolfWin()
+signal onWolfLeave()
 signal onWolfAppears()
 signal onWolfDisappears()
 	
@@ -31,8 +32,11 @@ func onAggroUpdated():
 	aggroProgressBar.value = getTotalAggro()
 	aggroProgressBar.max_value = maxAggro
 	
-	if (getTotalAggro() > maxAggro):
+	var totalAggro = getTotalAggro()
+	if (totalAggro > maxAggro):
 		onWolfWin.emit()
+	elif (totalAggro <= 0):
+		onWolfLeave.emit()
 
 func setRandomEyeColor():
 	eyeColor = EyeColor.values()[randi()%EyeColor.size() ]
@@ -55,6 +59,7 @@ func _ready():
 
 func appear():
 	currentPeekAggro = 0.0
+	onAggroUpdated()
 		
 	visible = true
 	for raycast in raycasts:
@@ -66,6 +71,8 @@ func appear():
 	disappear()
 
 func disappear():
+	currentPeekAggro = 0.0
+	onAggroUpdated()
 	visible = false
 	for raycast in raycasts:
 		raycast.enabled = false
