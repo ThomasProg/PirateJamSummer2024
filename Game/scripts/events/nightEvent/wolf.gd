@@ -17,8 +17,17 @@ signal onWolfWin()
 signal onWolfAppears()
 signal onWolfDisappears()
 
+func setRandomEyeColor():
+	eyeColor = EyeColor.values()[randi()%EyeColor.size() ]
+	match eyeColor:
+		EyeColor.RED:
+			sprite.modulate = Color.DARK_RED
+		EyeColor.YELLOW:
+			sprite.modulate = Color.YELLOW
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	setRandomEyeColor()
 	for eye in eyeAnchors:
 		var raycast = RayCast3D.new()
 		raycasts.push_back(raycast)
