@@ -7,7 +7,6 @@ radius = 0.229
 height = 1.7
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.81657, 0)
 script = ExtResource("1_0anxm")
 camera = NodePath("Camera3D")
 
@@ -16,5 +15,5 @@ shape = SubResource("CapsuleShape3D_8gchk")
 metadata/_edit_lock_ = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 metadata/_edit_lock_ = true

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs0cbrtxk55a8"]
+
+[ext_resource type="Script" path="res://scripts/events/nightEvent/wolf.gd" id="1_d22c8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7p6d8"]
+
+[node name="Wolf" type="Sprite3D" node_paths=PackedStringArray("eyeAnchors")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+modulate = Color(0.623529, 0, 0, 1)
+texture = SubResource("CanvasTexture_7p6d8")
+script = ExtResource("1_d22c8")
+eyeAnchors = [NodePath("EyeAnchor1"), NodePath("EyeAnchor2")]
+
+[node name="EyeAnchor1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00277608, 0.00260643, 0)
+
+[node name="EyeAnchor2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00260954, 0.00246655, 0)

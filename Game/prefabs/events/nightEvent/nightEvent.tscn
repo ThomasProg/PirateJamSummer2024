@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cacg3rg6rfwit"]
+
+[ext_resource type="Script" path="res://scripts/events/nightEvent/nightEvent.gd" id="1_gbiwh"]
+[ext_resource type="Script" path="res://scripts/events/nightEvent/nightTimer.gd" id="2_3ulpj"]
+
+[node name="NightEvent" type="Node" node_paths=PackedStringArray("nightTimer")]
+script = ExtResource("1_gbiwh")
+nightTimer = NodePath("NightTimer")
+
+[node name="NightTimer" type="Node" parent="."]
+script = ExtResource("2_3ulpj")
+peekTimes = Array[float]([5.0])
