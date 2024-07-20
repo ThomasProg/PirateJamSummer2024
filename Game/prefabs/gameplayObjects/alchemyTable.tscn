@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjgg8s1xbkm67"]
+[gd_scene load_steps=12 format=3 uid="uid://cjgg8s1xbkm67"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/alchemyTable.gd" id="1_wr1u7"]
+[ext_resource type="Resource" uid="uid://b5ikawlod3v5a" path="res://inventoryAssets/potions/redPotion.tres" id="2_bk653"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_lwojp"]
+[ext_resource type="Resource" uid="uid://cnnujc7uicalb" path="res://inventoryAssets/potions/yellowPotion.tres" id="3_b6h32"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7r6gh"]
 radius = 1.5
@@ -26,8 +28,12 @@ emission_enabled = true
 emission = Color(0.890196, 0.780392, 0, 1)
 emission_energy_multiplier = 5.05
 
-[node name="AlchemyTable" type="Area3D"]
+[node name="AlchemyTable" type="Area3D" node_paths=PackedStringArray("redPotionInteractible", "yellowPotionInteractible")]
 script = ExtResource("1_wr1u7")
+redPotionInteractible = NodePath("Red/RedInteractable")
+yellowPotionInteractible = NodePath("Yellow/YellowInteractable")
+redPotion = ExtResource("2_bk653")
+yellowPotion = ExtResource("3_b6h32")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7r6gh")
@@ -41,7 +47,7 @@ shape = SubResource("BoxShape3D_83j0p")
 mesh = SubResource("BoxMesh_0wbch")
 skeleton = NodePath("../../..")
 
-[node name="Interactable" type="Node" parent="StaticBody3D"]
+[node name="TableInteractable" type="Node" parent="StaticBody3D"]
 script = ExtResource("2_lwojp")
 interactionName = "Alchemy Table"
 interactionDescription = "Stay close to brew potions"
@@ -60,26 +66,26 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tv85k")
 metadata/_edit_lock_ = true
 
-[node name="Interactable" type="Node" parent="Red"]
+[node name="RedInteractable" type="Node" parent="Red"]
 script = ExtResource("2_lwojp")
 interactionName = "Red Potion"
 interactionDescription = "Click to brew"
 
-[node name="Yelow" type="StaticBody3D" parent="."]
+[node name="Yellow" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217358, 0.585445, -0.207957)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Yelow"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Yellow"]
 shape = SubResource("BoxShape3D_88r0e")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Yelow"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Yellow"]
 transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = SubResource("BoxMesh_0wbch")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_617p7")
 metadata/_edit_lock_ = true
 
-[node name="Interactable" type="Node" parent="Yelow"]
+[node name="YellowInteractable" type="Node" parent="Yellow"]
 script = ExtResource("2_lwojp")
 interactionName = "Yellow Potion"
 interactionDescription = "Click to brew"

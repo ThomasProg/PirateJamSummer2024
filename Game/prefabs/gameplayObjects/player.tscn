@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmotrrb5fci2n"]
+[gd_scene load_steps=12 format=3 uid="uid://bmotrrb5fci2n"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/player.gd" id="1_0anxm"]
 [ext_resource type="Resource" uid="uid://dgxb1wbqvtlrr" path="res://inventoryAssets/inventories/potionInventory.tres" id="2_i2ovb"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scripts/components/alchemyTableInteractor.gd" id="6_bmoqy"]
 [ext_resource type="Script" path="res://scripts/inventory/potionSelectorFeedback.gd" id="6_nuewa"]
 [ext_resource type="Script" path="res://scripts/components/interactionComponent.gd" id="7_c2x38"]
+[ext_resource type="Script" path="res://scripts/components/potionThrowerComponent.gd" id="9_53taj"]
+[ext_resource type="PackedScene" uid="uid://bbwwhvnoqdo0q" path="res://prefabs/instanced/thrownPotion.tscn" id="10_2ylfs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gchk"]
 radius = 0.229
@@ -111,12 +113,19 @@ potionSelector = NodePath("..")
 itemNameText = NodePath("../../UI/MarginContainer/VBoxContainer/ItemName")
 itemDescText = NodePath("../../UI/MarginContainer/VBoxContainer/ItemDescription")
 
-[node name="AlchemyTableInteractor" type="Node" parent="." node_paths=PackedStringArray("progressBar")]
+[node name="AlchemyTableInteractor" type="Node" parent="." node_paths=PackedStringArray("progressBar", "progressBarText")]
 script = ExtResource("6_bmoqy")
 progressBar = NodePath("../UI/MarginContainer/VBoxContainer/ProgressBar")
+progressBarText = NodePath("../UI/MarginContainer/VBoxContainer/ProgressBar/RichTextLabel")
 
 [node name="InteractionComponent" type="Node" parent="." node_paths=PackedStringArray("interactionRaycast", "interactionNameText", "interactionDescText")]
 script = ExtResource("7_c2x38")
 interactionRaycast = NodePath("../Camera3D/InteractRayCast3D")
 interactionNameText = NodePath("../UI/MarginContainer/VBoxContainer/ItemName")
 interactionDescText = NodePath("../UI/MarginContainer/VBoxContainer/ItemDescription")
+
+[node name="PotionThrowerComponent" type="Node" parent="." node_paths=PackedStringArray("potionSelector", "camera")]
+script = ExtResource("9_53taj")
+potionSelector = NodePath("../PotionSelector")
+thrownPotionPrefab = ExtResource("10_2ylfs")
+camera = NodePath("../Camera3D")

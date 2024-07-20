@@ -8,9 +8,16 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	potionSelector.onNewItemSelected.connect(func(item:InventoryItem):
+		if (item == null):
+			itemNameText.visible = false
+			itemDescText.visible = false
+			potionSprite.visible = false
+			return
+		
 		print("new item: ", item.name)
 		potionSprite.texture = item.texture
 		
+		potionSprite.visible = true
 		itemNameText.visible = true
 		itemDescText.visible = true
 		itemNameText.text = "[center] %s [/center]" % [item.name]

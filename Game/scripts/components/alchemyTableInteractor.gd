@@ -2,7 +2,7 @@ extends Node
 class_name AlchemyTableInteractor
 
 @export var progressBar:ProgressBar
-@export var currentProgress:float = 0
+@export var progressBarText:RichTextLabel
 
 var table:AlchemyTable = null
 
@@ -14,9 +14,18 @@ func onAreaExited(newTable):
 	table = null	
 
 func _process(delta):
-	if (table != null):
-		currentProgress += delta
-		progressBar.value = currentProgress
+	if (table != null and table.selectedInteractible != null):
+		table.addProgress(delta)
+		progressBar.value = table.currentProgress
 		progressBar.visible = true
+		
+		var str:String
+		if (table.selectedInteractible == table.redPotionInteractible):
+			str = "Brewing red potion..."
+		elif (table.selectedInteractible == table.yellowPotionInteractible):
+			str = "Brewing yellow potion..."
+		
+		progressBarText.text = "[center]" + str + "[/center]"
 	else:
 		progressBar.visible = false
+
