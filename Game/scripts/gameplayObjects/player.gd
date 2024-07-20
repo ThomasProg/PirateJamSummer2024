@@ -9,17 +9,29 @@ extends CharacterBody3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var captureMouse = false
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
-func _input(event):
+func _input(event: InputEvent):
 	print(Input.mouse_mode)
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and captureMouse:
 		var eventRelativeY = event.relative.y if invertMouseY else -event.relative.y
 		rotate_y(-event.relative.x * mouseSensitivity)
 		camera.rotate_x(eventRelativeY * mouseSensitivity)
 		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+		
+	if event is InputEventMouseButton:
+		if not captureMouse:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			captureMouse = true
+			Engine.time_scale = 1.0
+		if event.is_action_pressed("ui_cancel"):
+			if captureMouse:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				captureMouse = false
+				Engine.time_scale = 0.0
 		
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("OpenMenu"):
