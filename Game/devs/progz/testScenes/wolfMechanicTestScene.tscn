@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkrsjnj5558i0"]
+
+[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="1_yi5xg"]
+[ext_resource type="PackedScene" uid="uid://bgnpbh7ncbwlr" path="res://art/playerHut/player-hut-mk2.glb" id="2_xonsm"]
+[ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="3_2447y"]
+[ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="5_mhyy5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ty6ui"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cxw6q"]
+
+[node name="testScene3D" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00639766, -0.697664, -0.757557)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_ty6ui")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_cxw6q")
+
+[node name="RayCast3D" type="RayCast3D" parent="Floor"]
+target_position = Vector3(1000, -1, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_yi5xg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1793, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0790253, 0.0808615, -0.993588, 0.777933, 0.618251, 0.112188, 0.623358, -0.78181, -0.0140474, 0, 0, 0)
+
+[node name="player-hut-mk0" parent="." instance=ExtResource("2_xonsm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58699, -0.124554, 0.382744)
+
+[node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("3_2447y")]
+peekAnchorGroup = NodePath("../PeekAnchorGroup")
+wolf = NodePath("../Wolf")
+
+[node name="NightTimer" parent="NightEvent" index="0"]
+nightDuration = 60.0
+peekTimes = Array[float]([5.0, 15.0, 25.0])
+
+[node name="PeekAnchorGroup" type="Node3D" parent="."]
+
+[node name="PeekAnchor" type="Node3D" parent="PeekAnchorGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49755, 1.82582, 4.65263)
+
+[node name="PeekAnchor2" type="Node3D" parent="PeekAnchorGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973976, 1.16397, 4.38419)
+
+[node name="PeekAnchor3" type="Node3D" parent="PeekAnchorGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83352, 1.18214, 1.57502)
+
+[node name="Wolf" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_mhyy5")]
+target = NodePath("../Player")
+
+[editable path="NightEvent"]
