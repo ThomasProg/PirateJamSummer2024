@@ -77,6 +77,7 @@ func _process(delta):
 	if not(visible):
 		return
 	
+	# peeks
 	var hasHitTarget:bool = false
 	for i in range(eyeAnchors.size()):
 		raycasts[i].global_position = eyeAnchors[i].global_position
