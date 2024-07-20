@@ -4,18 +4,35 @@ class_name Wolf
 enum EyeColor{RED, YELLOW}
 
 @export var sprite:Sprite3D
-@export var currentTargetPeekedTime:float = 0.0
+@export var aggroProgressBar:ProgressBar
 @export var peekingDuration:float = 6.0
-@export var maxTargetPeekedTime:float = 5.0
 @export var target: Player
 @export var eyeAnchors: Array[Node3D]
 @export var lookAt:Node3D
 @export var eyeColor:EyeColor = EyeColor.RED
+
+@export var maxAggro:float = 20.0
+@export var aggro:float = 2.0
+@export var currentPeekAggro:float = 0.0
+
+@export var aggroMultWhenPeeking:float = 1.0
+@export var currentPeekAggroMult:float = 2.0
+
 var raycasts:Array[RayCast3D]
 
 signal onWolfWin()
 signal onWolfAppears()
 signal onWolfDisappears()
+	
+func getTotalAggro():
+	return aggro + currentPeekAggro
+	
+func onAggroUpdated():
+	aggroProgressBar.value = getTotalAggro()
+	aggroProgressBar.max_value = maxAggro
+	
+	if (getTotalAggro() > maxAggro):
+		onWolfWin.emit()
 
 func setRandomEyeColor():
 	eyeColor = EyeColor.values()[randi()%EyeColor.size() ]
@@ -28,6 +45,7 @@ func setRandomEyeColor():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setRandomEyeColor()
+	onAggroUpdated()
 	for eye in eyeAnchors:
 		var raycast = RayCast3D.new()
 		raycasts.push_back(raycast)
@@ -36,7 +54,8 @@ func _ready():
 	disappear()
 
 func appear():
-	currentTargetPeekedTime = 0
+	currentPeekAggro = 0.0
+		
 	visible = true
 	for raycast in raycasts:
 		raycast.enabled = true
@@ -82,11 +101,10 @@ func _process(delta):
 				break
 			
 	if (hasHitTarget):
-		currentTargetPeekedTime += delta
-		
-		if currentTargetPeekedTime >= maxTargetPeekedTime:
-			onWolfWin.emit()
-
+		# TODO : curve ?
+		currentPeekAggro += delta * currentPeekAggroMult
+		aggro += delta * aggroMultWhenPeeking
+		onAggroUpdated()
 	
 	# billboard
 	# Can't use the native feature since it doesn't lead to children

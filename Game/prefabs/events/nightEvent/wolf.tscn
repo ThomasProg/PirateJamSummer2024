@@ -6,9 +6,10 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ndqh"]
 
-[node name="Wolf" type="Area3D" node_paths=PackedStringArray("sprite", "eyeAnchors")]
+[node name="Wolf" type="Area3D" node_paths=PackedStringArray("sprite", "aggroProgressBar", "eyeAnchors")]
 script = ExtResource("1_d22c8")
 sprite = NodePath("WolfFace")
+aggroProgressBar = NodePath("CanvasLayer/AggroProgressBar")
 eyeAnchors = [NodePath("WolfFace/EyeAnchor1"), NodePath("WolfFace/EyeAnchor2")]
 
 [node name="WolfFace" type="Sprite3D" parent="."]
@@ -24,3 +25,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7ndqh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AggroProgressBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(1, 0.0980392, 0, 1)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+value = 50.0
+show_percentage = false

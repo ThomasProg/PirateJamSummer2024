@@ -56,7 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 [node name="Wolf" parent="." node_paths=PackedStringArray("target", "lookAt") instance=ExtResource("5_mhyy5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
 peekingDuration = 100.0
-maxTargetPeekedTime = 100.0
 target = NodePath("../Player")
 lookAt = NodePath("../player-hut-mk0")
 
