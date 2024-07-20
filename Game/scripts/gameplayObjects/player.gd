@@ -15,7 +15,6 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _input(event: InputEvent):
-	print(Input.mouse_mode)
 	if event is InputEventMouseMotion and captureMouse:
 		var eventRelativeY = event.relative.y if invertMouseY else -event.relative.y
 		rotate_y(-event.relative.x * mouseSensitivity)
