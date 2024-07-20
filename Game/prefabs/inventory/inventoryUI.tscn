@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3khd4xxva11r"]
+
+[ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/slotUI.tscn" id="1_ft0ek"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wnht3"]
+
+[node name="InventoryUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = SubResource("CanvasTexture_wnht3")
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="SlotUi" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi2" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi3" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi4" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi5" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi6" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi7" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi8" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2
+
+[node name="SlotUi9" parent="NinePatchRect/GridContainer" instance=ExtResource("1_ft0ek")]
+layout_mode = 2

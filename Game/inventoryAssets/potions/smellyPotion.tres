@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://j32orf0qvnf2"]
+
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="1_iut6u"]
+[ext_resource type="Texture2D" uid="uid://d23p13yi7asw0" path="res://addons/proton_scatter/demos/assets/textures/t_grass_2.png" id="2_11ebo"]
+
+[resource]
+script = ExtResource("1_iut6u")
+name = "Smelly Potion"
+description = "Prevents the werewolf from appearing around that spot for 10s."
+texture = ExtResource("2_11ebo")
+type = 0

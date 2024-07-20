@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=4 format=3 uid="uid://dgxb1wbqvtlrr"]
+
+[ext_resource type="Resource" uid="uid://dw1eo7ko88t2y" path="res://inventoryAssets/potions/invisibilityPotion.tres" id="1_cqwwh"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_gdbyk"]
+[ext_resource type="Resource" uid="uid://j32orf0qvnf2" path="res://inventoryAssets/potions/smellyPotion.tres" id="2_0kptv"]
+
+[resource]
+script = ExtResource("1_gdbyk")
+items = Array[Resource("res://scripts/inventory/inventoryItem.gd")]([ExtResource("1_cqwwh"), null, null, null, ExtResource("2_0kptv"), null, null, null, null])

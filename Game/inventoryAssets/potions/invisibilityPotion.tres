@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dw1eo7ko88t2y"]
+
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="1_6quis"]
+[ext_resource type="Texture2D" uid="uid://c08mm3p2ehvr6" path="res://addons/proton_scatter/demos/assets/textures/t_grass.png" id="2_jrnyn"]
+
+[resource]
+script = ExtResource("1_6quis")
+name = "Invisibility Potion"
+description = "Makes the player invisible during 10s."
+texture = ExtResource("2_jrnyn")
+type = 0

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c65547vh7twcy"]
+
+[sub_resource type="Gradient" id="Gradient_sxcdx"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6yuch"]
+gradient = SubResource("Gradient_sxcdx")
+width = 16
+height = 16
+
+[node name="SlotUi" type="Panel"]
+custom_minimum_size = Vector2(16, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_6yuch")
+centered = false
