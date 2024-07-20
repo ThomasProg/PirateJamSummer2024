@@ -1,6 +1,7 @@
 extends PotionEffect
 
 @export var workingAgainstEyeColor:Wolf.EyeColor = Wolf.EyeColor.RED 
+@export var potionDamage:float = 5.0
 
 # Called when the node enters the scene tree for the first time.
 func runEffect():
@@ -11,5 +12,7 @@ func runEffect():
 
 func _on_area_entered(area):
 	if area is Wolf:
-		if area.eyeColor == workingAgainstEyeColor:
+		if area.visible and area.eyeColor == workingAgainstEyeColor:
+			area.aggro -= potionDamage
+			area.onAggroUpdated()
 			print("Wolf attacked!")
