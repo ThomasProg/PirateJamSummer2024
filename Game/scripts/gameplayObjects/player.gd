@@ -38,6 +38,10 @@ func _input(event: InputEvent):
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			else:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
+	if Input.is_action_just_pressed("InvertMouseYAxis"):
+			invertMouseY = not(invertMouseY)
+	
 
 func _physics_process(delta):
 	# Add the gravity.
