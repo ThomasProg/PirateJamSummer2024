@@ -10,6 +10,9 @@ func _ready():
 	potionSelector.onNewItemSelected.connect(func(item:InventoryItem):
 		print("new item: ", item.name)
 		potionSprite.texture = item.texture
+		
+		itemNameText.visible = true
+		itemDescText.visible = true
 		itemNameText.text = "[center] %s [/center]" % [item.name]
 		itemDescText.text = "[center] %s [/center]" % [item.description]		
 		)

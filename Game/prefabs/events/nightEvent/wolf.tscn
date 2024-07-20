@@ -12,7 +12,7 @@ script = ExtResource("1_d22c8")
 eyeAnchors = [NodePath("EyeAnchor1"), NodePath("EyeAnchor2")]
 
 [node name="EyeAnchor1" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00277608, 0.00260643, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003, 0, 0)
 
 [node name="EyeAnchor2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00260954, 0.00246655, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, 0)

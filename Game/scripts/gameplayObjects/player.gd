@@ -1,11 +1,15 @@
 extends CharacterBody3D
+class_name Player
 
 @export var camera:Camera3D
+@export var collider:CollisionShape3D
 @export var mouseSensitivity = 0.002
 
 @export var speed = 5.0
 @export var jumpVelocity = 4.5
 @export var invertMouseY = false;
+
+@export var enableTestRayCast:bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -40,8 +44,22 @@ func _input(event: InputEvent):
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
 	if Input.is_action_just_pressed("InvertMouseYAxis"):
-			invertMouseY = not(invertMouseY)
-	
+		invertMouseY = not(invertMouseY)
+			
+	if Input.is_action_just_pressed("Interact"):
+		if (OS.is_debug_build() and enableTestRayCast):
+			var raycast = RayCast3D.new()
+			get_parent().add_child(raycast)
+			raycast.name = "TestRay"
+			raycast.global_position = camera.global_position
+			raycast.target_position = -camera.get_global_transform().basis.z * 2
+			raycast.force_raycast_update()
+
+			if (raycast.is_colliding()):
+				print(raycast.get_collider())
+			else:
+				print("Nothing interacted with")
+		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -64,3 +82,5 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
+
+		

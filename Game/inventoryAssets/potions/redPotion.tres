@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://b5ikawlod3v5a"]
+
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="1_twd0f"]
+[ext_resource type="Texture2D" uid="uid://c08mm3p2ehvr6" path="res://addons/proton_scatter/demos/assets/textures/t_grass.png" id="2_xdl6c"]
+
+[resource]
+script = ExtResource("1_twd0f")
+name = "Red Potion"
+description = "Use it against the wolf if he has red eyes!"
+texture = ExtResource("2_xdl6c")
+type = 0

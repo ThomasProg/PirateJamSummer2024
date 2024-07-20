@@ -4,8 +4,9 @@ class_name Wolf
 @export var currentTargetPeekedTime:float = 0.0
 @export var peekingDuration:float = 6.0
 @export var maxTargetPeekedTime:float = 5.0
-@export var target: CharacterBody3D
+@export var target: Player
 @export var eyeAnchors: Array[Node3D]
+@export var lookAt:Node3D
 var raycasts:Array[RayCast3D]
 
 signal onWolfWin()
@@ -47,9 +48,18 @@ func _process(delta):
 	var hasHitTarget:bool = false
 	for i in range(eyeAnchors.size()):
 		raycasts[i].global_position = eyeAnchors[i].global_position
-		raycasts[i].target_position = target.global_position - raycasts[i].global_position
-
+		
+		var globalTargetPos:Vector3 = target.global_position
+		var capsule = target.collider.shape as CapsuleShape3D
+		if (capsule != null):
+			var min = globalTargetPos.y - capsule.height / 2.0
+			var max = globalTargetPos.y + capsule.height / 2.0
+			globalTargetPos.y = clampf(raycasts[i].global_position.y, min, max)
+		
+		raycasts[i].target_position = globalTargetPos - raycasts[i].global_position
+		
 		var hit = raycasts[i].get_collider() as Node3D
+		
 		if (hit == target):
 			hasHitTarget = true
 			
@@ -69,6 +79,6 @@ func _process(delta):
 	# billboard
 	# Can't use the native feature since it doesn't lead to children
 	# to update their transforms (we want the eyes to follow)
-	var cameraPos = get_viewport().get_camera_3d().global_position
-	cameraPos.y = global_position.y
-	look_at(cameraPos, Vector3(0, 1, 0))
+	var posToLookAt = lookAt.global_position #get_viewport().get_camera_3d().global_position
+	posToLookAt.y = global_position.y
+	look_at(posToLookAt, Vector3(0, 1, 0))
