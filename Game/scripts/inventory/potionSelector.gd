@@ -8,6 +8,17 @@ signal onNewItemSelected(InventoryItem)
 
 func getCurrentItem()->InventoryItem:
 	return inventory.items[currentlySelectedItemIndex]
+	
+func popCurrentItem()->InventoryItem:
+	var item = inventory.items[currentlySelectedItemIndex]
+	inventory.items[currentlySelectedItemIndex] = null
+	
+	if not(inventory.isEmpty()):
+		selectNextValidItem()
+	else:
+		onNewItemSelected.emit(null)
+	
+	return item
 
 func ensureValidIndex():
 	var nbItems = inventory.items.size()
@@ -22,6 +33,11 @@ func selectNextValidItem():
 		currentlySelectedItemIndex += 1
 		ensureValidIndex()
 		
+	onNewItemSelected.emit(getCurrentItem())
+		
+func selectItemAtIndex(index:int):
+	currentlySelectedItemIndex = index
+	ensureValidIndex()
 	onNewItemSelected.emit(getCurrentItem())
 		
 func selectPreviousValidItem():

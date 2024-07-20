@@ -1,20 +1,33 @@
-extends Sprite3D
+extends Area3D
 class_name Wolf
 
+enum EyeColor{RED, YELLOW}
+
+@export var sprite:Sprite3D
 @export var currentTargetPeekedTime:float = 0.0
 @export var peekingDuration:float = 6.0
 @export var maxTargetPeekedTime:float = 5.0
 @export var target: Player
 @export var eyeAnchors: Array[Node3D]
 @export var lookAt:Node3D
+@export var eyeColor:EyeColor = EyeColor.RED
 var raycasts:Array[RayCast3D]
 
 signal onWolfWin()
 signal onWolfAppears()
 signal onWolfDisappears()
 
+func setRandomEyeColor():
+	eyeColor = EyeColor.values()[randi()%EyeColor.size() ]
+	match eyeColor:
+		EyeColor.RED:
+			sprite.modulate = Color.DARK_RED
+		EyeColor.YELLOW:
+			sprite.modulate = Color.YELLOW
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	setRandomEyeColor()
 	for eye in eyeAnchors:
 		var raycast = RayCast3D.new()
 		raycasts.push_back(raycast)
@@ -71,7 +84,6 @@ func _process(delta):
 	if (hasHitTarget):
 		currentTargetPeekedTime += delta
 		
-		print("Current time peeked: ", currentTargetPeekedTime)
 		if currentTargetPeekedTime >= maxTargetPeekedTime:
 			onWolfWin.emit()
 

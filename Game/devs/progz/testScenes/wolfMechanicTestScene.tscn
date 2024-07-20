@@ -41,7 +41,6 @@ wolf = NodePath("../Wolf")
 
 [node name="NightTimer" parent="NightEvent" index="0"]
 nightDuration = 60.0
-peekTimes = Array[float]([])
 
 [node name="PeekAnchorGroup" type="Node3D" parent="."]
 
@@ -55,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.857589, 1.16397, 4.38419)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 
 [node name="Wolf" parent="." node_paths=PackedStringArray("target", "lookAt") instance=ExtResource("5_mhyy5")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.0064702, 1.19209e-07, 0.00165534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
 peekingDuration = 100.0
 maxTargetPeekedTime = 100.0
 target = NodePath("../Player")
@@ -63,5 +62,6 @@ lookAt = NodePath("../player-hut-mk0")
 
 [node name="AlchemyTable" parent="." instance=ExtResource("5_jh4au")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07196, 0, 0)
+timeForPotion = 1.0
 
 [editable path="NightEvent"]
