@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://djqghbv7n0e3o"]
+
+[ext_resource type="PackedScene" uid="uid://cua4q3dx1oh5d" path="res://art/furniture-props/alchemyTable.glb" id="1_ucm4m"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_72gfx"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_uvgom"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="4_gmr37"]
+
+[node name="alchemyTable" instance=ExtResource("1_ucm4m")]
+
+[node name="alchemyTable" parent="." index="0"]
+transform = Transform3D(1.61633, 0, 0, 0, 0.129114, 0, 0, 0, -1.63835, 0, 0, 0)
+
+[node name="beam_009" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_72gfx")
+
+[node name="planks" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_uvgom")
+
+[node name="thatch_003" parent="." index="3"]
+surface_material_override/0 = ExtResource("4_gmr37")

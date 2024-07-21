@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkrsjnj5558i0"]
+[gd_scene load_steps=9 format=3 uid="uid://dkrsjnj5558i0"]
 
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="1_yi5xg"]
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="3_2447y"]
 [ext_resource type="PackedScene" uid="uid://cjgg8s1xbkm67" path="res://prefabs/gameplayObjects/alchemyTable.tscn" id="5_jh4au"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="5_mhyy5"]
 [ext_resource type="PackedScene" uid="uid://cuoh7dh0xkkgq" path="res://prefabs/gameplayObjects/buildings/playerHut.tscn" id="5_vedi1"]
+[ext_resource type="PackedScene" uid="uid://cua4q3dx1oh5d" path="res://art/furniture-props/alchemyTable.glb" id="6_frb25"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ty6ui"]
 size = Vector3(20, 1, 20)
@@ -62,5 +63,8 @@ timeForPotion = 1.0
 
 [node name="player-hut" parent="." instance=ExtResource("5_vedi1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573, -0.125, 0.376)
+
+[node name="alchemyTable" parent="." instance=ExtResource("6_frb25")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.51426, -0.80018, 0.0734298)
 
 [editable path="NightEvent"]
