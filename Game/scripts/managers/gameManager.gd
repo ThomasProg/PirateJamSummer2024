@@ -1,14 +1,19 @@
 extends Node
 
 @export var currentScene:Node = null
+@export var currentScenePath:String = ""
 @export var dayLoadingScreen:PackedScene = preload("res://prefabs/cinematics/dayLoadingScreen.tscn")
 @export var nightLoadingScreen:PackedScene = preload("res://prefabs/cinematics/nightLoadingScreen.tscn")
+@export var gameOverScreen:PackedScene = preload("res://prefabs/cinematics/gameOverScreen.tscn")
+
+func loadGameOver():
+	await loadSceneWithLoadingScreen(currentScenePath, gameOverScreen)
 
 func loadDay(newScenePath:String):
-	loadSceneWithLoadingScreen(newScenePath, dayLoadingScreen)
+	await loadSceneWithLoadingScreen(newScenePath, dayLoadingScreen)
 
 func loadNight(newScenePath:String):
-	loadSceneWithLoadingScreen(newScenePath, nightLoadingScreen)
+	await loadSceneWithLoadingScreen(newScenePath, nightLoadingScreen)
 
 func loadSceneWithLoadingScreen(newScenePath:String, loadingScreenPrefab:PackedScene):
 	var loadingScreen = loadingScreenPrefab.instantiate() as LoadingScreen
@@ -16,22 +21,23 @@ func loadSceneWithLoadingScreen(newScenePath:String, loadingScreenPrefab:PackedS
 	
 	ResourceLoader.load_threaded_request(newScenePath)
 	
-	loadingScreen.onFadeInFinished.connect(func():
-		if (currentScene != null):
-			currentScene.queue_free()
-			currentScene = null
+	await loadingScreen.onFadeInFinished
+	
+	if (currentScene != null):
+		currentScene.queue_free()
+		currentScene = null
+	
+	await get_tree().create_timer(loadingScreen.minTimeOnScreen).timeout
+	
+	var loadStatus = ResourceLoader.load_threaded_get_status(newScenePath)
+	while loadStatus != ResourceLoader.THREAD_LOAD_LOADED:
+		await get_tree().process_frame
+		loadStatus = ResourceLoader.load_threaded_get_status(newScenePath)
 		
-		await get_tree().create_timer(loadingScreen.minTimeOnScreen).timeout
-		
-		var loadStatus = ResourceLoader.load_threaded_get_status(newScenePath)
-		while loadStatus != ResourceLoader.THREAD_LOAD_LOADED:
-			await get_tree().process_frame
-			loadStatus = ResourceLoader.load_threaded_get_status(newScenePath)
-			
-		currentScene = (ResourceLoader.load_threaded_get(newScenePath) as PackedScene).instantiate()
-		get_parent().add_child(currentScene)
-		loadingScreen.mode = LoadingScreen.Mode.FadeOut 
-		)
+	currentScenePath = newScenePath
+	currentScene = (ResourceLoader.load_threaded_get(newScenePath) as PackedScene).instantiate()
+	get_parent().add_child(currentScene)
+	loadingScreen.mode = LoadingScreen.Mode.FadeOut 
 
 func loadNewScene(newScenePath:String):
 	if (currentScene != null):
