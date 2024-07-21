@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://byoeieikuwswg"]
+
+[ext_resource type="PackedScene" uid="uid://cfi8k7nsb420e" path="res://art/furniture-props/potionFluid.glb" id="1_rqnmf"]
+[ext_resource type="Material" uid="uid://dv28huxy73xio" path="res://art/materials/pinkishPurple.tres" id="2_asx6e"]
+
+[node name="potionFluid2" instance=ExtResource("1_rqnmf")]
+
+[node name="potionFluid" parent="." index="0"]
+transform = Transform3D(-0.0722629, 0, 0, 0, -0.0722629, 0, 0, 0, -0.0722629, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_asx6e")
