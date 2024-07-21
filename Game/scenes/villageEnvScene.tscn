@@ -1,7 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://j7nagwydbbem"]
+[gd_scene load_steps=3 format=3 uid="uid://j7nagwydbbem"]
 
 [ext_resource type="PackedScene" uid="uid://cteqkg274rx11" path="res://scenes/villageEnvLDScene.tscn" id="1_hnp1q"]
+
+[sub_resource type="Environment" id="Environment_p2c4j"]
+fog_density = 0.0495
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0459
+adjustment_enabled = true
+adjustment_brightness = 0.65
+adjustment_contrast = 0.9
 
 [node name="VillageEnvScene" type="Node3D"]
 
 [node name="VillageEnvLDScene" parent="." instance=ExtResource("1_hnp1q")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.854486, -0.424768, 0.299042, 0, 0.575662, 0.817688, -0.519474, -0.698703, 0.491895, 0, 0, 0)
+light_color = Color(0.827451, 0.882353, 0.792157, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p2c4j")
