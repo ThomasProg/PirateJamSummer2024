@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1hlogfcvubae"]
+
+[ext_resource type="PackedScene" uid="uid://ou5aheooxv8p" path="res://art/stones/buildingStoneSm1.glb" id="1_essn3"]
+
+[node name="buildingStoneSm12" instance=ExtResource("1_essn3")]
