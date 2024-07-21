@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuoh7dh0xkkgq"]
+
+[ext_resource type="PackedScene" uid="uid://cdaqb3ycbes2j" path="res://devs/banzaiMimic/player-hut/player-hut-mk3.glb" id="1_2snxm"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_o0mwq"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_osefj"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="4_ja6b0"]
+
+[node name="player-hut-mk32" instance=ExtResource("1_2snxm")]
+
+[node name="beam" parent="player-hut-mk3" index="0"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_001" parent="player-hut-mk3" index="1"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_002" parent="player-hut-mk3" index="2"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_003" parent="player-hut-mk3" index="3"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_004" parent="player-hut-mk3" index="4"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_005" parent="player-hut-mk3" index="5"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_006" parent="player-hut-mk3" index="6"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_007" parent="player-hut-mk3" index="7"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="beam_008" parent="player-hut-mk3" index="8"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+
+[node name="panel-back" parent="player-hut-mk3" index="9"]
+surface_material_override/0 = ExtResource("3_osefj")
+
+[node name="panel-front-mk0" parent="player-hut-mk3" index="10"]
+surface_material_override/0 = ExtResource("3_osefj")
+
+[node name="roof-beams" parent="player-hut-mk3" index="17"]
+surface_material_override/0 = ExtResource("2_o0mwq")
+surface_material_override/1 = ExtResource("2_o0mwq")
+
+[node name="thatch" parent="player-hut-mk3" index="18"]
+surface_material_override/0 = ExtResource("4_ja6b0")
+
+[node name="thatch_001" parent="player-hut-mk3" index="19"]
+surface_material_override/0 = ExtResource("4_ja6b0")
+
+[node name="thatch_002" parent="player-hut-mk3" index="20"]
+surface_material_override/0 = ExtResource("4_ja6b0")
