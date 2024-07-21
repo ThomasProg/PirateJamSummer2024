@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdxtlyav7kf57"]
+
+[ext_resource type="PackedScene" uid="uid://5jy22neuhj0m" path="res://prefabs/gameplayObjects/characters/character.tscn" id="1_8vqa8"]
+[ext_resource type="Texture2D" uid="uid://b3hfhtgflvy4g" path="res://art/characters/Character_Hunter.png" id="2_ed26s"]
+
+[node name="Hunter" instance=ExtResource("1_8vqa8")]
+
+[node name="Sprite3D" parent="." index="0"]
+texture = ExtResource("2_ed26s")
