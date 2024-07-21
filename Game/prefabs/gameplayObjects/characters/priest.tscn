@@ -3,3 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://5jy22neuhj0m" path="res://prefabs/gameplayObjects/characters/character.tscn" id="1_n37oq"]
 
 [node name="Priest" instance=ExtResource("1_n37oq")]
+
+[node name="Interactable" parent="." index="1"]
+interactionName = "[outline_size=5][outline_color=yellow]Priest[/outline_color][/outline_size]"
+interactionDescription = "Click to Talk"

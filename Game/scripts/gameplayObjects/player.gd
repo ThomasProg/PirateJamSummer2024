@@ -15,27 +15,24 @@ class_name Player
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var captureMouse = false
+var blockMouseCapture = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _input(event: InputEvent):
-	if event is InputEventMouseMotion and captureMouse:
-		var eventRelativeY = event.relative.y if invertMouseY else -event.relative.y
-		rotate_y(-event.relative.x * mouseSensitivity)
-		camera.rotate_x(eventRelativeY * mouseSensitivity)
-		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-		
+	if (Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
+		if event is InputEventMouseMotion and captureMouse:
+			var eventRelativeY = event.relative.y if invertMouseY else -event.relative.y
+			rotate_y(-event.relative.x * mouseSensitivity)
+			camera.rotate_x(eventRelativeY * mouseSensitivity)
+			camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+			
 	if event is InputEventMouseButton:
-		if not captureMouse:
+		if not captureMouse and not(blockMouseCapture):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			captureMouse = true
 			Engine.time_scale = 1.0
-		if event.is_action_pressed("ui_cancel"):
-			if captureMouse:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				captureMouse = false
-				Engine.time_scale = 0.0
 		
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("OpenMenu"):
@@ -47,7 +44,7 @@ func _input(event: InputEvent):
 	if Input.is_action_just_pressed("InvertMouseYAxis"):
 		invertMouseY = not(invertMouseY)
 			
-	if Input.is_action_just_pressed("Interact"):
+	if Input.is_action_just_pressed("Interact") and captureMouse:
 		if (OS.is_debug_build() and enableTestRayCast):
 			var raycast = RayCast3D.new()
 			get_parent().add_child(raycast)
@@ -66,6 +63,10 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+
+	if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED):
+		move_and_slide()
+		return
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

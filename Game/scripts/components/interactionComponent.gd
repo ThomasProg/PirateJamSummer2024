@@ -1,12 +1,22 @@
 extends Node
+class_name InteractionComponent
 
 @export var interactionRaycast:RayCast3D
 @export var interactionNameText:RichTextLabel
 @export var interactionDescText:RichTextLabel
 
 var collidedLastFrame:bool = false
+var enabled = true
+
+func hideFeedback():
+	interactionNameText.visible = false
+	interactionDescText.visible = false
 
 func _physics_process(delta):
+	if not(enabled):
+		hideFeedback()
+		return
+	
 	var isCollidingThisFrame:bool = false
 	var interactedBody = interactionRaycast.get_collider() as Node3D
 	var currentlyAimedInteractable = null
@@ -23,8 +33,7 @@ func _physics_process(delta):
 				break
 				
 	if (not(isCollidingThisFrame) and collidedLastFrame):
-		interactionNameText.visible = false
-		interactionDescText.visible = false
+		hideFeedback()
 				
 	collidedLastFrame = isCollidingThisFrame
 
