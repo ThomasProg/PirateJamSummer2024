@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://6n2ce7kv80pm"]
+
+[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1vf5r"]
+[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_n5mh3"]
+
+[node name="Day1" type="Node3D"]
+
+[node name="VillageEnvScene" parent="." instance=ExtResource("1_1vf5r")]
+
+[node name="Player" parent="." instance=ExtResource("2_n5mh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81081, 10, -12.9512)

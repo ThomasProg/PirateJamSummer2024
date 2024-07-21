@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=3 uid="uid://cteqkg274rx11"]
+
+[ext_resource type="PackedScene" uid="uid://cuoh7dh0xkkgq" path="res://prefabs/gameplayObjects/buildings/playerHut.tscn" id="1_yet32"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cvf57"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3hsy"]
+albedo_color = Color(0.792157, 0.423529, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h150p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybx0d"]
+albedo_color = Color(1, 0, 0, 0.313726)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4o34"]
+albedo_color = Color(0.247059, 0.627451, 0.286275, 0.313726)
+
+[node name="VillageEnvLDScene" type="Node3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(158.694, 0.00157222, 0.969298, -0.251282, 0.999995, 0.679403, -0.633805, -0.00280879, 242.426, -0.0110846, -0.0282269, 7.42128)
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+metadata/_edit_lock_ = true
+
+[node name="Path" type="Node3D" parent="."]
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(-8.20995, -2.5922e-07, 0, 7.17736e-07, -2.96513, 0, 0, 0, 126.672, -0.555903, -0.817162, -52.0805)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D16" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(-22.1163, -4.34434e-07, 0, 3.33947e-06, -2.87713, 0, 0, 0, 22.1163, -0.555903, -2.33248, -20.7332)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("CylinderMesh_h150p")
+
+[node name="CSGMesh3D15" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(-8.20995, -2.5922e-07, 0, 7.17736e-07, -2.96513, 0, 0, 0, 46.96, -19.7271, -0.817162, 72.8309)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(-7.42143, -2.34324e-07, -20.0813, 7.17736e-07, -2.96513, -3.32674e-13, -3.51079, -1.10849e-07, 42.4497, -10.1883, -0.817161, 29.9319)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(-0.042672, -6.36814e-09, 10.8279, 4.52988e-07, -2.965, -3.16779e-14, 2.9997, 4.47657e-07, 0.154032, -9.87321, -0.817162, -19.3991)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(-2.02194, -3.01743e-07, 7.99992, 4.52988e-07, -2.965, -2.52018e-14, 2.21625, 3.3074e-07, 7.29853, 5.3243, -0.817162, -13.2449)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D13" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(0.261496, 2.41643e-08, 21.7006, 7.31553e-07, -2.965, 1.9288e-13, 4.83779, 4.4705e-07, -1.17298, 6.11267, -0.817162, -20.9643)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(2.45547, 3.26938e-07, 9.25236, 5.07718e-07, -2.965, -2.07393e-13, 2.29714, 3.05858e-07, -9.89005, 5.69022, -0.817163, -29.0216)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D12" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(2.63113, 3.50327e-07, 8.43272, 5.07718e-07, -2.965, -1.68842e-13, 2.09364, 2.78763e-07, -10.5976, -7.10957, -0.817163, -13.3527)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D14" type="CSGMesh3D" parent="Path"]
+transform = Transform3D(-2.70102, -3.59633e-07, 8.06627, 5.07718e-07, -2.965, -1.39285e-13, 2.00266, 2.66649e-07, 10.8791, -10.0958, -0.888958, -32.8131)
+material_override = SubResource("StandardMaterial3D_g3hsy")
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="ForestWalls" type="Node3D" parent="."]
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="ForestWalls"]
+transform = Transform3D(-180.832, -1.22334e-06, 0, 1.58088e-05, -13.9934, 0, 0, 0, 1, -1.06798, 0.0142269, -50.0689)
+material_override = SubResource("StandardMaterial3D_ybx0d")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="ForestWalls"]
+transform = Transform3D(-149.788, -1.22601e-06, 0, 1.30949e-05, -14.024, 0, 0, 0, 1.00218, 4.63345, -0.0564537, 5.05503)
+material_override = SubResource("StandardMaterial3D_ybx0d")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="ForestWalls"]
+transform = Transform3D(-3.17951, -1.22334e-06, 0, 2.77962e-07, -13.9934, 0, 0, 0, 212.177, -26.4414, -0.0564537, 5.76024)
+material_override = SubResource("StandardMaterial3D_ybx0d")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="ForestWalls"]
+transform = Transform3D(-3.17951, -1.22334e-06, 0, 2.77962e-07, -13.9934, 0, 0, 0, 205.328, 35.9878, -0.0564537, 4.42258)
+material_override = SubResource("StandardMaterial3D_ybx0d")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="Houses" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0093956, 1.90735e-06, 0.0776827)
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="Houses"]
+transform = Transform3D(-4.19976, -0.110946, 4.78778, -0.205155, -11.5002, -0.236503, 5.08859, -0.555218, 3.94196, -12.1652, -0.479387, -7.44171)
+material_override = SubResource("StandardMaterial3D_c4o34")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="Houses"]
+transform = Transform3D(-3.7172, 0.00166793, -5.1287, 0.0013874, -11.5141, -0.00197701, -5.45493, -0.0040654, 3.49489, -13.0478, 0.0412159, -37.4857)
+material_override = SubResource("StandardMaterial3D_c4o34")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="Houses"]
+transform = Transform3D(-4.99033, -7.60979e-07, -4.06252, 5.77081e-07, -11.5141, 0, -4.32093, -6.58902e-07, 4.69189, 10.9901, -0.00254297, -7.86244)
+material_override = SubResource("StandardMaterial3D_c4o34")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="Church" type="CSGMesh3D" parent="Houses"]
+transform = Transform3D(-12.1561, -1.85369e-06, 0.495609, 1.06372e-06, -21.2237, -3.03048e-16, 0.527134, 8.0383e-08, 11.4291, 20.1873, 0.0412197, -21.7847)
+material_override = SubResource("StandardMaterial3D_c4o34")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="Houses"]
+transform = Transform3D(-3.83671, -5.85064e-07, 5.0503, 5.77081e-07, -11.5141, -4.23117e-14, 5.37153, 8.1911e-07, 3.60726, 11.1073, 0.0412178, -35.6109)
+material_override = SubResource("StandardMaterial3D_c4o34")
+use_collision = true
+mesh = SubResource("BoxMesh_cvf57")
+
+[node name="playerHut" parent="Houses" instance=ExtResource("1_yet32")]
+transform = Transform3D(-0.174765, 0, 0.98461, 0, 1, 0, -0.98461, 0, -0.174765, -18.8243, 0.5, -18.4368)
