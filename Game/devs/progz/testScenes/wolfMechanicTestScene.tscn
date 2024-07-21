@@ -62,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07196, 0, 0)
 timeForPotion = 1.0
 
 [node name="player-hut" parent="." instance=ExtResource("5_vedi1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573, -0.125, 0.376)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573, -0.125, 0.388425)
 
 [node name="alchemyTable" parent="." instance=ExtResource("6_frb25")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.51426, -0.80018, 0.0734298)
