@@ -33,17 +33,17 @@ func _ready():
 		)
 		
 	onPotionPrepared.connect(func():
-		for child in player.get_children():
-			if child is PotionSelector:
-				var potion = null
-				match selectedInteractible:
-					redPotionInteractible:
-						potion = redPotion
-					yellowPotionInteractible:
-						potion = yellowPotion						
-				var index = child.inventory.addItem(potion)
-				if (index != -1):
-					child.selectItemAtIndex(index)
+		var potionSelector = Utilities.findComponentByType(player, PotionSelector)
+		if (potionSelector != null):
+			var potion = null
+			match selectedInteractible:
+				redPotionInteractible:
+					potion = redPotion
+				yellowPotionInteractible:
+					potion = yellowPotion						
+			var index = potionSelector.inventory.addItem(potion)
+			if (index != -1):
+				potionSelector.selectItemAtIndex(index)
 					
 		selectedInteractible = null
 		)
@@ -51,10 +51,9 @@ func _ready():
 func _on_body_entered(body):
 	if body is Player:
 		player = body
-		for child in player.get_children():
-			if child is AlchemyTableInteractor:
-				interactor = child
-				child.onAreaEntered(self)
+		interactor = Utilities.findComponentByType(body, AlchemyTableInteractor)
+		if (interactor != null):
+			interactor.onAreaEntered(self)
 
 
 func _on_body_exited(body):
@@ -62,8 +61,8 @@ func _on_body_exited(body):
 		if (body == player):
 			player = null
 
-		for child in body.get_children():
-			if child is AlchemyTableInteractor:
-				child.onAreaExited(self)
+		var tableInteractor = Utilities.findComponentByType(body, AlchemyTableInteractor)
+		if (tableInteractor != null):
+			tableInteractor.onAreaExited(self)
 
 	interactor = null

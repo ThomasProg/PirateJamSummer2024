@@ -21,16 +21,15 @@ func _physics_process(delta):
 	var interactedBody = interactionRaycast.get_collider() as Node3D
 	var currentlyAimedInteractable = null
 	if (interactedBody):
-		for child in interactedBody.get_children():
-			if child is Interactable:
-				currentlyAimedInteractable = child
-				interactionNameText.text = "[center]" + child.interactionName + "[/center]"
-				interactionNameText.visible = true
-				interactionDescText.text = "[center]" + child.interactionDescription + "[/center]"
-				interactionDescText.visible = true
-				
-				isCollidingThisFrame = true
-				break
+		var interactable = Utilities.findComponentByType(interactedBody, Interactable)
+		if (interactable != null):
+			currentlyAimedInteractable = interactable
+			interactionNameText.text = "[center]" + interactable.interactionName + "[/center]"
+			interactionNameText.visible = true
+			interactionDescText.text = "[center]" + interactable.interactionDescription + "[/center]"
+			interactionDescText.visible = true
+			
+			isCollidingThisFrame = true
 				
 	if (not(isCollidingThisFrame) and collidedLastFrame):
 		hideFeedback()
