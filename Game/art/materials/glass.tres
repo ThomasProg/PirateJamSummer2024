@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dh206qjlmfuf7" path="res://art/textures/glassScratch/glassScratch.jpg" id="1_v1uhy"]
 
 [resource]
-albedo_color = Color(0.133333, 0.384314, 0.686275, 0.227451)
+albedo_color = Color(0.133333, 0.384314, 0.686275, 0.756863)
 albedo_texture = ExtResource("1_v1uhy")
-metallic_specular = 0.0
-roughness = 0.41
+metallic_specular = 0.05
+roughness = 0.89
 roughness_texture = ExtResource("1_v1uhy")
 refraction_enabled = true
 refraction_scale = 0.0
