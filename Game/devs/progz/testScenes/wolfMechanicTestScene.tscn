@@ -50,11 +50,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.857589, 1.16397, 4.38419)
 [node name="PeekAnchor3" type="Node3D" parent="PeekAnchorGroup"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 
-[node name="Wolf" parent="." node_paths=PackedStringArray("target", "lookAt") instance=ExtResource("5_mhyy5")]
+[node name="Wolf" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_mhyy5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
 peekingDuration = 5.0
 target = NodePath("../Player")
-lookAt = NodePath("")
 
 [node name="AlchemyTable" parent="." instance=ExtResource("5_jh4au")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07196, 0, 0)
