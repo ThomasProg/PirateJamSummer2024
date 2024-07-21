@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://20u2hsotfkmp"]
+
+[ext_resource type="PackedScene" uid="uid://cc3hu5t7bqke7" path="res://art/stones/buildingStoneSm0.glb" id="1_lusmc"]
+[ext_resource type="Material" uid="uid://cetk51yaqcwmj" path="res://art/materials/rock037.tres" id="2_hov01"]
+
+[node name="buildingStoneSm02" instance=ExtResource("1_lusmc")]
+
+[node name="buildingStoneSm0" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_hov01")
+
+[node name="@StaticBody3D@28626" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

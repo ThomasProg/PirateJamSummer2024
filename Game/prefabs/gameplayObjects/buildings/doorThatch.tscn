@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://r71rr60yc5pt"]
+
+[ext_resource type="PackedScene" uid="uid://7o4p756x8po8" path="res://art/buildings/door-thatch.glb" id="1_ykkvs"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="2_8m6hq"]
+
+[node name="door-thatch2" instance=ExtResource("1_ykkvs")]
+
+[node name="door-thatch" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_8m6hq")
+
+[node name="@StaticBody3D@23296" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

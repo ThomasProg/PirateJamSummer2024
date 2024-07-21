@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dkrsjnj5558i0"]
 
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="1_yi5xg"]
-[ext_resource type="PackedScene" uid="uid://bgnpbh7ncbwlr" path="res://art/playerHut/player-hut-mk2.glb" id="2_xonsm"]
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="3_2447y"]
 [ext_resource type="PackedScene" uid="uid://cjgg8s1xbkm67" path="res://prefabs/gameplayObjects/alchemyTable.tscn" id="5_jh4au"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="5_mhyy5"]
+[ext_resource type="PackedScene" uid="uid://cuoh7dh0xkkgq" path="res://prefabs/gameplayObjects/buildings/playerHut.tscn" id="5_vedi1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ty6ui"]
 size = Vector3(20, 1, 20)
@@ -32,9 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1793, 0)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.0790253, 0.0808615, -0.993588, 0.777933, 0.618251, 0.112188, 0.623358, -0.78181, -0.0140474, 0, 0, 0)
 
-[node name="player-hut-mk0" parent="." instance=ExtResource("2_xonsm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57253, -0.12471, 0.375709)
-
 [node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("3_2447y")]
 peekAnchorGroup = NodePath("../PeekAnchorGroup")
 wolf = NodePath("../Wolf")
@@ -57,10 +54,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
 peekingDuration = 5.0
 target = NodePath("../Player")
-lookAt = NodePath("../player-hut-mk0")
+lookAt = NodePath("../player-hut")
 
 [node name="AlchemyTable" parent="." instance=ExtResource("5_jh4au")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07196, 0, 0)
 timeForPotion = 1.0
+
+[node name="player-hut" parent="." instance=ExtResource("5_vedi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573, -0.125, 0.376)
 
 [editable path="NightEvent"]
