@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="3_2447y"]
 [ext_resource type="PackedScene" uid="uid://cjgg8s1xbkm67" path="res://prefabs/gameplayObjects/alchemyTable.tscn" id="5_jh4au"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="5_mhyy5"]
-[ext_resource type="PackedScene" uid="uid://cuoh7dh0xkkgq" path="res://prefabs/gameplayObjects/buildings/player_hut.tscn" id="5_vedi1"]
+[ext_resource type="PackedScene" uid="uid://cuoh7dh0xkkgq" path="res://prefabs/gameplayObjects/buildings/playerHut.tscn" id="5_vedi1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ty6ui"]
 size = Vector3(20, 1, 20)

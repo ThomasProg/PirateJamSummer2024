@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuoh7dh0xkkgq"]
+[gd_scene load_steps=6 format=3 uid="uid://cuoh7dh0xkkgq"]
 
 [ext_resource type="PackedScene" uid="uid://cdaqb3ycbes2j" path="res://devs/banzaiMimic/player-hut/player-hut-mk3.glb" id="1_2snxm"]
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_o0mwq"]
 [ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_osefj"]
 [ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="4_ja6b0"]
+[ext_resource type="PackedScene" uid="uid://r71rr60yc5pt" path="res://prefabs/gameplayObjects/buildings/doorThatch.tscn" id="5_k71gm"]
 
 [node name="player-hut-mk32" instance=ExtResource("1_2snxm")]
 
@@ -52,3 +53,6 @@ surface_material_override/0 = ExtResource("4_ja6b0")
 
 [node name="thatch_002" parent="player-hut-mk3" index="20"]
 surface_material_override/0 = ExtResource("4_ja6b0")
+
+[node name="door-thatch2" parent="." index="1" instance=ExtResource("5_k71gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.655921, 0, 3.71135)
