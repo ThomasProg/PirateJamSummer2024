@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8y4mmn4nj2b7"
-path="res://.godot/imported/doorPlanksSm.glb-2c7e63408320fac2368804ac8f87c724.scn"
+uid="uid://c3eyrkmyaljbr"
+path="res://.godot/imported/doorPlanksSmMk0.glb-90db6415b044b41c52cf5d9d1fe09eda.scn"
 
 [deps]
 
-source_file="res://art/buildings/doorPlanksSm.glb"
-dest_files=["res://.godot/imported/doorPlanksSm.glb-2c7e63408320fac2368804ac8f87c724.scn"]
+source_file="res://art/buildings/doorPlanksSmMk0.glb"
+dest_files=["res://.godot/imported/doorPlanksSmMk0.glb-90db6415b044b41c52cf5d9d1fe09eda.scn"]
 
 [params]
 

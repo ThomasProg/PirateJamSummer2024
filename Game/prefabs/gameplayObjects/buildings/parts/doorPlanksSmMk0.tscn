@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://0p0yjd70kipk"]
+
+[ext_resource type="PackedScene" uid="uid://c3eyrkmyaljbr" path="res://art/buildings/doorPlanksSmMk0.glb" id="1_2x12q"]
+
+[node name="doorPlanksSmMk0" instance=ExtResource("1_2x12q")]
+
+[node name="door-planks-sm-mk0" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="@StaticBody3D@36997" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
