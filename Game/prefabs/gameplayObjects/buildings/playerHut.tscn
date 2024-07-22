@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_o0mwq"]
 [ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_osefj"]
 [ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="4_ja6b0"]
-[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/buildings/doorThatch.tscn" id="5_k71gm"]
+[ext_resource type="PackedScene" uid="uid://r71rr60yc5pt" path="res://prefabs/gameplayObjects/buildings/parts/doorThatch.tscn" id="5_k71gm"]
 [ext_resource type="PackedScene" uid="uid://bxxnteponmpix" path="res://prefabs/gameplayObjects/stones/buildingStoneFlat.tscn" id="6_mqvlj"]
 [ext_resource type="PackedScene" uid="uid://cfl56av4n7g72" path="res://prefabs/gameplayObjects/stones/buildingStoneMd.tscn" id="7_kuksw"]
 [ext_resource type="PackedScene" uid="uid://20u2hsotfkmp" path="res://prefabs/gameplayObjects/stones/buildingStoneSm0.tscn" id="8_8hgxd"]
