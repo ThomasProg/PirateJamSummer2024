@@ -17,13 +17,13 @@ func _ready():
 	nightTimer.onNightEnd.connect(func():
 		print("End of the night: you survive")
 		if not(nextDayPath.is_empty()):
-			GameManager.loadNight(nextDayPath)
+			GameManager.loadDay(nextDayPath)
 		)
 		
 	wolf.onWolfLeave.connect(func():
 		print("End of the night: the wolf went away")
 		if not(nextDayPath.is_empty()):
-			GameManager.loadNight(nextDayPath)
+			GameManager.loadDay(nextDayPath)
 		)
 	
 	wolf.onWolfWin.connect(func(): 
@@ -35,9 +35,17 @@ func _ready():
 		)
 
 func onPeek():
-	var peekAnchor = peekAnchorGroup.get_children().pick_random() as Node3D
-	if (peekAnchor != null):
-		wolf.global_position = peekAnchor.global_position
+	# TODO : opti and precompute
+	var stones = get_parent().find_children("*", "RemovableStone", true, false)
+
+	#var peekAnchor = peekAnchorGroup.get_children().pick_random() as Node3D
+	var stone = stones.pick_random() as RemovableStone
+	var peekAnchor = stone.peekingSpot
+
+	if (stone.peekingSpot != null):
+		stone.disappear()
+		wolf.global_position = stone.peekingSpot.global_position
+		wolf.lookAt = stone
 		wolf.appear()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

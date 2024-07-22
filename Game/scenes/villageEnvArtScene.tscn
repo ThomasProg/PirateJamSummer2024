@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://5gr2h7l2dewa"]
+[gd_scene load_steps=4 format=3 uid="uid://5gr2h7l2dewa"]
 
 [ext_resource type="PackedScene" uid="uid://cteqkg274rx11" path="res://scenes/villageEnvLDScene.tscn" id="1_6menc"]
+[ext_resource type="PackedScene" uid="uid://wqy2d82p2qpe" path="res://prefabs/gameplayObjects/buildings/npcHutWood.tscn" id="2_e12ab"]
+[ext_resource type="PackedScene" uid="uid://cuoh7dh0xkkgq" path="res://prefabs/gameplayObjects/buildings/playerHut.tscn" id="3_lboe8"]
 
 [node name="VillageEnvArtScene" type="Node3D"]
 
 [node name="VillageEnvLDScene" parent="." instance=ExtResource("1_6menc")]
+
+[node name="npcHutWood" parent="." instance=ExtResource("2_e12ab")]
+transform = Transform3D(0.997775, 0, 0.0666745, 0, 1, 0, -0.0666745, 0, 0.997775, -12.4284, 0, -33.9284)
+
+[node name="player-hut-mk32" parent="." instance=ExtResource("3_lboe8")]
+transform = Transform3D(-0.165736, 0, 0.98617, 0, 1, 0, -0.98617, 0, -0.165736, -18.9112, 0.412749, -18.313)

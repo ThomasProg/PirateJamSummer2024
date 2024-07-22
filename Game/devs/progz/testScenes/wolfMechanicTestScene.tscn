@@ -59,6 +59,7 @@ lookAt = NodePath("../player-hut")
 
 [node name="AlchemyTable" parent="." instance=ExtResource("5_jh4au")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07196, 0, 0)
+visible = false
 timeForPotion = 1.0
 
 [node name="player-hut" parent="." instance=ExtResource("5_vedi1")]

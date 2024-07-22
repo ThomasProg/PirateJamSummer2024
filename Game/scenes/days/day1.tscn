@@ -29,30 +29,16 @@ timeline = ExtResource("4_5jogi")
 [node name="Hunter" parent="." instance=ExtResource("4_6tilt")]
 transform = Transform3D(0.0603866, 0, 0.998175, 0, 1, 0, -0.998175, 0, 0.0603866, -13.6115, 0.515971, -23.661)
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
 use_collision = true
 mesh = SubResource("CylinderMesh_mnhcf")
 script = ExtResource("6_wque3")
+interactable = NodePath("Interactable")
 nextNightPath = "res://scenes/nights/night1.tscn"
-interactable = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":ExtResource("4_vi4if"),"interactionName":"Bed","interactionDescription":"Click to sleep")
-
+nextDayPath = "res://scenes/days/day1.tscn"
 
 [node name="Interactable" type="Node" parent="CSGMesh3D"]
-script = ExtResource("4_vi4if")
-interactionName = "Bed"
-interactionDescription = "Click to sleep"
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
-use_collision = true
-mesh = SubResource("CylinderMesh_mnhcf")
-script = ExtResource("6_wque3")
-nextNightPath = "res://scenes/nights/night1.tscn"
-interactable = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":ExtResource("4_vi4if"),"interactionName":"Bed","interactionDescription":"Click to sleep")
-
-
-[node name="Interactable" type="Node" parent="CSGMesh3D2"]
 script = ExtResource("4_vi4if")
 interactionName = "Bed"
 interactionDescription = "Click to sleep"

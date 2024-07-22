@@ -1,7 +1,7 @@
 extends Node
 class_name NightTimer
 
-@export var nightDuration:float = 20.0
+@export var nightDuration:float = 50.0
 @export var peekTimes:Array[float] = []
 
 # useful for testing debug, to skip part of the night

@@ -16,7 +16,7 @@ enum EyeColor{RED, YELLOW}
 @export var currentPeekAggro:float = 0.0
 
 @export var aggroMultWhenPeeking:float = 1.0
-@export var currentPeekAggroMult:float = 2.0
+@export var currentPeekAggroMult:float = 0.25
 
 var raycasts:Array[RayCast3D]
 

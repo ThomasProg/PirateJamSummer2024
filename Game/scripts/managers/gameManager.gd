@@ -12,10 +12,10 @@ func loadGameOver():
 func loadDay(newScenePath:String):
 	await loadSceneWithLoadingScreen(newScenePath, dayLoadingScreen)
 
-func loadNight(newScenePath:String):
-	await loadSceneWithLoadingScreen(newScenePath, nightLoadingScreen)
+func loadNight(newScenePath:String, onNightLoaded):
+	await loadSceneWithLoadingScreen(newScenePath, nightLoadingScreen, onNightLoaded)
 
-func loadSceneWithLoadingScreen(newScenePath:String, loadingScreenPrefab:PackedScene):
+func loadSceneWithLoadingScreen(newScenePath:String, loadingScreenPrefab:PackedScene, onSceneLoaded = null):
 	var loadingScreen = loadingScreenPrefab.instantiate() as LoadingScreen
 	get_parent().add_child(loadingScreen)
 	
@@ -36,6 +36,8 @@ func loadSceneWithLoadingScreen(newScenePath:String, loadingScreenPrefab:PackedS
 		
 	currentScenePath = newScenePath
 	currentScene = (ResourceLoader.load_threaded_get(newScenePath) as PackedScene).instantiate()
+	if (onSceneLoaded != null):
+		onSceneLoaded.call(currentScene)
 	get_parent().add_child(currentScene)
 	loadingScreen.mode = LoadingScreen.Mode.FadeOut 
 
@@ -51,3 +53,5 @@ func loadNewScene(newScenePath:String):
 	currentScene = (ResourceLoader.load_threaded_get(newScenePath) as PackedScene).instantiate()
 	get_parent().add_child(currentScene)
 
+func _ready():
+	currentScene = Utilities.findComponentByType(get_parent(), Node3D)

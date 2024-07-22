@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://0p0yjd70kipk"]
+
+[ext_resource type="PackedScene" uid="uid://c3eyrkmyaljbr" path="res://art/buildings/doorPlanksSmMk0.glb" id="1_2x12q"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="2_unqc5"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_pdnu8"]
+
+[node name="doorPlanksSmMk0" instance=ExtResource("1_2x12q")]
+
+[node name="door-planks-sm-mk0" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_unqc5")
+surface_material_override/1 = ExtResource("2_unqc5")
+surface_material_override/2 = ExtResource("3_pdnu8")
+
+[node name="@StaticBody3D@36997" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjgg8s1xbkm67"]
+[gd_scene load_steps=13 format=3 uid="uid://cjgg8s1xbkm67"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/alchemyTable.gd" id="1_wr1u7"]
 [ext_resource type="Resource" uid="uid://b5ikawlod3v5a" path="res://inventoryAssets/potions/redPotion.tres" id="2_bk653"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_lwojp"]
 [ext_resource type="Resource" uid="uid://cnnujc7uicalb" path="res://inventoryAssets/potions/yellowPotion.tres" id="3_b6h32"]
+[ext_resource type="PackedScene" uid="uid://cua4q3dx1oh5d" path="res://art/furniture-props/alchemyTable.glb" id="4_p2jvy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7r6gh"]
 radius = 1.5
@@ -36,9 +37,14 @@ redPotion = ExtResource("2_bk653")
 yellowPotion = ExtResource("3_b6h32")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_7r6gh")
 
+[node name="alchemyTable" parent="." instance=ExtResource("4_p2jvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.583981, -0.392)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_83j0p")
