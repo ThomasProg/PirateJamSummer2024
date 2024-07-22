@@ -1,16 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://rj0gs5dnv0mj"]
+[gd_scene load_steps=7 format=3 uid="uid://rj0gs5dnv0mj"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_4g165"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_vedc3"]
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="3_reu50"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="4_ymt8p"]
 
+[sub_resource type="Environment" id="Environment_laupn"]
+background_mode = 1
+ambient_light_source = 1
+tonemap_mode = 1
+tonemap_exposure = 1.2
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_cascades = 8
+sdfgi_min_cell_size = 0.140625
+glow_enabled = true
+glow_levels/3 = 0.5
+glow_levels/5 = 0.0
+glow_strength = 1.5
+glow_blend_mode = 0
+fog_light_color = Color(0.517647, 0.552941, 0.607843, 1)
+fog_density = 0.1324
+volumetric_fog_density = 0.9
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+adjustment_brightness = 0.65
+adjustment_contrast = 0.9
+
+[sub_resource type="FogMaterial" id="FogMaterial_4j81r"]
+density = -1.0
+
 [node name="Night1" type="Node3D"]
 
 [node name="VillageEnvScene" parent="." instance=ExtResource("1_4g165")]
 
+[node name="DirectionalLight3D" parent="VillageEnvScene" index="1"]
+visible = false
+
+[node name="WorldEnvironment" parent="VillageEnvScene" index="2"]
+environment = SubResource("Environment_laupn")
+
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3742, 1.3201, -19.9177)
+
+[node name="FogVolume" type="FogVolume" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08363, 0.726178, 1.55334)
+visible = false
+size = Vector3(7, 7, 7)
+material = SubResource("FogMaterial_4j81r")
 
 [node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("3_reu50")]
 peekAnchorGroup = NodePath("../PeekAnchorGroup")
@@ -35,4 +71,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.001
 peekingDuration = 5.0
 target = NodePath("../Player")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2256, 2.10578, -19.0393)
+light_energy = 0.135
+distance_fade_length = 245.85
+omni_range = 5.002
+omni_attenuation = 0.0136023
+
+[editable path="VillageEnvScene"]
 [editable path="NightEvent"]
