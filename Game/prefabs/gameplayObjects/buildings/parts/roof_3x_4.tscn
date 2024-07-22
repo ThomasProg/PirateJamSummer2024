@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://btjpl86jx0nsl"]
+
+[ext_resource type="PackedScene" uid="uid://coh607bokbx8c" path="res://art/buildings/roof3x4.glb" id="1_umgy3"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_4o8gt"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="3_0v1at"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="4_2ndiy"]
+
+[node name="roof3x4" instance=ExtResource("1_umgy3")]
+
+[node name="roof-3x4" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_4o8gt")
+surface_material_override/1 = ExtResource("3_0v1at")
+surface_material_override/2 = ExtResource("4_2ndiy")

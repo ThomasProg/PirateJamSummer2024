@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://gauwskimp68y"]
+
+[ext_resource type="PackedScene" uid="uid://blp66n8sb085g" path="res://art/buildings/wallLogsSm.glb" id="1_e66co"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_h705h"]
+
+[node name="wallLogsSm" instance=ExtResource("1_e66co")]
+
+[node name="@StaticBody3D@22822" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="wall-logs-sm" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_h705h")
