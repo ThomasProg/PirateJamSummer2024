@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://btjpl86jx0nsl" path="res://prefabs/gameplayObjects/buildings/parts/roof_3x_4.tscn" id="2_bmx2p"]
 [ext_resource type="PackedScene" uid="uid://0p0yjd70kipk" path="res://prefabs/gameplayObjects/buildings/parts/doorPlanksSmMk0.tscn" id="3_xic85"]
 
-[node name="NpcHutWood" type="Node"]
+[node name="npcHutWood" type="Node3D"]
 
 [node name="wallLogsSm3" parent="." instance=ExtResource("1_xwefy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13, 0, 0)

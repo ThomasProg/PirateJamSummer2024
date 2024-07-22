@@ -5,7 +5,7 @@
 
 [node name="wallLogsSm" instance=ExtResource("1_e66co")]
 
-[node name="@StaticBody3D@78016" parent="." index="0"]
+[node name="@StaticBody3D@22822" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="wall-logs-sm" parent="." index="1"]
