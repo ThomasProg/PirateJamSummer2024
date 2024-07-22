@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://j7nagwydbbem"]
+[gd_scene load_steps=6 format=3 uid="uid://j7nagwydbbem"]
 
 [ext_resource type="PackedScene" uid="uid://cteqkg274rx11" path="res://scenes/villageEnvLDScene.tscn" id="1_hnp1q"]
+[ext_resource type="Terrain3DStorage" uid="uid://dhe35d6tu5nqe" path="res://art/terrain/terrain_3d_storage.res" id="2_rp6qt"]
+[ext_resource type="Terrain3DMaterial" uid="uid://ip3m313vko7v" path="res://art/terrain/terrain_3d_material.tres" id="3_te6cu"]
+[ext_resource type="Terrain3DAssets" uid="uid://c0jtrqawsq8sf" path="res://art/terrain/terrain_3d_assets.tres" id="4_oh2n4"]
 
 [sub_resource type="Environment" id="Environment_p2c4j"]
 fog_density = 0.0495
@@ -13,6 +16,7 @@ adjustment_contrast = 0.9
 [node name="VillageEnvScene" type="Node3D"]
 
 [node name="VillageEnvLDScene" parent="." instance=ExtResource("1_hnp1q")]
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.854486, -0.424768, 0.299042, 0, 0.575662, 0.817688, -0.519474, -0.698703, 0.491895, 0, 0, 0)
@@ -21,3 +25,8 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_p2c4j")
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+storage = ExtResource("2_rp6qt")
+material = ExtResource("3_te6cu")
+assets = ExtResource("4_oh2n4")
