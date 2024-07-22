@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryPotionItem.gd" id="1_52ol8"]
 [ext_resource type="PackedScene" uid="uid://by0fo1xf32qi2" path="res://prefabs/instanced/potions/yellowPotionEffectPrefab.tscn" id="1_mu5s6"]
-[ext_resource type="Texture2D" uid="uid://bxaffg1bqa2jk" path="res://addons/proton_scatter/icons/loading/progress1.svg" id="2_15ypk"]
+[ext_resource type="Texture2D" uid="uid://cvt4lvo0oijp2" path="res://art/items/Potion_Yellow_Placeholder.png" id="3_ir4bj"]
 
 [resource]
 script = ExtResource("1_52ol8")
 effectPrefab = ExtResource("1_mu5s6")
 name = "Yellow Potion"
 description = "Use it against the wolf if he has yellow eyes!"
-texture = ExtResource("2_15ypk")
+texture = ExtResource("3_ir4bj")
 type = 0

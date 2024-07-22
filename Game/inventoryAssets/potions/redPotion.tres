@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryPotionItem.gd" id="1_h0pvw"]
 [ext_resource type="PackedScene" uid="uid://dmfc4bfiqkjer" path="res://prefabs/instanced/potions/redPotionEffectPrefab.tscn" id="1_rk6lm"]
-[ext_resource type="Texture2D" uid="uid://drmmcy11y7mho" path="res://addons/proton_scatter/demos/assets/textures/t_leaves_1.png" id="2_jrtag"]
+[ext_resource type="Texture2D" uid="uid://duc6h36c6mfn4" path="res://art/items/Potion_Red_Placeholder.png" id="3_1ppsa"]
 
 [resource]
 script = ExtResource("1_h0pvw")
 effectPrefab = ExtResource("1_rk6lm")
 name = "Red Potion"
 description = "Use it against the wolf if he has red eyes!"
-texture = ExtResource("2_jrtag")
+texture = ExtResource("3_1ppsa")
 type = 0
