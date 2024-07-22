@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://rj0gs5dnv0mj"]
+[gd_scene load_steps=6 format=3 uid="uid://rj0gs5dnv0mj"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_4g165"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_vedc3"]
@@ -26,9 +26,6 @@ volumetric_fog_albedo = Color(0, 0, 0, 1)
 adjustment_brightness = 0.65
 adjustment_contrast = 0.9
 
-[sub_resource type="FogMaterial" id="FogMaterial_4j81r"]
-density = -1.0
-
 [node name="Night1" type="Node3D"]
 
 [node name="VillageEnvScene" parent="." instance=ExtResource("1_4g165")]
@@ -41,12 +38,6 @@ environment = SubResource("Environment_laupn")
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3742, 1.3201, -19.9177)
-
-[node name="FogVolume" type="FogVolume" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08363, 0.726178, 1.55334)
-visible = false
-size = Vector3(7, 7, 7)
-material = SubResource("FogMaterial_4j81r")
 
 [node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("3_reu50")]
 peekAnchorGroup = NodePath("../PeekAnchorGroup")
