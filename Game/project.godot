@@ -17,13 +17,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GameManager="*res://prefabs/managers/gameManager.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"welcome": "res://dialogues/welcome.dtl"
+}
 
 [display]
 
