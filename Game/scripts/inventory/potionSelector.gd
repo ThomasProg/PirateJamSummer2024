@@ -78,4 +78,5 @@ func _input(event: InputEvent):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	selectNextValidItem()
+	if not(inventory.isEmpty()):
+		selectNextValidItem()

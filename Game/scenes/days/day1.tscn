@@ -1,11 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://6n2ce7kv80pm"]
+[gd_scene load_steps=9 format=3 uid="uid://6n2ce7kv80pm"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1vf5r"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_n5mh3"]
+[ext_resource type="Resource" path="res://devs/progz/dialogues/welcome.dtl" id="4_5jogi"]
+[ext_resource type="PackedScene" uid="uid://bdxtlyav7kf57" path="res://prefabs/gameplayObjects/characters/hunter.tscn" id="4_6tilt"]
+[ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="4_hbxvj"]
+[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="4_vi4if"]
+[ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="6_wque3"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
 [node name="Day1" type="Node3D"]
+metadata/_edit_lock_ = true
 
 [node name="VillageEnvScene" parent="." instance=ExtResource("1_1vf5r")]
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_n5mh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81081, 10, -12.9512)
+
+[node name="GameplayObjects" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Priest" parent="." instance=ExtResource("4_hbxvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2366, 0.521723, -21.5309)
+timeline = ExtResource("4_5jogi")
+
+[node name="Hunter" parent="." instance=ExtResource("4_6tilt")]
+transform = Transform3D(0.0603866, 0, 0.998175, 0, 1, 0, -0.998175, 0, 0.0603866, -13.6115, 0.515971, -23.661)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
+use_collision = true
+mesh = SubResource("CylinderMesh_mnhcf")
+script = ExtResource("6_wque3")
+interactable = NodePath("Interactable")
+nextNightPath = "res://scenes/nights/night1.tscn"
+
+[node name="Interactable" type="Node" parent="CSGMesh3D"]
+script = ExtResource("4_vi4if")
+interactionName = "Bed"
+interactionDescription = "Click to sleep"
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
+use_collision = true
+mesh = SubResource("CylinderMesh_mnhcf")
+script = ExtResource("6_wque3")
+interactable = NodePath("../CSGMesh3D/Interactable")
+nextNightPath = "res://scenes/nights/night1.tscn"
+
+[node name="Interactable" type="Node" parent="CSGMesh3D2"]
+script = ExtResource("4_vi4if")
+interactionName = "Bed"
+interactionDescription = "Click to sleep"

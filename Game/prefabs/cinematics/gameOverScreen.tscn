@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp0146bk3x36r"]
+
+[ext_resource type="Script" path="res://scripts/cinematics/loadingScreen.gd" id="1_pt8rt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq8rt"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="DayLoadingScreen" type="Node" node_paths=PackedStringArray("content")]
+script = ExtResource("1_pt8rt")
+content = NodePath("CanvasLayer/Panel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oq8rt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]You have been killed by the wolf... [/center]"
+fit_content = true

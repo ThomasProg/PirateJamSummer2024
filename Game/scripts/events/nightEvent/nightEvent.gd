@@ -1,8 +1,10 @@
 extends Node
+class_name NightEvent
 
 @export var peekAnchorGroup:Node3D
 @export var nightTimer: NightTimer
 @export var wolf: Wolf
+@export_file("*.tscn") var nextDayPath: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,16 +16,22 @@ func _ready():
 	nightTimer.onPeek.connect(onPeek)
 	nightTimer.onNightEnd.connect(func():
 		print("End of the night: you survive")
+		if not(nextDayPath.is_empty()):
+			GameManager.loadNight(nextDayPath)
 		)
 		
 	wolf.onWolfLeave.connect(func():
 		print("End of the night: the wolf went away")
+		if not(nextDayPath.is_empty()):
+			GameManager.loadNight(nextDayPath)
 		)
 	
 	wolf.onWolfWin.connect(func(): 
 		print("Game Over")
 		nightTimer.queue_free()	
 		wolf.queue_free()
+		
+		GameManager.loadGameOver()
 		)
 
 func onPeek():
