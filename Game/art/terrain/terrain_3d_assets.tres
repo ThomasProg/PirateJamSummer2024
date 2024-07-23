@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" path="res://art/terrain/dds/ground013-alb-ht.dds" id="1_436nn"]
 [ext_resource type="Texture2D" path="res://art/terrain/dds/ground013-nrm-rgh.dds" id="2_vpjnx"]
-[ext_resource type="Texture2D" path="res://art/terrain/dds/ground020-alb-ht.dds" id="3_t42mk"]
+[ext_resource type="Texture2D" path="res://art/terrain/dds/ground020-alb-ht-dark.dds" id="3_4cr6d"]
 [ext_resource type="Texture2D" path="res://art/terrain/dds/ground020-nrm-rgh.dds" id="4_s7rf0"]
 [ext_resource type="Texture2D" path="res://art/terrain/dds/ground048-alb-ht.dds" id="5_7hxn7"]
 [ext_resource type="Texture2D" path="res://art/terrain/dds/ground048-nrm-rgh.dds" id="6_ak663"]
@@ -23,12 +23,15 @@ generated_type = 1
 name = "ground013-alb-ht"
 albedo_texture = ExtResource("1_436nn")
 normal_texture = ExtResource("2_vpjnx")
+uv_scale = 0.3
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xs6pq"]
 name = "ground020-alb-ht"
 id = 1
-albedo_texture = ExtResource("3_t42mk")
+albedo_texture = ExtResource("3_4cr6d")
 normal_texture = ExtResource("4_s7rf0")
+uv_scale = 0.3
+detiling = 0.3
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xk50q"]
 name = "ground048-alb-ht"
