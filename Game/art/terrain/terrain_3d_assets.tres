@@ -1,0 +1,45 @@
+[gd_resource type="Terrain3DAssets" load_steps=14 format=3 uid="uid://c0jtrqawsq8sf"]
+
+[ext_resource type="Texture2D" path="res://art/terrain/dds/ground013-alb-ht.dds" id="1_436nn"]
+[ext_resource type="PackedScene" uid="uid://cmga5cew0712q" path="res://prefabs/gameplayObjects/trees/tree-mk0.tscn" id="1_gksiv"]
+[ext_resource type="PackedScene" uid="uid://dvmvsu6fvxgeb" path="res://prefabs/gameplayObjects/trees/treeLeafless.tscn" id="2_jpuym"]
+[ext_resource type="Texture2D" path="res://art/terrain/dds/ground013-nrm-rgh.dds" id="2_vpjnx"]
+[ext_resource type="Texture2D" path="res://art/terrain/dds/ground020-alb-ht-dark.dds" id="3_4cr6d"]
+[ext_resource type="Texture2D" path="res://art/terrain/dds/ground020-nrm-rgh.dds" id="4_s7rf0"]
+[ext_resource type="Texture2D" path="res://art/terrain/dds/ground048-alb-ht.dds" id="5_7hxn7"]
+[ext_resource type="Texture2D" path="res://art/terrain/dds/ground048-nrm-rgh.dds" id="6_ak663"]
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_n872b"]
+name = "tree-mk0"
+density = 0.267819
+scene_file = ExtResource("1_gksiv")
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_1khwp"]
+name = "treeLeafless"
+id = 1
+density = 0.607585
+scene_file = ExtResource("2_jpuym")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_n41ir"]
+name = "ground013-alb-ht"
+albedo_texture = ExtResource("1_436nn")
+normal_texture = ExtResource("2_vpjnx")
+uv_scale = 0.3
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xs6pq"]
+name = "ground020-alb-ht"
+id = 1
+albedo_texture = ExtResource("3_4cr6d")
+normal_texture = ExtResource("4_s7rf0")
+uv_scale = 0.3
+detiling = 0.3
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xk50q"]
+name = "ground048-alb-ht"
+id = 2
+albedo_texture = ExtResource("5_7hxn7")
+normal_texture = ExtResource("6_ak663")
+
+[resource]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_n872b"), SubResource("Terrain3DMeshAsset_1khwp")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_n41ir"), SubResource("Terrain3DTextureAsset_xs6pq"), SubResource("Terrain3DTextureAsset_xk50q")])

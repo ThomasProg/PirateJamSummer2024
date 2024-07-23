@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvmvsu6fvxgeb"]
+
+[ext_resource type="PackedScene" uid="uid://d1ycm7vk5oug1" path="res://art/trees/tree-leafless.glb" id="1_1jh1a"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_3kebu"]
+
+[node name="tree-leafless" instance=ExtResource("1_1jh1a")]
+
+[node name="m-tree-leafless" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_3kebu")
+
+[node name="@StaticBody3D@27815" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
