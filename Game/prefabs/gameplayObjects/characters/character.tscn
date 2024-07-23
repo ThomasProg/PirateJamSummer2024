@@ -15,7 +15,6 @@ interactable = NodePath("Interactable")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.077, 0, 0, 0, 0.077, 0, 0, 0, 0.077, 0, 0, 0)
 offset = Vector2(0, 1324)
-double_sided = false
 alpha_cut = 1
 texture = ExtResource("1_1hvsu")
 metadata/_edit_lock_ = true
