@@ -23,11 +23,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81081, 10, -12.9512)
 metadata/_edit_lock_ = true
 
 [node name="Priest" parent="." instance=ExtResource("4_hbxvj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2366, 0.521723, -21.5309)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.237, 0, -21.531)
 timeline = ExtResource("4_5jogi")
 
 [node name="Hunter" parent="." instance=ExtResource("4_6tilt")]
-transform = Transform3D(0.0603866, 0, 0.998175, 0, 1, 0, -0.998175, 0, 0.0603866, -13.6115, 0.515971, -23.661)
+transform = Transform3D(0.0603866, 0, 0.998175, 0, 1, 0, -0.998175, 0, 0.0603866, -13.611, 0, -23.661)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)

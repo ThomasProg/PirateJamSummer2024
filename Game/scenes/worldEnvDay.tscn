@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0crqwvbsalpy"]
+
+[sub_resource type="Environment" id="Environment_rsg07"]
+fog_light_color = Color(0.703482, 0.788036, 0.777639, 1)
+fog_light_energy = 0.59
+fog_density = 0.001
+volumetric_fog_enabled = true
+adjustment_brightness = 0.65
+adjustment_contrast = 0.9
+
+[node name="WorldEnvDay" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rsg07")
