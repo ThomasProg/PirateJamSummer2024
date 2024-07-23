@@ -56,7 +56,7 @@ mesh = SubResource("CylinderMesh_mnhcf")
 script = ExtResource("6_wque3")
 interactable = NodePath("Interactable")
 nextNightPath = "res://scenes/nights/night1.tscn"
-nextDayPath = "res://scenes/days/day1.tscn"
+nextDayPath = "res://scenes/days/day2.tscn"
 
 [node name="Interactable" type="Node" parent="CSGMesh3D"]
 script = ExtResource("4_vi4if")

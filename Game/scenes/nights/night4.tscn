@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=3 uid="uid://7q7ed7xqbhsr"]
+
+[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_oo4s4"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="2_tick0"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="3_rv4le"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="4_ldd54"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_6fxfd"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_3ntoo"]
+[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="7_jwjm7"]
+[ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="8_0l76m"]
+[ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="9_bsotw"]
+
+[sub_resource type="Resource" id="Resource_5be58"]
+script = ExtResource("3_rv4le")
+amount = 75
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_liefd"]
+script = ExtResource("4_ldd54")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(6, 360, 6)
+scale = Vector3(0.1, 0.1, 0.1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_oeht4"]
+script = ExtResource("5_6fxfd")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_wu6je"]
+script = ExtResource("6_3ntoo")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_a18mn"]
+script = ExtResource("2_tick0")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_5be58"), SubResource("Resource_liefd"), SubResource("Resource_oeht4"), SubResource("Resource_wu6je")])
+
+[node name="Night4" type="Node3D"]
+
+[node name="VillageEnvScene" parent="." instance=ExtResource("1_oo4s4")]
+
+[node name="DirectionalLight3D" parent="VillageEnvScene" index="0"]
+visible = false
+
+[node name="trees" parent="VillageEnvScene" index="4"]
+modifier_stack = SubResource("Resource_a18mn")
+
+[node name="Player" parent="." instance=ExtResource("7_jwjm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3742, 1.3201, -19.9177)
+
+[node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("8_0l76m")]
+peekAnchorGroup = NodePath("../PeekAnchorGroup")
+wolf = NodePath("../Wolf")
+
+[node name="NightTimer" parent="NightEvent" index="0"]
+peekTimes = Array[float]([5.0, 15.0, 25.0, 35.0])
+
+[node name="PeekAnchorGroup" type="Node3D" parent="."]
+
+[node name="PeekAnchor" type="Node3D" parent="PeekAnchorGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.77809, 1.85647, 4.42032)
+
+[node name="PeekAnchor2" type="Node3D" parent="PeekAnchorGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.857589, 1.16397, 4.38419)
+
+[node name="PeekAnchor3" type="Node3D" parent="PeekAnchorGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
+
+[node name="Wolf" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_bsotw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
+peekingDuration = 5.0
+target = NodePath("../Player")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2256, 2.10578, -19.0393)
+light_energy = 0.135
+distance_fade_length = 245.85
+omni_range = 5.002
+omni_attenuation = 0.0136023
+
+[editable path="VillageEnvScene"]
+[editable path="NightEvent"]

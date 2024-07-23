@@ -22,10 +22,26 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"alchemist": "res://dialogues/characters/alchemist.dch",
+"carpenter": "res://dialogues/characters/carpenter.dch",
+"hunter": "res://dialogues/characters/hunter.dch",
+"merchant": "res://dialogues/characters/merchant.dch",
+"priest": "res://dialogues/characters/priest.dch",
+"tailor": "res://dialogues/characters/tailor.dch"
+}
 directories/dtl_directory={
+"d1_carpenter": "res://dialogues/day1/d1_carpenter.dtl",
+"d1_hunter": "res://dialogues/day1/d1_hunter.dtl",
+"d1_merchant": "res://dialogues/day1/d1_merchant.dtl",
+"d1_priest": "res://dialogues/day1/d1_priest.dtl",
+"d1_tailor": "res://dialogues/day1/d1_tailor.dtl",
 "welcome": "res://dialogues/welcome.dtl"
 }
+variables={}
+layout/style_list=[""]
+layout/default_style=""
+glossary/default_case_sensitive=true
 
 [display]
 
