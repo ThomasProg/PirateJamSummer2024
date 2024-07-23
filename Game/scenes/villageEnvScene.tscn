@@ -1,11 +1,80 @@
-[gd_scene load_steps=7 format=3 uid="uid://j7nagwydbbem"]
+[gd_scene load_steps=23 format=3 uid="uid://j7nagwydbbem"]
 
 [ext_resource type="Terrain3DStorage" uid="uid://dhe35d6tu5nqe" path="res://art/terrain/terrain_3d_storage.res" id="2_rp6qt"]
 [ext_resource type="Terrain3DMaterial" uid="uid://ip3m313vko7v" path="res://art/terrain/terrain_3d_material.tres" id="3_te6cu"]
 [ext_resource type="Terrain3DAssets" uid="uid://c0jtrqawsq8sf" path="res://art/terrain/terrain_3d_assets.tres" id="4_oh2n4"]
 [ext_resource type="PackedScene" uid="uid://c0crqwvbsalpy" path="res://scenes/worldEnvDay.tscn" id="5_p62a8"]
-[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="6_1kcu4"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="6_kfpls"]
 [ext_resource type="PackedScene" uid="uid://5gr2h7l2dewa" path="res://scenes/villageEnvArtScene.tscn" id="6_yihxv"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="7_f8o2o"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="8_m035n"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="9_q087c"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="10_fvxws"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="11_24bgj"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="12_ws6g0"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_lgups"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="14_eagwk"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
+
+[sub_resource type="Resource" id="Resource_w655x"]
+script = ExtResource("8_m035n")
+amount = 75
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_obaqs"]
+script = ExtResource("9_q087c")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(6, 360, 6)
+scale = Vector3(0.1, 0.1, 0.1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_qwgen"]
+script = ExtResource("10_fvxws")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_exsye"]
+script = ExtResource("11_24bgj")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_w58dp"]
+script = ExtResource("7_f8o2o")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_w655x"), SubResource("Resource_obaqs"), SubResource("Resource_qwgen"), SubResource("Resource_exsye")])
+
+[sub_resource type="Resource" id="Resource_tr4wi"]
+script = ExtResource("14_eagwk")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="Resource" id="Resource_fc7ok"]
+script = ExtResource("15_07kjr")
+radius = 27.813
 
 [node name="VillageEnvScene" type="Node3D"]
 
@@ -23,5 +92,26 @@ assets = ExtResource("4_oh2n4")
 
 [node name="VillageEnvArtScene" parent="." instance=ExtResource("6_yihxv")]
 
-[node name="Player" parent="." instance=ExtResource("6_1kcu4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -25)
+[node name="trees" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0941)
+script = ExtResource("6_kfpls")
+modifier_stack = SubResource("Resource_w58dp")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="trees"]
+script = ExtResource("12_ws6g0")
+proportion = 200
+source_scale_multiplier = 2.9
+path = "res://prefabs/gameplayObjects/trees/tree-mk0.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="trees"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("13_lgups")
+shape = SubResource("Resource_tr4wi")
+
+[node name="negate" type="Node3D" parent="trees"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("13_lgups")
+negative = true
+shape = SubResource("Resource_fc7ok")
