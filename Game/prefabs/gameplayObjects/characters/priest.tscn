@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq7rn46ilrthd"]
+[gd_scene load_steps=3 format=3 uid="uid://bq7rn46ilrthd"]
 
 [ext_resource type="PackedScene" uid="uid://5jy22neuhj0m" path="res://prefabs/gameplayObjects/characters/character.tscn" id="1_n37oq"]
+[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_8tmr6"]
 
 [node name="Priest" instance=ExtResource("1_n37oq")]
 
 [node name="Interactable" parent="." index="1"]
+interactionName = "[outline_size=5][outline_color=yellow]Priest[/outline_color][/outline_size]"
+interactionDescription = "Click to Talk"
+
+[node name="Interactable2" type="Node" parent="." index="2"]
+script = ExtResource("2_8tmr6")
 interactionName = "[outline_size=5][outline_color=yellow]Priest[/outline_color][/outline_size]"
 interactionDescription = "Click to Talk"
