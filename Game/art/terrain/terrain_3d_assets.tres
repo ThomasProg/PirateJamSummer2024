@@ -20,19 +20,19 @@ id = 1
 density = 0.607585
 scene_file = ExtResource("2_jpuym")
 
-[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_n41ir"]
-name = "ground013-alb-ht"
-albedo_texture = ExtResource("1_436nn")
-normal_texture = ExtResource("2_vpjnx")
-uv_scale = 0.3
-
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xs6pq"]
 name = "ground020-alb-ht"
-id = 1
 albedo_texture = ExtResource("3_4cr6d")
 normal_texture = ExtResource("4_s7rf0")
 uv_scale = 0.3
 detiling = 0.3
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_n41ir"]
+name = "ground013-alb-ht"
+id = 1
+albedo_texture = ExtResource("1_436nn")
+normal_texture = ExtResource("2_vpjnx")
+uv_scale = 0.3
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xk50q"]
 name = "ground048-alb-ht"
@@ -42,4 +42,4 @@ normal_texture = ExtResource("6_ak663")
 
 [resource]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_n872b"), SubResource("Terrain3DMeshAsset_1khwp")])
-texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_n41ir"), SubResource("Terrain3DTextureAsset_xs6pq"), SubResource("Terrain3DTextureAsset_xk50q")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_xs6pq"), SubResource("Terrain3DTextureAsset_n41ir"), SubResource("Terrain3DTextureAsset_xk50q")])
