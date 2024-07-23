@@ -1,4 +1,5 @@
 extends Area3D
+class_name Character
 
 @export var interactable:Interactable
 @export var timeline:DialogicTimeline
