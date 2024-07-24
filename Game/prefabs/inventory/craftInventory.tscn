@@ -1,0 +1,340 @@
+[gd_scene load_steps=6 format=3 uid="uid://fahaah8lfrw0"]
+
+[ext_resource type="Script" path="res://scripts/inventory/craftInventory.gd" id="1_sqmg8"]
+[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_iyhuh"]
+[ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/slotUI.tscn" id="4_hgh1y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4p6i"]
+
+[node name="CraftInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sqmg8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7tf7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Potions" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -68.0
+offset_right = 168.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Ingredients[/center]"
+fit_content = true
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="SlotUi" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi2" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi3" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi4" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi5" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi6" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi7" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi8" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi9" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi10" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Ingredients" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -68.0
+offset_right = 168.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Potions[/center]"
+fit_content = true
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="SlotUi" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi2" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi3" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi4" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi5" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi6" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi7" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi8" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi9" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="SlotUi10" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MiddlePanel" type="Panel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemTextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_iyhuh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.454524, 0.454524, 0.454524, 1)
+bbcode_enabled = true
+text = "[center]Click to craft[/center]"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="SlotUi" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/HBoxContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SlotUi2" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/HBoxContainer" instance=ExtResource("4_hgh1y")]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[center]Required[/center]"
+fit_content = true
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Healing potion[/center]"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]A potion that heals small injuries.[/center]"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d4p6i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Ingredients[/center]"
+fit_content = true
+metadata/_edit_lock_ = true

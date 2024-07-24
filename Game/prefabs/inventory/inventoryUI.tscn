@@ -1,18 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3khd4xxva11r"]
+[gd_scene load_steps=4 format=3 uid="uid://c3khd4xxva11r"]
 
 [ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/slotUI.tscn" id="1_ft0ek"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_wnht3"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qibqy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wy88m"]
+noise = SubResource("FastNoiseLite_qibqy")
 
 [node name="InventoryUi" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_right = 60.0
-offset_bottom = 60.0
-texture = SubResource("CanvasTexture_wnht3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_wy88m")
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 1
