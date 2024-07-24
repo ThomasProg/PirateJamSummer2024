@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dw1eo7ko88t2y" path="res://inventoryAssets/potions/invisibilityPotion.tres" id="1_cqwwh"]
 [ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_gdbyk"]
-[ext_resource type="Resource" uid="uid://j32orf0qvnf2" path="res://inventoryAssets/potions/smellyPotion.tres" id="2_0kptv"]
+[ext_resource type="Resource" uid="uid://j32orf0qvnf2" path="res://inventoryAssets/potions/deterringPotion.tres" id="2_0kptv"]
 
 [resource]
 script = ExtResource("1_gdbyk")

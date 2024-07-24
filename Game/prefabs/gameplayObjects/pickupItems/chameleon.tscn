@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyaiymo2seaqv"]
+
+[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="1_x6w2n"]
+[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_f3bkn"]
+[ext_resource type="Script" path="res://scripts/gameplayObjects/pickups/pickupItem.gd" id="3_ock6v"]
+[ext_resource type="Resource" uid="uid://cd0jile8t3n7o" path="res://inventoryAssets/ingredients/chameleonIngr.tres" id="4_jw5m8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfmch"]
+size = Vector3(1, 0.2, 1)
+
+[node name="Chameleon" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.00587577, 0)
+texture = ExtResource("1_x6w2n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dfmch")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("2_f3bkn")
+interactionName = "Chameleon"
+interactionDescription = "Click to pickup"
+
+[node name="PickupItem" type="Node" parent="." node_paths=PackedStringArray("interactable")]
+script = ExtResource("3_ock6v")
+interactable = NodePath("../Interactable")
+itemToGive = ExtResource("4_jw5m8")

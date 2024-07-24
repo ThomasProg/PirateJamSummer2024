@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=3 format=3 uid="uid://dnq68duvypcvo"]
+
+[ext_resource type="Script" path="res://scripts/inventory/inventoryIngredientItem.gd" id="1_r8ekf"]
+[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_nde3v"]
+
+[resource]
+script = ExtResource("1_r8ekf")
+name = "Stinkhorn"
+description = "A mushroom that smells very bad"
+texture = ExtResource("2_nde3v")
+type = 1

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryPotionItem" load_steps=4 format=3 uid="uid://j32orf0qvnf2"]
+
+[ext_resource type="PackedScene" uid="uid://bn18i7nwcm361" path="res://prefabs/instanced/potions/defaultPotionEffectPrefab.tscn" id="1_2noyb"]
+[ext_resource type="Script" path="res://scripts/inventory/inventoryPotionItem.gd" id="2_f4dhm"]
+[ext_resource type="Texture2D" uid="uid://d23p13yi7asw0" path="res://addons/proton_scatter/demos/assets/textures/t_grass_2.png" id="3_u4r1q"]
+
+[resource]
+script = ExtResource("2_f4dhm")
+effectPrefab = ExtResource("1_2noyb")
+name = "Deterring Potion"
+description = "Prevents the werewolf from appearing around that spot for 10s."
+texture = ExtResource("3_u4r1q")
+type = 0
