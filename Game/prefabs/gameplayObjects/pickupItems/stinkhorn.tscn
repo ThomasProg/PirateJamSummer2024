@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1y0vkje6yxua"]
+
+[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="1_xbg3n"]
+[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_tpuoe"]
+[ext_resource type="Script" path="res://scripts/gameplayObjects/pickups/pickupItem.gd" id="3_h25aa"]
+[ext_resource type="Resource" uid="uid://dnq68duvypcvo" path="res://inventoryAssets/ingredients/stinkhornIngr.tres" id="4_hob7u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfmch"]
+size = Vector3(0.5, 1, 0.5)
+
+[node name="Stinkhorn" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+billboard = 2
+texture = ExtResource("1_xbg3n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_dfmch")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("2_tpuoe")
+interactionName = "Stinkhorn"
+interactionDescription = "Click to pickup"
+
+[node name="PickupItem" type="Node" parent="." node_paths=PackedStringArray("interactable")]
+script = ExtResource("3_h25aa")
+interactable = NodePath("../Interactable")
+itemToGive = ExtResource("4_hob7u")
