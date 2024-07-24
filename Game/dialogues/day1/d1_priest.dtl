@@ -1,0 +1,14 @@
+join priest 0
+priest (Default): Welcome in our village, traveler.
+priest (Default): Your journey must have been long, but rest at ease.
+priest (Default): This is a haven for the pilgrims travelling through the forest.
+- I am not a pilgrim, I am an alchemist.
+priest (Thinking): An alchemist, you say..?
+- I am interested in different ingredients I can find in this forest.
+priest (Thinking): Hmmm....
+priest (Default): Fine.
+priest (Default): I believe hospitality should be given to everyone.
+priest (Default): One of the huts is still vacant.
+priest (Default): You can settle there.
+priest (Default): But before that, make sure to greet everyone.
+priest (Default): Every community needs trust and unity after all. Especially small ones.

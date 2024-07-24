@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://caralmujwdn3h"]
+
+[ext_resource type="PackedScene" uid="uid://5jy22neuhj0m" path="res://prefabs/gameplayObjects/characters/character.tscn" id="1_o1sud"]
+[ext_resource type="Texture2D" uid="uid://c68c8gq0mlaos" path="res://art/characters/Character_Merchant.png" id="2_fuyae"]
+
+[node name="Merchant" instance=ExtResource("1_o1sud")]
+
+[node name="Sprite3D" parent="." index="0"]
+texture = ExtResource("2_fuyae")
+
+[node name="Interactable" parent="." index="1"]
+interactionName = "[outline_size=5][outline_color=red]Hunter[/outline_color][/outline_size]"
+interactionDescription = "Click to talk"

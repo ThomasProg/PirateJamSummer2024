@@ -1,12 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://6n2ce7kv80pm"]
+[gd_scene load_steps=16 format=3 uid="uid://6n2ce7kv80pm"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1vf5r"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_n5mh3"]
-[ext_resource type="Resource" path="res://dialogues/welcome.dtl" id="4_5jogi"]
 [ext_resource type="PackedScene" uid="uid://bdxtlyav7kf57" path="res://prefabs/gameplayObjects/characters/hunter.tscn" id="4_6tilt"]
+[ext_resource type="Resource" path="res://dialogues/day1/d1_priest.dtl" id="4_44pxr"]
 [ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="4_hbxvj"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="4_vi4if"]
+[ext_resource type="Resource" path="res://dialogues/day1/d1_hunter.dtl" id="6_8hbyc"]
 [ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="6_wque3"]
+[ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="7_vq5my"]
+[ext_resource type="PackedScene" uid="uid://cgbo0fg7mpkg0" path="res://prefabs/gameplayObjects/characters/tailor.tscn" id="8_27she"]
+[ext_resource type="Resource" path="res://dialogues/day1/d1_merchant.dtl" id="8_ssr06"]
+[ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="9_4d5n5"]
+[ext_resource type="Resource" path="res://dialogues/day1/d1_tailor.dtl" id="10_yejgd"]
+[ext_resource type="Resource" path="res://dialogues/day1/d1_carpenter.dtl" id="12_fc5d1"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
@@ -16,18 +23,31 @@ metadata/_edit_lock_ = true
 [node name="VillageEnvScene" parent="." instance=ExtResource("1_1vf5r")]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("2_n5mh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81081, 10, -12.9512)
-
 [node name="GameplayObjects" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Priest" parent="." instance=ExtResource("4_hbxvj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.237, 0, -21.531)
-timeline = ExtResource("4_5jogi")
+[node name="Player" parent="GameplayObjects" instance=ExtResource("2_n5mh3")]
+transform = Transform3D(-0.999057, 0, 0.0434275, 0, 1, 0, -0.0434275, 0, -0.999057, -3.86959, 0.890025, -45.9916)
 
-[node name="Hunter" parent="." instance=ExtResource("4_6tilt")]
-transform = Transform3D(0.0603866, 0, 0.998175, 0, 1, 0, -0.998175, 0, 0.0603866, -13.611, 0, -23.661)
+[node name="Priest" parent="GameplayObjects" instance=ExtResource("4_hbxvj")]
+transform = Transform3D(-0.979673, 0, 0.200599, 0, 1, 0, -0.200599, 0, -0.979673, -3.92556, 0, -38.5788)
+timeline = ExtResource("4_44pxr")
+
+[node name="Hunter" parent="GameplayObjects" instance=ExtResource("4_6tilt")]
+transform = Transform3D(0.475286, 0, -0.879831, 0, 1, 0, 0.879831, 0, 0.475286, 6.93689, 0, -33.5308)
+timeline = ExtResource("6_8hbyc")
+
+[node name="Merchant" parent="GameplayObjects" instance=ExtResource("7_vq5my")]
+transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -12.5013, 0, -31.4773)
+timeline = ExtResource("8_ssr06")
+
+[node name="Tailor" parent="GameplayObjects" instance=ExtResource("8_27she")]
+transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -8.60984, 0, -8.53276)
+timeline = ExtResource("10_yejgd")
+
+[node name="Carpenter" parent="GameplayObjects" instance=ExtResource("9_4d5n5")]
+transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, 5.46815, 0, -10.4761)
+timeline = ExtResource("12_fc5d1")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
@@ -36,7 +56,7 @@ mesh = SubResource("CylinderMesh_mnhcf")
 script = ExtResource("6_wque3")
 interactable = NodePath("Interactable")
 nextNightPath = "res://scenes/nights/night1.tscn"
-nextDayPath = "res://scenes/days/day1.tscn"
+nextDayPath = "res://scenes/days/day2.tscn"
 
 [node name="Interactable" type="Node" parent="CSGMesh3D"]
 script = ExtResource("4_vi4if")

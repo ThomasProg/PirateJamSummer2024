@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://duvm7dnivxel8"]
+
+[ext_resource type="PackedScene" uid="uid://5jy22neuhj0m" path="res://prefabs/gameplayObjects/characters/character.tscn" id="1_kcuck"]
+[ext_resource type="Texture2D" uid="uid://cc4625dfy6di0" path="res://art/characters/Character_Carpenter.png" id="2_rqfp0"]
+
+[node name="Carpenter" instance=ExtResource("1_kcuck")]
+
+[node name="Sprite3D" parent="." index="0"]
+texture = ExtResource("2_rqfp0")
+
+[node name="Interactable" parent="." index="1"]
+interactionName = "[outline_size=5][outline_color=red]Hunter[/outline_color][/outline_size]"
+interactionDescription = "Click to talk"
