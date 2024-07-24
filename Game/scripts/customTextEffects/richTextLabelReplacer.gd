@@ -1,4 +1,5 @@
 extends Node
+class_name RichTextLabelReplacer
 
 @export var label: RichTextLabel
 
