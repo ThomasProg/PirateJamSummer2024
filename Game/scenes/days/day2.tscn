@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy8u56ullhoqr"]
+[gd_scene load_steps=13 format=3 uid="uid://cy8u56ullhoqr"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_lg165"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_q54yj"]
 [ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="3_hgolj"]
 [ext_resource type="PackedScene" uid="uid://bdxtlyav7kf57" path="res://prefabs/gameplayObjects/characters/hunter.tscn" id="5_omx54"]
 [ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="7_4n2yj"]
+[ext_resource type="Script" path="res://scripts/dialogues/sharedDialogue.gd" id="8_dlyje"]
 [ext_resource type="PackedScene" uid="uid://cgbo0fg7mpkg0" path="res://prefabs/gameplayObjects/characters/tailor.tscn" id="9_3lds7"]
+[ext_resource type="Resource" path="res://dialogues/day2/d2_group.dtl" id="9_c04dc"]
 [ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="11_mmmfm"]
 [ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="13_7miqr"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="14_e62rb"]
@@ -24,20 +26,29 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="GameplayObjects" instance=ExtResource("2_q54yj")]
 transform = Transform3D(-0.129142, 0, -0.991627, 0, 1, 0, 0.991627, 0, -0.129142, -14.0247, 0.890025, -19.0837)
 
-[node name="Priest" parent="GameplayObjects" instance=ExtResource("3_hgolj")]
+[node name="Priest" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("3_hgolj")]
 transform = Transform3D(-0.141298, 0, -0.989967, 0, 1, 0, 0.989967, 0, -0.141298, 1.05374, -0.0977421, -23.8462)
+sharedDialogue = NodePath("../GroupDialogue")
 
-[node name="Hunter" parent="GameplayObjects" instance=ExtResource("5_omx54")]
+[node name="Hunter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("5_omx54")]
 transform = Transform3D(0.830022, 0, -0.557731, 0, 1, 0, 0.557731, 0, 0.830022, -0.774402, 0, -25.9667)
+sharedDialogue = NodePath("../GroupDialogue")
 
-[node name="Merchant" parent="GameplayObjects" instance=ExtResource("7_4n2yj")]
+[node name="Merchant" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("7_4n2yj")]
 transform = Transform3D(0.944284, 0, 0.32913, 0, 1, 0, -0.32913, 0, 0.944284, -2.49643, 0, -25.624)
+sharedDialogue = NodePath("../GroupDialogue")
 
-[node name="Tailor" parent="GameplayObjects" instance=ExtResource("9_3lds7")]
+[node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("9_3lds7")]
 transform = Transform3D(-0.985166, 0, 0.171602, 0, 1, 0, -0.171602, 0, -0.985166, -2.1736, 0, -21.0007)
+sharedDialogue = NodePath("../GroupDialogue")
 
-[node name="Carpenter" parent="GameplayObjects" instance=ExtResource("11_mmmfm")]
+[node name="Carpenter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("11_mmmfm")]
 transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, -0.818804, 0, -21.3722)
+sharedDialogue = NodePath("../GroupDialogue")
+
+[node name="GroupDialogue" type="Node" parent="GameplayObjects"]
+script = ExtResource("8_dlyje")
+timeline = ExtResource("9_c04dc")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)

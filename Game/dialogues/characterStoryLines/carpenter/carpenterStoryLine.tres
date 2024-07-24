@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StoryLine" load_steps=5 format=3 uid="uid://cwt1qmyu68dah"]
+
+[ext_resource type="Script" path="res://scripts/dialogues/storyLine.gd" id="1_k87xb"]
+[ext_resource type="Resource" path="res://dialogues/characterStoryLines/carpenter/d_sl1_carpenter.dtl" id="2_mlqdc"]
+[ext_resource type="Resource" path="res://dialogues/characterStoryLines/carpenter/d_sl2_carpenter.dtl" id="3_hkbe0"]
+[ext_resource type="Resource" path="res://dialogues/characterStoryLines/carpenter/d_sl3_carpenter.dtl" id="4_60gcg"]
+
+[resource]
+script = ExtResource("1_k87xb")
+storyLineName = "CarpenterStoryLine"
+currentTimelineIndex = 0
+timelines = Array[Resource("res://addons/dialogic/Resources/timeline.gd")]([ExtResource("2_mlqdc"), ExtResource("3_hkbe0"), ExtResource("4_60gcg")])

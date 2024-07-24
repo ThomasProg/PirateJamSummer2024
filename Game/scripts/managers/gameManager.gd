@@ -6,6 +6,8 @@ extends Node
 @export var nightLoadingScreen:PackedScene = preload("res://prefabs/cinematics/nightLoadingScreen.tscn")
 @export var gameOverScreen:PackedScene = preload("res://prefabs/cinematics/gameOverScreen.tscn")
 
+@export var currentSaveDir = "save0"
+
 func loadGameOver():
 	await loadSceneWithLoadingScreen(currentScenePath, gameOverScreen)
 
@@ -55,3 +57,22 @@ func loadNewScene(newScenePath:String):
 
 func _ready():
 	currentScene = Utilities.findComponentByType(get_parent(), Node3D)
+
+	# Start a new game
+	print("===== starting new game =====")
+	var saveGamePath = "user://%s/" % currentSaveDir
+
+	var dir = DirAccess.open(saveGamePath)
+	if dir:
+		dir.list_dir_begin()
+		var filename = dir.get_next()
+		while filename != "":
+			if dir.current_is_dir():
+				print("Found directory: " + filename)
+				# TODO : recursive
+			else:
+				print("Found file: " + filename)
+				DirAccess.remove_absolute(saveGamePath + filename)
+			filename = dir.get_next()
+
+	DirAccess.remove_absolute(saveGamePath)

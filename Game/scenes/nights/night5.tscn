@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="8_7b78j"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="9_1gueh"]
 
-[sub_resource type="Resource" id="Resource_vtt1b"]
+[sub_resource type="Resource" id="Resource_yy1ok"]
 script = ExtResource("3_4ssa4")
 amount = 75
 enabled = true
@@ -19,7 +19,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_kfl0x"]
+[sub_resource type="Resource" id="Resource_x2ub8"]
 script = ExtResource("4_ph3ok")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -30,7 +30,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_wpdlb"]
+[sub_resource type="Resource" id="Resource_lcqc0"]
 script = ExtResource("5_mp1wi")
 iterations = 3
 offset_step = 0.2
@@ -42,7 +42,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_t0rmo"]
+[sub_resource type="Resource" id="Resource_mxgcq"]
 script = ExtResource("6_0x18v")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -58,9 +58,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_r30ds"]
+[sub_resource type="Resource" id="Resource_oiniw"]
 script = ExtResource("2_ked1a")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_vtt1b"), SubResource("Resource_kfl0x"), SubResource("Resource_wpdlb"), SubResource("Resource_t0rmo")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_yy1ok"), SubResource("Resource_x2ub8"), SubResource("Resource_lcqc0"), SubResource("Resource_mxgcq")])
 
 [node name="Night5" type="Node3D"]
 
@@ -70,7 +70,7 @@ stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_r30ds")
+modifier_stack = SubResource("Resource_oiniw")
 
 [node name="Player" parent="." instance=ExtResource("7_eb2w4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3742, 1.3201, -19.9177)
@@ -80,6 +80,7 @@ peekAnchorGroup = NodePath("../PeekAnchorGroup")
 wolf = NodePath("../Wolf")
 
 [node name="NightTimer" parent="NightEvent" index="0"]
+nightDuration = 3.0
 peekTimes = Array[float]([5.0, 15.0, 25.0, 35.0])
 
 [node name="PeekAnchorGroup" type="Node3D" parent="."]
