@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cvdifdatyercl"]
+
+[ext_resource type="Texture2D" uid="uid://cwyhsw2kj77xs" path="res://art/textures/rusticStoneWall02/rustic_stone_wall_02_diff_1k.png" id="1_eq3qp"]
+[ext_resource type="Texture2D" uid="uid://dh4arsbq1qgif" path="res://art/textures/rusticStoneWall02/rustic_stone_wall_02_nor_gl_1k.png" id="2_1kiwe"]
+[ext_resource type="Texture2D" uid="uid://ddavq23b4ry7y" path="res://art/textures/rusticStoneWall02/rustic_stone_wall_02_rough_1k.png" id="3_7l8ds"]
+
+[resource]
+albedo_texture = ExtResource("1_eq3qp")
+roughness_texture = ExtResource("3_7l8ds")
+normal_enabled = true
+normal_texture = ExtResource("2_1kiwe")
