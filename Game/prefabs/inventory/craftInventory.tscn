@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://fahaah8lfrw0"]
+[gd_scene load_steps=10 format=3 uid="uid://fahaah8lfrw0"]
 
 [ext_resource type="Script" path="res://scripts/inventory/craftInventory.gd" id="1_sqmg8"]
 [ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_iyhuh"]
-[ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/slotUI.tscn" id="4_hgh1y"]
+[ext_resource type="Resource" uid="uid://c7pa0dr1gk5aa" path="res://inventoryAssets/recipes/deterringPotionCraft.tres" id="2_q0r66"]
+[ext_resource type="Resource" uid="uid://icsl0d0gpxhh" path="res://inventoryAssets/recipes/invisibilityPotionCraft.tres" id="3_3s3pe"]
+[ext_resource type="Texture2D" uid="uid://b7j220k0ewh35" path="res://addons/dialogic/Editor/Images/Dropdown/join.svg" id="3_g4p0l"]
+[ext_resource type="Resource" uid="uid://dc8q45svxh6on" path="res://inventoryAssets/recipes/healingPotionCraft.tres" id="4_358wx"]
+[ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/inventorySlot.tscn" id="4_hgh1y"]
+[ext_resource type="Resource" uid="uid://dnq68duvypcvo" path="res://inventoryAssets/ingredients/stinkhornIngr.tres" id="7_7afmy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4p6i"]
-
-[node name="CraftInventory" type="Control"]
+[node name="CraftInventory" type="Control" node_paths=PackedStringArray("craftInParent", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +20,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sqmg8")
+availableRecipes = Array[Resource("res://scripts/inventory/craftRecipe.gd")]([ExtResource("2_q0r66"), ExtResource("3_3s3pe"), ExtResource("4_358wx")])
+slotPrefab = ExtResource("4_hgh1y")
+craftInParent = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/RequiredItemsSlots")
+craftOutName = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer2/RichTextLabel")
+craftOutDescription = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer3/RichTextLabel")
+craftNextRecipeButton = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/RightButton")
+craftPreviousRecipeButton = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/LeftButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -91,8 +101,12 @@ columns = 5
 [node name="SlotUi" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer/SlotUi" index="0"]
+texture = ExtResource("3_g4p0l")
+
 [node name="SlotUi2" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
 layout_mode = 2
+currentItem = ExtResource("7_7afmy")
 
 [node name="SlotUi3" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer" instance=ExtResource("4_hgh1y")]
 layout_mode = 2
@@ -214,20 +228,20 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LeftButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 8.0
-grow_vertical = 2
-
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 8.0
 grow_vertical = 2
 
 [node name="RightButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
@@ -275,16 +289,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer"]
+[node name="RequiredItemsSlots" type="HBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
-[node name="SlotUi" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/HBoxContainer" instance=ExtResource("4_hgh1y")]
+[node name="SlotUi" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/RequiredItemsSlots" instance=ExtResource("4_hgh1y")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="SlotUi2" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/HBoxContainer" instance=ExtResource("4_hgh1y")]
+[node name="SlotUi2" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/RequiredItemsSlots" instance=ExtResource("4_hgh1y")]
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer"]
@@ -322,19 +336,11 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer3"]
 layout_mode = 2
+theme_override_colors/default_color = Color(0.737193, 0.737193, 0.737193, 1)
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]A potion that heals small injuries.[/center]"
 fit_content = true
 metadata/_edit_lock_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_d4p6i")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-bbcode_enabled = true
-text = "[center]Ingredients[/center]"
-fit_content = true
-metadata/_edit_lock_ = true
+[editable path="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/GridContainer/SlotUi"]

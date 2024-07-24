@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3khd4xxva11r"]
 
-[ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/slotUI.tscn" id="1_ft0ek"]
+[ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/inventorySlot.tscn" id="1_ft0ek"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qibqy"]
 

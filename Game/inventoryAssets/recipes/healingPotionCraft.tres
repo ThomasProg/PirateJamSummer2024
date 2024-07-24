@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CraftRecipe" load_steps=5 format=3 uid="uid://dc8q45svxh6on"]
+
+[ext_resource type="Resource" uid="uid://d12l6iq6mn0ao" path="res://inventoryAssets/ingredients/honeyIngr.tres" id="1_iefwr"]
+[ext_resource type="Script" path="res://scripts/inventory/craftRecipe.gd" id="1_uf5tp"]
+[ext_resource type="Resource" uid="uid://dq7sjxl5o1265" path="res://inventoryAssets/ingredients/calendulaIngr.tres" id="2_phlex"]
+[ext_resource type="Resource" uid="uid://bggcrlnnp6r8w" path="res://inventoryAssets/potions/healingPotion.tres" id="3_pimtd"]
+
+[resource]
+script = ExtResource("1_uf5tp")
+ingredients = Array[Resource("res://scripts/inventory/inventoryItem.gd")]([ExtResource("1_iefwr"), ExtResource("2_phlex")])
+result = ExtResource("3_pimtd")

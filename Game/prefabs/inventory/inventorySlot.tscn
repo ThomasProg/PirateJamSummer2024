@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c65547vh7twcy"]
+
+[ext_resource type="Script" path="res://scripts/inventory/inventorySlot.gd" id="1_2msoh"]
+[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_5s383"]
+[ext_resource type="PackedScene" uid="uid://bw8tl4ahjxkl8" path="res://prefabs/inventory/slotTooltip.tscn" id="2_p6co4"]
+
+[node name="InventorySlot" type="Panel" node_paths=PackedStringArray("tex")]
+custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_2msoh")
+tex = NodePath("TextureRect")
+tooltipPrefab = ExtResource("2_p6co4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_5s383")
+expand_mode = 3
