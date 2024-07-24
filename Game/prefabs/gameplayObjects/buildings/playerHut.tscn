@@ -14,7 +14,7 @@
 
 [node name="player-hut-mk32" node_paths=PackedStringArray("toResetColliders") instance=ExtResource("1_2snxm")]
 script = ExtResource("2_5bqe2")
-toResetColliders = NodePath("stones")
+toResetColliders = NodePath(".")
 
 [node name="beam" parent="player-hut-mk3" index="0"]
 surface_material_override/0 = ExtResource("2_o0mwq")
