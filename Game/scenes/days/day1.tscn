@@ -38,7 +38,7 @@ transform = Transform3D(0.475286, 0, -0.879831, 0, 1, 0, 0.879831, 0, 0.475286, 
 timeline = ExtResource("6_8hbyc")
 
 [node name="Merchant" parent="GameplayObjects" instance=ExtResource("7_vq5my")]
-transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -12.5013, 0, -31.4773)
+transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -9.43728, 0, -30.1713)
 timeline = ExtResource("8_ssr06")
 
 [node name="Tailor" parent="GameplayObjects" instance=ExtResource("8_27she")]

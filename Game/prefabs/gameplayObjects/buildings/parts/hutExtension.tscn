@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqwbudfy1f435"]
+
+[ext_resource type="PackedScene" uid="uid://bx4box8x2pof8" path="res://art/buildings/hutExtension.glb" id="1_kufg6"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_08q3h"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="3_vylgj"]
+
+[node name="hutExtension" instance=ExtResource("1_kufg6")]
+
+[node name="hut-extension" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_08q3h")
+surface_material_override/1 = ExtResource("3_vylgj")
+
+[node name="@StaticBody3D@28255" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

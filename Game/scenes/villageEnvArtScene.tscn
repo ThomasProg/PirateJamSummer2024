@@ -1,25 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://5gr2h7l2dewa"]
+[gd_scene load_steps=5 format=3 uid="uid://5gr2h7l2dewa"]
 
 [ext_resource type="PackedScene" uid="uid://wqy2d82p2qpe" path="res://prefabs/gameplayObjects/buildings/npcHutWood.tscn" id="2_e12ab"]
 [ext_resource type="PackedScene" uid="uid://rteyeco40n51" path="res://prefabs/gameplayObjects/buildings/church.tscn" id="3_8a2oo"]
 [ext_resource type="PackedScene" uid="uid://cuoh7dh0xkkgq" path="res://prefabs/gameplayObjects/buildings/playerHut.tscn" id="3_lboe8"]
+[ext_resource type="PackedScene" uid="uid://cqwbudfy1f435" path="res://prefabs/gameplayObjects/buildings/parts/hutExtension.tscn" id="4_yjing"]
 
 [node name="VillageEnvArtScene" type="Node3D"]
 
 [node name="npcHutWood" parent="." instance=ExtResource("2_e12ab")]
-transform = Transform3D(0.934429, 0, 0.356151, 0, 1, 0, -0.356151, 0, 0.934429, -11.5635, 0, -33.4841)
+transform = Transform3D(0.190141, 0, 0.981757, 0, 1, 0, -0.981757, 0, 0.190141, -9.04528, 0, -36.1367)
 
 [node name="npcHutWood2" parent="." instance=ExtResource("2_e12ab")]
-transform = Transform3D(-0.779633, 0, 0.626237, 0, 1, 0, -0.626237, 0, -0.779633, -10.049, 0, -8.46607)
+transform = Transform3D(-0.779633, 0, 0.626237, 0, 1, 0, -0.626237, 0, -0.779633, -11.9186, 0, -8.46607)
 
 [node name="npcHutWood3" parent="." instance=ExtResource("2_e12ab")]
 transform = Transform3D(0.649435, 0, -0.760417, 0, 1, 0, 0.760417, 0, 0.649435, 3.1464, -1.90735e-06, -37.0418)
 
 [node name="npcHutWood4" parent="." instance=ExtResource("2_e12ab")]
-transform = Transform3D(-0.815259, 0, -0.579096, 0, 1, 0, 0.579096, 0, -0.815259, 3.27642, 9.53674e-07, -8.77845)
+transform = Transform3D(-0.992101, 0, -0.125437, 0, 1, 0, 0.125437, 0, -0.992101, 8.04378, -9.53675e-07, -7.37757)
 
 [node name="player-hut-mk32" parent="." instance=ExtResource("3_lboe8")]
 transform = Transform3D(-0.165736, 0, 0.98617, 0, 1, 0, -0.98617, 0, -0.165736, -18.911, 0, -18.313)
 
 [node name="church" parent="." instance=ExtResource("3_8a2oo")]
-transform = Transform3D(-0.112007, 0, -0.993707, 0, 1, 0, 0.993707, 0, -0.112007, 13.7719, 0.884414, -22.6046)
+transform = Transform3D(-0.112007, 0, -0.993707, 0, 1, 0, 0.993707, 0, -0.112007, 13.7719, 0.983361, -22.6046)
+
+[node name="hutExtension" parent="." instance=ExtResource("4_yjing")]
+transform = Transform3D(-0.194166, 0, -0.980969, 0, 1, 0, 0.980969, 0, -0.194166, -13.215, 0, -34.0075)
+
+[node name="hutExtension2" parent="." instance=ExtResource("4_yjing")]
+transform = Transform3D(-0.99173, 0, -0.128345, 0, 1, 0, 0.128345, 0, -0.99173, 4.6133, -1.90735e-06, -3.24566)
