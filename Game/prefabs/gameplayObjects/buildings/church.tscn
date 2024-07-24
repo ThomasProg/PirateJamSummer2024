@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://rteyeco40n51"]
+
+[ext_resource type="PackedScene" uid="uid://dwrmf7ti4xaut" path="res://art/buildings/church.glb" id="1_yeyfv"]
+[ext_resource type="Material" uid="uid://cvdifdatyercl" path="res://art/materials/rusticStoneWall02.tres" id="2_ofbyg"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="3_g5tpa"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="4_simie"]
+
+[node name="church" instance=ExtResource("1_yeyfv")]
+
+[node name="m-church" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ofbyg")
+surface_material_override/1 = ExtResource("3_g5tpa")
+surface_material_override/2 = ExtResource("4_simie")
+surface_material_override/3 = ExtResource("3_g5tpa")

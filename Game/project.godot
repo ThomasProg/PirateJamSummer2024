@@ -36,6 +36,22 @@ directories/dtl_directory={
 "d1_merchant": "res://dialogues/day1/d1_merchant.dtl",
 "d1_priest": "res://dialogues/day1/d1_priest.dtl",
 "d1_tailor": "res://dialogues/day1/d1_tailor.dtl",
+"d2_group": "res://dialogues/day2/d2_group.dtl",
+"d_sl1_carpenter": "res://dialogues/characterStoryLines/carpenter/d_sl1_carpenter.dtl",
+"d_sl1_hunter": "res://dialogues/characterStoryLines/hunter/d_sl1_hunter.dtl",
+"d_sl1_merchant": "res://dialogues/characterStoryLines/merchant/d_sl1_merchant.dtl",
+"d_sl1_priest": "res://dialogues/characterStoryLines/priest/d_sl1_priest.dtl",
+"d_sl1_tailor": "res://dialogues/characterStoryLines/tailor/d_sl1_tailor.dtl",
+"d_sl2_carpenter": "res://dialogues/characterStoryLines/carpenter/d_sl2_carpenter.dtl",
+"d_sl2_hunter": "res://dialogues/characterStoryLines/hunter/d_sl2_hunter.dtl",
+"d_sl2_merchant": "res://dialogues/characterStoryLines/merchant/d_sl2_merchant.dtl",
+"d_sl2_priest": "res://dialogues/characterStoryLines/priest/d_sl2_priest.dtl",
+"d_sl2_tailor": "res://dialogues/characterStoryLines/tailor/d_sl2_tailor.dtl",
+"d_sl3_carpenter": "res://dialogues/characterStoryLines/carpenter/d_sl3_carpenter.dtl",
+"d_sl3_hunter": "res://dialogues/characterStoryLines/hunter/d_sl3_hunter.dtl",
+"d_sl3_merchant": "res://dialogues/characterStoryLines/merchant/d_sl3_merchant.dtl",
+"d_sl3_priest": "res://dialogues/characterStoryLines/priest/d_sl3_priest.dtl",
+"d_sl3_tailor": "res://dialogues/characterStoryLines/tailor/d_sl3_tailor.dtl",
 "welcome": "res://dialogues/welcome.dtl"
 }
 variables={}
