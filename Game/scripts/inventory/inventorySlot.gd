@@ -1,39 +1,59 @@
-extends Panel
+extends PanelContainer
 class_name InventorySlot
 
+@export var draggedItemPrefab:PackedScene
 @export var currentItem:InventoryItem
 @export var tex:TextureRect
 @export var tooltipPrefab:PackedScene
+@export var dragGroup:int = 0
+@export var canBeDragged:bool = true
 var tooltip:Control
 var isHovering
 
+signal onItemSet(newItem:InventoryItem)
+
 func _get_drag_data(at_position):
-	var previewTex = TextureRect.new()
-	previewTex.texture = tex.texture
-	previewTex.expand_mode = 1
-	previewTex.size = tex.size
+	if (currentItem == null):
+		return null
 	
-	var preview = Control.new()
-	preview.add_child(previewTex)
+	var preview = draggedItemPrefab.instantiate()
+	preview.setItem(currentItem)
+	preview.fromSlot = self
+	preview.item = currentItem
+	preview.dragGroup = dragGroup
 	
 	set_drag_preview(preview)
-	tex.texture = null
+	setItem(null)
 	
-	return previewTex.texture
+	return preview
 	
 	
 func _can_drop_data(at_position, data):
-	return data is Texture2D
+	if (data is DraggedItem):
+		return (currentItem == null) and (dragGroup == data.dragGroup)
+		
+	return false
 	
 func _drop_data(at_position, data):
-	tex.texture = data
+	setItem(data.item)
 
 func updateTooltipLocation():
 	var mousePos = get_viewport().get_mouse_position() 
 	var mouseOffset = Vector2(10, 10) + ProjectSettings.get_setting("display/mouse_cursor/tooltip_position_offset") 
 	tooltip.global_position = mousePos + mouseOffset
 
+func setItem(newItem:InventoryItem):
+	currentItem = newItem
+	if (newItem == null):
+		tex.texture = null
+	else:
+		tex.texture = newItem.texture
+		
+	onItemSet.emit(newItem)
+
 func _ready():
+	setItem(currentItem)
+	
 	mouse_entered.connect(func():
 		if (currentItem == null):
 			return
@@ -41,7 +61,11 @@ func _ready():
 		tooltip = tooltipPrefab.instantiate() as Control
 		tooltip.nameLabel.text = currentItem.name
 		tooltip.descriptionLabel.text = currentItem.description
-		get_tree().root.add_child(tooltip)
+		var p = get_parent()
+		while not(p is CanvasLayer):
+			p = p.get_parent()
+		
+		p.add_child(tooltip)
 		updateTooltipLocation()
 		
 		)

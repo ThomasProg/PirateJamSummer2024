@@ -12,6 +12,8 @@ class_name Player
 
 @export var enableTestRayCast:bool = false
 
+@export var ingameMenu:Control
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var captureMouse = false
@@ -38,8 +40,11 @@ func _input(event: InputEvent):
 		if Input.is_action_just_pressed("OpenMenu"):
 			if (Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				ingameMenu.updatePlayerInventory()
+				ingameMenu.visible = true
 			else:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				ingameMenu.visible = false
 			
 	if Input.is_action_just_pressed("InvertMouseYAxis"):
 		invertMouseY = not(invertMouseY)

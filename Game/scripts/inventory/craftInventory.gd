@@ -11,6 +11,10 @@ class_name CraftInventory
 @export var craftNextRecipeButton:Button
 @export var craftPreviousRecipeButton:Button
 
+@export var playerInv:PlayerInventory
+@export var playerIngredientsContainer:Control
+@export var playerPotionsContainer:Control
+
 func getCurrentRecipe() -> CraftRecipe:
 	return availableRecipes[currentRecipeIndex]
 
@@ -24,13 +28,43 @@ func onRecipeUpdated():
 		
 	for ingr in currentRecipe.ingredients:
 		var slot = slotPrefab.instantiate() as InventorySlot
-		slot.tex.texture = ingr.texture
+		slot.canBeDragged = false
+		slot.dragGroup = 2
+		slot.setItem(ingr)
 		craftInParent.add_child(slot)
 		
+func updatePlayerInventory():
+	if (playerInv == null):
+		push_error("Player inv is null!")
+		return null
 	
+	var ingredients = playerInv.ingredientInventory.items
+	for i in range(ingredients.size()):
+		var ingr = ingredients[i]
+		var slot = playerIngredientsContainer.get_children()[i] as InventorySlot
+		slot.setItem(ingr)
+		for connection in slot.onItemSet.get_connections():
+			slot.onItemSet.disconnect(connection.callable)
+		slot.onItemSet.connect(func(newItem:InventoryItem):
+			ingredients[i] = newItem
+			)
+		
+	var potions = playerInv.potionInventory.items
+	for i in range(potions.size()):
+		var potion = potions[i]
+		var slot = playerPotionsContainer.get_children()[i] as InventorySlot
+		slot.setItem(potion)
+		for connection in slot.onItemSet.get_connections():
+			slot.onItemSet.disconnect(connection.callable)
+		slot.onItemSet.connect(func(newItem:InventoryItem):
+			potions[i] = newItem
+			)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	onRecipeUpdated()
+	updatePlayerInventory()
+	
 	craftNextRecipeButton.pressed.connect(func():
 		currentRecipeIndex = (currentRecipeIndex + 1) % availableRecipes.size()
 		onRecipeUpdated()

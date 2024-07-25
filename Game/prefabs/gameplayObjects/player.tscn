@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bmotrrb5fci2n"]
+[gd_scene load_steps=16 format=3 uid="uid://bmotrrb5fci2n"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/player.gd" id="1_0anxm"]
 [ext_resource type="Resource" uid="uid://dgxb1wbqvtlrr" path="res://inventoryAssets/inventories/potionInventory.tres" id="2_i2ovb"]
 [ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_u3o1f"]
 [ext_resource type="Script" path="res://scripts/customTextEffects/richTextLabelReplacer.gd" id="3_twm41"]
 [ext_resource type="Texture2D" uid="uid://dg8yvxkhcmvw2" path="res://art/cursors/hit_marker.png" id="3_vhjkl"]
+[ext_resource type="PackedScene" uid="uid://fahaah8lfrw0" path="res://prefabs/inventory/craftInventory.tscn" id="5_6xnvm"]
 [ext_resource type="Script" path="res://scripts/inventory/potionSelector.gd" id="5_qqyfv"]
 [ext_resource type="Script" path="res://scripts/components/alchemyTableInteractor.gd" id="6_bmoqy"]
 [ext_resource type="Script" path="res://scripts/inventory/potionSelectorFeedback.gd" id="6_nuewa"]
@@ -12,14 +13,16 @@
 [ext_resource type="Script" path="res://scripts/components/potionThrowerComponent.gd" id="9_53taj"]
 [ext_resource type="PackedScene" uid="uid://bbwwhvnoqdo0q" path="res://prefabs/instanced/thrownPotion.tscn" id="10_2ylfs"]
 [ext_resource type="Script" path="res://scripts/inventory/playerInventory.gd" id="11_iayvv"]
+[ext_resource type="Resource" uid="uid://cmajo12ucvbyw" path="res://inventoryAssets/inventories/ingredientsInventory.tres" id="14_nsphy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2mcq"]
 size = Vector3(0.229, 1.7, 0.229)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "collider")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "collider", "ingameMenu")]
 script = ExtResource("1_0anxm")
 camera = NodePath("Camera3D")
 collider = NodePath("CollisionShape3D")
+ingameMenu = NodePath("UI/CraftInventory")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_n2mcq")
@@ -112,6 +115,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_vhjkl")
 
+[node name="CraftInventory" parent="UI" node_paths=PackedStringArray("playerInv") instance=ExtResource("5_6xnvm")]
+visible = false
+playerInv = NodePath("../../PlayerInventory")
+
 [node name="PotionSelector" type="Node" parent="."]
 script = ExtResource("5_qqyfv")
 currentlySelectedItemIndex = -1
@@ -143,3 +150,5 @@ camera = NodePath("../Camera3D")
 
 [node name="PlayerInventory" type="Node" parent="."]
 script = ExtResource("11_iayvv")
+potionInventory = ExtResource("2_i2ovb")
+ingredientInventory = ExtResource("14_nsphy")
