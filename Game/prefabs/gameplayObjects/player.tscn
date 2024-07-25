@@ -119,10 +119,10 @@ texture = ExtResource("3_vhjkl")
 visible = false
 playerInv = NodePath("../../PlayerInventory")
 
-[node name="PotionSelector" type="Node" parent="."]
+[node name="PotionSelector" type="Node" parent="." node_paths=PackedStringArray("playerInv")]
 script = ExtResource("5_qqyfv")
 currentlySelectedItemIndex = -1
-inventory = ExtResource("2_i2ovb")
+playerInv = NodePath("../PlayerInventory")
 
 [node name="PotionSelectorFeedback" type="Node" parent="PotionSelector" node_paths=PackedStringArray("potionSprite", "potionSelector", "itemNameText", "itemDescText")]
 script = ExtResource("6_nuewa")

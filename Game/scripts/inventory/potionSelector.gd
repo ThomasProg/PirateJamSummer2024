@@ -2,18 +2,18 @@ extends Node
 class_name PotionSelector
 
 @export var currentlySelectedItemIndex:int = 0
-@export var inventory:Inventory
+@export var playerInv:PlayerInventory
 
 signal onNewItemSelected(InventoryItem)
 
 func getCurrentItem()->InventoryItem:
-	return inventory.items[currentlySelectedItemIndex]
+	return playerInv.potionInventory.items[currentlySelectedItemIndex]
 	
 func popCurrentItem()->InventoryItem:
-	var item = inventory.items[currentlySelectedItemIndex]
-	inventory.items[currentlySelectedItemIndex] = null
+	var item = playerInv.potionInventory.items[currentlySelectedItemIndex]
+	playerInv.potionInventory.items[currentlySelectedItemIndex] = null
 	
-	if not(inventory.isEmpty()):
+	if not(playerInv.potionInventory.isEmpty()):
 		selectNextValidItem()
 	else:
 		onNewItemSelected.emit(null)
@@ -21,11 +21,11 @@ func popCurrentItem()->InventoryItem:
 	return item
 
 func ensureValidIndex():
-	var nbItems = inventory.items.size()
+	var nbItems = playerInv.potionInventory.items.size()
 	currentlySelectedItemIndex = (currentlySelectedItemIndex % nbItems + nbItems) % nbItems
 
 func selectNextValidItem():
-	assert(not(inventory.isEmpty()))
+	assert(not(playerInv.potionInventory.isEmpty()))
 	currentlySelectedItemIndex += 1
 	ensureValidIndex()
 	
@@ -41,7 +41,7 @@ func selectItemAtIndex(index:int):
 	onNewItemSelected.emit(getCurrentItem())
 		
 func selectPreviousValidItem():
-	assert(not(inventory.isEmpty()))
+	assert(not(playerInv.potionInventory.isEmpty()))
 	currentlySelectedItemIndex -= 1
 	ensureValidIndex()
 	
@@ -57,7 +57,7 @@ var currentScrollDown = 0.0
 
 func _input(event: InputEvent):
 	# prevent infinite loop for searching for valid items
-	if (inventory.isEmpty()):
+	if (playerInv.potionInventory.isEmpty()):
 		return
 	
 	if Input.is_action_just_released("NextItem"):
@@ -78,5 +78,5 @@ func _input(event: InputEvent):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if not(inventory.isEmpty()):
+	if not(playerInv.potionInventory.isEmpty()):
 		selectNextValidItem()
