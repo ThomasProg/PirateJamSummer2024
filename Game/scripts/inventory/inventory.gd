@@ -13,3 +13,24 @@ func addItem(newItem:InventoryItem) -> int:
 			return i
 
 	return -1
+
+func canConsumeItems(itemsToConsume:Array[InventoryItem]) -> bool:
+	var itemsCopy = items.duplicate(false)
+	for ingr in itemsToConsume:
+		var index = itemsCopy.find(ingr)
+		if (index == -1):
+			return  false
+		itemsCopy.remove_at(index)
+		
+	return true
+
+func tryConsumeItems(itemsToConsume:Array[InventoryItem]) -> bool:
+	var itemsCopy = items.duplicate(false)
+	for ingr in itemsToConsume:
+		var index = itemsCopy.find(ingr)
+		if (index == -1):
+			return  false
+		itemsCopy.remove_at(index)
+		
+	items = itemsCopy
+	return true

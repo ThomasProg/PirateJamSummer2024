@@ -10,7 +10,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="CraftInventory" type="Control" node_paths=PackedStringArray("craftInParent", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer")]
+[node name="CraftInventory" type="Control" node_paths=PackedStringArray("craftInParent", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +27,7 @@ craftNextRecipeButton = NodePath("MarginContainer/Panel/HBoxContainer/Control/Te
 craftPreviousRecipeButton = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/LeftButton")
 playerIngredientsContainer = NodePath("MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/IngredientSlotContainer")
 playerPotionsContainer = NodePath("MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/PotionSlotContainer")
+craftButton = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer/CraftButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -275,9 +276,16 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ItemTextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ItemTextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer"]
 layout_mode = 2
 texture = ExtResource("2_iyhuh")
+
+[node name="CraftButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+flat = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2"]
 layout_mode = 2

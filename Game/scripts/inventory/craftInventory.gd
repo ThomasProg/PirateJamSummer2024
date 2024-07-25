@@ -15,6 +15,8 @@ class_name CraftInventory
 @export var playerIngredientsContainer:Control
 @export var playerPotionsContainer:Control
 
+@export var craftButton:Button
+
 func getCurrentRecipe() -> CraftRecipe:
 	return availableRecipes[currentRecipeIndex]
 
@@ -75,6 +77,12 @@ func _ready():
 		onRecipeUpdated()
 		)
 
+	craftButton.pressed.connect(func():
+		var recipe = getCurrentRecipe()
+		if (playerInv.ingredientInventory.tryConsumeItems(recipe.ingredients)):
+			playerInv.potionInventory.addItem(recipe.result)
+			updatePlayerInventory()
+		)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
