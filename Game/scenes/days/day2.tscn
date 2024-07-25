@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cy8u56ullhoqr"]
+[gd_scene load_steps=16 format=3 uid="uid://cy8u56ullhoqr"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_lg165"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_q54yj"]
@@ -8,9 +8,12 @@
 [ext_resource type="Script" path="res://scripts/dialogues/sharedDialogue.gd" id="8_dlyje"]
 [ext_resource type="PackedScene" uid="uid://cgbo0fg7mpkg0" path="res://prefabs/gameplayObjects/characters/tailor.tscn" id="9_3lds7"]
 [ext_resource type="Resource" path="res://dialogues/day2/d2_group.dtl" id="9_c04dc"]
+[ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="10_tfdr5"]
 [ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="11_mmmfm"]
 [ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="13_7miqr"]
+[ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="13_lrkyk"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="14_e62rb"]
+[ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="14_hqtgx"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
@@ -50,6 +53,12 @@ sharedDialogue = NodePath("../GroupDialogue")
 script = ExtResource("8_dlyje")
 timeline = ExtResource("9_c04dc")
 
+[node name="Chameleon" parent="GameplayObjects" instance=ExtResource("10_tfdr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.1229)
+
+[node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("13_lrkyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22664, 0, -16.4974)
+
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
 use_collision = true
@@ -63,3 +72,6 @@ nextDayPath = "res://scenes/days/day3.tscn"
 script = ExtResource("14_e62rb")
 interactionName = "Bed"
 interactionDescription = "Click to sleep"
+
+[node name="Calendula" parent="." instance=ExtResource("14_hqtgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19)

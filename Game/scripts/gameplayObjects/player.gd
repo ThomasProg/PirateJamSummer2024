@@ -21,7 +21,8 @@ var blockMouseCapture = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-
+	GameManager.player = self
+	
 func _input(event: InputEvent):
 	if (Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
 		if event is InputEventMouseMotion and captureMouse:

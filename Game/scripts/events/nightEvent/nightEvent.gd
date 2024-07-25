@@ -17,13 +17,13 @@ func _ready():
 	nightTimer.onNightEnd.connect(func():
 		print("End of the night: you survive")
 		if not(nextDayPath.is_empty()):
-			GameManager.loadDay(nextDayPath)
+			GameManager.loadNextDay(nextDayPath)
 		)
 		
 	wolf.onWolfLeave.connect(func():
 		print("End of the night: the wolf went away")
 		if not(nextDayPath.is_empty()):
-			GameManager.loadDay(nextDayPath)
+			GameManager.loadNextDay(nextDayPath)
 		)
 	
 	wolf.onWolfWin.connect(func(): 

@@ -8,13 +8,78 @@ extends Node
 
 @export var currentSaveDir = "save0"
 
+# 0 = day 1
+# 1 = night 1
+# 2 = day 2
+# 3 = night 2 
+# etc
+@export var saveKey:int = 0
+
+var player:Player
+
+func tryLoadAtKey(saveKey:int):
+	var savePath = saveKeyToSavePath(saveKey)
+	if DirAccess.dir_exists_absolute(savePath):
+		loadInventories(savePath)
+		return true
+	return false
+	
+func saveAtCurrentKey():
+	var savePath = saveKeyToSavePath(saveKey)
+	saveInventories(savePath)
+	
+	
+static func saveKeyToSavePath(dayNumber:int) -> String:
+	return "user://%s/%d/" % [GameManager.currentSaveDir, dayNumber]
+	
+func saveInventories(path:String):		
+	if not(DirAccess.dir_exists_absolute(path)):
+		var err = DirAccess.make_dir_recursive_absolute(path)
+		assert(err == 0)
+		
+	var inv = Utilities.findComponentByType(player, PlayerInventory)
+		
+	var error = ResourceSaver.save(inv.ingredientInventory, savePathToIngredientInventoryPath(path))
+	assert(error == 0)
+		
+	var error2 = ResourceSaver.save(inv.potionInventory, savePathToPotionInventoryPath(path))
+	assert(error2 == 0)
+	
+func savePathToIngredientInventoryPath(path:String):
+	return path + "%s.res" % "ingredientsInventory"
+	
+func savePathToPotionInventoryPath(path:String):
+	return path + "%s.res" % "potionsInventory"
+	
+func loadInventories(path:String):		
+	var inv = Utilities.findComponentByType(player, PlayerInventory)
+	inv.ingredientInventory = load(savePathToIngredientInventoryPath(path))
+	inv.potionInventory = load(savePathToPotionInventoryPath(path))
+
+
 func loadGameOver():
-	await loadSceneWithLoadingScreen(currentScenePath, gameOverScreen)
+	var onLoaded = func(newScene):
+		await get_tree().process_frame
+		tryLoadAtKey(saveKey)
+	await loadSceneWithLoadingScreen(currentScene.scene_file_path, gameOverScreen, onLoaded)
+	#tryLoadAtKey(saveAtCurrentKey())
+
+func loadNextDay(newScenePath:String):
+	saveKey += 1
+	saveAtCurrentKey()
+	loadDay(newScenePath)
+	
+func loadNextNight(newScenePath:String, onNightLoaded):
+	saveKey += 1
+	saveAtCurrentKey()
+	loadNight(newScenePath, onNightLoaded)
 
 func loadDay(newScenePath:String):
 	await loadSceneWithLoadingScreen(newScenePath, dayLoadingScreen)
 
 func loadNight(newScenePath:String, onNightLoaded):
+	saveKey += 1
+	saveAtCurrentKey()
 	await loadSceneWithLoadingScreen(newScenePath, nightLoadingScreen, onNightLoaded)
 
 func loadSceneWithLoadingScreen(newScenePath:String, loadingScreenPrefab:PackedScene, onSceneLoaded = null):

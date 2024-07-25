@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_4h4ay"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_foyvl"]
 
-[sub_resource type="Resource" id="Resource_244c1"]
+[sub_resource type="Resource" id="Resource_c3h4v"]
 script = ExtResource("3_qo4fm")
 amount = 75
 enabled = true
@@ -19,7 +19,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_lmh5x"]
+[sub_resource type="Resource" id="Resource_4my1k"]
 script = ExtResource("4_xg8r6")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -30,7 +30,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_e3mmx"]
+[sub_resource type="Resource" id="Resource_b5uky"]
 script = ExtResource("5_4h4ay")
 iterations = 3
 offset_step = 0.2
@@ -42,7 +42,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_w3r4r"]
+[sub_resource type="Resource" id="Resource_f66cu"]
 script = ExtResource("6_foyvl")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -58,9 +58,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_t45lc"]
+[sub_resource type="Resource" id="Resource_0ba3l"]
 script = ExtResource("2_a3oyh")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_244c1"), SubResource("Resource_lmh5x"), SubResource("Resource_e3mmx"), SubResource("Resource_w3r4r")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_c3h4v"), SubResource("Resource_4my1k"), SubResource("Resource_b5uky"), SubResource("Resource_f66cu")])
 
 [node name="Night1" type="Node3D"]
 
@@ -70,7 +70,7 @@ stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_t45lc")
+modifier_stack = SubResource("Resource_0ba3l")
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3742, 1.3201, -19.9177)

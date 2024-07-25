@@ -9,7 +9,7 @@ extends CSGMesh3D
 # By using a static function, we prevent that
 static func bindInteractable(interactable, nextNightPath, nextDayPath):
 	interactable.onInteracted.connect(func(player:Player):
-		await GameManager.loadNight(nextNightPath, func(scene):
+		await GameManager.loadNextNight(nextNightPath, func(scene):
 			var night = Utilities.findComponentByType(scene, NightEvent)
 			if (night.nextDayPath.is_empty()):
 				night.nextDayPath = nextDayPath 
