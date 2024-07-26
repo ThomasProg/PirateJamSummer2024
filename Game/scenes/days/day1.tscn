@@ -55,7 +55,7 @@ script = ExtResource("4_vk6kb")
 timeline = ExtResource("8_ssr06")
 
 [node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("8_27she")]
-transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -8.60984, 0, -8.53276)
+transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -12.5708, 0, -3.98619)
 sharedDialogue = NodePath("TailorDialogue")
 
 [node name="TailorDialogue" type="Node" parent="GameplayObjects/Tailor"]
@@ -63,7 +63,7 @@ script = ExtResource("4_vk6kb")
 timeline = ExtResource("10_yejgd")
 
 [node name="Carpenter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("9_4d5n5")]
-transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, 5.46815, 0, -10.4761)
+transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, 3.98607, 0, -8.82823)
 sharedDialogue = NodePath("CarpenterDialogue")
 
 [node name="CarpenterDialogue" type="Node" parent="GameplayObjects/Carpenter"]
@@ -71,7 +71,7 @@ script = ExtResource("4_vk6kb")
 timeline = ExtResource("12_fc5d1")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5639, 0.957601, -24.2312)
 use_collision = true
 mesh = SubResource("CylinderMesh_mnhcf")
 script = ExtResource("6_wque3")
