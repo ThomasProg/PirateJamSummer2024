@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://b5ikawlod3v5a" path="res://inventoryAssets/potions/redPotion.tres" id="2_bk653"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_lwojp"]
 [ext_resource type="Resource" uid="uid://cnnujc7uicalb" path="res://inventoryAssets/potions/yellowPotion.tres" id="3_b6h32"]
-[ext_resource type="PackedScene" uid="uid://cua4q3dx1oh5d" path="res://art/furniture-props/alchemyTable.glb" id="4_p2jvy"]
+[ext_resource type="PackedScene" uid="uid://djqghbv7n0e3o" path="res://prefabs/gameplayObjects/furnitureAndProps/alchemyTable.tscn" id="4_xgx07"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7r6gh"]
 radius = 1.5
@@ -36,15 +36,15 @@ yellowPotionInteractible = NodePath("Yellow/YellowInteractable")
 redPotion = ExtResource("2_bk653")
 yellowPotion = ExtResource("3_b6h32")
 
+[node name="alchemyTable" parent="." instance=ExtResource("4_xgx07")]
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_7r6gh")
 
-[node name="alchemyTable" parent="." instance=ExtResource("4_p2jvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.583981, -0.392)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_83j0p")
@@ -60,6 +60,7 @@ interactionDescription = "Stay close to brew potions"
 
 [node name="Red" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217358, 0.590221, 0.155024)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Red"]
 shape = SubResource("BoxShape3D_30pt3")
@@ -79,6 +80,7 @@ interactionDescription = "Click to brew"
 
 [node name="Yellow" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217358, 0.585445, -0.207957)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Yellow"]
 shape = SubResource("BoxShape3D_88r0e")

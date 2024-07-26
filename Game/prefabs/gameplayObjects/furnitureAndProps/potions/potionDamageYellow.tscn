@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvncl57b8xow6"]
+
+[ext_resource type="PackedScene" uid="uid://b1fuhltpp4xek" path="res://art/furniture-props/potions/potionDamageYellow.glb" id="1_sbocp"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="2_5l0hp"]
+
+[node name="potionDamageYellow" instance=ExtResource("1_sbocp")]
+
+[node name="potionDamageYellow" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_5l0hp")

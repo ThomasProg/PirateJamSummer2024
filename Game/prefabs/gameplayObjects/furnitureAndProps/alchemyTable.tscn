@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://djqghbv7n0e3o"]
+[gd_scene load_steps=9 format=3 uid="uid://djqghbv7n0e3o"]
 
 [ext_resource type="PackedScene" uid="uid://cua4q3dx1oh5d" path="res://art/furniture-props/alchemyTable.glb" id="1_ucm4m"]
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_72gfx"]
 [ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_uvgom"]
-[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="4_gmr37"]
+[ext_resource type="PackedScene" uid="uid://bqv2lq5gh7ysb" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageRed.tscn" id="4_ljv5l"]
+[ext_resource type="PackedScene" uid="uid://dvncl57b8xow6" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageYellow.tscn" id="5_4wl72"]
+[ext_resource type="PackedScene" uid="uid://hd7f62uc7gdj" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDeterring.tscn" id="6_ns6a7"]
+[ext_resource type="PackedScene" uid="uid://k6b1fjexoxsi" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionHealing.tscn" id="7_31bgb"]
+[ext_resource type="PackedScene" uid="uid://crp55jgtkvid1" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionInvisibility.tscn" id="8_opbcd"]
 
 [node name="alchemyTable" instance=ExtResource("1_ucm4m")]
 
 [node name="alchemyTable" parent="." index="0"]
-transform = Transform3D(1.61633, 0, 0, 0, 0.129114, 0, 0, 0, -1.63835, 0, 0, 0)
-
-[node name="beam_009" parent="." index="1"]
 surface_material_override/0 = ExtResource("2_72gfx")
+surface_material_override/1 = ExtResource("3_uvgom")
 
-[node name="planks" parent="." index="2"]
-surface_material_override/0 = ExtResource("3_uvgom")
+[node name="potionDamageRed" parent="alchemyTable" index="0" instance=ExtResource("4_ljv5l")]
 
-[node name="thatch_003" parent="." index="3"]
-surface_material_override/0 = ExtResource("4_gmr37")
+[node name="potionDamageYellow" parent="alchemyTable" index="1" instance=ExtResource("5_4wl72")]
+
+[node name="potionDeterring" parent="alchemyTable" index="2" instance=ExtResource("6_ns6a7")]
+
+[node name="potionHealing" parent="alchemyTable" index="3" instance=ExtResource("7_31bgb")]
+
+[node name="potionInvisibility" parent="alchemyTable" index="4" instance=ExtResource("8_opbcd")]

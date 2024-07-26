@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6b1fjexoxsi"]
+
+[ext_resource type="PackedScene" uid="uid://buo4lvg71xitg" path="res://art/furniture-props/potions/potionHealing.glb" id="1_1mux5"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="2_pjua3"]
+
+[node name="potionHealing" instance=ExtResource("1_1mux5")]
+
+[node name="potionHealing_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pjua3")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://hd7f62uc7gdj"]
+
+[ext_resource type="PackedScene" uid="uid://cpfev4d523b8r" path="res://art/furniture-props/potions/potionDeterring.glb" id="1_j44ms"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="2_pdjaq"]
+
+[node name="potionDeterring" instance=ExtResource("1_j44ms")]
+
+[node name="potionDeterring" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pdjaq")

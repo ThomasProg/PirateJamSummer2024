@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://crp55jgtkvid1"]
+
+[ext_resource type="PackedScene" uid="uid://dmmawxs8b43ch" path="res://art/furniture-props/potions/potionInvisibility.glb" id="1_wdcrr"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="2_qhg7d"]
+
+[node name="potionInvisibility" instance=ExtResource("1_wdcrr")]
+
+[node name="potionInvisibility" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_qhg7d")

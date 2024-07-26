@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqv2lq5gh7ysb"]
+
+[ext_resource type="PackedScene" uid="uid://b8r86ko6mwb2m" path="res://art/furniture-props/potions/potionDamageRed.glb" id="1_8e42a"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="2_uxay0"]
+
+[node name="potionDamageRed" instance=ExtResource("1_8e42a")]
+
+[node name="potionDamageRed" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_uxay0")
