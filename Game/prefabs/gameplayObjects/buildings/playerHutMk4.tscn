@@ -15,6 +15,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.751046)
 
 [node name="doorPlanksSmMk0" parent="." instance=ExtResource("3_pu0pu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954757, 2.38419e-07, 2.88352)
+visible = false
 
 [node name="playerHutStones" parent="." instance=ExtResource("2_0nel5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9993, 0.0482445, -0.842786)

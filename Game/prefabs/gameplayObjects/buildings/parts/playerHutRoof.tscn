@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy8qydoxn3cwa"]
+[gd_scene load_steps=6 format=3 uid="uid://dy8qydoxn3cwa"]
 
 [ext_resource type="PackedScene" uid="uid://bq8v0fyukgwno" path="res://art/buildings/playerHutRoof.glb" id="1_3f417"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="2_0urkm"]
 [ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="2_1e6mf"]
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="3_g63p1"]
 [ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="4_t2huk"]
 
 [node name="playerHutRoof" instance=ExtResource("1_3f417")]
 
-[node name="player-hut-roof" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_1e6mf")
+[node name="player-hut-roof" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_0urkm")
 surface_material_override/1 = ExtResource("3_g63p1")
-surface_material_override/2 = ExtResource("4_t2huk")
+surface_material_override/2 = ExtResource("2_1e6mf")
+surface_material_override/3 = ExtResource("4_t2huk")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk1q3bxr1foxv"]
+
+[ext_resource type="PackedScene" uid="uid://ckifrls11k7qj" path="res://art/buildings/doorHinged.glb" id="1_ocsgy"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_3ekfk"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="3_e1wc4"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="4_5jwda"]
+
+[node name="doorHinged" instance=ExtResource("1_ocsgy")]
+
+[node name="@StaticBody3D@52198" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="hinged-door" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_3ekfk")
+surface_material_override/1 = ExtResource("3_e1wc4")
+surface_material_override/2 = ExtResource("4_5jwda")
