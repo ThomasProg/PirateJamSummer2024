@@ -1,52 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://wqy2d82p2qpe"]
+[gd_scene load_steps=6 format=3 uid="uid://wqy2d82p2qpe"]
 
-[ext_resource type="PackedScene" uid="uid://gauwskimp68y" path="res://prefabs/gameplayObjects/buildings/parts/wallLogsSm.tscn" id="1_xwefy"]
-[ext_resource type="PackedScene" uid="uid://btjpl86jx0nsl" path="res://prefabs/gameplayObjects/buildings/parts/roof_3x_4.tscn" id="2_bmx2p"]
-[ext_resource type="PackedScene" uid="uid://0p0yjd70kipk" path="res://prefabs/gameplayObjects/buildings/parts/doorPlanksSmMk0.tscn" id="3_xic85"]
+[ext_resource type="PackedScene" uid="uid://cy5bp1at4subn" path="res://art/buildings/npcHut.glb" id="1_ct0hq"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_jfryl"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="3_lo64o"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="4_sf0xs"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="5_r3eew"]
 
-[node name="npcHutWood" type="Node3D"]
+[node name="npcHut" instance=ExtResource("1_ct0hq")]
 
-[node name="wallLogsSm3" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13, 0, 0)
+[node name="npcHutWood" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 
-[node name="wallLogsSm2" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13, 0, 0)
-
-[node name="wallLogsSm7" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.455)
-
-[node name="wallLogsSm12" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13, 0, -7.455)
-
-[node name="wallLogsSm14" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13, 0, -7.455)
-
-[node name="wallLogsSm4" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.13, 0, 0)
-
-[node name="wallLogsSm5" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.13, 0, -2.13)
-
-[node name="wallLogsSm6" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.13, 0, -4.26)
-
-[node name="wallLogsSm8" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.13, 0, -6.39)
-
-[node name="wallLogsSm9" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.195, 0, 0)
-
-[node name="wallLogsSm10" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.195, 0, -2.13)
-
-[node name="wallLogsSm11" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.195, 0, -4.26)
-
-[node name="wallLogsSm13" parent="." instance=ExtResource("1_xwefy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.195, 0, -6.39)
-
-[node name="roof3x4" parent="." instance=ExtResource("2_bmx2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5325, 2.13, -3.834)
-
-[node name="doorPlanksSmMk0" parent="." instance=ExtResource("3_xic85")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5325, 0, 0)
+[node name="roof-3x4_160" parent="npcHutWood/roof3x4" index="0"]
+surface_material_override/0 = ExtResource("2_jfryl")
+surface_material_override/1 = ExtResource("3_lo64o")
+surface_material_override/2 = ExtResource("4_sf0xs")
+surface_material_override/3 = ExtResource("5_r3eew")

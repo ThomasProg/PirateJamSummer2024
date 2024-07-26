@@ -68,7 +68,7 @@ dialogue = NodePath("../MerchantDialogue")
 baseStoryLine = ExtResource("10_rpwwj")
 
 [node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("6_l215m")]
-transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -12.1058, 0, -4.12723)
+transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -9.69755, 0, -11.9477)
 sharedDialogue = NodePath("TailorDialogue")
 
 [node name="TailorDialogue" type="Node" parent="GameplayObjects/Tailor"]
