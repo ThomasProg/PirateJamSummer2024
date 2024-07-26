@@ -140,16 +140,16 @@ transform = Transform3D(-1.05998, 0, 0.112852, 0, 1, 0, -0.121332, 0, -0.985904,
 transform = Transform3D(-0.373832, 0, 1.19464, 0, 1, 0, -1.00338, 0, -0.44509, -2.49746, 1.62801, 3.64181)
 
 [node name="buildingStoneMd3" parent="stones/front-right" index="6" instance=ExtResource("7_kuksw")]
-transform = Transform3D(1.39227, 0, 0, 0, -0.573119, 0.819472, 0, -0.819472, -0.573119, -2.33202, 0.922704, 3.64181)
+transform = Transform3D(1.42474, 5.32907e-15, -2.4869e-14, -7.10543e-15, -0.573118, 0.938995, 0, -0.819471, -0.65671, -2.36356, 0.922704, 3.64181)
 
 [node name="buildingStoneSm02" parent="stones/front-right" index="7" instance=ExtResource("8_8hgxd")]
 transform = Transform3D(1.11837, 0.287069, 0, -0.293149, 1.09518, 0, 0, 0, 1, -1.81999, 0.466825, 3.642)
 
 [node name="buildingStoneSm03" parent="stones/front-right" index="8" instance=ExtResource("8_8hgxd")]
-transform = Transform3D(0.363072, 0.931761, 0, -0.931761, 0.363072, 0, 0, 0, 1, -1.59489, 0.852117, 3.642)
+transform = Transform3D(0.363072, 1.08859, 0, -0.931761, 0.424183, 0, 0, 0, 1, -1.62328, 0.841055, 3.642)
 
 [node name="buildingStoneSm04" parent="stones/front-right" index="9" node_paths=PackedStringArray("peekingSpot") instance=ExtResource("8_8hgxd")]
-transform = Transform3D(-1.10785, 0.026328, 0.565951, -0.496143, 0.794134, -0.845954, -0.365411, -1.15807, -0.567237, -1.80485, 1.42366, 3.642)
+transform = Transform3D(-1.24271, 0.148419, 0.584471, -0.477097, 0.844923, -0.873637, -0.528374, -1.112, -0.585799, -1.78197, 1.39952, 3.65357)
 script = ExtResource("2_6gqce")
 peekingSpot = NodePath("peekAnchor")
 
