@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="8_0l76m"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="9_bsotw"]
 
-[sub_resource type="Resource" id="Resource_bfr24"]
+[sub_resource type="Resource" id="Resource_ixl8j"]
 script = ExtResource("3_rv4le")
 amount = 75
 enabled = true
@@ -19,7 +19,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_sn1v0"]
+[sub_resource type="Resource" id="Resource_iakwo"]
 script = ExtResource("4_ldd54")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -30,7 +30,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ln5uv"]
+[sub_resource type="Resource" id="Resource_13cqa"]
 script = ExtResource("5_6fxfd")
 iterations = 3
 offset_step = 0.2
@@ -42,7 +42,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_fogps"]
+[sub_resource type="Resource" id="Resource_w1vef"]
 script = ExtResource("6_3ntoo")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -58,9 +58,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_aam4w"]
+[sub_resource type="Resource" id="Resource_118h3"]
 script = ExtResource("2_tick0")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_bfr24"), SubResource("Resource_sn1v0"), SubResource("Resource_ln5uv"), SubResource("Resource_fogps")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_ixl8j"), SubResource("Resource_iakwo"), SubResource("Resource_13cqa"), SubResource("Resource_w1vef")])
 
 [node name="Night4" type="Node3D"]
 
@@ -70,10 +70,10 @@ stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_aam4w")
+modifier_stack = SubResource("Resource_118h3")
 
 [node name="Player" parent="." instance=ExtResource("7_jwjm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3742, 1.3201, -19.9177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
 
 [node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("8_0l76m")]
 peekAnchorGroup = NodePath("../PeekAnchorGroup")

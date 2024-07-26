@@ -27,7 +27,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="GameplayObjects" instance=ExtResource("2_q54yj")]
-transform = Transform3D(-0.129142, 0, -0.991627, 0, 1, 0, 0.991627, 0, -0.129142, -14.0247, 0.890025, -19.0837)
+transform = Transform3D(-0.129142, 0, -0.991627, 0, 1, 0, 0.991627, 0, -0.129142, -21, 0.89, -26)
 
 [node name="Priest" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("3_hgolj")]
 transform = Transform3D(-0.141298, 0, -0.989967, 0, 1, 0, 0.989967, 0, -0.141298, 1.05374, -0.0977421, -23.8462)
