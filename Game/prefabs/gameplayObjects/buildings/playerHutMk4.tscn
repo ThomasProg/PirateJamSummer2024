@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/playerHut.gd" id="1_esc5b"]
 [ext_resource type="PackedScene" uid="uid://dy8qydoxn3cwa" path="res://prefabs/gameplayObjects/buildings/parts/playerHutRoof.tscn" id="1_xbxty"]
-[ext_resource type="PackedScene" uid="uid://cqdeigpadrnvp" path="res://prefabs/gameplayObjects/stones/playerHutStones.tscn" id="2_0nel5"]
+[ext_resource type="PackedScene" uid="uid://bxsg5kdoaa1vc" path="res://prefabs/gameplayObjects/stones/playerHutStones.tscn" id="2_0nel5"]
 [ext_resource type="PackedScene" uid="uid://0p0yjd70kipk" path="res://prefabs/gameplayObjects/buildings/parts/doorPlanksSmMk0.tscn" id="3_pu0pu"]
 [ext_resource type="PackedScene" uid="uid://cjgg8s1xbkm67" path="res://prefabs/gameplayObjects/alchemyTable.tscn" id="5_bpya6"]
 [ext_resource type="PackedScene" uid="uid://bfev7et8m3rn0" path="res://prefabs/gameplayObjects/furnitureAndProps/bookshelf.tscn" id="6_rqajv"]
@@ -11,6 +11,7 @@
 script = ExtResource("1_esc5b")
 
 [node name="playerHutRoof" parent="." instance=ExtResource("1_xbxty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.751046)
 
 [node name="doorPlanksSmMk0" parent="." instance=ExtResource("3_pu0pu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954757, 2.38419e-07, 2.88352)
