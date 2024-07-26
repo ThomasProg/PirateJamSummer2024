@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b78w1plbw5wl4"]
+
+[ext_resource type="Script" path="res://scripts/instanciated/potions/invisibilityPotionEffect.gd" id="1_ujs5h"]
+
+[node name="InvisiblePotionEffectPrefab" type="Node3D"]
+script = ExtResource("1_ujs5h")

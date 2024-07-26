@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="InventoryPotionItem" load_steps=4 format=3 uid="uid://dw1eo7ko88t2y"]
 
-[ext_resource type="PackedScene" uid="uid://bn18i7nwcm361" path="res://prefabs/instanced/potions/defaultPotionEffectPrefab.tscn" id="1_2fspd"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryPotionItem.gd" id="1_cw2pe"]
+[ext_resource type="PackedScene" uid="uid://b78w1plbw5wl4" path="res://prefabs/instanced/potions/invisibilityPotionEffectPrefab.tscn" id="1_scb1m"]
 [ext_resource type="Texture2D" uid="uid://d0unqe83q60ev" path="res://art/items/Potions/invisibility_potion.png" id="3_d1x28"]
 
 [resource]
 script = ExtResource("1_cw2pe")
-effectPrefab = ExtResource("1_2fspd")
+effectPrefab = ExtResource("1_scb1m")
+isThrowable = false
 name = "Invisibility Potion"
 description = "Makes the player invisible during 10s."
 texture = ExtResource("3_d1x28")
