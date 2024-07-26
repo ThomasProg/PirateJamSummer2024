@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=3 format=3 uid="uid://d12l6iq6mn0ao"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryIngredientItem.gd" id="1_jifg8"]
-[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_00nxp"]
+[ext_resource type="Texture2D" uid="uid://cnvaasvg55khe" path="res://art/items/Ingredients/honey_ingredient.png" id="2_v0f2a"]
 
 [resource]
 script = ExtResource("1_jifg8")
 name = "Honey"
 description = "A sweet substance made by bees"
-texture = ExtResource("2_00nxp")
+texture = ExtResource("2_v0f2a")
 type = 1

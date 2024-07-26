@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bn18i7nwcm361" path="res://prefabs/instanced/potions/defaultPotionEffectPrefab.tscn" id="1_8rcqp"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryPotionItem.gd" id="2_7glld"]
-[ext_resource type="Texture2D" uid="uid://d23p13yi7asw0" path="res://addons/proton_scatter/demos/assets/textures/t_grass_2.png" id="3_p53pv"]
+[ext_resource type="Texture2D" uid="uid://b4bc0qtguaa2x" path="res://art/items/Potions/healing_potion.png" id="3_26ila"]
 
 [resource]
 script = ExtResource("2_7glld")
 effectPrefab = ExtResource("1_8rcqp")
 name = "Healing Potion"
 description = "Heals small injuries"
-texture = ExtResource("3_p53pv")
+texture = ExtResource("3_26ila")
 type = 0

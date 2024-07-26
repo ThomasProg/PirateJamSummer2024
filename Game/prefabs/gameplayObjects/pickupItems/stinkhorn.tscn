@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1y0vkje6yxua"]
 
-[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="1_xbg3n"]
+[ext_resource type="Texture2D" uid="uid://c2wh24ly4cfah" path="res://art/items/Ingredients/fungi_ingredient_world.png" id="1_au748"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_tpuoe"]
 [ext_resource type="Script" path="res://scripts/gameplayObjects/pickups/pickupItem.gd" id="3_h25aa"]
 [ext_resource type="Resource" uid="uid://dnq68duvypcvo" path="res://inventoryAssets/ingredients/stinkhornIngr.tres" id="4_hob7u"]
@@ -13,9 +13,10 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+offset = Vector2(0, 351)
 billboard = 2
-texture = ExtResource("1_xbg3n")
+texture = ExtResource("1_au748")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

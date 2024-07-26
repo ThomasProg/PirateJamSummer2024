@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=3 format=3 uid="uid://dq7sjxl5o1265"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryIngredientItem.gd" id="1_sro8j"]
-[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_1so4i"]
+[ext_resource type="Texture2D" uid="uid://2thjl4hfbp67" path="res://art/items/Ingredients/herbs_ingredient_inventory.png" id="2_0dvi1"]
 
 [resource]
 script = ExtResource("1_sro8j")
 name = "Calendula"
 description = "A medicinal plant"
-texture = ExtResource("2_1so4i")
+texture = ExtResource("2_0dvi1")
 type = 1

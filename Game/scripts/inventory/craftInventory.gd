@@ -6,6 +6,7 @@ class_name CraftInventory
 
 @export var slotPrefab:PackedScene
 @export var craftInParent:Control
+@export var craftOutTexture:TextureRect
 @export var craftOutName:RichTextLabel
 @export var craftOutDescription:RichTextLabel
 @export var craftNextRecipeButton:Button
@@ -22,6 +23,7 @@ func getCurrentRecipe() -> CraftRecipe:
 
 func onRecipeUpdated():
 	var currentRecipe = getCurrentRecipe()
+	craftOutTexture.texture = currentRecipe.result.texture
 	craftOutName.text = currentRecipe.result.name
 	craftOutDescription.text = currentRecipe.result.description
 	

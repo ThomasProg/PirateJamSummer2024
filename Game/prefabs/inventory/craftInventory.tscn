@@ -10,7 +10,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="CraftInventory" type="Control" node_paths=PackedStringArray("craftInParent", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton")]
+[node name="CraftInventory" type="Control" node_paths=PackedStringArray("craftInParent", "craftOutTexture", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +21,7 @@ script = ExtResource("1_sqmg8")
 availableRecipes = Array[Resource("res://scripts/inventory/craftRecipe.gd")]([ExtResource("2_q0r66"), ExtResource("3_3s3pe"), ExtResource("4_358wx")])
 slotPrefab = ExtResource("4_hgh1y")
 craftInParent = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/RequiredItemsSlots")
+craftOutTexture = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer/CraftOutTextureRect")
 craftOutName = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer2/RichTextLabel")
 craftOutDescription = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer3/RichTextLabel")
 craftNextRecipeButton = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/RightButton")
@@ -279,9 +280,10 @@ grow_vertical = 2
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2"]
 layout_mode = 2
 
-[node name="ItemTextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer"]
+[node name="CraftOutTextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer"]
 layout_mode = 2
 texture = ExtResource("2_iyhuh")
+expand_mode = 5
 
 [node name="CraftButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer"]
 layout_mode = 2

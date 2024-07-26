@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=3 format=3 uid="uid://cd0jile8t3n7o"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryIngredientItem.gd" id="1_mq7gs"]
-[ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_gyq25"]
+[ext_resource type="Texture2D" uid="uid://bi8cl0g6761t8" path="res://art/items/Ingredients/chameleon_ingredient_inventory.png" id="2_hpepr"]
 
 [resource]
 script = ExtResource("1_mq7gs")
 name = "Chameleon"
 description = "A small creatures that has a strong camouflage ability"
-texture = ExtResource("2_gyq25")
+texture = ExtResource("2_hpepr")
 type = 1
