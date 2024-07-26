@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://t78gk6woj4gv"]
+
+[ext_resource type="PackedScene" uid="uid://capedwpx35jvh" path="res://art/furniture-props/fenceLeft.glb" id="1_8145q"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_4wb7y"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_jhkga"]
+
+[node name="fenceLeft" instance=ExtResource("1_8145q")]
+
+[node name="fenceLeft_003" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_4wb7y")
+surface_material_override/1 = ExtResource("3_jhkga")

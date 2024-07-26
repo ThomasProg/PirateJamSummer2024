@@ -4,7 +4,6 @@
 fog_light_color = Color(0.703482, 0.788036, 0.777639, 1)
 fog_light_energy = 0.59
 fog_density = 0.001
-volumetric_fog_enabled = true
 adjustment_brightness = 0.65
 adjustment_contrast = 0.9
 
