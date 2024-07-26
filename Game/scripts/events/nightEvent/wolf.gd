@@ -79,12 +79,10 @@ func disappear():
 		
 	onWolfDisappears.emit()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if not(visible):
+func updatePeek(delta):
+	if (target.nbInvisibleEffects > 0):
 		return
-	
-	# peeks
+		
 	var hasHitTarget:bool = false
 	for i in range(eyeAnchors.size()):
 		raycasts[i].global_position = eyeAnchors[i].global_position
@@ -113,6 +111,13 @@ func _process(delta):
 		currentPeekAggro += delta * currentPeekAggroMult
 		aggro += delta * aggroMultWhenPeeking
 		onAggroUpdated()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if not(visible):
+		return
+	
+	updatePeek(delta)
 	
 	# billboard
 	# Can't use the native feature since it doesn't lead to children

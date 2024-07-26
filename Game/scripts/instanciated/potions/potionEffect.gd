@@ -3,6 +3,7 @@ class_name PotionEffect
 
 @export var particlesPrefab:PackedScene = preload("res://prefabs/instanced/potionParticles.tscn")
 var particles:GPUParticles3D = null
+var skillOwner:Player
 
 func setParticleColor(newColor:Color):
 	var mat = particles.process_material

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmotrrb5fci2n"]
+[gd_scene load_steps=18 format=3 uid="uid://bmotrrb5fci2n"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/player.gd" id="1_0anxm"]
 [ext_resource type="Resource" uid="uid://dgxb1wbqvtlrr" path="res://inventoryAssets/inventories/potionInventory.tres" id="2_i2ovb"]
@@ -18,11 +18,24 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2mcq"]
 size = Vector3(0.229, 1.7, 0.229)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "collider", "ingameMenu")]
+[sub_resource type="Gradient" id="Gradient_cuc13"]
+offsets = PackedFloat32Array(0, 0.695817, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.196078, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r5i61"]
+gradient = SubResource("Gradient_cuc13")
+width = 960
+height = 540
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "collider", "ingameMenu", "invisibilityEffect")]
 script = ExtResource("1_0anxm")
 camera = NodePath("Camera3D")
 collider = NodePath("CollisionShape3D")
 ingameMenu = NodePath("UI/CraftInventory")
+invisibilityEffect = NodePath("UI/Vignette")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_n2mcq")
@@ -46,6 +59,15 @@ collide_with_areas = true
 debug_shape_custom_color = Color(0, 0, 0, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="TextureRect" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r5i61")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 12

@@ -3,7 +3,7 @@ class_name Player
 
 @export var camera:Camera3D
 @export var collider:CollisionShape3D
-@export var mouseSensitivity = 0.002
+@export var mouseSensitivity:float = 0.002
 
 @export var speed:float = 5.0
 @export var sprintSpeed:float = 15.0
@@ -18,6 +18,14 @@ class_name Player
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var captureMouse = false
 var blockMouseCapture = false
+
+@export var invisibilityEffect:Control
+var nbInvisibleEffects = 0
+func updateInvisibility():
+	if nbInvisibleEffects == 0:
+		invisibilityEffect.visible = false
+	else:
+		invisibilityEffect.visible = true
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
