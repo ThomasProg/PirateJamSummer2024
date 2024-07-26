@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvkdoux3d6cur"]
+
+[ext_resource type="Script" path="res://scripts/instanciated/potions/deterringPotionEffect.gd" id="1_wnfh1"]
+[ext_resource type="PackedScene" uid="uid://bjv4ymfwa3uyg" path="res://prefabs/instanced/deterringPotionParticles.tscn" id="2_37lrj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3dk6w"]
+radius = 1.0
+
+[node name="DeterringPotionEffectPrefab" type="Area3D"]
+script = ExtResource("1_wnfh1")
+particlesPrefab = ExtResource("2_37lrj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_3dk6w")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
