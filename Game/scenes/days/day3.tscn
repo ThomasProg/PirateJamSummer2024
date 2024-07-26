@@ -68,7 +68,7 @@ dialogue = NodePath("../MerchantDialogue")
 baseStoryLine = ExtResource("10_chmou")
 
 [node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("9_poxsl")]
-transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -8.60984, 0, -8.53276)
+transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -10.635, 2.95658, -8.53276)
 sharedDialogue = NodePath("TailorDialogue")
 
 [node name="TailorDialogue" type="Node" parent="GameplayObjects/Tailor"]
@@ -80,7 +80,7 @@ dialogue = NodePath("../TailorDialogue")
 baseStoryLine = ExtResource("12_n8i2y")
 
 [node name="Carpenter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("11_3jdgh")]
-transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, 5.46815, 0, -10.4761)
+transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, 3.98848, 0, -9.15442)
 sharedDialogue = NodePath("CarpenterDialogue")
 
 [node name="CarpenterDialogue" type="Node" parent="GameplayObjects/Carpenter"]
@@ -92,7 +92,7 @@ dialogue = NodePath("../CarpenterDialogue")
 baseStoryLine = ExtResource("14_2g0xd")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1892, 0.957601, -17.1972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3359, 0.9576, -23.7425)
 use_collision = true
 mesh = SubResource("CylinderMesh_mnhcf")
 script = ExtResource("13_khy5i")
