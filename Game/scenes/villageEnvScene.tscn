@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
 [ext_resource type="PackedScene" uid="uid://t78gk6woj4gv" path="res://prefabs/gameplayObjects/furnitureAndProps/fenceLeft.tscn" id="16_jkcw8"]
 
-[sub_resource type="Resource" id="Resource_fh4fu"]
+[sub_resource type="Resource" id="Resource_4pfcf"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -26,7 +26,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_66fe6"]
+[sub_resource type="Resource" id="Resource_frq1m"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -37,7 +37,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kuplb"]
+[sub_resource type="Resource" id="Resource_6bnkp"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -49,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_k2iqh"]
+[sub_resource type="Resource" id="Resource_lne5w"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -65,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_ocfio"]
+[sub_resource type="Resource" id="Resource_w0de2"]
 script = ExtResource("7_f8o2o")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_fh4fu"), SubResource("Resource_66fe6"), SubResource("Resource_kuplb"), SubResource("Resource_k2iqh")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_4pfcf"), SubResource("Resource_frq1m"), SubResource("Resource_6bnkp"), SubResource("Resource_lne5w")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -96,7 +96,7 @@ assets = ExtResource("4_oh2n4")
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0941)
 script = ExtResource("6_kfpls")
-modifier_stack = SubResource("Resource_ocfio")
+modifier_stack = SubResource("Resource_w0de2")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -121,6 +121,9 @@ shape = SubResource("Resource_fc7ok")
 
 [node name="fenceLeft" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
 transform = Transform3D(0.995927, 0, 0.0901633, 0, 1, 0, -0.0901633, 0, 0.995927, 2.35503, 0, 7.63405)
+
+[node name="fenceLeft63" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
+transform = Transform3D(0.923096, 0, 0.384569, 0, 1, 0, -0.384569, 0, 0.923096, -0.358917, 0, 8.84025)
 
 [node name="fenceLeft2" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
 transform = Transform3D(0.947154, 0, 0.320778, 0, 1, 0, -0.320778, 0, 0.947154, 5.34516, -2.38419e-07, 7.34306)
@@ -210,10 +213,16 @@ transform = Transform3D(-0.999166, 0, -0.0408293, 0, 1, 0, 0.0408293, 0, -0.9991
 transform = Transform3D(-0.926535, 0, -0.376208, 0, 1, 0, 0.376208, 0, -0.926535, 4.00032, -2.38419e-07, -46.5144)
 
 [node name="fenceLeft31" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
-transform = Transform3D(-0.995364, 0, -0.0961758, 0, 1, 0, 0.0961758, 0, -0.995364, 0.869309, -2.38419e-07, -45.2154)
+transform = Transform3D(-0.995364, 0, -0.0961758, 0, 1, 0, 0.0961758, 0, -0.995364, 1.07959, -2.38419e-07, -45.3468)
+
+[node name="fenceLeft65" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
+transform = Transform3D(-0.746928, 0, 0.664905, 0, 1, 0, -0.664905, 0, -0.746928, -2.07748, -4.76837e-07, -44.8207)
 
 [node name="fenceLeft32" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
 transform = Transform3D(-0.999906, 0, -0.0137178, 0, 1, 0, 0.0137178, 0, -0.999906, -8.85681, -2.38419e-07, -44.8823)
+
+[node name="fenceLeft64" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
+transform = Transform3D(-0.555019, 0, -0.831838, 0, 1, 0, 0.831838, 0, -0.555019, -7.11657, -2.38419e-07, -47.4927)
 
 [node name="fenceLeft33" parent="fenceEnclosure" instance=ExtResource("16_jkcw8")]
 transform = Transform3D(-0.987303, 0, -0.158847, 0, 1, 0, 0.158847, 0, -0.987303, -12.121, -2.38419e-07, -44.8157)
