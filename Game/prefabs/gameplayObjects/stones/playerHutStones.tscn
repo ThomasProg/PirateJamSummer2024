@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqdeigpadrnvp"]
+[gd_scene load_steps=4 format=3 uid="uid://bxsg5kdoaa1vc"]
 
 [ext_resource type="PackedScene" uid="uid://b0bgdgsuas1n0" path="res://art/stones/playerHutStones.glb" id="1_nudev"]
 [ext_resource type="Material" uid="uid://cetk51yaqcwmj" path="res://art/materials/rock037.tres" id="2_mfttd"]
+[ext_resource type="Script" path="res://scripts/gameplayObjects/removableStone.gd" id="4_0cr66"]
 
 [node name="playerHutStones" instance=ExtResource("1_nudev")]
 
@@ -125,8 +126,14 @@ surface_material_override/0 = ExtResource("2_mfttd")
 [node name="stone_071" parent="." index="39"]
 surface_material_override/0 = ExtResource("2_mfttd")
 
-[node name="stone_041" parent="." index="40"]
+[node name="stone_041" parent="." index="40" node_paths=PackedStringArray("body", "peekingSpot")]
 surface_material_override/0 = ExtResource("2_mfttd")
+script = ExtResource("4_0cr66")
+body = NodePath("../stone_210")
+peekingSpot = NodePath("Node3D")
+
+[node name="Node3D" type="Node3D" parent="stone_041" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.456697, 0, 0)
 
 [node name="stone_043" parent="." index="41"]
 surface_material_override/0 = ExtResource("2_mfttd")
@@ -257,8 +264,14 @@ surface_material_override/0 = ExtResource("2_mfttd")
 [node name="stone_080" parent="." index="83"]
 surface_material_override/0 = ExtResource("2_mfttd")
 
-[node name="stone_095" parent="." index="84"]
+[node name="stone_095" parent="." index="84" node_paths=PackedStringArray("body", "peekingSpot")]
 surface_material_override/0 = ExtResource("2_mfttd")
+script = ExtResource("4_0cr66")
+body = NodePath("../stone_254")
+peekingSpot = NodePath("Node3D")
+
+[node name="Node3D" type="Node3D" parent="stone_095" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.291653)
 
 [node name="stone_085" parent="." index="85"]
 surface_material_override/0 = ExtResource("2_mfttd")
@@ -362,8 +375,14 @@ surface_material_override/0 = ExtResource("2_mfttd")
 [node name="stone_119" parent="." index="118"]
 surface_material_override/0 = ExtResource("2_mfttd")
 
-[node name="stone_116" parent="." index="119"]
+[node name="stone_116" parent="." index="119" node_paths=PackedStringArray("body", "peekingSpot")]
 surface_material_override/0 = ExtResource("2_mfttd")
+script = ExtResource("4_0cr66")
+body = NodePath("../stone_289")
+peekingSpot = NodePath("Node3D")
+
+[node name="Node3D" type="Node3D" parent="stone_116" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35215, 0, 0)
 
 [node name="stone_121" parent="." index="120"]
 surface_material_override/0 = ExtResource("2_mfttd")
@@ -404,8 +423,14 @@ surface_material_override/0 = ExtResource("2_mfttd")
 [node name="stone_151" parent="." index="132"]
 surface_material_override/0 = ExtResource("2_mfttd")
 
-[node name="stone_126" parent="." index="133"]
+[node name="stone_126" parent="." index="133" node_paths=PackedStringArray("body", "peekingSpot")]
 surface_material_override/0 = ExtResource("2_mfttd")
+script = ExtResource("4_0cr66")
+body = NodePath("../stone_303")
+peekingSpot = NodePath("Node3D")
+
+[node name="Node3D" type="Node3D" parent="stone_126" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257277, 0, 0)
 
 [node name="stone_150" parent="." index="134"]
 surface_material_override/0 = ExtResource("2_mfttd")
@@ -503,8 +528,14 @@ surface_material_override/0 = ExtResource("2_mfttd")
 [node name="stone_166" parent="." index="165"]
 surface_material_override/0 = ExtResource("2_mfttd")
 
-[node name="stone_167" parent="." index="166"]
+[node name="stone_167" parent="." index="166" node_paths=PackedStringArray("body", "peekingSpot")]
 surface_material_override/0 = ExtResource("2_mfttd")
+script = ExtResource("4_0cr66")
+body = NodePath("../stone_336")
+peekingSpot = NodePath("Node3D")
+
+[node name="Node3D" type="Node3D" parent="stone_167" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.237521)
 
 [node name="stone_168" parent="." index="167"]
 surface_material_override/0 = ExtResource("2_mfttd")
