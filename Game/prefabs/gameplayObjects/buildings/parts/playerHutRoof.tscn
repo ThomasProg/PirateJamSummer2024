@@ -13,5 +13,5 @@ surface_material_override/0 = ExtResource("2_1e6mf")
 surface_material_override/1 = ExtResource("3_g63p1")
 surface_material_override/2 = ExtResource("4_t2huk")
 
-[node name="@StaticBody3D@62992" parent="." index="1"]
+[node name="@StaticBody3D@27857" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
