@@ -82,7 +82,7 @@ dialogue = NodePath("../CarpenterDialogue")
 baseStoryLine = ExtResource("14_2g0xd")
 
 [node name="Tailor" parent="GameplayObjects" instance=ExtResource("9_poxsl")]
-transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -9.3758, 0, -11.4412)
+transform = Transform3D(-0.999885, 0, -0.015149, 0, 1, 0, 0.015149, 0, -0.999885, -8.83074, 2.38419e-07, -10.3192)
 
 [node name="TailorDialogue" type="Node" parent="GameplayObjects/Tailor"]
 script = ExtResource("4_bn7ue")

@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
 [ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="16_py3ka"]
 
-[sub_resource type="Resource" id="Resource_n47sb"]
+[sub_resource type="Resource" id="Resource_07uw8"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -26,7 +26,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_48nxo"]
+[sub_resource type="Resource" id="Resource_u1yic"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -37,7 +37,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_p37si"]
+[sub_resource type="Resource" id="Resource_eke8m"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -49,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_iirjr"]
+[sub_resource type="Resource" id="Resource_0w6k7"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -65,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_g5807"]
+[sub_resource type="Resource" id="Resource_sqiim"]
 script = ExtResource("7_f8o2o")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_n47sb"), SubResource("Resource_48nxo"), SubResource("Resource_p37si"), SubResource("Resource_iirjr")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_07uw8"), SubResource("Resource_u1yic"), SubResource("Resource_eke8m"), SubResource("Resource_0w6k7")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -80,7 +80,7 @@ radius = 32.383
 [node name="VillageEnvScene" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.854486, -0.424768, 0.299042, 0, 0.575662, 0.817688, -0.519474, -0.698703, 0.491895, 0, 0, 0)
+transform = Transform3D(0.854486, -0.424768, 0.299041, 0, 0.575662, 0.817688, -0.519474, -0.698703, 0.491895, 0, 0, 0)
 light_color = Color(0.827451, 0.882353, 0.792157, 1)
 shadow_enabled = true
 
@@ -96,7 +96,7 @@ assets = ExtResource("4_oh2n4")
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0941)
 script = ExtResource("6_kfpls")
-modifier_stack = SubResource("Resource_g5807")
+modifier_stack = SubResource("Resource_sqiim")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 

@@ -57,7 +57,7 @@ script = ExtResource("4_vk6kb")
 timeline = ExtResource("8_ssr06")
 
 [node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("8_27she")]
-transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -9.3758, 0, -11.4412)
+transform = Transform3D(-0.995996, 0, -0.0893985, 0, 1, 0, 0.0893985, 0, -0.995996, -8.36069, -1.19209e-07, -10.6435)
 sharedDialogue = NodePath("TailorDialogue")
 
 [node name="TailorDialogue" type="Node" parent="GameplayObjects/Tailor"]

@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_n4xjp"]
 [ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="3_q5hcf"]
 
-[node name="loom2" instance=ExtResource("1_fc25l")]
+[node name="loom" instance=ExtResource("1_fc25l")]
 
 [node name="loom" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_n4xjp")

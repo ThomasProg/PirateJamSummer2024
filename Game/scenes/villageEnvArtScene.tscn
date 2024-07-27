@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://5gr2h7l2dewa"]
+[gd_scene load_steps=10 format=3 uid="uid://5gr2h7l2dewa"]
 
 [ext_resource type="PackedScene" uid="uid://wqy2d82p2qpe" path="res://prefabs/gameplayObjects/buildings/npcHutWood.tscn" id="2_e12ab"]
 [ext_resource type="PackedScene" uid="uid://rteyeco40n51" path="res://prefabs/gameplayObjects/buildings/church.tscn" id="3_8a2oo"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="3_gdnqo"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="4_x02g1"]
 [ext_resource type="PackedScene" uid="uid://cqwbudfy1f435" path="res://prefabs/gameplayObjects/buildings/parts/hutExtension.tscn" id="4_yjing"]
+[ext_resource type="PackedScene" uid="uid://ci8i3xlfqs6ej" path="res://prefabs/gameplayObjects/furnitureAndProps/tailor/loom.tscn" id="5_4tqtc"]
 [ext_resource type="PackedScene" uid="uid://t78gk6woj4gv" path="res://prefabs/gameplayObjects/furnitureAndProps/fenceLeft.tscn" id="5_ndppl"]
 [ext_resource type="PackedScene" uid="uid://cu7oh25dvuelt" path="res://prefabs/gameplayObjects/buildings/playerHutMk4.tscn" id="5_x4sbc"]
 [ext_resource type="PackedScene" uid="uid://7td3ta0ppef7" path="res://prefabs/gameplayObjects/furnitureAndProps/lampPost.tscn" id="6_4ylnu"]
@@ -35,6 +36,24 @@ transform = Transform3D(-0.972386, 0, -0.233377, 0, 1, 0, 0.233377, 0, -0.972386
 
 [node name="hutExtension" parent="npcHutWood-tailor" instance=ExtResource("4_yjing")]
 transform = Transform3D(-0.999718, 0, 0.0239094, 0, 1, 0, -0.0239094, 0, -0.999718, -3.35935, -9.53675e-07, -0.0572836)
+
+[node name="loom" parent="npcHutWood-tailor/hutExtension" instance=ExtResource("5_4tqtc")]
+transform = Transform3D(-0.989565, -0.00878778, 0.143787, -0.00896791, 0.99996, -0.000604925, -0.143776, -0.0018881, -0.989604, 2.00217, -0.0637789, -2.04766)
+
+[node name="crate2" parent="npcHutWood-tailor/hutExtension" instance=ExtResource("3_gdnqo")]
+transform = Transform3D(0.0890498, 0, -1.04251, 0, 0.445482, 0, 0.492155, 0, 0.188631, 1.02279, 9.53675e-07, 2.40575)
+
+[node name="crate3" parent="npcHutWood-tailor/hutExtension" instance=ExtResource("3_gdnqo")]
+transform = Transform3D(0.283278, 0, -0.698553, 0, 0.335749, 0, 0.536557, 0, 0.368805, 0.848928, 9.53675e-07, 1.05933)
+
+[node name="crate4" parent="npcHutWood-tailor/hutExtension" instance=ExtResource("3_gdnqo")]
+transform = Transform3D(0.0608767, 0, -0.297954, 0, 0.248671, 0, 0.274098, 0, 0.0661752, 0.742293, 0.728435, 1.47163)
+
+[node name="crate5" parent="npcHutWood-tailor/hutExtension" instance=ExtResource("3_gdnqo")]
+transform = Transform3D(0.27407, 0, -0.0663099, 0, 0.248671, 0, 0.0610006, 0, 0.297924, 0.441763, 0.863675, 2.36566)
+
+[node name="crate6" parent="npcHutWood-tailor/hutExtension" instance=ExtResource("3_gdnqo")]
+transform = Transform3D(0.2061, 0, -0.207274, 0, 0.248672, 0, 0.190677, 0, 0.224039, -0.044837, -0.00835055, -2.11731)
 
 [node name="npcHutWood-priest" parent="." instance=ExtResource("2_e12ab")]
 transform = Transform3D(-0.5833, 0, 0.812257, 0, 1, 0, -0.812257, 0, -0.5833, -22.9098, 0, -11.2575)
