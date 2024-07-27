@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5gr2h7l2dewa"]
+[gd_scene load_steps=7 format=3 uid="uid://5gr2h7l2dewa"]
 
 [ext_resource type="PackedScene" uid="uid://wqy2d82p2qpe" path="res://prefabs/gameplayObjects/buildings/npcHutWood.tscn" id="2_e12ab"]
 [ext_resource type="PackedScene" uid="uid://rteyeco40n51" path="res://prefabs/gameplayObjects/buildings/church.tscn" id="3_8a2oo"]
 [ext_resource type="PackedScene" uid="uid://cqwbudfy1f435" path="res://prefabs/gameplayObjects/buildings/parts/hutExtension.tscn" id="4_yjing"]
 [ext_resource type="PackedScene" uid="uid://t78gk6woj4gv" path="res://prefabs/gameplayObjects/furnitureAndProps/fenceLeft.tscn" id="5_ndppl"]
 [ext_resource type="PackedScene" uid="uid://cu7oh25dvuelt" path="res://prefabs/gameplayObjects/buildings/playerHutMk4.tscn" id="5_x4sbc"]
+[ext_resource type="PackedScene" uid="uid://7td3ta0ppef7" path="res://prefabs/gameplayObjects/furnitureAndProps/lampPost.tscn" id="6_4ylnu"]
 
 [node name="VillageEnvArtScene" type="Node3D"]
 
@@ -235,3 +236,14 @@ transform = Transform3D(0.854359, 0, 0.519683, 0, 1, 0, -0.519683, 0, 0.854359, 
 
 [node name="fenceLeft62" parent="fenceEnclosure" instance=ExtResource("5_ndppl")]
 transform = Transform3D(0.707872, 0, -0.706342, 0, 1, 0, 0.706342, 0, 0.707872, -5.45933, -2.38419e-07, 9.57726)
+
+[node name="lampPosts" type="Node3D" parent="."]
+
+[node name="lampPost2" parent="lampPosts" instance=ExtResource("6_4ylnu")]
+transform = Transform3D(-0.999832, 0, 0.0183249, 0, 1, 0, -0.0183249, 0, -0.999832, -2.69747, -4.76837e-07, -42.9878)
+
+[node name="lampPost3" parent="lampPosts" instance=ExtResource("6_4ylnu")]
+transform = Transform3D(-0.927752, 0, 0.373198, 0, 1, 0, -0.373198, 0, -0.927752, 2.90756, -4.76837e-07, -20.734)
+
+[node name="lampPost4" parent="lampPosts" instance=ExtResource("6_4ylnu")]
+transform = Transform3D(0.978042, 0, -0.208407, 0, 1, 0, 0.208407, 0, 0.978042, -6.49039, -2.14577e-06, 5.8713)
