@@ -1,0 +1,15 @@
+join priest 2
+priest (Default): The carpenter is dead!!
+priest (Default): We have to vote!
+priest (Default): Alchemist, who do you want to vote for?
+- The priest
+	set {vote} = "priest"
+- The tailor
+	set {vote} = "tailor"
+- The merchant
+	priest (Default): Why is that?
+	priest (Default): Well, fine! Let's vote her!
+	set {vote} = "merchant"
+- The hunter
+	set {vote} = "hunter"
+The person you voted for got burned into ashes

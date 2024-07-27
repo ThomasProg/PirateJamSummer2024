@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="StoryLine" load_steps=5 format=3 uid="uid://ciqnku1od2nx2"]
+[gd_resource type="Resource" script_class="StoryLine" load_steps=6 format=3 uid="uid://ciqnku1od2nx2"]
 
 [ext_resource type="Script" path="res://scripts/dialogues/storyLine.gd" id="1_wxwkv"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/merchant/d_sl1_merchant.dtl" id="2_idc8u"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/timeline.gd" id="2_yt2vn"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/merchant/d_sl2_merchant.dtl" id="3_nwmx0"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/merchant/d_sl3_merchant.dtl" id="4_x31ha"]
 
@@ -9,4 +10,4 @@
 script = ExtResource("1_wxwkv")
 storyLineName = "MerchantStoryLine"
 currentTimelineIndex = 0
-timelines = Array[Resource("res://addons/dialogic/Resources/timeline.gd")]([ExtResource("2_idc8u"), ExtResource("3_nwmx0"), ExtResource("4_x31ha")])
+timelines = Array[ExtResource("2_yt2vn")]([ExtResource("2_idc8u"), ExtResource("3_nwmx0"), ExtResource("4_x31ha")])

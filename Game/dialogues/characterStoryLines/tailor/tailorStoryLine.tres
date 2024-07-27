@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="StoryLine" load_steps=5 format=3 uid="uid://c8w2vkdxqrsk2"]
+[gd_resource type="Resource" script_class="StoryLine" load_steps=6 format=3 uid="uid://c8w2vkdxqrsk2"]
 
 [ext_resource type="Script" path="res://scripts/dialogues/storyLine.gd" id="1_6m8b1"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/timeline.gd" id="2_1p86t"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/tailor/d_sl1_tailor.dtl" id="2_i10jb"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/tailor/d_sl2_tailor.dtl" id="3_f2sl2"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/tailor/d_sl3_tailor.dtl" id="4_ik815"]
@@ -9,4 +10,4 @@
 script = ExtResource("1_6m8b1")
 storyLineName = "TailorStoryLine"
 currentTimelineIndex = 0
-timelines = Array[Resource("res://addons/dialogic/Resources/timeline.gd")]([ExtResource("2_i10jb"), ExtResource("3_f2sl2"), ExtResource("4_ik815")])
+timelines = Array[ExtResource("2_1p86t")]([ExtResource("2_i10jb"), ExtResource("3_f2sl2"), ExtResource("4_ik815")])

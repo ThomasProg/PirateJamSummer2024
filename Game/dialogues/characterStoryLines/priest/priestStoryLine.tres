@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="StoryLine" load_steps=5 format=3 uid="uid://yg8ipgo6cwlj"]
+[gd_resource type="Resource" script_class="StoryLine" load_steps=6 format=3 uid="uid://yg8ipgo6cwlj"]
 
 [ext_resource type="Script" path="res://scripts/dialogues/storyLine.gd" id="1_tnhpl"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/priest/d_sl1_priest.dtl" id="2_ay7y4"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/timeline.gd" id="2_xx538"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/priest/d_sl2_priest.dtl" id="3_2k2m0"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/priest/d_sl3_priest.dtl" id="4_kyr1y"]
 
@@ -9,4 +10,4 @@
 script = ExtResource("1_tnhpl")
 storyLineName = "PriestStoryLine"
 currentTimelineIndex = 0
-timelines = Array[Resource("res://addons/dialogic/Resources/timeline.gd")]([ExtResource("2_ay7y4"), ExtResource("3_2k2m0"), ExtResource("4_kyr1y")])
+timelines = Array[ExtResource("2_xx538")]([ExtResource("2_ay7y4"), ExtResource("3_2k2m0"), ExtResource("4_kyr1y")])
