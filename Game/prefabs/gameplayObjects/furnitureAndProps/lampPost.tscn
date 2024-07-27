@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://7td3ta0ppef7"]
+
+[ext_resource type="PackedScene" uid="uid://duhw1olxfi7er" path="res://art/furniture-props/lampPost.glb" id="1_bbr7g"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_6pn08"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="3_kl08b"]
+[ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="4_h7f6c"]
+
+[node name="lampPost2" instance=ExtResource("1_bbr7g")]
+
+[node name="lampPost_003" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_6pn08")
+surface_material_override/1 = ExtResource("3_kl08b")
+surface_material_override/2 = ExtResource("4_h7f6c")
