@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
 [ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="16_py3ka"]
 
-[sub_resource type="Resource" id="Resource_07uw8"]
+[sub_resource type="Resource" id="Resource_licnc"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -26,18 +26,18 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_u1yic"]
+[sub_resource type="Resource" id="Resource_l1cbn"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
-scale = Vector3(0.1, 0.1, 0.1)
+scale = Vector3(1, 1, 1)
 enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_eke8m"]
+[sub_resource type="Resource" id="Resource_fi26g"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -49,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_0w6k7"]
+[sub_resource type="Resource" id="Resource_0uxwl"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -65,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_sqiim"]
+[sub_resource type="Resource" id="Resource_0a653"]
 script = ExtResource("7_f8o2o")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_07uw8"), SubResource("Resource_u1yic"), SubResource("Resource_eke8m"), SubResource("Resource_0w6k7")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_licnc"), SubResource("Resource_l1cbn"), SubResource("Resource_fi26g"), SubResource("Resource_0uxwl")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -96,26 +96,37 @@ assets = ExtResource("4_oh2n4")
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0941)
 script = ExtResource("6_kfpls")
-modifier_stack = SubResource("Resource_sqiim")
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_0a653")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
-[node name="ScatterItem" type="Node3D" parent="trees"]
+[node name="bushy" type="Node3D" parent="trees"]
 script = ExtResource("12_ws6g0")
-proportion = 200
-source_scale_multiplier = 2.9
+source_scale_multiplier = 2.75
 path = "res://prefabs/gameplayObjects/trees/tree-mk0.tscn"
 
-[node name="ScatterShape" type="Node3D" parent="trees"]
+[node name="spawnArea" type="Node3D" parent="trees"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("13_lgups")
 shape = SubResource("Resource_tr4wi")
 
 [node name="negate" type="Node3D" parent="trees"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 3.81208)
+transform = Transform3D(1.10261, 0, -3.12797e-08, 0, 1, 0, 3.28604e-08, 0, 1.04957, -2.71976, 0, 3.58735)
 script = ExtResource("13_lgups")
 negative = true
 shape = SubResource("Resource_fc7ok")
+
+[node name="leafless" type="Node3D" parent="trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.0941)
+script = ExtResource("12_ws6g0")
+source_scale_multiplier = 3.78
+path = "res://prefabs/gameplayObjects/trees/treeLeafless.tscn"
+
+[node name="leafless-sm" type="Node3D" parent="trees"]
+script = ExtResource("12_ws6g0")
+source_scale_multiplier = 1.905
+path = "res://prefabs/gameplayObjects/trees/treeLeafless.tscn"
 
 [node name="Merchant" parent="." instance=ExtResource("16_py3ka")]
 transform = Transform3D(0.994138, 0.0394827, 0.100655, -0.0398528, 0.999204, 0.00166754, -0.100509, -0.00566915, 0.99492, -13.7056, 0.00117028, -28.3653)
