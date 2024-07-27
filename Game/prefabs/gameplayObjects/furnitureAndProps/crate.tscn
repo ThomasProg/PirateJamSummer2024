@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://tc161yn6qy2g"]
+
+[ext_resource type="PackedScene" uid="uid://i07n80ruwps7" path="res://art/furniture-props/crate.glb" id="1_ubb2n"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_ygy5u"]
+
+[node name="crate2" instance=ExtResource("1_ubb2n")]
+
+[node name="crate" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_ygy5u")
