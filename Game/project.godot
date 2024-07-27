@@ -60,9 +60,7 @@ directories/dtl_directory={
 "d_sl3_tailor": "res://dialogues/characterStoryLines/tailor/d_sl3_tailor.dtl",
 "welcome": "res://dialogues/welcome.dtl"
 }
-variables={
-"vote": "None"
-}
+variables={}
 layout/style_list=["res://VNStyle/style.tres"]
 layout/default_style="res://VNStyle/style.tres"
 glossary/default_case_sensitive=true

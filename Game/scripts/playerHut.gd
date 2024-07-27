@@ -7,4 +7,3 @@ func _ready():
 	var children = toResetColliders.find_children("*", "StaticBody3D", true, false)
 	for child in children:
 		child.position = Vector3.ZERO
-

@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6le685ed7ggh"]
+
+[ext_resource type="PackedScene" uid="uid://t7ei5eudvo27" path="res://art/furniture-props/thatchBed.glb" id="1_b1gm6"]
+[ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="2_mpppp"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="3_1kqom"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="4_56d62"]
+
+[node name="thatchBed" instance=ExtResource("1_b1gm6")]
+
+[node name="bed" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_mpppp")
+surface_material_override/1 = ExtResource("3_1kqom")
+surface_material_override/2 = ExtResource("4_56d62")
