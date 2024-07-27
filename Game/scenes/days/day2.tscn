@@ -79,7 +79,7 @@ interactionDescription = "Click to sleep"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19)
 
 [node name="woodenCart" type="Node3D" parent="."]
-transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.4635, -0.107395, -30.9883)
+transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)
 
 [node name="crate" parent="woodenCart" instance=ExtResource("15_mjudl")]
 transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696, 0.414118, 0.115611, -2.12697)
