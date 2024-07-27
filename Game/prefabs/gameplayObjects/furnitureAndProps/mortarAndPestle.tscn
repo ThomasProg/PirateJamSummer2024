@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://qem08rnfgusn"]
+
+[ext_resource type="PackedScene" uid="uid://cydhgw654ltva" path="res://art/furniture-props/mortarAndPestle.glb" id="1_nehb1"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_nh3lx"]
+
+[node name="mortarAndPestle" instance=ExtResource("1_nehb1")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nh3lx")

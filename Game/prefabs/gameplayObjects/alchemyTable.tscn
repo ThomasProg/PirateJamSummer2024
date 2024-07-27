@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjgg8s1xbkm67"]
+[gd_scene load_steps=14 format=3 uid="uid://cjgg8s1xbkm67"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/alchemyTable.gd" id="1_wr1u7"]
 [ext_resource type="Resource" uid="uid://b5ikawlod3v5a" path="res://inventoryAssets/potions/redPotion.tres" id="2_bk653"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_lwojp"]
 [ext_resource type="Resource" uid="uid://cnnujc7uicalb" path="res://inventoryAssets/potions/yellowPotion.tres" id="3_b6h32"]
 [ext_resource type="PackedScene" uid="uid://djqghbv7n0e3o" path="res://prefabs/gameplayObjects/furnitureAndProps/alchemyTable.tscn" id="4_xgx07"]
+[ext_resource type="PackedScene" uid="uid://qem08rnfgusn" path="res://prefabs/gameplayObjects/furnitureAndProps/mortarAndPestle.tscn" id="6_t15fu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7r6gh"]
 radius = 1.5
@@ -97,6 +98,9 @@ metadata/_edit_lock_ = true
 script = ExtResource("2_lwojp")
 interactionName = "Yellow Potion"
 interactionDescription = "Click to brew"
+
+[node name="mortarAndPestle" parent="." instance=ExtResource("6_t15fu")]
+transform = Transform3D(1.06811, 0, 0, 0, 1.52001, 0, 0, 0, 1, 0.279404, 0.795851, 0.0910415)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
