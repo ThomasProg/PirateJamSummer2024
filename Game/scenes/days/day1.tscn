@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://6n2ce7kv80pm"]
+[gd_scene load_steps=19 format=3 uid="uid://6n2ce7kv80pm"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1vf5r"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_n5mh3"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="9_4d5n5"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_tailor.dtl" id="10_yejgd"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_carpenter.dtl" id="12_fc5d1"]
+[ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="16_c21gf"]
+[ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="17_fpghp"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
@@ -47,7 +49,7 @@ script = ExtResource("4_vk6kb")
 timeline = ExtResource("6_8hbyc")
 
 [node name="Merchant" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("7_vq5my")]
-transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -9.43728, 0, -30.1713)
+transform = Transform3D(-0.912613, 0, 0.408824, 0, 1, 0, -0.408824, 0, -0.912613, -9.43728, 0, -30.1713)
 sharedDialogue = NodePath("MerchantDialogue")
 
 [node name="MerchantDialogue" type="Node" parent="GameplayObjects/Merchant"]
@@ -83,3 +85,12 @@ nextDayPath = "res://scenes/days/day2.tscn"
 script = ExtResource("4_vi4if")
 interactionName = "Bed"
 interactionDescription = "Click to sleep"
+
+[node name="woodenCart" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4717, 0, -28.0187)
+
+[node name="crate" parent="woodenCart" instance=ExtResource("16_c21gf")]
+transform = Transform3D(-0.567738, 0.139094, -0.135377, 0.149671, 0.580174, -0.031577, 0.123584, -0.063649, -0.583675, 2.07088, 0.397393, -0.493607)
+
+[node name="cart" parent="woodenCart" instance=ExtResource("17_fpghp")]
+transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)

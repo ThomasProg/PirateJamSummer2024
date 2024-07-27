@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cy8u56ullhoqr"]
+[gd_scene load_steps=18 format=3 uid="uid://cy8u56ullhoqr"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_lg165"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_q54yj"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="13_lrkyk"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="14_e62rb"]
 [ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="14_hqtgx"]
+[ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="15_mjudl"]
+[ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="16_mx6qv"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
@@ -75,3 +77,12 @@ interactionDescription = "Click to sleep"
 
 [node name="Calendula" parent="." instance=ExtResource("14_hqtgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19)
+
+[node name="woodenCart" type="Node3D" parent="."]
+transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.4635, -0.107395, -30.9883)
+
+[node name="crate" parent="woodenCart" instance=ExtResource("15_mjudl")]
+transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696, 0.414118, 0.115611, -2.12697)
+
+[node name="cart" parent="woodenCart" instance=ExtResource("16_mx6qv")]
+transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)

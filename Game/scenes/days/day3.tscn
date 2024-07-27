@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4jqhy4013i3t"]
+[gd_scene load_steps=20 format=3 uid="uid://c4jqhy4013i3t"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_232fl"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_ppn40"]
@@ -16,6 +16,8 @@
 [ext_resource type="Resource" uid="uid://cwt1qmyu68dah" path="res://dialogues/characterStoryLines/carpenter/carpenterStoryLine.tres" id="14_2g0xd"]
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="14_ix0bv"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_tailor.dtl" id="14_n6oq2"]
+[ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="17_ubib6"]
+[ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="18_ywu8n"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
@@ -56,7 +58,7 @@ dialogue = NodePath("../HunterDialogue")
 baseStoryLine = ExtResource("8_u12km")
 
 [node name="Merchant" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("7_joeqx")]
-transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -12.5013, 0, -31.4773)
+transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -14.4307, 0, -29.5039)
 sharedDialogue = NodePath("MerchantDialogue")
 
 [node name="MerchantDialogue" type="Node" parent="GameplayObjects/Merchant"]
@@ -79,10 +81,8 @@ script = ExtResource("5_xixsj")
 dialogue = NodePath("../CarpenterDialogue")
 baseStoryLine = ExtResource("14_2g0xd")
 
-[node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("interactable", "sharedDialogue") instance=ExtResource("9_poxsl")]
+[node name="Tailor" parent="GameplayObjects" instance=ExtResource("9_poxsl")]
 transform = Transform3D(-0.677903, 0, 0.735151, 0, 1, 0, -0.735151, 0, -0.677903, -9.3758, 0, -11.4412)
-interactable = NodePath("")
-sharedDialogue = NodePath("")
 
 [node name="TailorDialogue" type="Node" parent="GameplayObjects/Tailor"]
 script = ExtResource("4_bn7ue")
@@ -101,3 +101,12 @@ nextDayPath = "res://scenes/days/day4.tscn"
 script = ExtResource("14_ix0bv")
 interactionName = "Bed"
 interactionDescription = "Click to sleep"
+
+[node name="woodenCart" type="Node3D" parent="."]
+transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.4635, -0.107395, -30.9883)
+
+[node name="crate" parent="woodenCart" instance=ExtResource("17_ubib6")]
+transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696, 0.414118, 0.115611, -2.12697)
+
+[node name="cart" parent="woodenCart" instance=ExtResource("18_ywu8n")]
+transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd2sokl2hqfxm"]
+
+[ext_resource type="PackedScene" uid="uid://bykafyoq1e1yu" path="res://art/furniture-props/cart.glb" id="1_1j3gm"]
+[ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_ifobo"]
+[ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_sesn1"]
+
+[node name="cart" instance=ExtResource("1_1j3gm")]
+
+[node name="cart" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ifobo")
+surface_material_override/1 = ExtResource("3_sesn1")

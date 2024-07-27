@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://5gr2h7l2dewa"]
+[gd_scene load_steps=9 format=3 uid="uid://5gr2h7l2dewa"]
 
 [ext_resource type="PackedScene" uid="uid://wqy2d82p2qpe" path="res://prefabs/gameplayObjects/buildings/npcHutWood.tscn" id="2_e12ab"]
 [ext_resource type="PackedScene" uid="uid://rteyeco40n51" path="res://prefabs/gameplayObjects/buildings/church.tscn" id="3_8a2oo"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="3_gdnqo"]
+[ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="4_x02g1"]
 [ext_resource type="PackedScene" uid="uid://cqwbudfy1f435" path="res://prefabs/gameplayObjects/buildings/parts/hutExtension.tscn" id="4_yjing"]
 [ext_resource type="PackedScene" uid="uid://t78gk6woj4gv" path="res://prefabs/gameplayObjects/furnitureAndProps/fenceLeft.tscn" id="5_ndppl"]
 [ext_resource type="PackedScene" uid="uid://cu7oh25dvuelt" path="res://prefabs/gameplayObjects/buildings/playerHutMk4.tscn" id="5_x4sbc"]
@@ -20,10 +21,14 @@ transform = Transform3D(-0.999992, 0, 0.00410143, 0, 1, 0, -0.00410143, 0, -0.99
 transform = Transform3D(0.408018, 0, -0.439911, 0, 0.6, 0, 0.439911, 0, 0.408018, 0.972366, 0, -2.77432)
 
 [node name="crate2" parent="npcHutWood-merchant/hutExtension" instance=ExtResource("3_gdnqo")]
-transform = Transform3D(0.254814, 0, -0.543204, 0, 0.6, 0, 0.543204, 0, 0.254814, 1.36405, 0, -1.51904)
+transform = Transform3D(0.205351, 0, -0.517041, 0, 0.48, 0, 0.43776, 0, 0.242541, 1.31438, -0.0291099, -1.61204)
 
 [node name="crate3" parent="npcHutWood-merchant/hutExtension" instance=ExtResource("3_gdnqo")]
-transform = Transform3D(0.41836, 0, -0.249769, 0, 0.322147, 0, 0.205387, 0, 0.508762, 1.11219, 1.28246, -2.20853)
+transform = Transform3D(0.386654, 0, -0.22496, 0, 0.273696, 0, 0.189822, 0, 0.458229, 0.972771, 1.28246, -2.53485)
+
+[node name="cart2" parent="npcHutWood-merchant/hutExtension" instance=ExtResource("4_x02g1")]
+transform = Transform3D(-0.209124, 0, 0.977891, 0, 1, 0, -0.977891, 0, -0.209124, 3.72253, 0, 1.1231)
+visible = false
 
 [node name="npcHutWood-tailor" parent="." instance=ExtResource("2_e12ab")]
 transform = Transform3D(-0.972386, 0, -0.233377, 0, 1, 0, 0.233377, 0, -0.972386, -11.6512, 0, -4.38897)

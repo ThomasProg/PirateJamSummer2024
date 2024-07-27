@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://j7nagwydbbem"]
+[gd_scene load_steps=24 format=3 uid="uid://j7nagwydbbem"]
 
 [ext_resource type="Terrain3DStorage" uid="uid://dhe35d6tu5nqe" path="res://art/terrain/terrain_3d_storage.res" id="2_rp6qt"]
 [ext_resource type="Terrain3DMaterial" uid="uid://ip3m313vko7v" path="res://art/terrain/terrain_3d_material.tres" id="3_te6cu"]
@@ -15,8 +15,9 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_lgups"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="14_eagwk"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
+[ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="16_py3ka"]
 
-[sub_resource type="Resource" id="Resource_ckm4e"]
+[sub_resource type="Resource" id="Resource_v3rcg"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -25,7 +26,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_jhg3i"]
+[sub_resource type="Resource" id="Resource_tmorx"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -36,7 +37,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_qwykl"]
+[sub_resource type="Resource" id="Resource_qdvgj"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -48,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_83olo"]
+[sub_resource type="Resource" id="Resource_kf1e7"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -64,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_6ac5p"]
+[sub_resource type="Resource" id="Resource_fn51w"]
 script = ExtResource("7_f8o2o")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_ckm4e"), SubResource("Resource_jhg3i"), SubResource("Resource_qwykl"), SubResource("Resource_83olo")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_v3rcg"), SubResource("Resource_tmorx"), SubResource("Resource_qdvgj"), SubResource("Resource_kf1e7")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -95,7 +96,7 @@ assets = ExtResource("4_oh2n4")
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0941)
 script = ExtResource("6_kfpls")
-modifier_stack = SubResource("Resource_6ac5p")
+modifier_stack = SubResource("Resource_fn51w")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -115,3 +116,7 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 3.
 script = ExtResource("13_lgups")
 negative = true
 shape = SubResource("Resource_fc7ok")
+
+[node name="Merchant" parent="." instance=ExtResource("16_py3ka")]
+transform = Transform3D(0.994138, 0.0394827, 0.100655, -0.0398528, 0.999204, 0.00166754, -0.100509, -0.00566915, 0.99492, -13.7056, 0.00117028, -28.3653)
+visible = false

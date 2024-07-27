@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://6giwoxpd8a18"]
+[gd_scene load_steps=20 format=3 uid="uid://6giwoxpd8a18"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_x6bgo"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_x0074"]
@@ -16,6 +16,8 @@
 [ext_resource type="Resource" uid="uid://ciqnku1od2nx2" path="res://dialogues/characterStoryLines/merchant/merchantStoryLine.tres" id="10_jexgi"]
 [ext_resource type="Resource" uid="uid://c8w2vkdxqrsk2" path="res://dialogues/characterStoryLines/tailor/tailorStoryLine.tres" id="12_ymbrh"]
 [ext_resource type="Resource" uid="uid://cwt1qmyu68dah" path="res://dialogues/characterStoryLines/carpenter/carpenterStoryLine.tres" id="14_1xemx"]
+[ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="17_1rc61"]
+[ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="18_pyi63"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
@@ -56,7 +58,7 @@ dialogue = NodePath("../HunterDialogue")
 baseStoryLine = ExtResource("8_74wmx")
 
 [node name="Merchant" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("5_ae0ry")]
-transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -12.5013, 0, -31.4773)
+transform = Transform3D(0.836592, 0, 0.547826, 0, 1, 0, -0.547826, 0, 0.836592, -14.3206, 0, -29.9573)
 sharedDialogue = NodePath("MerchantDialogue")
 
 [node name="MerchantDialogue" type="Node" parent="GameplayObjects/Merchant"]
@@ -104,3 +106,12 @@ nextDayPath = "res://scenes/days/day5.tscn"
 script = ExtResource("9_urjhn")
 interactionName = "Bed"
 interactionDescription = "Click to sleep"
+
+[node name="woodenCart" type="Node3D" parent="."]
+transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.4635, -0.107395, -30.9883)
+
+[node name="crate" parent="woodenCart" instance=ExtResource("17_1rc61")]
+transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696, 0.414118, 0.115611, -2.12697)
+
+[node name="cart" parent="woodenCart" instance=ExtResource("18_pyi63")]
+transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)
