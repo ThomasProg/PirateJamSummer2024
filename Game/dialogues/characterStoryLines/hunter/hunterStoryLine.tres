@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="StoryLine" load_steps=5 format=3 uid="uid://cw0i06hasv30g"]
+[gd_resource type="Resource" script_class="StoryLine" load_steps=6 format=3 uid="uid://cw0i06hasv30g"]
 
 [ext_resource type="Script" path="res://scripts/dialogues/storyLine.gd" id="1_jnvwk"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/hunter/d_sl1_hunter.dtl" id="2_85gnm"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/timeline.gd" id="2_rrwrk"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/hunter/d_sl2_hunter.dtl" id="3_pg3x1"]
 [ext_resource type="Resource" path="res://dialogues/characterStoryLines/hunter/d_sl3_hunter.dtl" id="4_gghd3"]
 
@@ -9,4 +10,4 @@
 script = ExtResource("1_jnvwk")
 storyLineName = "HunterStoryLine"
 currentTimelineIndex = 0
-timelines = Array[Resource("res://addons/dialogic/Resources/timeline.gd")]([ExtResource("2_85gnm"), ExtResource("3_pg3x1"), ExtResource("4_gghd3")])
+timelines = Array[ExtResource("2_rrwrk")]([ExtResource("2_85gnm"), ExtResource("3_pg3x1"), ExtResource("4_gghd3")])

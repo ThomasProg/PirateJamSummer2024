@@ -1,0 +1,18 @@
+join tailor 2
+tailor (Default): Thank you for the potion!!
+tailor (Default): Who do you want to talk about?
+- Hunter
+	tailor (Default): The hunter? He's scary
+	tailor (Default): He's also been looking really tired recently...
+	tailor (Default): As if he was spending his nights hunting people
+- Merchant
+	tailor (Default): I don't know, I haven't really talked to her a lot
+- Priest
+	tailor (Default): Hmmm...
+	tailor (Default): I don't know
+	tailor (Default): He appears like someone we can depend on, since he's the one leading, but
+	tailor (Default): He tells us to not suspect each other
+	tailor (Default): Under these circumstances, it's a bit weird...
+- Carpenter
+	tailor (Default): He looks sweet
+	tailor (Default): I don't think it's him

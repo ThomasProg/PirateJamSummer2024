@@ -1,0 +1,4 @@
+merchant (Default): Here, as a token of our new friendship.
+merchant: Take that, some honey.
+do GameManager.giveHoney()
+merchant: Take care!

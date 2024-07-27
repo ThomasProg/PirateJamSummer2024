@@ -15,6 +15,8 @@ extends Node
 # etc
 @export var saveKey:int = 0
 
+@export var honey:InventoryIngredientItem = preload("res://inventoryAssets/ingredients/honeyIngr.tres")
+
 var player:Player
 
 func tryLoadAtKey(saveKey:int):
@@ -141,3 +143,9 @@ func _ready():
 			filename = dir.get_next()
 
 	DirAccess.remove_absolute(saveGamePath)
+
+func giveHoney():
+	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
+	playerInv.ingredientInventory.addItem(honey)
+	
+	

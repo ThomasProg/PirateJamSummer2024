@@ -37,6 +37,12 @@ directories/dtl_directory={
 "d1_priest": "res://dialogues/day1/d1_priest.dtl",
 "d1_tailor": "res://dialogues/day1/d1_tailor.dtl",
 "d2_group": "res://dialogues/day2/d2_group.dtl",
+"d6_hunter": "res://dialogues/day6/d6_hunter.dtl",
+"d6_merchant": "res://dialogues/day6/d6_merchant.dtl",
+"d6_priest": "res://dialogues/day6/d6_priest.dtl",
+"d6_tailor": "res://dialogues/day6/d6_tailor.dtl",
+"d7_group": "res://dialogues/day7/d7_group.dtl",
+"d8_group": "res://dialogues/day8/d8_group.dtl",
 "d_sl1_carpenter": "res://dialogues/characterStoryLines/carpenter/d_sl1_carpenter.dtl",
 "d_sl1_hunter": "res://dialogues/characterStoryLines/hunter/d_sl1_hunter.dtl",
 "d_sl1_merchant": "res://dialogues/characterStoryLines/merchant/d_sl1_merchant.dtl",
@@ -54,7 +60,9 @@ directories/dtl_directory={
 "d_sl3_tailor": "res://dialogues/characterStoryLines/tailor/d_sl3_tailor.dtl",
 "welcome": "res://dialogues/welcome.dtl"
 }
-variables={}
+variables={
+"vote": "None"
+}
 layout/style_list=["res://VNStyle/style.tres"]
 layout/default_style="res://VNStyle/style.tres"
 glossary/default_case_sensitive=true

@@ -1,1 +1,10 @@
-priest (Default): The wolf has attacked!!
+carpenter (Default): The werewolf has attacked!!
+merchant (Default): I thought it was a wolf, I've only heard some noises.
+tailor(Default): *Stares at the hunter*
+hunter(Default): Don't look at me, I won't try to hunt it.
+tailor(Default): But he's probably one of us!!
+priest(Default): Let's not start accusing each other.
+priest: Distrust will lead us nowhere.
+priest: I believe in all of you.
+priest: The werewolf is probably just hiding in the forest during the day.
+
