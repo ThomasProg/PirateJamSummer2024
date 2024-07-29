@@ -19,6 +19,13 @@ func _ready() -> void:
 		
 	for idx in hiddenObjectives:
 		objectifNodes[idx].visible = false
+		
+	await get_tree().process_frame
+	if (GameManager.actionPointSystem != null):
+		GameManager.actionPointSystem.onNoPoints.connect(func():
+			hideObjectif(0)
+			showObjectif(1)
+			)
 
 func hideObjectif(index:int):
 	objectifNodes[index].visible = false

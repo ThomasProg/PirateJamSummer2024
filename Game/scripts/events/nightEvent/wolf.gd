@@ -44,10 +44,8 @@ func setRandomEyeColor():
 	eyeColor = EyeColor.values()[randi()%EyeColor.size() ]
 	match eyeColor:
 		EyeColor.RED:
-			#sprite.modulate = Color.DARK_RED
 			sprite.texture = redEyesTex
 		EyeColor.YELLOW:
-			#sprite.modulate = Color.YELLOW
 			sprite.texture = yellowEyesTex
 	
 # Called when the node enters the scene tree for the first time.

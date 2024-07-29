@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://boe8ayyomb35j"]
+
+[ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="1_gmxd7"]
+
+[node name="DayUI" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_gmxd7")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 55.0
+offset_top = 106.0
+offset_right = 165.0
+offset_bottom = 131.0
+rotation = -0.785398
+bbcode_enabled = true
+text = "[center][b]NIGHT TIME[/b][/center]"
+fit_content = true

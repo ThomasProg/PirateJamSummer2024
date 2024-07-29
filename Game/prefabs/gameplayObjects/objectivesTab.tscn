@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwqa40li7tflu"]
+[gd_scene load_steps=4 format=3 uid="uid://bwqa40li7tflu"]
 
 [ext_resource type="Script" path="res://scripts/objectivesTab.gd" id="1_iycyg"]
 [ext_resource type="PackedScene" uid="uid://drkfqvwnq2u7u" path="res://prefabs/gameplayObjects/objectifPrefab.tscn" id="2_docy7"]
+[ext_resource type="FontFile" uid="uid://bpm3pkttxpjel" path="res://fonts/fontThemes/ABeeZee-Regular.ttf" id="3_v8t4f"]
 
 [node name="Objectives" type="CanvasLayer" node_paths=PackedStringArray("objectivesContainer")]
 layer = 0
 script = ExtResource("1_iycyg")
+objectives = Array[String](["- Talk to the villagers", "- Go to bed"])
+hiddenObjectives = Array[int]([1])
 objectivesContainer = NodePath("PanelContainer/MarginContainer/VBoxContainer")
 objectifPrefab = ExtResource("2_docy7")
 
@@ -14,9 +17,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -294.0
-offset_top = 25.0
+offset_top = 250.0
 offset_right = -30.0
-offset_bottom = 89.0
+offset_bottom = 314.0
 grow_horizontal = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -31,5 +34,6 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_v8t4f")
 text = "Objectives:"
 fit_content = true

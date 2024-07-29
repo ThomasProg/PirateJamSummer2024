@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://j7nagwydbbem"]
+[gd_scene load_steps=24 format=3 uid="uid://j7nagwydbbem"]
 
 [ext_resource type="Terrain3DStorage" uid="uid://dhe35d6tu5nqe" path="res://art/terrain/terrain_3d_storage.res" id="2_rp6qt"]
 [ext_resource type="Terrain3DMaterial" uid="uid://ip3m313vko7v" path="res://art/terrain/terrain_3d_material.tres" id="3_te6cu"]
@@ -16,9 +16,8 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_lgups"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="14_eagwk"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
-[ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="16_py3ka"]
 
-[sub_resource type="Resource" id="Resource_svn1j"]
+[sub_resource type="Resource" id="Resource_5tx7e"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -27,7 +26,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_3k3hb"]
+[sub_resource type="Resource" id="Resource_v2nu7"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -38,7 +37,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kphgw"]
+[sub_resource type="Resource" id="Resource_xh2gk"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -50,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_h5m11"]
+[sub_resource type="Resource" id="Resource_dxx56"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -66,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_8mqp4"]
+[sub_resource type="Resource" id="Resource_31egi"]
 script = ExtResource("7_f8o2o")
-stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_svn1j"), SubResource("Resource_3k3hb"), SubResource("Resource_kphgw"), SubResource("Resource_h5m11")])
+stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_5tx7e"), SubResource("Resource_v2nu7"), SubResource("Resource_xh2gk"), SubResource("Resource_dxx56")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -98,7 +97,7 @@ assets = ExtResource("4_oh2n4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0941)
 script = ExtResource("6_kfpls")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_8mqp4")
+modifier_stack = SubResource("Resource_31egi")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -128,7 +127,3 @@ path = "res://prefabs/gameplayObjects/trees/treeLeafless.tscn"
 script = ExtResource("12_ws6g0")
 source_scale_multiplier = 1.905
 path = "res://prefabs/gameplayObjects/trees/treeLeafless.tscn"
-
-[node name="Merchant" parent="." instance=ExtResource("16_py3ka")]
-transform = Transform3D(0.994138, 0.0394827, 0.100655, -0.0398528, 0.999204, 0.00166754, -0.100509, -0.00566915, 0.99492, -13.7056, 0.00117028, -28.3653)
-visible = false

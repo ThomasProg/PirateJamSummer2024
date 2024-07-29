@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://fahaah8lfrw0"]
+[gd_scene load_steps=9 format=3 uid="uid://fahaah8lfrw0"]
 
 [ext_resource type="Script" path="res://scripts/inventory/craftInventory.gd" id="1_sqmg8"]
+[ext_resource type="Script" path="res://scripts/inventory/craftRecipe.gd" id="2_7lp3y"]
 [ext_resource type="Texture2D" uid="uid://bku25qj0sjo63" path="res://icon.svg" id="2_iyhuh"]
 [ext_resource type="Resource" uid="uid://c7pa0dr1gk5aa" path="res://inventoryAssets/recipes/deterringPotionCraft.tres" id="2_q0r66"]
 [ext_resource type="Resource" uid="uid://icsl0d0gpxhh" path="res://inventoryAssets/recipes/invisibilityPotionCraft.tres" id="3_3s3pe"]
@@ -10,15 +11,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="CraftInventory" type="Control" node_paths=PackedStringArray("craftInParent", "craftOutTexture", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton")]
-layout_mode = 3
+[node name="CraftInventory" type="Panel" node_paths=PackedStringArray("craftInParent", "craftOutTexture", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sqmg8")
-availableRecipes = Array[Resource("res://scripts/inventory/craftRecipe.gd")]([ExtResource("2_q0r66"), ExtResource("3_3s3pe"), ExtResource("4_358wx")])
+availableRecipes = Array[ExtResource("2_7lp3y")]([ExtResource("2_q0r66"), ExtResource("3_3s3pe"), ExtResource("4_358wx")])
 slotPrefab = ExtResource("4_hgh1y")
 craftInParent = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/RequiredItemsSlots")
 craftOutTexture = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer/CraftOutTextureRect")

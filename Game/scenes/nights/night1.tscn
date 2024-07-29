@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://rj0gs5dnv0mj"]
+[gd_scene load_steps=20 format=3 uid="uid://rj0gs5dnv0mj"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_4g165"]
 [ext_resource type="Script" path="res://scripts/night.gd" id="1_dxrap"]
@@ -12,8 +12,31 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_4h4ay"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_foyvl"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_tca7t"]
+[ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_r4ups"]
 
-[sub_resource type="Resource" id="Resource_7oyde"]
+[sub_resource type="Environment" id="Environment_dw1s4"]
+glow_enabled = true
+glow_levels/1 = 10.9
+glow_levels/2 = 7.85
+glow_levels/3 = 7.85
+glow_levels/4 = 9.15
+glow_levels/5 = 20.2
+glow_levels/6 = 37.75
+glow_levels/7 = 40.95
+glow_strength = 0.55
+glow_bloom = 1.0
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 88.9
+glow_map_strength = 0.0
+fog_light_color = Color(0.703482, 0.788036, 0.777639, 1)
+fog_light_energy = 0.59
+fog_density = 0.001
+volumetric_fog_enabled = true
+adjustment_brightness = 0.65
+adjustment_contrast = 0.9
+
+[sub_resource type="Resource" id="Resource_fw7ew"]
 script = ExtResource("3_qo4fm")
 amount = 75
 enabled = true
@@ -22,7 +45,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_soe7d"]
+[sub_resource type="Resource" id="Resource_t70ys"]
 script = ExtResource("4_xg8r6")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -33,7 +56,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kcbqo"]
+[sub_resource type="Resource" id="Resource_vt5nc"]
 script = ExtResource("5_4h4ay")
 iterations = 3
 offset_step = 0.2
@@ -45,7 +68,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_2mv4m"]
+[sub_resource type="Resource" id="Resource_yl2jl"]
 script = ExtResource("6_foyvl")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -61,9 +84,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_d2gnp"]
+[sub_resource type="Resource" id="Resource_5ie4u"]
 script = ExtResource("2_a3oyh")
-stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_7oyde"), SubResource("Resource_soe7d"), SubResource("Resource_kcbqo"), SubResource("Resource_2mv4m")])
+stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_fw7ew"), SubResource("Resource_t70ys"), SubResource("Resource_vt5nc"), SubResource("Resource_yl2jl")])
 
 [node name="Night1" type="Node3D"]
 script = ExtResource("1_dxrap")
@@ -73,8 +96,11 @@ script = ExtResource("1_dxrap")
 [node name="DirectionalLight3D" parent="VillageEnvScene" index="0"]
 visible = false
 
+[node name="WorldEnvironment" parent="VillageEnvScene/WorldEnvDay" index="0"]
+environment = SubResource("Environment_dw1s4")
+
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_d2gnp")
+modifier_stack = SubResource("Resource_5ie4u")
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
@@ -99,7 +125,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.857589, 1.16397, 4.38419)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 
 [node name="Wolf" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_ymt8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 0.564568, 0.00165534)
 target = NodePath("../Player")
 maxAggro = 40.0
 
@@ -113,5 +139,8 @@ omni_attenuation = 0.0136023
 [node name="Objectives" parent="." instance=ExtResource("12_tca7t")]
 objectives = Array[String](["- Escape the gaze of the werewolf", "- Survive the night"])
 
+[node name="DayUI" parent="." instance=ExtResource("13_r4ups")]
+
 [editable path="VillageEnvScene"]
+[editable path="VillageEnvScene/WorldEnvDay"]
 [editable path="NightEvent"]

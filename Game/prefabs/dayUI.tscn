@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://6qyvtyy4jjuo"]
+
+[ext_resource type="Texture2D" uid="uid://cuf07pdtcoixx" path="res://art/ui/ui_day_icon.png" id="1_if8uv"]
+[ext_resource type="FontFile" uid="uid://bpm3pkttxpjel" path="res://fonts/fontThemes/ABeeZee-Regular.ttf" id="2_c1kaq"]
+
+[node name="DayUI" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_if8uv")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 55.0
+offset_top = 106.0
+offset_right = 165.0
+offset_bottom = 131.0
+rotation = -0.785398
+theme_override_fonts/normal_font = ExtResource("2_c1kaq")
+bbcode_enabled = true
+text = "[center][b]DAY TIME[/b][/center]"
+fit_content = true

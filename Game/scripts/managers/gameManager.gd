@@ -20,6 +20,7 @@ extends Node
 var isDay:bool = true
 var player:Player
 var objectivesTab:ObjectivesTab
+var actionPointSystem:ActionPointSystem
 
 func hideObjectif(idx:int):
 	objectivesTab.hideObjectif(idx)

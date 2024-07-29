@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://6n2ce7kv80pm"]
+[gd_scene load_steps=21 format=3 uid="uid://6n2ce7kv80pm"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1vf5r"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_el4dr"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="16_c21gf"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="17_fpghp"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="18_65wl1"]
+[ext_resource type="PackedScene" uid="uid://bj0jbnlepr72h" path="res://prefabs/actionPointSystem.tscn" id="19_k8vvc"]
+[ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="20_dx31b"]
 
 [node name="Day1" type="Node3D"]
 script = ExtResource("1_el4dr")
@@ -87,5 +89,7 @@ transform = Transform3D(-0.567738, 0.139094, -0.135377, 0.149671, 0.580174, -0.0
 transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)
 
 [node name="Objectives" parent="." instance=ExtResource("18_65wl1")]
-objectives = Array[String](["- Talk to the villagers", "- Go to bed"])
-hiddenObjectives = Array[int]([1])
+
+[node name="ActionPointSystem" parent="." instance=ExtResource("19_k8vvc")]
+
+[node name="DayUI" parent="." instance=ExtResource("20_dx31b")]

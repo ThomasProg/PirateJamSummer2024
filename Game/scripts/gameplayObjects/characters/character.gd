@@ -11,6 +11,7 @@ func _ready():
 		
 	interactable.onInteracted.connect(func(player: Player):				
 		sharedDialogue.play(self, player)			
+		GameManager.actionPointSystem.removePoint()
 	)
 	
 	sharedDialogue.onStarted.connect(func(characterTalkedTo:Character, player: Player):
