@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp0146bk3x36r"]
+[gd_scene load_steps=10 format=3 uid="uid://cp0146bk3x36r"]
 
 [ext_resource type="Script" path="res://scripts/cinematics/loadingScreen.gd" id="1_pt8rt"]
 [ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="2_5041r"]
+[ext_resource type="AudioStream" uid="uid://bgs82f0qedas3" path="res://audio/sfx/ui/sfx_ui_wwolfgameover.wav" id="2_d0imq"]
 [ext_resource type="Texture2D" uid="uid://bdfsy11wfxxp5" path="res://art/ui/ui_day_icon_transition.png" id="3_s6f2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq8rt"]
@@ -49,6 +50,7 @@ _data = {
 script = ExtResource("1_pt8rt")
 content = NodePath("CanvasLayer/Panel")
 isItGameOver = true
+sfx = ExtResource("2_d0imq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

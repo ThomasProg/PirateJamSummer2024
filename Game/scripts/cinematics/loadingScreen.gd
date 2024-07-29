@@ -18,6 +18,8 @@ var fromSprite: Sprite2D
 var toSprite: Sprite2D
 var animationPlayer: AnimationPlayer
 
+@export var sfx: AudioStream
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	content.modulate = Color(1.0, 1.0, 1.0, 0.0)
@@ -27,6 +29,13 @@ func _ready():
 	toSprite.visible = false
 	if isItGameOver:
 		fromSprite.visible = false
+	
+	var audioPlayer = AudioStreamPlayer.new()
+	audioPlayer.stream = sfx
+	add_child(audioPlayer)
+	audioPlayer.play()
+	audioPlayer.finished.connect(func():
+		audioPlayer.queue_free())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
