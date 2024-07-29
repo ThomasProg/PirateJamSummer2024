@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("2_f4dhm")
 effectPrefab = ExtResource("1_gybbm")
+isThrowable = true
 name = "Deterring Potion"
 description = "Prevents the werewolf from appearing around that spot for 10s."
 texture = ExtResource("3_6fce5")

@@ -5,4 +5,3 @@ class_name Interactable
 @export var interactionDescription:String = "Click to [...]"
 
 signal onInteracted(player:Player)
-

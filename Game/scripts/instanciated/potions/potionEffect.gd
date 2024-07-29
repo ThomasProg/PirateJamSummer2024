@@ -20,5 +20,3 @@ func spawnParticles():
 func runEffect():
 	spawnParticles()
 	queue_free()
-
-

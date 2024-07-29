@@ -7,6 +7,11 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	await get_tree().process_frame
+	
+	if (GameManager.isDay):
+		return
+	
 	potionSelector.onNewItemSelected.connect(func(item:InventoryItem):
 		if (item == null):
 			itemNameText.visible = false

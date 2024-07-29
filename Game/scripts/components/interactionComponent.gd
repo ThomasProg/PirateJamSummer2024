@@ -2,6 +2,7 @@ extends Node
 class_name InteractionComponent
 
 @export var interactionRaycast:RayCast3D
+@export var parent:Control
 @export var interactionNameText:RichTextLabel
 @export var interactionDescText:RichTextLabel
 
@@ -9,6 +10,7 @@ var collidedLastFrame:bool = false
 var enabled = true
 
 func hideFeedback():
+	parent.visible = false
 	interactionNameText.visible = false
 	interactionDescText.visible = false
 
@@ -28,6 +30,7 @@ func _physics_process(delta):
 			interactionNameText.visible = true
 			interactionDescText.text = "[center]" + interactable.interactionDescription + "[/center]"
 			interactionDescText.visible = true
+			parent.visible = true
 			
 			isCollidingThisFrame = true
 				

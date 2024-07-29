@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy8u56ullhoqr"]
+[gd_scene load_steps=19 format=3 uid="uid://cy8u56ullhoqr"]
 
+[ext_resource type="Script" path="res://scripts/day.gd" id="1_0rold"]
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_lg165"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_q54yj"]
 [ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="3_hgolj"]
@@ -20,6 +21,7 @@
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
 [node name="Day2" type="Node3D"]
+script = ExtResource("1_0rold")
 metadata/_edit_lock_ = true
 
 [node name="VillageEnvScene" parent="." instance=ExtResource("1_lg165")]

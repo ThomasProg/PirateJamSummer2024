@@ -80,3 +80,8 @@ func _input(event: InputEvent):
 func _ready():
 	if not(playerInv.potionInventory.isEmpty()):
 		selectNextValidItem()
+		
+	await get_tree().process_frame
+	
+	if (GameManager.isDay):
+		queue_free()

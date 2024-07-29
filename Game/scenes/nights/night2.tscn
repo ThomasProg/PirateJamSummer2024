@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://crmkeo1y177pj"]
+[gd_scene load_steps=17 format=3 uid="uid://crmkeo1y177pj"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_hh6k6"]
+[ext_resource type="Script" path="res://scripts/night.gd" id="1_psyoj"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="2_7de4c"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="3_lnm5u"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="4_bguu4"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="4_otpvx"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_3bldi"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_lnxgp"]
@@ -10,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="8_h6qw4"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="9_mcif6"]
 
-[sub_resource type="Resource" id="Resource_hx8t8"]
+[sub_resource type="Resource" id="Resource_d54ql"]
 script = ExtResource("3_lnm5u")
 amount = 75
 enabled = true
@@ -19,7 +21,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_u5lxj"]
+[sub_resource type="Resource" id="Resource_hjvks"]
 script = ExtResource("4_otpvx")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -30,7 +32,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_a0af3"]
+[sub_resource type="Resource" id="Resource_mg253"]
 script = ExtResource("5_3bldi")
 iterations = 3
 offset_step = 0.2
@@ -42,7 +44,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_hitjh"]
+[sub_resource type="Resource" id="Resource_4kflk"]
 script = ExtResource("6_lnxgp")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -58,11 +60,12 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_bfk6w"]
+[sub_resource type="Resource" id="Resource_lswyh"]
 script = ExtResource("2_7de4c")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_hx8t8"), SubResource("Resource_u5lxj"), SubResource("Resource_a0af3"), SubResource("Resource_hitjh")])
+stack = Array[ExtResource("4_bguu4")]([SubResource("Resource_d54ql"), SubResource("Resource_hjvks"), SubResource("Resource_mg253"), SubResource("Resource_4kflk")])
 
 [node name="Night2" type="Node3D"]
+script = ExtResource("1_psyoj")
 
 [node name="VillageEnvScene" parent="." instance=ExtResource("1_hh6k6")]
 
@@ -70,7 +73,7 @@ stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_bfk6w")
+modifier_stack = SubResource("Resource_lswyh")
 
 [node name="Player" parent="." instance=ExtResource("7_ns111")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)

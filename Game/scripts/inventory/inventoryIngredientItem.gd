@@ -1,3 +1,2 @@
 extends InventoryItem
 class_name InventoryIngredientItem
-

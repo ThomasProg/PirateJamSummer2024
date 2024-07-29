@@ -17,6 +17,7 @@ extends Node
 
 @export var honey:InventoryIngredientItem = preload("res://inventoryAssets/ingredients/honeyIngr.tres")
 
+var isDay:bool = true
 var player:Player
 
 func tryLoadAtKey(saveKey:int):

@@ -13,5 +13,3 @@ func _ready():
 		storyLine.currentTimelineIndex += 1
 		storyLine.saveStoryLine()
 		)
-
-

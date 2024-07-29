@@ -7,5 +7,3 @@ enum ItemType {POTION, INGREDIENT}
 @export var description: String = ""
 @export var texture: Texture2D
 @export var type:ItemType = ItemType.POTION
-
-

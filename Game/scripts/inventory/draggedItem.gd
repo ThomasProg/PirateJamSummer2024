@@ -12,4 +12,3 @@ func setItem(item:InventoryItem):
 func _exit_tree():
 	if (!get_viewport().gui_is_drag_successful()):
 		fromSlot.setItem(item)
-

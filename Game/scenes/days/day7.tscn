@@ -1,0 +1,90 @@
+[gd_scene load_steps=19 format=3 uid="uid://j17h368goe2n"]
+
+[ext_resource type="Script" path="res://scripts/day.gd" id="1_nd6u6"]
+[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_ykvvp"]
+[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_fqmpo"]
+[ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="3_8okek"]
+[ext_resource type="PackedScene" uid="uid://bdxtlyav7kf57" path="res://prefabs/gameplayObjects/characters/hunter.tscn" id="4_klrjo"]
+[ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="5_k5s3s"]
+[ext_resource type="PackedScene" uid="uid://cgbo0fg7mpkg0" path="res://prefabs/gameplayObjects/characters/tailor.tscn" id="6_wwf26"]
+[ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="7_6l4cd"]
+[ext_resource type="Script" path="res://scripts/dialogues/sharedDialogue.gd" id="8_scs7u"]
+[ext_resource type="Resource" path="res://dialogues/day7/d7_group.dtl" id="9_o8g8k"]
+[ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="10_0vw0u"]
+[ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="11_1005b"]
+[ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="12_gx1qi"]
+[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="13_7qgcx"]
+[ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="14_vwjpg"]
+[ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="15_ag7ug"]
+[ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="16_1jaq1"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
+
+[node name="Day7" type="Node3D"]
+script = ExtResource("1_nd6u6")
+metadata/_edit_lock_ = true
+
+[node name="VillageEnvScene" parent="." instance=ExtResource("1_ykvvp")]
+metadata/_edit_lock_ = true
+
+[node name="GameplayObjects" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="GameplayObjects" instance=ExtResource("2_fqmpo")]
+transform = Transform3D(-0.129142, 0, -0.991627, 0, 1, 0, 0.991627, 0, -0.129142, -21, 0.89, -26)
+
+[node name="Priest" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("3_8okek")]
+transform = Transform3D(-0.141298, 0, -0.989967, 0, 1, 0, 0.989967, 0, -0.141298, 1.05374, -0.0977421, -23.8462)
+sharedDialogue = NodePath("../GroupDialogue")
+
+[node name="Hunter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("4_klrjo")]
+transform = Transform3D(0.830022, 0, -0.557731, 0, 1, 0, 0.557731, 0, 0.830022, -0.774402, 0, -25.9667)
+sharedDialogue = NodePath("../GroupDialogue")
+
+[node name="Merchant" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("5_k5s3s")]
+transform = Transform3D(0.944284, 0, 0.32913, 0, 1, 0, -0.32913, 0, 0.944284, -2.49643, 0, -25.624)
+sharedDialogue = NodePath("../GroupDialogue")
+
+[node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("6_wwf26")]
+transform = Transform3D(-0.985166, 0, 0.171602, 0, 1, 0, -0.171602, 0, -0.985166, -2.1736, 0, -21.0007)
+sharedDialogue = NodePath("../GroupDialogue")
+
+[node name="Carpenter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("7_6l4cd")]
+transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, -0.818804, 0, -21.3722)
+sharedDialogue = NodePath("../GroupDialogue")
+
+[node name="GroupDialogue" type="Node" parent="GameplayObjects"]
+script = ExtResource("8_scs7u")
+timeline = ExtResource("9_o8g8k")
+
+[node name="Chameleon" parent="GameplayObjects" instance=ExtResource("10_0vw0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.1229)
+
+[node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("11_1005b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22664, 0, -16.4974)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.094, 0.957601, -23.9163)
+use_collision = true
+mesh = SubResource("CylinderMesh_mnhcf")
+script = ExtResource("12_gx1qi")
+interactable = NodePath("Interactable")
+nextNightPath = "res://scenes/nights/night2.tscn"
+nextDayPath = "res://scenes/days/day3.tscn"
+
+[node name="Interactable" type="Node" parent="CSGMesh3D"]
+script = ExtResource("13_7qgcx")
+interactionName = "Bed"
+interactionDescription = "Click to sleep"
+
+[node name="Calendula" parent="." instance=ExtResource("14_vwjpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19)
+
+[node name="woodenCart" type="Node3D" parent="."]
+transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)
+
+[node name="crate" parent="woodenCart" instance=ExtResource("15_ag7ug")]
+transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696, 0.414118, 0.115611, -2.12697)
+
+[node name="cart" parent="woodenCart" instance=ExtResource("16_1jaq1")]
+transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)

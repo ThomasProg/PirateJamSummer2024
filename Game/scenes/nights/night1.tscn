@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://rj0gs5dnv0mj"]
+[gd_scene load_steps=17 format=3 uid="uid://rj0gs5dnv0mj"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_4g165"]
+[ext_resource type="Script" path="res://scripts/night.gd" id="1_dxrap"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="2_a3oyh"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_vedc3"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="3_qo4fm"]
@@ -11,7 +12,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_4h4ay"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_foyvl"]
 
-[sub_resource type="Resource" id="Resource_q55ey"]
+[sub_resource type="Resource" id="Resource_7gmbu"]
 script = ExtResource("3_qo4fm")
 amount = 75
 enabled = true
@@ -20,7 +21,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_8x1ba"]
+[sub_resource type="Resource" id="Resource_i7468"]
 script = ExtResource("4_xg8r6")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -31,7 +32,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_vlgjx"]
+[sub_resource type="Resource" id="Resource_l01n2"]
 script = ExtResource("5_4h4ay")
 iterations = 3
 offset_step = 0.2
@@ -43,7 +44,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_1ci7u"]
+[sub_resource type="Resource" id="Resource_0x1ye"]
 script = ExtResource("6_foyvl")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -59,11 +60,12 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_noyo4"]
+[sub_resource type="Resource" id="Resource_tf06a"]
 script = ExtResource("2_a3oyh")
-stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_q55ey"), SubResource("Resource_8x1ba"), SubResource("Resource_vlgjx"), SubResource("Resource_1ci7u")])
+stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_7gmbu"), SubResource("Resource_i7468"), SubResource("Resource_l01n2"), SubResource("Resource_0x1ye")])
 
 [node name="Night1" type="Node3D"]
+script = ExtResource("1_dxrap")
 
 [node name="VillageEnvScene" parent="." instance=ExtResource("1_4g165")]
 
@@ -71,7 +73,7 @@ stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_q55ey"), SubResourc
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_noyo4")
+modifier_stack = SubResource("Resource_tf06a")
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)

@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="CraftRecipe" load_steps=4 format=3 uid="uid://c7pa0dr1gk5aa"]
+[gd_resource type="Resource" script_class="CraftRecipe" load_steps=5 format=3 uid="uid://c7pa0dr1gk5aa"]
 
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="1_ku4i6"]
 [ext_resource type="Script" path="res://scripts/inventory/craftRecipe.gd" id="1_qesv1"]
 [ext_resource type="Resource" uid="uid://dnq68duvypcvo" path="res://inventoryAssets/ingredients/stinkhornIngr.tres" id="1_yt8md"]
 [ext_resource type="Resource" uid="uid://j32orf0qvnf2" path="res://inventoryAssets/potions/deterringPotion.tres" id="2_qfav7"]
 
 [resource]
 script = ExtResource("1_qesv1")
-ingredients = Array[Resource("res://scripts/inventory/inventoryItem.gd")]([ExtResource("1_yt8md")])
+ingredients = Array[ExtResource("1_ku4i6")]([ExtResource("1_yt8md")])
 result = ExtResource("2_qfav7")

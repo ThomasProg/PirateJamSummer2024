@@ -29,4 +29,3 @@ func saveStoryLine():
 
 func getCurrentTimeline() -> DialogicTimeline:
 	return timelines[currentTimelineIndex]
-

@@ -5,7 +5,16 @@ extends Node
 @export var camera:Camera3D
 @export var defaultSpeed:float = 20.0
 
+func _ready() -> void:
+	await get_tree().process_frame
+	
+	if (GameManager.isDay):
+		queue_free()
+
 func _input(event):
+	if (GameManager.isDay or potionSelector == null):
+		return
+	
 	if (Input.is_action_just_pressed("ThrowPotion")):
 		var item = potionSelector.popCurrentItem()
 		if item is InventoryPotionItem:

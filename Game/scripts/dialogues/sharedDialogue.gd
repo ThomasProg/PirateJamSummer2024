@@ -36,4 +36,3 @@ func play(characterTalkedTo:Character, player:Player):
 		interactComp.enabled = true
 		onFinished.emit(characterTalkedTo, player)
 		, CONNECT_ONE_SHOT)
-

@@ -15,5 +15,3 @@ func _ready():
 			
 		get_parent().queue_free()
 		)
-
-
