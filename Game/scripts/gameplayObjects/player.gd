@@ -14,6 +14,8 @@ class_name Player
 
 @export var ingameMenu:Control
 
+@export var mouseSensibility:float = 0.32
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var captureMouse = false
@@ -28,31 +30,61 @@ func updateInvisibility():
 		invisibilityEffect.visible = true
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	GameManager.player = self
 	
+var rotInput:float = 0.0
+var tiltInput:float = 0.0
+var mouseRot:Vector3
+var playerRot:Vector3
+var cameraRot:Vector3
+
+func updateCamera(delta:float):
+	mouseRot.x += tiltInput * delta
+	mouseRot.x = clamp(mouseRot.x, deg_to_rad(-90), deg_to_rad(90))
+	mouseRot.y += rotInput * delta
+	
+	playerRot = Vector3(0.0, mouseRot.y, 0.0)
+	cameraRot = Vector3(mouseRot.x, 0.0, 0.0)
+	
+	camera.transform.basis = Basis.from_euler(cameraRot)
+	camera.rotation.z = 0.0
+	
+	global_transform.basis = Basis.from_euler(playerRot)
+	
+	rotInput = 0.0
+	tiltInput = 0.0
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if (event is InputEventMouseMotion) and captureMouse:
+		rotInput = -event.relative.x * mouseSensibility
+		tiltInput = -event.relative.y * mouseSensibility
+	
 func _input(event: InputEvent):
-	if (Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
-		if event is InputEventMouseMotion and captureMouse:
-			var eventRelativeY = event.relative.y if invertMouseY else -event.relative.y
-			rotate_y(-event.relative.x * mouseSensitivity)
-			camera.rotate_x(eventRelativeY * mouseSensitivity)
-			camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+	#if (captureMouse):
+		#if event is InputEventMouseMotion:
+			#var eventRelativeY = event.relative.y if invertMouseY else -event.relative.y
+			#rotate_y(-event.relative.x * mouseSensitivity)
+			#camera.rotate_x(eventRelativeY * mouseSensitivity)
+			##camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+			#mouseMotion += -event.relative*0.00015*DPI
 			
 	if event is InputEventMouseButton:
-		if not captureMouse and not(blockMouseCapture):
+		#if not captureMouse and not(blockMouseCapture):
+		if (captureMouse):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			captureMouse = true
-			Engine.time_scale = 1.0
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("OpenMenu"):
-			if (Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			if (captureMouse):
+				captureMouse = false
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				ingameMenu.updatePlayerInventory()
 				ingameMenu.visible = true
 			else:
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				captureMouse = true
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				ingameMenu.visible = false
 			
 	if Input.is_action_just_pressed("InvertMouseYAxis"):
@@ -74,11 +106,13 @@ func _input(event: InputEvent):
 		
 
 func _physics_process(delta):
+	updateCamera(delta)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED):
+	if not(captureMouse):
 		move_and_slide()
 		return
 

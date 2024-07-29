@@ -23,7 +23,7 @@ func play(characterTalkedTo:Character, player:Player):
 	get_viewport().set_input_as_handled()
 	player.blockMouseCapture = true
 	player.captureMouse = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	var interactComp = Utilities.findComponentByType(player, InteractionComponent) as InteractionComponent
 	if (interactComp != null):
