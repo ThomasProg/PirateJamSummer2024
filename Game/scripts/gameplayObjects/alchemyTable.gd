@@ -7,6 +7,7 @@ class_name AlchemyTable
 @export var yellowPotion:InventoryItem
 @export var timeForPotion:float = 10.0
 @export var currentProgress:float = 0.0
+@export var audioPlayer:AudioStreamPlayer3D
 
 var player:Player = null
 
@@ -33,6 +34,7 @@ func _ready():
 		)
 		
 	onPotionPrepared.connect(func():
+		audioPlayer.stop()
 		var potionSelector = Utilities.findComponentByType(player, PotionSelector)
 		if (potionSelector != null):
 			var potion = null

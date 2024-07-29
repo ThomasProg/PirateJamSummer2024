@@ -12,13 +12,15 @@ func playGetSFX(item:InventoryItem):
 	player.finished.connect(func():
 		player.queue_free())
 
-func giveItem(item:InventoryItem):
+func giveItem(item:InventoryItem)->int:
 	playGetSFX(item)
 	match item.type:
 		InventoryItem.ItemType.POTION:
-			potionInventory.addItem(item)
+			return potionInventory.addItem(item)
 		InventoryItem.ItemType.INGREDIENT:
-			ingredientInventory.addItem(item)
+			return ingredientInventory.addItem(item)
+			
+	return -1
 
 func _input(event: InputEvent) -> void:
 	if (Input.is_action_pressed("GiveDeterringPotion")):
