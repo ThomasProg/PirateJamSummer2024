@@ -17,6 +17,6 @@ func _on_area_entered(area):
 			print("Damaging potion threw to the Wolf!")
 			area.aggro -= potionDamage
 			area.onAggroUpdated()
-			area.disappear()
+			area.disappear(true)
 			area.setRandomEyeColor()
 			

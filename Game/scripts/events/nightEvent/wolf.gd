@@ -20,6 +20,11 @@ enum EyeColor{RED, YELLOW}
 @export var aggroMultWhenPeeking:float = 1.0
 @export var currentPeekAggroMult:float = 0.0
 
+@export var peekAudio:AudioStream
+@export var peekEndAudio:AudioStream
+@export var hitAudios:Array[AudioStream]
+@export var audioPlayer:AudioStreamPlayer3D
+
 var raycasts:Array[RayCast3D]
 
 signal onWolfWin()
@@ -63,6 +68,8 @@ func appear():
 	currentPeekAggro = 0.0
 	onAggroUpdated()
 		
+	audioPlayer.stream = peekAudio
+	audioPlayer.play()
 	visible = true
 	for raycast in raycasts:
 		raycast.enabled = true
@@ -70,11 +77,18 @@ func appear():
 	onWolfAppears.emit()	
 		
 	await get_tree().create_timer(peekingDuration).timeout
-	disappear()
+	
+	if (visible == true):
+		disappear(false)
 
-func disappear():
+func disappear(hasBeenHit:bool = false):
 	currentPeekAggro = 0.0
 	onAggroUpdated()
+	if (hasBeenHit):
+		audioPlayer.stream = hitAudios.pick_random()
+	else:
+		audioPlayer.stream = peekEndAudio
+	audioPlayer.play()
 	visible = false
 	for raycast in raycasts:
 		raycast.enabled = false

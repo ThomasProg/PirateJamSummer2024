@@ -20,6 +20,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Dialogic.current_timeline == sharedDialogue.timeline:
+		visible = false
+	else:
+		visible = true
+	
 	# billboard
 	# Can't use the native feature since it doesn't update shadow correctly
 	var posToLookAt = get_viewport().get_camera_3d().global_position

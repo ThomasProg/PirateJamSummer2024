@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cacg3rg6rfwit"]
+[gd_scene load_steps=4 format=3 uid="uid://cacg3rg6rfwit"]
 
 [ext_resource type="Script" path="res://scripts/events/nightEvent/nightEvent.gd" id="1_gbiwh"]
 [ext_resource type="Script" path="res://scripts/events/nightEvent/nightTimer.gd" id="2_3ulpj"]
+[ext_resource type="AudioStream" uid="uid://c1el3fxigx1ya" path="res://audio/sfx/werewolf/sfx_wwolf_wallbreak.wav" id="2_xghkw"]
 
 [node name="NightEvent" type="Node" node_paths=PackedStringArray("nightTimer")]
 script = ExtResource("1_gbiwh")
 nightTimer = NodePath("NightTimer")
+brickBreakSFX = ExtResource("2_xghkw")
 
 [node name="NightTimer" type="Node" parent="."]
 script = ExtResource("2_3ulpj")

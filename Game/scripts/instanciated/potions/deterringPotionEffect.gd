@@ -12,4 +12,4 @@ func runEffect():
 func _on_area_entered(area):
 	if area is Wolf:
 		if area.visible:
-			area.disappear()
+			area.disappear(true)

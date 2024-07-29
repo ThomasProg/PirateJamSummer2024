@@ -15,6 +15,11 @@ class_name Player
 @export var ingameMenu:Control
 
 @export var mouseSensibility:float = 0.32
+@export var audioStreamPlayerStep:AudioStreamPlayer
+@export var stepOnDirtSFX:Array[AudioStream]
+@export var stepOnWoodSFX:Array[AudioStream]
+
+@export var isOnDirt:bool = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -31,6 +36,8 @@ func updateInvisibility():
 
 func _ready():
 	GameManager.player = self
+	captureMouse = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 var rotInput:float = 0.0
 var tiltInput:float = 0.0
@@ -105,6 +112,8 @@ func _input(event: InputEvent):
 				print("Nothing interacted with")
 		
 
+var lastStepTime:float = 0
+
 func _physics_process(delta):
 	updateCamera(delta)
 	
@@ -113,12 +122,13 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	if not(captureMouse):
+		velocity = Vector3.ZERO
 		move_and_slide()
 		return
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jumpVelocity
+	## Handle jump.
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#velocity.y = jumpVelocity
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -128,6 +138,36 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * usedSpeed
 		velocity.z = direction.z * usedSpeed
+		
+		var currentMoveTime = Time.get_ticks_usec()
+		
+		var stepDelay:float
+		if (Input.is_action_pressed("Sprint")):
+			stepDelay = 0.2*1000*1000
+		else:
+			stepDelay = 0.4 * 1000 * 1000
+
+			
+		if (currentMoveTime - lastStepTime > stepDelay):
+			#var space_state = get_world_3d().direct_space_state
+			#var cam = $Camera3D
+			#var mousepos = get_viewport().get_mouse_position()
+#
+			#var origin = self.global_position
+			#var end = origin - Vector3.DOWN * 3
+			#var query = PhysicsRayQueryParameters3D.create(origin, end)
+			#query.collide_with_areas = true
+#
+			#var result = space_state.intersect_ray(query)
+			#print(result)
+			if (isOnDirt):
+				audioStreamPlayerStep.stream = stepOnDirtSFX.pick_random()
+			else:
+				audioStreamPlayerStep.stream = stepOnWoodSFX.pick_random()
+			audioStreamPlayerStep.play()
+			lastStepTime = Time.get_ticks_usec()
+			
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, usedSpeed)
 		velocity.z = move_toward(velocity.z, 0, usedSpeed)
