@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fahaah8lfrw0"]
+[gd_scene load_steps=36 format=3 uid="uid://fahaah8lfrw0"]
 
 [ext_resource type="Script" path="res://scripts/inventory/craftInventory.gd" id="1_sqmg8"]
 [ext_resource type="Script" path="res://scripts/inventory/craftRecipe.gd" id="2_7lp3y"]
@@ -7,9 +7,61 @@
 [ext_resource type="Resource" uid="uid://icsl0d0gpxhh" path="res://inventoryAssets/recipes/invisibilityPotionCraft.tres" id="3_3s3pe"]
 [ext_resource type="Resource" uid="uid://dc8q45svxh6on" path="res://inventoryAssets/recipes/healingPotionCraft.tres" id="4_358wx"]
 [ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/inventorySlot.tscn" id="4_hgh1y"]
+[ext_resource type="Texture2D" uid="uid://8qhon3n4chha" path="res://art/ui/ui_alchemy_arrow_left_hover.png" id="7_0nsqd"]
+[ext_resource type="Texture2D" uid="uid://ifi72nteif2g" path="res://art/ui/ui_alchemy_arrow_left.png" id="7_w55br"]
+[ext_resource type="Texture2D" uid="uid://bo0tyd0nhby0e" path="res://art/ui/ui_alchemy_arrow_right_hover.png" id="8_jedha"]
+[ext_resource type="Texture2D" uid="uid://ek7xgg3hljio" path="res://art/ui/ui_alchemy_arrow_right.png" id="8_m7bak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0bpf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4a4ye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsdu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_skg4u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0p35k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88ssw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ctxgn"]
+texture = ExtResource("7_0nsqd")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jqi8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22217"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88thy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3flw"]
+
+[sub_resource type="Theme" id="Theme_d7ev2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pf0ik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_griob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8um3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_810t2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqct1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83ekv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t0lq"]
+texture = ExtResource("8_jedha")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afjhq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwgwy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjpod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_arvwb"]
 
 [node name="CraftInventory" type="Panel" node_paths=PackedStringArray("craftInParent", "craftOutTexture", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton")]
 anchors_preset = 15
@@ -249,19 +301,51 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 8.0
+offset_left = 0.999998
+offset_top = 370.0
+offset_right = 1033.0
+offset_bottom = 510.0
 grow_vertical = 2
+scale = Vector2(0.12, 0.12)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v0bpf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4a4ye")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tsdu8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_skg4u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0p35k")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_88ssw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ctxgn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6jqi8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22217")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_88thy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f3flw")
+icon = ExtResource("7_w55br")
 
 [node name="RightButton" type="Button" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
-custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
+offset_left = -126.0
+offset_top = 370.0
+offset_right = 906.0
+offset_bottom = 510.0
 grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(0.12, 0.12)
+theme = SubResource("Theme_d7ev2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pf0ik")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_griob")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a8um3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_810t2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gqct1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_83ekv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8t0lq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_afjhq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uwgwy")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_xjpod")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_arvwb")
+icon = ExtResource("8_m7bak")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel"]
 layout_mode = 1
