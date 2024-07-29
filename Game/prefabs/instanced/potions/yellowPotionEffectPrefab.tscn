@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://by0fo1xf32qi2"]
+[gd_scene load_steps=4 format=3 uid="uid://by0fo1xf32qi2"]
 
 [ext_resource type="Script" path="res://scripts/instanciated/potions/damagePotionEffect.gd" id="1_y4bl6"]
+[ext_resource type="AudioStream" uid="uid://fu44jbe21e6k" path="res://audio/sfx/potions/sfx_potions_impact_damage.wav" id="2_3ftkt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x28ld"]
 radius = 1.0
@@ -8,6 +9,7 @@ radius = 1.0
 [node name="RedPotionEffectPrefab" type="Area3D"]
 script = ExtResource("1_y4bl6")
 workingAgainstEyeColor = 1
+potionUseSFX = ExtResource("2_3ftkt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_x28ld")

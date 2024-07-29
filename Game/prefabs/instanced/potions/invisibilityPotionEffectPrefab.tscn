@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b78w1plbw5wl4"]
+[gd_scene load_steps=3 format=3 uid="uid://b78w1plbw5wl4"]
 
 [ext_resource type="Script" path="res://scripts/instanciated/potions/invisibilityPotionEffect.gd" id="1_ujs5h"]
+[ext_resource type="AudioStream" uid="uid://2uxhp6xkprjx" path="res://audio/sfx/potions/sfx_potions_consume_invis.wav" id="2_ripxj"]
 
 [node name="InvisiblePotionEffectPrefab" type="Node3D"]
 script = ExtResource("1_ujs5h")
+potionUseSFX = ExtResource("2_ripxj")
