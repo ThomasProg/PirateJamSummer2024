@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2cbevuyvr7fn"]
+[gd_scene load_steps=20 format=3 uid="uid://c2cbevuyvr7fn"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_83ftn"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_e1eas"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="14_l0was"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="15_6ob2w"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="16_rcu87"]
+[ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="17_ji73g"]
+[ext_resource type="PackedScene" uid="uid://bj0jbnlepr72h" path="res://prefabs/actionPointSystem.tscn" id="18_geeln"]
+[ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="19_mjvdy"]
 
 [node name="Day8" type="Node3D"]
 script = ExtResource("1_e1eas")
@@ -77,3 +80,10 @@ transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696
 
 [node name="cart" parent="woodenCart" instance=ExtResource("16_rcu87")]
 transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)
+
+[node name="Objectives" parent="." instance=ExtResource("17_ji73g")]
+
+[node name="ActionPointSystem" parent="." instance=ExtResource("18_geeln")]
+nbPoints = 1
+
+[node name="DayUI" parent="." instance=ExtResource("19_mjvdy")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvlxb2ya1rmvh"]
+[gd_scene load_steps=22 format=3 uid="uid://cvlxb2ya1rmvh"]
 
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_5gyq2"]
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_j47ae"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="16_fnig5"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="17_83qfd"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="18_vdm02"]
+[ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="19_uiwek"]
+[ext_resource type="PackedScene" uid="uid://bj0jbnlepr72h" path="res://prefabs/actionPointSystem.tscn" id="20_owyci"]
+[ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="21_n50xb"]
 
 [node name="Day4" type="Node3D"]
 script = ExtResource("1_5gyq2")
@@ -105,3 +108,11 @@ transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696
 
 [node name="cart" parent="woodenCart" instance=ExtResource("18_vdm02")]
 transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)
+
+[node name="Objectives" parent="." instance=ExtResource("19_uiwek")]
+objectives = Array[String](["- Learn more about the villagers", "- Go to bed", "- Collect ingredients", "- Craft Potions (E)"])
+
+[node name="ActionPointSystem" parent="." instance=ExtResource("20_owyci")]
+nbPoints = 4
+
+[node name="DayUI" parent="." instance=ExtResource("21_n50xb")]
