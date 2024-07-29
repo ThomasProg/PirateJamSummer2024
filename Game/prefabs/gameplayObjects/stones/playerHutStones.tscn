@@ -535,7 +535,7 @@ body = NodePath("../stone_336")
 peekingSpot = NodePath("Node3D")
 
 [node name="Node3D" type="Node3D" parent="stone_167" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.237521)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162916, 0, 0.237521)
 
 [node name="stone_168" parent="." index="167"]
 surface_material_override/0 = ExtResource("2_mfttd")

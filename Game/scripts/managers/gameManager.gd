@@ -19,6 +19,13 @@ extends Node
 
 var isDay:bool = true
 var player:Player
+var objectivesTab:ObjectivesTab
+
+func hideObjectif(idx:int):
+	objectivesTab.hideObjectif(idx)
+	
+func showObjectif(idx:int):
+	objectivesTab.showObjectif(idx)
 
 func tryLoadAtKey(saveKey:int):
 	var savePath = saveKeyToSavePath(saveKey)
