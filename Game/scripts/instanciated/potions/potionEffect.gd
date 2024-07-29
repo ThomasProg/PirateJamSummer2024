@@ -7,10 +7,13 @@ var particles:GPUParticles3D = null
 var skillOwner:Player
 
 # Static to keep lambda
-static func playUseSFX(sfx:AudioStream, parent:Node):
-	var player = AudioStreamPlayer.new()
+static func playUseSFX(sfx:AudioStream, parent:Node3D):
+	var player = AudioStreamPlayer3D.new()
 	player.stream = sfx
 	parent.get_parent().add_child(player)
+	player.global_position = parent.global_position
+	player.volume_db = -8.0
+	player.max_db = -3.0
 	player.play()
 	player.finished.connect(func():
 		player.queue_free())
@@ -28,6 +31,6 @@ func spawnParticles():
 	
 # Called when the node enters the scene tree for the first time.
 func runEffect():
-	playUseSFX(potionUseSFX, skillOwner)
+	playUseSFX(potionUseSFX, self)
 	spawnParticles()
 	queue_free()

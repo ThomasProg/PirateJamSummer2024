@@ -4,7 +4,7 @@ extends PotionEffect
 
 # Called when the node enters the scene tree for the first time.
 func runEffect():
-	playUseSFX(potionUseSFX, skillOwner)
+	playUseSFX(potionUseSFX, self)
 	skillOwner.nbInvisibleEffects += 1
 	skillOwner.updateInvisibility()
 	await get_tree().create_timer(duration).timeout
