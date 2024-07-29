@@ -87,6 +87,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ItemName" type="RichTextLabel" parent="UI/InfoBox/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
@@ -98,6 +99,7 @@ script = ExtResource("3_twm41")
 label = NodePath("..")
 
 [node name="ItemDescription" type="RichTextLabel" parent="UI/InfoBox/VBoxContainer"]
+visible = false
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Does things[/center]"
