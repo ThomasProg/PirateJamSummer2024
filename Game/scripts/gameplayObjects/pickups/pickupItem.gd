@@ -9,9 +9,9 @@ func _ready():
 		var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
 		match (itemToGive.type):
 			InventoryItem.ItemType.POTION:
-				playerInv.potionInventory.addItem(itemToGive)
+				playerInv.giveItem(itemToGive)
 			InventoryItem.ItemType.INGREDIENT:
-				playerInv.ingredientInventory.addItem(itemToGive)
+				playerInv.giveItem(itemToGive)
 			
 		get_parent().queue_free()
 		)

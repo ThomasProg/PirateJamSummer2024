@@ -82,7 +82,7 @@ func _ready():
 	craftButton.pressed.connect(func():
 		var recipe = getCurrentRecipe()
 		if (playerInv.ingredientInventory.tryConsumeItems(recipe.ingredients)):
-			playerInv.potionInventory.addItem(recipe.result)
+			playerInv.giveItem(recipe.result)
 			updatePlayerInventory()
 		)
 

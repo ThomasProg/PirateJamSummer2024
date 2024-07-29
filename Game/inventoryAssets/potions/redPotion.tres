@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="InventoryPotionItem" load_steps=4 format=3 uid="uid://b5ikawlod3v5a"]
+[gd_resource type="Resource" script_class="InventoryPotionItem" load_steps=5 format=3 uid="uid://b5ikawlod3v5a"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryPotionItem.gd" id="1_h0pvw"]
 [ext_resource type="PackedScene" uid="uid://dmfc4bfiqkjer" path="res://prefabs/instanced/potions/redPotionEffectPrefab.tscn" id="1_rk6lm"]
+[ext_resource type="AudioStream" uid="uid://rrgiem67a685" path="res://audio/sfx/potions/sfx_potions_craft_damage.wav" id="2_sdbsl"]
 [ext_resource type="Texture2D" uid="uid://c2v8s0t48osti" path="res://art/items/Potions/red_dmg_potion.png" id="3_hdspj"]
 
 [resource]
@@ -12,3 +13,4 @@ name = "Red Potion"
 description = "Use it against the werewolf if it has red eyes!"
 texture = ExtResource("3_hdspj")
 type = 0
+getSound = ExtResource("2_sdbsl")

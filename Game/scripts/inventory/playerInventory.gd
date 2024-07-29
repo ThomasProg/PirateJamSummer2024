@@ -4,21 +4,37 @@ class_name PlayerInventory
 @export var potionInventory:Inventory = Inventory.new()
 @export var ingredientInventory:Inventory = Inventory.new()
 
+func playGetSFX(item:InventoryItem):
+	var player = AudioStreamPlayer.new()
+	player.stream = item.getSound
+	get_parent().add_child(player)
+	player.play()
+	player.finished.connect(func():
+		player.queue_free())
+
+func giveItem(item:InventoryItem):
+	playGetSFX(item)
+	match item.type:
+		InventoryItem.ItemType.POTION:
+			potionInventory.addItem(item)
+		InventoryItem.ItemType.INGREDIENT:
+			ingredientInventory.addItem(item)
+
 func _input(event: InputEvent) -> void:
 	if (Input.is_action_pressed("GiveDeterringPotion")):
-		potionInventory.addItem(load("res://inventoryAssets/potions/deterringPotion.tres"))
+		giveItem(load("res://inventoryAssets/potions/deterringPotion.tres"))
 	if (Input.is_action_pressed("GiveInvisibilityPotion")):
-		potionInventory.addItem(load("res://inventoryAssets/potions/invisibilityPotion.tres"))		
+		giveItem(load("res://inventoryAssets/potions/invisibilityPotion.tres"))		
 	if (Input.is_action_pressed("GiveRedPotion")):
-		potionInventory.addItem(load("res://inventoryAssets/potions/redPotion.tres"))
+		giveItem(load("res://inventoryAssets/potions/redPotion.tres"))
 	if (Input.is_action_pressed("GiveYellowPotion")):
-		potionInventory.addItem(load("res://inventoryAssets/potions/yellowPotion.tres"))
+		giveItem(load("res://inventoryAssets/potions/yellowPotion.tres"))
 		
 	if (Input.is_action_pressed("GiveChameleon")):
-		potionInventory.addItem(load("res://inventoryAssets/ingredients/chameleonIngr.tres"))
+		giveItem(load("res://inventoryAssets/ingredients/chameleonIngr.tres"))
 	if (Input.is_action_pressed("GiveStinkhorn")):
-		potionInventory.addItem(load("res://inventoryAssets/ingredients/stinkhornIngr.tres"))
+		giveItem(load("res://inventoryAssets/ingredients/stinkhornIngr.tres"))
 	if (Input.is_action_pressed("GiveCalendula")):
-		potionInventory.addItem(load("res://inventoryAssets/ingredients/calendulaIngr.tres"))
+		giveItem(load("res://inventoryAssets/ingredients/calendulaIngr.tres"))
 	if (Input.is_action_pressed("GiveHoney")):
-		potionInventory.addItem(load("res://inventoryAssets/ingredients/honeyIngr.tres"))
+		giveItem(load("res://inventoryAssets/ingredients/honeyIngr.tres"))
