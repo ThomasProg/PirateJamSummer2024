@@ -1,13 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp0146bk3x36r"]
+[gd_scene load_steps=9 format=3 uid="uid://cp0146bk3x36r"]
 
 [ext_resource type="Script" path="res://scripts/cinematics/loadingScreen.gd" id="1_pt8rt"]
+[ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="2_5041r"]
+[ext_resource type="Texture2D" uid="uid://bdfsy11wfxxp5" path="res://art/ui/ui_day_icon_transition.png" id="3_s6f2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq8rt"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_mtlb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rf2bp"]
+resource_name = "day_to_night_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b810d"]
+_data = {
+"RESET": SubResource("Animation_mtlb3"),
+"day_to_night_animation": SubResource("Animation_rf2bp")
+}
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q1ksx"]
+
 [node name="DayLoadingScreen" type="Node" node_paths=PackedStringArray("content")]
 script = ExtResource("1_pt8rt")
 content = NodePath("CanvasLayer/Panel")
+isItGameOver = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -18,6 +59,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oq8rt")
+
+[node name="DayNightSpritesPanel" type="Panel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayNightSpritesNode" type="Node2D" parent="CanvasLayer/Panel/DayNightSpritesPanel"]
+scale = Vector2(0.626298, 0.626298)
+
+[node name="FromSprite" type="Sprite2D" parent="CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode"]
+position = Vector2(3.99996, -431.105)
+scale = Vector2(0.521, 0.521)
+texture = ExtResource("2_5041r")
+
+[node name="ToSprite" type="Sprite2D" parent="CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode"]
+position = Vector2(7.19344, 373.624)
+rotation = -3.14159
+texture = ExtResource("3_s6f2q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode"]
+libraries = {
+"": SubResource("AnimationLibrary_b810d")
+}
+
+[node name="BlackSprite" type="Sprite2D" parent="CanvasLayer/Panel"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1925.5, 1322.88)
+scale = Vector2(1765, 632.25)
+texture = SubResource("PlaceholderTexture2D_q1ksx")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
 layout_mode = 1

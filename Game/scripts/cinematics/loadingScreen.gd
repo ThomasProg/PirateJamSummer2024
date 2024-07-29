@@ -6,6 +6,7 @@ class_name LoadingScreen
 @export var minTimeOnScreen:float = 1.0
 @export var content:CanvasItem
 @export var isItDayToNight: bool = true
+@export var isItGameOver: bool = false
 
 enum Mode {FadeIn, Visible, FadeOut}
 var mode:Mode = Mode.FadeIn
@@ -24,6 +25,8 @@ func _ready():
 	toSprite = $CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode/ToSprite
 	animationPlayer = $CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode/AnimationPlayer
 	toSprite.visible = false
+	if isItGameOver:
+		fromSprite.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,7 +34,8 @@ func _process(delta):
 		Mode.FadeIn:
 			content.modulate.a += delta / fadeInTime
 			if (content.modulate.a >= 1.0):
-				dayNightAnimation()
+				if !isItGameOver:
+					dayNightAnimation()
 				onFadeInFinished.emit()
 				mode = Mode.Visible
 	
