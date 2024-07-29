@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=3 format=3 uid="uid://d12l6iq6mn0ao"]
+[gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=4 format=3 uid="uid://d12l6iq6mn0ao"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryIngredientItem.gd" id="1_jifg8"]
+[ext_resource type="AudioStream" uid="uid://1xqahj06brnj" path="res://audio/sfx/ingredients/sfx_ingredients_pickup_honey.wav" id="1_rk5q7"]
 [ext_resource type="Texture2D" uid="uid://cnvaasvg55khe" path="res://art/items/Ingredients/honey_ingredient.png" id="2_v0f2a"]
 
 [resource]
@@ -9,3 +10,4 @@ name = "Honey"
 description = "A sweet substance made by bees"
 texture = ExtResource("2_v0f2a")
 type = 1
+getSound = ExtResource("1_rk5q7")

@@ -4,6 +4,7 @@ extends PotionEffect
 
 # Called when the node enters the scene tree for the first time.
 func runEffect():
+	playUseSFX(potionUseSFX, self)	
 	spawnParticles()
 	await get_tree().create_timer(duration).timeout
 	queue_free()

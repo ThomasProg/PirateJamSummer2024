@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbwwhvnoqdo0q"]
+[gd_scene load_steps=5 format=3 uid="uid://bbwwhvnoqdo0q"]
 
 [ext_resource type="Script" path="res://scripts/instanciated/thrownPotion.gd" id="1_b66sp"]
 [ext_resource type="Texture2D" uid="uid://c2v8s0t48osti" path="res://art/items/Potions/red_dmg_potion.png" id="2_85fs1"]
+[ext_resource type="AudioStream" uid="uid://dvsclghhv2fkb" path="res://audio/sfx/potions/sfx_potions_throw.wav" id="2_pbc1i"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mn0pn"]
 
 [node name="ThrownPotion" type="Area3D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_b66sp")
 sprite = NodePath("Sprite3D")
+throwSound = ExtResource("2_pbc1i")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.001

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="InventoryPotionItem" load_steps=4 format=3 uid="uid://cnnujc7uicalb"]
+[gd_resource type="Resource" script_class="InventoryPotionItem" load_steps=5 format=3 uid="uid://cnnujc7uicalb"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryPotionItem.gd" id="1_52ol8"]
 [ext_resource type="PackedScene" uid="uid://by0fo1xf32qi2" path="res://prefabs/instanced/potions/yellowPotionEffectPrefab.tscn" id="1_mu5s6"]
+[ext_resource type="AudioStream" uid="uid://rrgiem67a685" path="res://audio/sfx/potions/sfx_potions_craft_damage.wav" id="2_gdbfk"]
 [ext_resource type="Texture2D" uid="uid://b11m4po627sbx" path="res://art/items/Potions/yellow_dmg_potion.png" id="3_x14dg"]
 
 [resource]
@@ -12,3 +13,4 @@ name = "Yellow Potion"
 description = "Use it against the werewolf if it has yellow eyes!"
 texture = ExtResource("3_x14dg")
 type = 0
+getSound = ExtResource("2_gdbfk")

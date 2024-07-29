@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=3 format=3 uid="uid://cd0jile8t3n7o"]
+[gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=4 format=3 uid="uid://cd0jile8t3n7o"]
 
+[ext_resource type="AudioStream" uid="uid://cqei1snc7wl8" path="res://audio/sfx/ingredients/sfx_ingredients_pickup_scales.wav" id="1_lwukr"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryIngredientItem.gd" id="1_mq7gs"]
 [ext_resource type="Texture2D" uid="uid://bi8cl0g6761t8" path="res://art/items/Ingredients/chameleon_ingredient_inventory.png" id="2_hpepr"]
 
@@ -9,3 +10,4 @@ name = "Chameleon"
 description = "A small creatures that has a strong camouflage ability"
 texture = ExtResource("2_hpepr")
 type = 1
+getSound = ExtResource("1_lwukr")

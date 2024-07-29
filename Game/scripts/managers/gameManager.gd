@@ -155,6 +155,6 @@ func _ready():
 
 func giveHoney():
 	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
-	playerInv.ingredientInventory.addItem(honey)
+	playerInv.giveItem(honey)
 	
 	
