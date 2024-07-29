@@ -1,7 +1,7 @@
 extends PotionEffect
 
 @export var workingAgainstEyeColor:Wolf.EyeColor = Wolf.EyeColor.RED 
-@export var potionDamage:float = 5.0
+@export var potionDamage:float = 2.0
 
 # Called when the node enters the scene tree for the first time.
 func runEffect():

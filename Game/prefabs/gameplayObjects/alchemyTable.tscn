@@ -38,6 +38,7 @@ redPotionInteractible = NodePath("Red/RedInteractable")
 yellowPotionInteractible = NodePath("Yellow/YellowInteractable")
 redPotion = ExtResource("2_bk653")
 yellowPotion = ExtResource("3_b6h32")
+timeForPotion = 7.5
 
 [node name="alchemyTable" parent="." instance=ExtResource("4_xgx07")]
 
