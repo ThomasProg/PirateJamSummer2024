@@ -11,6 +11,10 @@ class_name NightTimer
 signal onPeek()
 signal onNightEnd()
 
+func _input(event: InputEvent) -> void:
+	if (Input.is_action_pressed("SkipNight")):
+		onNightEnd.emit()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var nextTime = currentTime + delta 

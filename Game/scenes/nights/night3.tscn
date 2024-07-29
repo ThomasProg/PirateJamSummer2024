@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_wdbwn"]
 [ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_qfa73"]
 
-[sub_resource type="Resource" id="Resource_10k0l"]
+[sub_resource type="Resource" id="Resource_3h1oe"]
 script = ExtResource("3_vr3qf")
 amount = 75
 enabled = true
@@ -23,7 +23,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_juix0"]
+[sub_resource type="Resource" id="Resource_ub5lu"]
 script = ExtResource("4_g2pat")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -34,7 +34,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_0gta6"]
+[sub_resource type="Resource" id="Resource_c4io2"]
 script = ExtResource("5_r3fas")
 iterations = 3
 offset_step = 0.2
@@ -46,7 +46,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_rnrd5"]
+[sub_resource type="Resource" id="Resource_0bpc1"]
 script = ExtResource("6_fkeq5")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -62,9 +62,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_m0ris"]
+[sub_resource type="Resource" id="Resource_ukaeu"]
 script = ExtResource("2_b6jj5")
-stack = Array[ExtResource("4_7jln7")]([SubResource("Resource_10k0l"), SubResource("Resource_juix0"), SubResource("Resource_0gta6"), SubResource("Resource_rnrd5")])
+stack = Array[ExtResource("4_7jln7")]([SubResource("Resource_3h1oe"), SubResource("Resource_ub5lu"), SubResource("Resource_c4io2"), SubResource("Resource_0bpc1")])
 
 [node name="Night3" type="Node3D"]
 script = ExtResource("1_sd3m1")
@@ -75,7 +75,7 @@ script = ExtResource("1_sd3m1")
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_m0ris")
+modifier_stack = SubResource("Resource_ukaeu")
 
 [node name="Player" parent="." instance=ExtResource("7_tado3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
