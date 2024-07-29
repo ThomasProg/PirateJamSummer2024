@@ -5,6 +5,7 @@ class_name NightEvent
 @export var nightTimer: NightTimer
 @export var wolf: Wolf
 @export_file("*.tscn") var nextDayPath: String
+@export var brickBreakSFX:AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,6 +44,13 @@ func onPeek():
 	var peekAnchor = stone.peekingSpot
 
 	if (stone.peekingSpot != null):
+		var audioPlayer = AudioStreamPlayer3D.new()
+		audioPlayer.stream = brickBreakSFX
+		stone.add_child(audioPlayer)
+		audioPlayer.play()
+		audioPlayer.finished.connect(func():
+			audioPlayer.queue_free())
+		
 		stone.disappear()
 		wolf.global_position = stone.peekingSpot.global_position
 		wolf.lookAt = stone
