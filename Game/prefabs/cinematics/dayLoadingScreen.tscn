@@ -1,26 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://ck8ac3gueamlt"]
 
 [ext_resource type="Script" path="res://scripts/cinematics/loadingScreen.gd" id="1_6uaax"]
-[ext_resource type="Texture2D" uid="uid://caeaph5ak2y8u" path="res://art/ui/ui_day_icon_transition.png" id="2_a5ddg"]
+[ext_resource type="Texture2D" uid="uid://bdfsy11wfxxp5" path="res://art/ui/ui_day_icon_transition.png" id="2_a5ddg"]
 [ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="3_m4y87"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq8rt"]
 bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_rf2bp"]
-resource_name = "day_to_night_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 3.14159]
-}
 
 [sub_resource type="Animation" id="Animation_mtlb3"]
 length = 0.001
@@ -35,6 +20,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rf2bp"]
+resource_name = "day_to_night_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.14159]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b810d"]
@@ -107,3 +107,5 @@ theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center]The sun is rising... [/center]"
 fit_content = true
+
+[connection signal="animation_finished" from="CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
