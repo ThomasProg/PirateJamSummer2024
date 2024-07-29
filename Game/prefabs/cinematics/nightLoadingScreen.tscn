@@ -1,26 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://fjrpuf8agjs3"]
+[gd_scene load_steps=10 format=3 uid="uid://fjrpuf8agjs3"]
 
 [ext_resource type="Script" path="res://scripts/cinematics/loadingScreen.gd" id="1_f42j4"]
-[ext_resource type="Texture2D" uid="uid://caeaph5ak2y8u" path="res://art/ui/ui_day_icon_transition.png" id="2_wx4bt"]
+[ext_resource type="AudioStream" uid="uid://bnuo3j2vi3tf0" path="res://audio/sfx/ui/sfx_ui_switchToNight.wav" id="2_wakea"]
+[ext_resource type="Texture2D" uid="uid://bdfsy11wfxxp5" path="res://art/ui/ui_day_icon_transition.png" id="2_wx4bt"]
 [ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="3_uq4cw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq8rt"]
 bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_rf2bp"]
-resource_name = "day_to_night_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 3.14159]
-}
 
 [sub_resource type="Animation" id="Animation_mtlb3"]
 length = 0.001
@@ -37,6 +23,21 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_rf2bp"]
+resource_name = "day_to_night_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b810d"]
 _data = {
 "RESET": SubResource("Animation_mtlb3"),
@@ -48,6 +49,7 @@ _data = {
 [node name="DayLoadingScreen" type="Node" node_paths=PackedStringArray("content")]
 script = ExtResource("1_f42j4")
 content = NodePath("CanvasLayer/Panel")
+sfx = ExtResource("2_wakea")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

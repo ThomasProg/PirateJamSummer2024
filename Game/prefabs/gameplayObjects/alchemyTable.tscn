@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageRed.tscn" id="6_kohi7"]
 [ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/mortarAndPestle.tscn" id="6_t15fu"]
 [ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageYellow.tscn" id="7_2o3ac"]
-[ext_resource type="AudioStream" uid="uid://c0q23x0mj7rg2" path="res://audio/sfx/potions/sfx_potions_craft_damage_timer.wav" id="9_s56ix"]
+[ext_resource type="AudioStream" uid="uid://cggl40v31hqy" path="res://audio/sfx/potions/sfx_potions_craft_damage_timer.ogg" id="9_am67a"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7r6gh"]
 radius = 0.9
@@ -113,7 +113,7 @@ interactionDescription = "Click to brew"
 transform = Transform3D(1.06811, 0, 0, 0, 1.52001, 0, 0, 0, 1, 0.279404, 0.795851, 0.0910415)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_s56ix")
+stream = ExtResource("9_am67a")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

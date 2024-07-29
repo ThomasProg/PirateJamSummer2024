@@ -34,6 +34,7 @@ func _ready():
 		)
 		
 	onPotionPrepared.connect(func():
+		audioPlayer.stop()
 		var potionSelector = Utilities.findComponentByType(player, PotionSelector)
 		if (potionSelector != null):
 			var potion = null

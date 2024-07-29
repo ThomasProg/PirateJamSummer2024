@@ -6,6 +6,7 @@ class_name LoadingScreen
 @export var minTimeOnScreen:float = 1.0
 @export var content:CanvasItem
 @export var isItDayToNight: bool = true
+@export var isItGameOver: bool = false
 
 enum Mode {FadeIn, Visible, FadeOut}
 var mode:Mode = Mode.FadeIn
@@ -17,6 +18,8 @@ var fromSprite: Sprite2D
 var toSprite: Sprite2D
 var animationPlayer: AnimationPlayer
 
+@export var sfx: AudioStream
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	content.modulate = Color(1.0, 1.0, 1.0, 0.0)
@@ -24,6 +27,15 @@ func _ready():
 	toSprite = $CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode/ToSprite
 	animationPlayer = $CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode/AnimationPlayer
 	toSprite.visible = false
+	if isItGameOver:
+		fromSprite.visible = false
+	
+	var audioPlayer = AudioStreamPlayer.new()
+	audioPlayer.stream = sfx
+	add_child(audioPlayer)
+	audioPlayer.play()
+	audioPlayer.finished.connect(func():
+		audioPlayer.queue_free())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,7 +43,8 @@ func _process(delta):
 		Mode.FadeIn:
 			content.modulate.a += delta / fadeInTime
 			if (content.modulate.a >= 1.0):
-				dayNightAnimation()
+				if !isItGameOver:
+					dayNightAnimation()
 				onFadeInFinished.emit()
 				mode = Mode.Visible
 	
