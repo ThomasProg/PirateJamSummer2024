@@ -71,7 +71,6 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_r5i61")
 
 [node name="InfoBox" type="MarginContainer" parent="UI"]
-visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0

@@ -10,13 +10,15 @@ enum EyeColor{RED, YELLOW}
 @export var eyeAnchors: Array[Node3D]
 @export var lookAt:Node3D
 @export var eyeColor:EyeColor = EyeColor.RED
+@export var yellowEyesTex:Texture2D
+@export var redEyesTex:Texture2D
 
 @export var maxAggro:float = 20.0
 @export var aggro:float = 2.0
 @export var currentPeekAggro:float = 0.0
 
 @export var aggroMultWhenPeeking:float = 1.0
-@export var currentPeekAggroMult:float = 0.25
+@export var currentPeekAggroMult:float = 0.0
 
 var raycasts:Array[RayCast3D]
 
@@ -42,9 +44,11 @@ func setRandomEyeColor():
 	eyeColor = EyeColor.values()[randi()%EyeColor.size() ]
 	match eyeColor:
 		EyeColor.RED:
-			sprite.modulate = Color.DARK_RED
+			#sprite.modulate = Color.DARK_RED
+			sprite.texture = redEyesTex
 		EyeColor.YELLOW:
-			sprite.modulate = Color.YELLOW
+			#sprite.modulate = Color.YELLOW
+			sprite.texture = yellowEyesTex
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():

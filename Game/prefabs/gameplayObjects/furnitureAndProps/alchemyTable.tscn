@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cua4q3dx1oh5d" path="res://art/furniture-props/alchemyTable.glb" id="1_ucm4m"]
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_72gfx"]
 [ext_resource type="Material" uid="uid://bcttblibfkxv6" path="res://art/materials/planks030A.tres" id="3_uvgom"]
-[ext_resource type="PackedScene" uid="uid://bqv2lq5gh7ysb" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageRed.tscn" id="4_ljv5l"]
-[ext_resource type="PackedScene" uid="uid://dvncl57b8xow6" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageYellow.tscn" id="5_4wl72"]
-[ext_resource type="PackedScene" uid="uid://hd7f62uc7gdj" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDeterring.tscn" id="6_ns6a7"]
-[ext_resource type="PackedScene" uid="uid://k6b1fjexoxsi" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionHealing.tscn" id="7_31bgb"]
-[ext_resource type="PackedScene" uid="uid://crp55jgtkvid1" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionInvisibility.tscn" id="8_opbcd"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageRed.tscn" id="4_ljv5l"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageYellow.tscn" id="5_4wl72"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDeterring.tscn" id="6_ns6a7"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionHealing.tscn" id="7_31bgb"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionInvisibility.tscn" id="8_opbcd"]
 
 [node name="alchemyTable" instance=ExtResource("1_ucm4m")]
 

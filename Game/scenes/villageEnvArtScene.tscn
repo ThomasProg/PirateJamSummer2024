@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://5gr2h7l2dewa"]
 
 [ext_resource type="PackedScene" uid="uid://wqy2d82p2qpe" path="res://prefabs/gameplayObjects/buildings/npcHutWood.tscn" id="2_e12ab"]
-[ext_resource type="PackedScene" uid="uid://rteyeco40n51" path="res://prefabs/gameplayObjects/buildings/church.tscn" id="3_8a2oo"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/buildings/church.tscn" id="3_8a2oo"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="3_gdnqo"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="4_x02g1"]
-[ext_resource type="PackedScene" uid="uid://cqwbudfy1f435" path="res://prefabs/gameplayObjects/buildings/parts/hutExtension.tscn" id="4_yjing"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/buildings/parts/hutExtension.tscn" id="4_yjing"]
 [ext_resource type="PackedScene" uid="uid://ci8i3xlfqs6ej" path="res://prefabs/gameplayObjects/furnitureAndProps/tailor/loom.tscn" id="5_4tqtc"]
 [ext_resource type="PackedScene" uid="uid://t78gk6woj4gv" path="res://prefabs/gameplayObjects/furnitureAndProps/fenceLeft.tscn" id="5_ndppl"]
 [ext_resource type="PackedScene" uid="uid://cu7oh25dvuelt" path="res://prefabs/gameplayObjects/buildings/playerHutMk4.tscn" id="5_x4sbc"]
@@ -72,7 +72,6 @@ transform = Transform3D(-0.112007, 0, -0.993707, 0, 1, 0, 0.993707, 0, -0.112007
 
 [node name="playerHut-alchemist" parent="." instance=ExtResource("5_x4sbc")]
 transform = Transform3D(0.146428, 0, 0.989222, 0, 1, 0, -0.989222, 0, 0.146428, -25.5695, 0, -26.0949)
-script = null
 
 [node name="fenceEnclosure" type="Node3D" parent="."]
 

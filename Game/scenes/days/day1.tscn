@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://6n2ce7kv80pm"]
+[gd_scene load_steps=18 format=3 uid="uid://6n2ce7kv80pm"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1vf5r"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_el4dr"]
@@ -6,20 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://bdxtlyav7kf57" path="res://prefabs/gameplayObjects/characters/hunter.tscn" id="4_6tilt"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_priest.dtl" id="4_44pxr"]
 [ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="4_hbxvj"]
-[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="4_vi4if"]
 [ext_resource type="Script" path="res://scripts/dialogues/sharedDialogue.gd" id="4_vk6kb"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_hunter.dtl" id="6_8hbyc"]
-[ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="6_wque3"]
 [ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="7_vq5my"]
 [ext_resource type="PackedScene" uid="uid://cgbo0fg7mpkg0" path="res://prefabs/gameplayObjects/characters/tailor.tscn" id="8_27she"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_merchant.dtl" id="8_ssr06"]
 [ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="9_4d5n5"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_tailor.dtl" id="10_yejgd"]
 [ext_resource type="Resource" path="res://dialogues/day1/d1_carpenter.dtl" id="12_fc5d1"]
+[ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="15_rpmh7"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="16_c21gf"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="17_fpghp"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
 [node name="Day1" type="Node3D"]
 script = ExtResource("1_el4dr")
@@ -74,19 +71,10 @@ sharedDialogue = NodePath("CarpenterDialogue")
 script = ExtResource("4_vk6kb")
 timeline = ExtResource("12_fc5d1")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5639, 0.957601, -24.2312)
-use_collision = true
-mesh = SubResource("CylinderMesh_mnhcf")
-script = ExtResource("6_wque3")
-interactable = NodePath("Interactable")
+[node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("15_rpmh7")]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night1.tscn"
 nextDayPath = "res://scenes/days/day2.tscn"
-
-[node name="Interactable" type="Node" parent="CSGMesh3D"]
-script = ExtResource("4_vi4if")
-interactionName = "Bed"
-interactionDescription = "Click to sleep"
 
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4717, 0, -28.0187)

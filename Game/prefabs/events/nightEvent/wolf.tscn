@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs0cbrtxk55a8"]
+[gd_scene load_steps=6 format=3 uid="uid://cs0cbrtxk55a8"]
 
 [ext_resource type="Script" path="res://scripts/events/nightEvent/wolf.gd" id="1_d22c8"]
+[ext_resource type="Texture2D" uid="uid://c4a0afm6f2vym" path="res://art/characters/Character_Werewolf_dmg_yellow.png" id="2_2ex3s"]
 [ext_resource type="Texture2D" uid="uid://bfl1t6jjiuw4l" path="res://art/characters/Character_Werewolf-eyes.png" id="2_idt2f"]
+[ext_resource type="Texture2D" uid="uid://2ta6ow2syvu0" path="res://art/characters/Character_Werewolf_dmg_red.png" id="3_dq4rn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ndqh"]
 
@@ -10,6 +12,8 @@ script = ExtResource("1_d22c8")
 sprite = NodePath("WolfFace")
 aggroProgressBar = NodePath("CanvasLayer/AggroProgressBar")
 eyeAnchors = [NodePath("WolfFace/EyeAnchor1"), NodePath("WolfFace/EyeAnchor2")]
+yellowEyesTex = ExtResource("2_2ex3s")
+redEyesTex = ExtResource("3_dq4rn")
 
 [node name="WolfFace" type="Sprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

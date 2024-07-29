@@ -41,7 +41,7 @@ func _ready():
 					potion = redPotion
 				yellowPotionInteractible:
 					potion = yellowPotion						
-			var index = potionSelector.inventory.addItem(potion)
+			var index = potionSelector.playerInv.potionInventory.addItem(potion)
 			if (index != -1):
 				potionSelector.selectItemAtIndex(index)
 					

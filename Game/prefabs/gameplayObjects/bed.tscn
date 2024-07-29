@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://i60ugjjvc7xr"]
+
+[ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="1_8nwwy"]
+[ext_resource type="PackedScene" uid="uid://cxs3do68n3jxt" path="res://prefabs/gameplayObjects/furnitureAndProps/thatchBed.tscn" id="2_ya0tt"]
+[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="3_fn8vg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w6aej"]
+size = Vector3(1, 1, 2.425)
+
+[node name="ThatchBed" type="Area3D" node_paths=PackedStringArray("interactable")]
+script = ExtResource("1_8nwwy")
+interactable = NodePath("Interactable")
+
+[node name="thatchBedMesh" parent="." instance=ExtResource("2_ya0tt")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.405)
+shape = SubResource("BoxShape3D_w6aej")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("3_fn8vg")
+interactionName = "Bed"
+interactionDescription = "End the day"

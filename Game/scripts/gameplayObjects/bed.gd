@@ -1,8 +1,9 @@
-extends CSGMesh3D
+extends Area3D
 
 @export var interactable: Interactable
 @export_file("*.tscn") var nextNightPath: String
 @export_file("*.tscn") var nextDayPath: String
+@export var enabled:bool = true
 
 # The lambda used for the callback captures the context
 # If put in the Node class directly, then it would have become invalid after the node gets destroyed
@@ -19,7 +20,8 @@ static func bindInteractable(interactable, nextNightPath, nextDayPath):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bindInteractable(interactable, nextNightPath, nextDayPath)
+	if (enabled):
+		bindInteractable(interactable, nextNightPath, nextDayPath)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

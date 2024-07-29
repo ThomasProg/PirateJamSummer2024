@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_4h4ay"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_foyvl"]
 
-[sub_resource type="Resource" id="Resource_7gmbu"]
+[sub_resource type="Resource" id="Resource_vu5mb"]
 script = ExtResource("3_qo4fm")
 amount = 75
 enabled = true
@@ -21,7 +21,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_i7468"]
+[sub_resource type="Resource" id="Resource_1viwm"]
 script = ExtResource("4_xg8r6")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -32,7 +32,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_l01n2"]
+[sub_resource type="Resource" id="Resource_eqmcc"]
 script = ExtResource("5_4h4ay")
 iterations = 3
 offset_step = 0.2
@@ -44,7 +44,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_0x1ye"]
+[sub_resource type="Resource" id="Resource_jlgvo"]
 script = ExtResource("6_foyvl")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -60,9 +60,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_tf06a"]
+[sub_resource type="Resource" id="Resource_lqy01"]
 script = ExtResource("2_a3oyh")
-stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_7gmbu"), SubResource("Resource_i7468"), SubResource("Resource_l01n2"), SubResource("Resource_0x1ye")])
+stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_vu5mb"), SubResource("Resource_1viwm"), SubResource("Resource_eqmcc"), SubResource("Resource_jlgvo")])
 
 [node name="Night1" type="Node3D"]
 script = ExtResource("1_dxrap")
@@ -73,7 +73,7 @@ script = ExtResource("1_dxrap")
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_tf06a")
+modifier_stack = SubResource("Resource_lqy01")
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)

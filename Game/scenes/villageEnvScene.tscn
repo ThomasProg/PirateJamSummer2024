@@ -3,7 +3,7 @@
 [ext_resource type="Terrain3DStorage" uid="uid://dhe35d6tu5nqe" path="res://art/terrain/terrain_3d_storage.res" id="2_rp6qt"]
 [ext_resource type="Terrain3DMaterial" uid="uid://ip3m313vko7v" path="res://art/terrain/terrain_3d_material.tres" id="3_te6cu"]
 [ext_resource type="Terrain3DAssets" uid="uid://c0jtrqawsq8sf" path="res://art/terrain/terrain_3d_assets.tres" id="4_oh2n4"]
-[ext_resource type="PackedScene" uid="uid://c0crqwvbsalpy" path="res://scenes/worldEnvDay.tscn" id="5_p62a8"]
+[ext_resource type="PackedScene" path="res://scenes/worldEnvDay.tscn" id="5_p62a8"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="6_kfpls"]
 [ext_resource type="PackedScene" uid="uid://5gr2h7l2dewa" path="res://scenes/villageEnvArtScene.tscn" id="6_yihxv"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="7_f8o2o"]
@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
 [ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="16_py3ka"]
 
-[sub_resource type="Resource" id="Resource_ur1ii"]
+[sub_resource type="Resource" id="Resource_svn1j"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -27,7 +27,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_8qfld"]
+[sub_resource type="Resource" id="Resource_3k3hb"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -38,7 +38,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_yohnt"]
+[sub_resource type="Resource" id="Resource_kphgw"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -50,7 +50,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_vn220"]
+[sub_resource type="Resource" id="Resource_h5m11"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -66,9 +66,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_r51nj"]
+[sub_resource type="Resource" id="Resource_8mqp4"]
 script = ExtResource("7_f8o2o")
-stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_ur1ii"), SubResource("Resource_8qfld"), SubResource("Resource_yohnt"), SubResource("Resource_vn220")])
+stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_svn1j"), SubResource("Resource_3k3hb"), SubResource("Resource_kphgw"), SubResource("Resource_h5m11")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -98,7 +98,7 @@ assets = ExtResource("4_oh2n4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0941)
 script = ExtResource("6_kfpls")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_r51nj")
+modifier_stack = SubResource("Resource_8mqp4")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 

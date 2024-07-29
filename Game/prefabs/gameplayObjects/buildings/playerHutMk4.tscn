@@ -5,12 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://bxsg5kdoaa1vc" path="res://prefabs/gameplayObjects/stones/playerHutStones.tscn" id="2_0nel5"]
 [ext_resource type="PackedScene" uid="uid://0p0yjd70kipk" path="res://prefabs/gameplayObjects/buildings/parts/doorPlanksSmMk0.tscn" id="3_pu0pu"]
 [ext_resource type="PackedScene" uid="uid://cjgg8s1xbkm67" path="res://prefabs/gameplayObjects/alchemyTable.tscn" id="5_bpya6"]
-[ext_resource type="PackedScene" uid="uid://bfev7et8m3rn0" path="res://prefabs/gameplayObjects/furnitureAndProps/bookshelf.tscn" id="6_rqajv"]
+[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/bookshelf.tscn" id="6_rqajv"]
 [ext_resource type="PackedScene" uid="uid://bk1q3bxr1foxv" path="res://prefabs/gameplayObjects/buildings/parts/doorHinged.tscn" id="7_buuyj"]
-[ext_resource type="PackedScene" uid="uid://c6le685ed7ggh" path="res://prefabs/gameplayObjects/furnitureAndProps/thatchBed.tscn" id="8_uwmt1"]
+[ext_resource type="PackedScene" uid="uid://cxs3do68n3jxt" path="res://prefabs/gameplayObjects/furnitureAndProps/thatchBed.tscn" id="8_uwmt1"]
 
-[node name="playerHut" type="Node3D"]
+[node name="playerHut" type="Node3D" node_paths=PackedStringArray("toResetColliders", "door", "thatch")]
 script = ExtResource("1_esc5b")
+toResetColliders = NodePath("doorHinged")
+door = NodePath("doorHinged")
+thatch = NodePath("thatchBed")
 
 [node name="playerHutRoof" parent="." instance=ExtResource("1_xbxty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.751046)
@@ -33,3 +36,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.527952, 0.0997328, 3.02751
 
 [node name="thatchBed" parent="." instance=ExtResource("8_uwmt1")]
 transform = Transform3D(-0.447775, 0, -0.894147, 0, 1, 0, 0.894147, 0, -0.447775, 1.7063, -0.121349, -1.61308)
+visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6le685ed7ggh"]
+[gd_scene load_steps=5 format=3 uid="uid://cxs3do68n3jxt"]
 
 [ext_resource type="PackedScene" uid="uid://t7ei5eudvo27" path="res://art/furniture-props/thatchBed.glb" id="1_b1gm6"]
 [ext_resource type="Material" uid="uid://cl2qkb16vgco2" path="res://art/materials/thatch.tres" id="2_mpppp"]

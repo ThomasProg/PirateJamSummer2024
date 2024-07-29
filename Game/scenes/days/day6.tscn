@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8n4rwnfiove6"]
+[gd_scene load_steps=19 format=3 uid="uid://c8n4rwnfiove6"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1o4bl"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_xuxjc"]
@@ -15,12 +15,9 @@
 [ext_resource type="Resource" uid="uid://c8w2vkdxqrsk2" path="res://dialogues/characterStoryLines/tailor/tailorStoryLine.tres" id="12_olo4k"]
 [ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="13_8slbb"]
 [ext_resource type="Resource" uid="uid://cwt1qmyu68dah" path="res://dialogues/characterStoryLines/carpenter/carpenterStoryLine.tres" id="14_yvwag"]
-[ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="15_6ykoa"]
-[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="16_dyn7d"]
+[ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="16_ygq6v"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="17_sr44w"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="18_a5778"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
 [node name="Day6" type="Node3D"]
 script = ExtResource("1_xuxjc")
@@ -95,19 +92,10 @@ script = ExtResource("5_tbo1o")
 dialogue = NodePath("../CarpenterDialogue")
 baseStoryLine = ExtResource("14_yvwag")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.261, 0.957601, -23.0353)
-use_collision = true
-mesh = SubResource("CylinderMesh_mnhcf")
-script = ExtResource("15_6ykoa")
-interactable = NodePath("Interactable")
-nextNightPath = "res://scenes/nights/night5.tscn"
-nextDayPath = "res://scenes/days/day5.tscn"
-
-[node name="Interactable" type="Node" parent="CSGMesh3D"]
-script = ExtResource("16_dyn7d")
-interactionName = "Bed"
-interactionDescription = "Click to sleep"
+[node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("16_ygq6v")]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
+nextNightPath = "res://scenes/nights/night6.tscn"
+nextDayPath = "res://scenes/days/day7.tscn"
 
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)

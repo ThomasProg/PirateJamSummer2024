@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2cbevuyvr7fn"]
+[gd_scene load_steps=17 format=3 uid="uid://c2cbevuyvr7fn"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_83ftn"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_e1eas"]
@@ -12,13 +12,10 @@
 [ext_resource type="Resource" path="res://dialogues/day8/d8_group.dtl" id="9_tq8r5"]
 [ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="10_teh3m"]
 [ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="11_ltu40"]
-[ext_resource type="Script" path="res://scripts/gameplayObjects/bed.gd" id="12_tae03"]
-[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="13_coyod"]
+[ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="13_6r5iq"]
 [ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="14_l0was"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="15_6ob2w"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="16_rcu87"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mnhcf"]
 
 [node name="Day8" type="Node3D"]
 script = ExtResource("1_e1eas")
@@ -63,19 +60,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.1229)
 [node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("11_ltu40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22664, 0, -16.4974)
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="." node_paths=PackedStringArray("interactable")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.094, 0.957601, -23.9163)
-use_collision = true
-mesh = SubResource("CylinderMesh_mnhcf")
-script = ExtResource("12_tae03")
-interactable = NodePath("Interactable")
+[node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("13_6r5iq")]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night2.tscn"
 nextDayPath = "res://scenes/days/day3.tscn"
-
-[node name="Interactable" type="Node" parent="CSGMesh3D"]
-script = ExtResource("13_coyod")
-interactionName = "Bed"
-interactionDescription = "Click to sleep"
+enabled = false
 
 [node name="Calendula" parent="." instance=ExtResource("14_l0was")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19)
