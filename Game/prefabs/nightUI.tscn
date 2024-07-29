@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="1_gmxd7"]
 
-[node name="DayUI" type="CanvasLayer"]
+[node name="NightUI" type="CanvasLayer"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 100.0

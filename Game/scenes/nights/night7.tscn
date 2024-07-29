@@ -1,21 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbyuqmtkwyynb"]
+[gd_scene load_steps=19 format=3 uid="uid://cvm3j670ll3l8"]
 
-[ext_resource type="Script" path="res://scripts/night.gd" id="1_3i34m"]
-[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_wka2v"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="2_ked1a"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="3_4ssa4"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="4_ph3ok"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="4_xg0oo"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_mp1wi"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_0x18v"]
-[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="7_eb2w4"]
-[ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="8_7b78j"]
-[ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="9_1gueh"]
-[ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_3hfjh"]
-[ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_gmb6c"]
+[ext_resource type="Script" path="res://scripts/night.gd" id="1_n15jf"]
+[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="2_axd4d"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="3_vbnke"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="4_dpike"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="5_vkhep"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="6_81k7p"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="7_7581e"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="8_hu50r"]
+[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="9_54qek"]
+[ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="10_r1p8j"]
+[ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="11_r2ppa"]
+[ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_fvkg8"]
+[ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_5o1a4"]
 
 [sub_resource type="Resource" id="Resource_d3ja6"]
-script = ExtResource("3_4ssa4")
+script = ExtResource("5_vkhep")
 amount = 75
 enabled = true
 override_global_seed = false
@@ -24,7 +24,7 @@ restrict_height = true
 reference_frame = 1
 
 [sub_resource type="Resource" id="Resource_17bkc"]
-script = ExtResource("4_ph3ok")
+script = ExtResource("6_81k7p")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
 scale = Vector3(0.1, 0.1, 0.1)
@@ -35,7 +35,7 @@ restrict_height = false
 reference_frame = 2
 
 [sub_resource type="Resource" id="Resource_wubx4"]
-script = ExtResource("5_mp1wi")
+script = ExtResource("7_7581e")
 iterations = 3
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
@@ -47,7 +47,7 @@ restrict_height = true
 reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_bisbp"]
-script = ExtResource("6_0x18v")
+script = ExtResource("8_hu50r")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
 ray_offset = 5.0
@@ -63,13 +63,13 @@ restrict_height = false
 reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_6xrj1"]
-script = ExtResource("2_ked1a")
-stack = Array[ExtResource("4_xg0oo")]([SubResource("Resource_d3ja6"), SubResource("Resource_17bkc"), SubResource("Resource_wubx4"), SubResource("Resource_bisbp")])
+script = ExtResource("3_vbnke")
+stack = Array[ExtResource("4_dpike")]([SubResource("Resource_d3ja6"), SubResource("Resource_17bkc"), SubResource("Resource_wubx4"), SubResource("Resource_bisbp")])
 
 [node name="Night5" type="Node3D"]
-script = ExtResource("1_3i34m")
+script = ExtResource("1_n15jf")
 
-[node name="VillageEnvScene" parent="." instance=ExtResource("1_wka2v")]
+[node name="VillageEnvScene" parent="." instance=ExtResource("2_axd4d")]
 
 [node name="DirectionalLight3D" parent="VillageEnvScene" index="0"]
 visible = false
@@ -77,10 +77,10 @@ visible = false
 [node name="trees" parent="VillageEnvScene" index="4"]
 modifier_stack = SubResource("Resource_6xrj1")
 
-[node name="Player" parent="." instance=ExtResource("7_eb2w4")]
+[node name="Player" parent="." instance=ExtResource("9_54qek")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
 
-[node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("8_7b78j")]
+[node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("10_r1p8j")]
 peekAnchorGroup = NodePath("../PeekAnchorGroup")
 wolf = NodePath("../Wolf")
 
@@ -99,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.857589, 1.16397, 4.38419)
 [node name="PeekAnchor3" type="Node3D" parent="PeekAnchorGroup"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 
-[node name="Wolf" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_1gueh")]
+[node name="Wolf" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_r2ppa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
 peekingDuration = 5.0
 target = NodePath("../Player")
@@ -111,11 +111,11 @@ distance_fade_length = 245.85
 omni_range = 5.002
 omni_attenuation = 0.0136023
 
-[node name="Objectives" parent="." instance=ExtResource("12_3hfjh")]
+[node name="Objectives" parent="." instance=ExtResource("12_fvkg8")]
 objectives = Array[String](["- Escape the gaze of the werewolf", "- Brew damage potions (at the table)", "- Use your potions (right click)", "- Survive the night"])
 hiddenObjectives = Array[int]([])
 
-[node name="NightUI" parent="." instance=ExtResource("13_gmb6c")]
+[node name="NightUI" parent="." instance=ExtResource("13_5o1a4")]
 
 [editable path="VillageEnvScene"]
 [editable path="NightEvent"]

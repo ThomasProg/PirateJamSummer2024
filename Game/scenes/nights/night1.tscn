@@ -36,7 +36,7 @@ volumetric_fog_enabled = true
 adjustment_brightness = 0.65
 adjustment_contrast = 0.9
 
-[sub_resource type="Resource" id="Resource_fw7ew"]
+[sub_resource type="Resource" id="Resource_q8oqc"]
 script = ExtResource("3_qo4fm")
 amount = 75
 enabled = true
@@ -45,7 +45,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_t70ys"]
+[sub_resource type="Resource" id="Resource_2glxb"]
 script = ExtResource("4_xg8r6")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -56,7 +56,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_vt5nc"]
+[sub_resource type="Resource" id="Resource_dlmkq"]
 script = ExtResource("5_4h4ay")
 iterations = 3
 offset_step = 0.2
@@ -68,7 +68,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_yl2jl"]
+[sub_resource type="Resource" id="Resource_ib5tb"]
 script = ExtResource("6_foyvl")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -84,9 +84,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_5ie4u"]
+[sub_resource type="Resource" id="Resource_xaenu"]
 script = ExtResource("2_a3oyh")
-stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_fw7ew"), SubResource("Resource_t70ys"), SubResource("Resource_vt5nc"), SubResource("Resource_yl2jl")])
+stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_q8oqc"), SubResource("Resource_2glxb"), SubResource("Resource_dlmkq"), SubResource("Resource_ib5tb")])
 
 [node name="Night1" type="Node3D"]
 script = ExtResource("1_dxrap")
@@ -100,7 +100,7 @@ visible = false
 environment = SubResource("Environment_dw1s4")
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_5ie4u")
+modifier_stack = SubResource("Resource_xaenu")
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
@@ -137,9 +137,10 @@ omni_range = 5.002
 omni_attenuation = 0.0136023
 
 [node name="Objectives" parent="." instance=ExtResource("12_tca7t")]
-objectives = Array[String](["- Escape the gaze of the werewolf", "- Survive the night"])
+objectives = Array[String](["- Escape the gaze of the werewolf", "- Brew damage potions (at the table)", "- Use your potions (right click)", "- Survive the night"])
+hiddenObjectives = Array[int]([])
 
-[node name="DayUI" parent="." instance=ExtResource("13_r4ups")]
+[node name="NightUI" parent="." instance=ExtResource("13_r4ups")]
 
 [editable path="VillageEnvScene"]
 [editable path="VillageEnvScene/WorldEnvDay"]
