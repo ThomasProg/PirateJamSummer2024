@@ -36,6 +36,8 @@ func updateInvisibility():
 
 func _ready():
 	GameManager.player = self
+	captureMouse = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 var rotInput:float = 0.0
 var tiltInput:float = 0.0
@@ -120,6 +122,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	if not(captureMouse):
+		velocity = Vector3.ZERO
 		move_and_slide()
 		return
 
