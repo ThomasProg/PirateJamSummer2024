@@ -11,10 +11,16 @@ func onAreaEntered(newTable):
 	progressBar.max_value = table.timeForPotion
 	
 func onAreaExited(newTable):
+	if (newTable.audioPlayer.playing):
+		newTable.audioPlayer.stop()
+
 	table = null	
 
 func _process(delta):
 	if (table != null and table.selectedInteractible != null):
+		if not(table.audioPlayer.playing):
+			table.audioPlayer.play()
+		
 		table.addProgress(delta)
 		progressBar.value = table.currentProgress
 		progressBar.visible = true
@@ -28,4 +34,3 @@ func _process(delta):
 		progressBarText.text = "[center]" + str + "[/center]"
 	else:
 		progressBar.visible = false
-
