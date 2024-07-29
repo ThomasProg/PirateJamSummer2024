@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsg5kdoaa1vc" path="res://prefabs/gameplayObjects/stones/playerHutStones.tscn" id="2_0nel5"]
 [ext_resource type="PackedScene" uid="uid://0p0yjd70kipk" path="res://prefabs/gameplayObjects/buildings/parts/doorPlanksSmMk0.tscn" id="3_pu0pu"]
 [ext_resource type="PackedScene" uid="uid://cjgg8s1xbkm67" path="res://prefabs/gameplayObjects/alchemyTable.tscn" id="5_bpya6"]
-[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/bookshelf.tscn" id="6_rqajv"]
+[ext_resource type="PackedScene" uid="uid://brlekxwu3frny" path="res://prefabs/gameplayObjects/furnitureAndProps/bookshelf.tscn" id="6_rqajv"]
 [ext_resource type="PackedScene" uid="uid://bk1q3bxr1foxv" path="res://prefabs/gameplayObjects/buildings/parts/doorHinged.tscn" id="7_buuyj"]
 [ext_resource type="PackedScene" uid="uid://cxs3do68n3jxt" path="res://prefabs/gameplayObjects/furnitureAndProps/thatchBed.tscn" id="8_uwmt1"]
 

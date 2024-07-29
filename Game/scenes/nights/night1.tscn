@@ -36,7 +36,7 @@ volumetric_fog_enabled = true
 adjustment_brightness = 0.65
 adjustment_contrast = 0.9
 
-[sub_resource type="Resource" id="Resource_50mff"]
+[sub_resource type="Resource" id="Resource_ugipv"]
 script = ExtResource("3_qo4fm")
 amount = 75
 enabled = true
@@ -45,7 +45,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_0yn48"]
+[sub_resource type="Resource" id="Resource_yg0g6"]
 script = ExtResource("4_xg8r6")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -56,7 +56,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_fljmw"]
+[sub_resource type="Resource" id="Resource_5snbt"]
 script = ExtResource("5_4h4ay")
 iterations = 3
 offset_step = 0.2
@@ -68,7 +68,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_md0xf"]
+[sub_resource type="Resource" id="Resource_eoesa"]
 script = ExtResource("6_foyvl")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -84,9 +84,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_dn055"]
+[sub_resource type="Resource" id="Resource_k7cj6"]
 script = ExtResource("2_a3oyh")
-stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_50mff"), SubResource("Resource_0yn48"), SubResource("Resource_fljmw"), SubResource("Resource_md0xf")])
+stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_ugipv"), SubResource("Resource_yg0g6"), SubResource("Resource_5snbt"), SubResource("Resource_eoesa")])
 
 [node name="Night1" type="Node3D"]
 script = ExtResource("1_dxrap")
@@ -100,7 +100,7 @@ visible = false
 environment = SubResource("Environment_dw1s4")
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_dn055")
+modifier_stack = SubResource("Resource_k7cj6")
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
@@ -111,7 +111,7 @@ wolf = NodePath("../Wolf")
 
 [node name="NightTimer" parent="NightEvent" index="0"]
 nightDuration = 95.0
-peekTimes = Array[float]([15.0, 26.0, 38.0, 48.0, 56.0, 70.0, 78.0, 86.0])
+peekTimes = Array[float]([7.0, 15.0, 26.0, 38.0, 48.0, 56.0, 70.0, 78.0, 86.0])
 
 [node name="PeekAnchorGroup" type="Node3D" parent="."]
 
@@ -127,6 +127,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 [node name="Wolf" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_ymt8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 0.564568, 0.00165534)
 target = NodePath("../Player")
+aggro = 1.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2256, 2.10578, -19.0393)

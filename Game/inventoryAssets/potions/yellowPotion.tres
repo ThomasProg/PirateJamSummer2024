@@ -7,7 +7,8 @@
 [resource]
 script = ExtResource("1_52ol8")
 effectPrefab = ExtResource("1_mu5s6")
+isThrowable = true
 name = "Yellow Potion"
-description = "Use it against the wolf if he has yellow eyes!"
+description = "Use it against the werewolf if it has yellow eyes!"
 texture = ExtResource("3_x14dg")
 type = 0

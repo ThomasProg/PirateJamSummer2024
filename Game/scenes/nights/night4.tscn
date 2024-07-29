@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_r601a"]
 [ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_f02ah"]
 
-[sub_resource type="Resource" id="Resource_frw3i"]
+[sub_resource type="Resource" id="Resource_8dqwk"]
 script = ExtResource("3_rv4le")
 amount = 75
 enabled = true
@@ -23,7 +23,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_cyrp0"]
+[sub_resource type="Resource" id="Resource_sk8v1"]
 script = ExtResource("4_ldd54")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -34,7 +34,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_fq1gt"]
+[sub_resource type="Resource" id="Resource_36x6t"]
 script = ExtResource("5_6fxfd")
 iterations = 3
 offset_step = 0.2
@@ -46,7 +46,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_n3a7o"]
+[sub_resource type="Resource" id="Resource_oklx7"]
 script = ExtResource("6_3ntoo")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -62,9 +62,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_kme0p"]
+[sub_resource type="Resource" id="Resource_2pg0k"]
 script = ExtResource("2_tick0")
-stack = Array[ExtResource("4_7kbj6")]([SubResource("Resource_frw3i"), SubResource("Resource_cyrp0"), SubResource("Resource_fq1gt"), SubResource("Resource_n3a7o")])
+stack = Array[ExtResource("4_7kbj6")]([SubResource("Resource_8dqwk"), SubResource("Resource_sk8v1"), SubResource("Resource_36x6t"), SubResource("Resource_oklx7")])
 
 [node name="Night4" type="Node3D"]
 script = ExtResource("1_evcuw")
@@ -75,7 +75,7 @@ script = ExtResource("1_evcuw")
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_kme0p")
+modifier_stack = SubResource("Resource_2pg0k")
 
 [node name="Player" parent="." instance=ExtResource("7_jwjm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
@@ -85,8 +85,8 @@ peekAnchorGroup = NodePath("../PeekAnchorGroup")
 wolf = NodePath("../Wolf")
 
 [node name="NightTimer" parent="NightEvent" index="0"]
-nightDuration = 3.0
-peekTimes = Array[float]([5.0, 15.0, 25.0, 35.0])
+nightDuration = 95.0
+peekTimes = Array[float]([5.0, 13.0, 20.0, 28.0, 35.0, 44.0, 52.0, 59.0, 67.0, 75.0, 82.0, 88.0])
 
 [node name="PeekAnchorGroup" type="Node3D" parent="."]
 
@@ -103,6 +103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78058, 1.37749, 1.64885)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.00165534)
 peekingDuration = 5.0
 target = NodePath("../Player")
+aggro = 7.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2256, 2.10578, -19.0393)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfev7et8m3rn0"]
+[gd_scene load_steps=4 format=3 uid="uid://brlekxwu3frny"]
 
 [ext_resource type="PackedScene" uid="uid://chqkvl6k6orgi" path="res://art/furniture-props/bookshelf.glb" id="1_y7m58"]
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="2_naera"]
@@ -6,6 +6,10 @@
 
 [node name="bookshelf" instance=ExtResource("1_y7m58")]
 
+[node name="bookshelf" parent="." index="0"]
+collision_layer = 32
+
 [node name="bookshelf_023" parent="." index="1"]
+layers = 32
 surface_material_override/0 = ExtResource("2_naera")
 surface_material_override/1 = ExtResource("3_4m82d")
