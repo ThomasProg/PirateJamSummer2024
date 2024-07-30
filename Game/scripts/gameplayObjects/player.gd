@@ -122,7 +122,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	if not(captureMouse):
-		velocity = Vector3.ZERO
+		velocity = Vector3(0, velocity.y, 0)
 		move_and_slide()
 		return
 
