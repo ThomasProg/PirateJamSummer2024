@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://yloccmipgh8y"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://ip3m313vko7v" path="res://art/terrain/terrain_3d_material.tres" id="1_nhwdb"]
+[ext_resource type="Terrain3DAssets" uid="uid://c0jtrqawsq8sf" path="res://art/terrain/terrain_3d_assets.tres" id="2_atmxc"]
+
+[sub_resource type="Terrain3DStorage" id="Terrain3DStorage_lbdjy"]
+version = 0.92
+
+[node name="Terrain-test" type="Node3D"]
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+storage = SubResource("Terrain3DStorage_lbdjy")
+material = ExtResource("1_nhwdb")
+assets = ExtResource("2_atmxc")
