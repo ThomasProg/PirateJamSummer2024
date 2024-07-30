@@ -23,7 +23,7 @@ func play(characterTalkedTo:Character, player:Player):
 	get_viewport().set_input_as_handled()
 	player.blockMouseCapture = true
 	player.captureMouse = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	var interactComp = Utilities.findComponentByType(player, InteractionComponent) as InteractionComponent
 	if (interactComp != null):
@@ -31,6 +31,8 @@ func play(characterTalkedTo:Character, player:Player):
 		
 	Dialogic.timeline_ended.connect(func():
 		player.blockMouseCapture = false
+		player.captureMouse = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 		await get_tree().process_frame
 		interactComp.enabled = true
