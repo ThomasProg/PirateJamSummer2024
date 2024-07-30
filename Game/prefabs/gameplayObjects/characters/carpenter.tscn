@@ -9,5 +9,5 @@
 texture = ExtResource("2_xeldq")
 
 [node name="Interactable" parent="." index="1"]
-interactionName = "[Carpenter]Carpenter[/Carpenter]"
+interactionName = "Carpenter"
 interactionDescription = "Click to talk"

@@ -9,5 +9,5 @@
 texture = ExtResource("2_iuevn")
 
 [node name="Interactable" parent="." index="1"]
-interactionName = "[Merchant]Merchant[/Merchant]"
+interactionName = "Merchant"
 interactionDescription = "Click to talk"

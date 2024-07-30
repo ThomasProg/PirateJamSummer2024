@@ -9,5 +9,5 @@
 texture = ExtResource("2_gy6o5")
 
 [node name="Interactable" parent="." index="1"]
-interactionName = "[Tailor]Tailor[/Tailor]"
+interactionName = "Tailor"
 interactionDescription = "Click to talk"

@@ -9,5 +9,5 @@
 texture = ExtResource("2_vfilg")
 
 [node name="Interactable" parent="." index="1"]
-interactionName = "[Hunter]Hunter[/Hunter]"
+interactionName = "Hunter"
 interactionDescription = "Click to talk"

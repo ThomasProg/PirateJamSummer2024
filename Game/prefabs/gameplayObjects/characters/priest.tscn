@@ -9,5 +9,5 @@
 texture = ExtResource("2_nlkw0")
 
 [node name="Interactable" parent="." index="1"]
-interactionName = "[Priest]Priest[/Priest]"
+interactionName = "Priest"
 interactionDescription = "Click to Talk"
