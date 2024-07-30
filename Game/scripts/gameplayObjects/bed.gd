@@ -26,12 +26,14 @@ func _ready():
 		bindInteractable(interactable, nextNightPath, nextDayPath)
 
 func unbindInteractableAll():
-	for connection in interactable.onInteracted.get_connections():
-		interactable.onInteracted.disconnect(connection.callable)
+	if (interactable != null):
+		for connection in interactable.onInteracted.get_connections():
+			interactable.onInteracted.disconnect(connection.callable)
 
 func rebind():
 	unbindInteractableAll()
-	bindInteractable(interactable, nextNightPath, nextDayPath)
+	if (interactable != null):
+		bindInteractable(interactable, nextNightPath, nextDayPath)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
