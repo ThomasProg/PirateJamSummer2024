@@ -1,4 +1,5 @@
 extends Area3D
+class_name Bed
 
 @export var interactable: Interactable
 @export_file("*.tscn") var nextNightPath: String
@@ -8,8 +9,9 @@ extends Area3D
 # The lambda used for the callback captures the context
 # If put in the Node class directly, then it would have become invalid after the node gets destroyed
 # By using a static function, we prevent that
-static func bindInteractable(interactable, nextNightPath, nextDayPath):
+static func bindInteractable(interactable:Interactable, nextNightPath, nextDayPath):
 	interactable.onInteracted.connect(func(player:Player):
+		interactable.queue_free()
 		await GameManager.loadNextNight(nextNightPath, func(scene):
 			var night = Utilities.findComponentByType(scene, NightEvent)
 			if (night.nextDayPath.is_empty()):
