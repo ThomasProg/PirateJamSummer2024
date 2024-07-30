@@ -15,6 +15,6 @@ do GameManager.giveHoney()
 merchant (Proud): Some honey!
 merchant: I've heard it can be used in alchemy.
 merchant (Default): Even if I suppose you can also just eat it.
-- Thanks! [if {} == ""]
+- Thanks!
 merchant: It's nothing!
 merchant (Proud): Just consider that as an investment.
