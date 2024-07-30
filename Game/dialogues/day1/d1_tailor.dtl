@@ -1,14 +1,34 @@
-tailor(Default): He..hey!
+join tailor 2
+tailor (Default): He..hey.
 - Hey hey!
 tailor: Are you new?
 - I am new!
-tailor: ..!!
+tailor (Pouting): ..!!
 - !!!
 tailor: Stop teasing me!
 - I'll stop if you introduce yourself!
 tailor: ..fine!
-tailor: I'm a tailor, and I just moved in some days ago
+tailor (Default): I'm a tailor, and I just moved in some days ago.
 - Is that all?
+	tailor: ...
+	tailor: Yes.
 - Any reason for moving in?
-tailor: …
-# TODO
+	tailor: ...
+	tailor: Not really.
+tailor: What about you?
+- I came to find you.
+	tailor (Sad): ..
+	- I'm joking!! Don't cry!
+	tailor: Really?
+	- Yes!
+	update tailor (Default)
+	- In reality, I'm searching for ingredients.
+- I came to find ingredients.
+# 
+- I'm an alchemist.
+tailor: An evil alchemist?
+- Yes.
+- Yeah.
+- Yep.
+tailor: I knew it.
+tailor: Have a nice day, Mr. Evil Alchemist.

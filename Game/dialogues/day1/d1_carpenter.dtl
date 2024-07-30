@@ -1,19 +1,18 @@
 join carpenter 2
 carpenter (Default): Welcome!
-carpenter (Default): You must be the new resident!
-carpenter (Default): This place is originally just supposed to be a checkpoint, so I’m happy to see someone who’s not gonna leave.
-carpenter (Default): Do you know a lot about this place?
+carpenter: You must be the new resident!
+carpenter: This place is originally just supposed to be a checkpoint, so I’m happy to see someone who’s not gonna leave.
+carpenter: Do you know a lot about this place?
 - No
-carpenter (Default): Let me tell you then.
-carpenter (Default): In a few months, a lot of pilgrims will travel to the cathedral.
-carpenter (Default): This pilgrimage happens every year.
-carpenter (Default): The shortest path for some pilgrims is to go through the forest.
-carpenter (Default): However, every year, a large number of people end up disappearing.
-carpenter (Default): Of course, a solution is to go around, but it takes days, and some pilgrims can’t afford that.
-carpenter (Default): That’s why the church decided to build a village in the middle, as a checkpoint for the pilgrims.
-carpenter (Default): That way, pilgrims will have a safe place to stop by, and the forest will hopefully get safer!
-carpenter (Default): The church sent the priest to take charge of managing the settlement.
-carpenter (Default): The priest then asked me to help with building some huts, and that’s how I joined.
-carpenter (Default): I had to build a few of them rather quickly, so if you notice any problem, just tell me!
+carpenter: Let me tell you then.
+carpenter: In a few months, a lot of pilgrims will travel to the cathedral.
+carpenter: This pilgrimage happens every year.
+carpenter: The shortest path for some pilgrims is to go through the forest.
+carpenter: However, every year, a large number of people end up disappearing.
+carpenter: Of course, a solution is to go around, but it takes days, and some pilgrims can’t afford that.
+carpenter: That’s why the church decided to build a village in the middle, as a checkpoint for the pilgrims.
+carpenter: That way, pilgrims will have a safe place to stop by, and the forest will hopefully get safer!
+carpenter: The church sent the priest to take charge of managing the settlement.
+carpenter: The priest then asked me to help with building some huts, and that’s how I joined.
+carpenter: I had to build a few of them rather quickly, so if you notice any problem, just tell me!
 - Understood!
-

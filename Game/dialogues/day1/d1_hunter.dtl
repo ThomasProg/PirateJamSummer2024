@@ -1,7 +1,12 @@
 join hunter 2
-hunter (Default):The man stares at you.
-- Hello
+hunter (Default): The man stares at you.
+- Hello!
 hunter: Hello.
-- …
-hunter: …
-# TODO
+hunter: New?
+- Yeah, I just moved in.
+hunter: I see.
+- What are you doing around here?
+hunter: I hunt.
+- I can see that.
+hunter: Unlike my preys.
+hunter: I have to take care of my weapons, see you later.
