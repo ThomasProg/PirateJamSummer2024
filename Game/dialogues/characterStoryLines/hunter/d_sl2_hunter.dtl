@@ -1,8 +1,28 @@
+join hunter (Tired) 2
 - Hey!
-hunter (Default): ..
+hunter: ..
 hunter (Default): Oh, you.
 - What's wrong?
 hunter: Nothing.
-hunter: I'm just a bit tired.
+hunter (Sad): I'm just a bit tired.
 - Didn't sleep well?
 hunter: You could say that.
+- Any idea on who the werewolf might be?
+hunter (Proud): Yes.
+hunter (Proud): Of course I know.
+- !!!
+hunter (Default): It's the beast with big eyes and a lot of fur, right?
+# 
+- Uhm...
+- I mean, don't you think the werewolf is a villager?
+hunter: Does that change anything?
+- Well, if we know who it is, then we could do something about it.
+hunter (Proud): What's more effective than cutting through the beast directly?
+- That's...
+I guess he has a point.
+- But how are you going to do that if you're not gonna hunt the beast?
+hunter (Default): ...
+hunter (Proud): Clever, aren't you.
+hunter (Default): I actually tried to hunt the beast last night, but it's too much for me.
+hunter: Tonight, I'm just going to rest plenty.
+hunter: Now, leave me alone.
