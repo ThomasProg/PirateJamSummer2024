@@ -1,4 +1,5 @@
-carpenter (Default): You seem to get rather well with the tailor.
+join carpenter (Default) 2
+carpenter: You seem to get rather well with the tailor.
 carpenter: What do you think of her?
 - She's a bit too reserved
 	carpenter (Content): Oh, so that's not just me.

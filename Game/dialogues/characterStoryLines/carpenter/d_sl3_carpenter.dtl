@@ -1,4 +1,9 @@
-carpenter (Default): The hunter really is sus
-carpenter: Look at how tired he looks
-carpenter: He's been trying to hunt us all night!!
-# TODO: redo that dialogue
+join carpenter (Worried) 2
+carpenter: This is bad.
+carpenter (Content): I think I know who the werewolf is.
+carpenter (Happy): It's the hunter.
+- What makes you think  that?
+carpenter (Worried): The question is rather, what would make me not think that?
+carpenter: He refuses to hunt the werewolf.
+carpenter: And at the same time, he looks too tired to spend his time sleeping at night.
+carpenter: What's up with him??
