@@ -63,10 +63,11 @@ func onPeek():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var ratio = wolf.aggro / wolf.maxAggro
-	if (ratio < 0.3):
-		nightBGM.setIntensity0()
-	elif (ratio < 0.6):
-		nightBGM.setIntensity1()
-	else:
-		nightBGM.setIntensity2()
+	if (wolf != null):
+		var ratio = wolf.aggro / wolf.maxAggro
+		if (ratio < 0.3):
+			nightBGM.setIntensity0()
+		elif (ratio < 0.6):
+			nightBGM.setIntensity1()
+		else:
+			nightBGM.setIntensity2()
