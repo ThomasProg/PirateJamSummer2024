@@ -8,6 +8,7 @@
 size = Vector3(1, 1, 2.425)
 
 [node name="ThatchBed" type="Area3D" node_paths=PackedStringArray("interactable")]
+collision_layer = 3
 script = ExtResource("1_8nwwy")
 interactable = NodePath("Interactable")
 

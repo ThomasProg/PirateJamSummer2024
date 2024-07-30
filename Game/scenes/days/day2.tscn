@@ -58,18 +58,33 @@ script = ExtResource("8_dlyje")
 timeline = ExtResource("9_c04dc")
 
 [node name="Chameleon" parent="GameplayObjects" instance=ExtResource("10_tfdr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.1229)
+transform = Transform3D(-4.3184e-08, -0.987936, -0.154866, 1, -4.37114e-08, 0, -6.76939e-09, -0.154866, 0.987936, -22.9365, 0.253146, -23.7229)
+
+[node name="Chameleon2" parent="GameplayObjects" instance=ExtResource("10_tfdr5")]
+transform = Transform3D(0.456368, -0.416685, -0.328788, 0.409217, 6.19148e-05, 0.567927, -0.338038, -0.562471, 0.243633, 2.26354, 0.679864, -32.1622)
 
 [node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("13_lrkyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22664, 0, -16.4974)
+transform = Transform3D(1, -0.000793285, -4.41484e-05, 0.00079326, 1, -0.000569254, 4.45992e-05, 0.000569219, 1, -15.6778, 0, -26.7257)
+
+[node name="Stinkhorn2" parent="GameplayObjects" instance=ExtResource("13_lrkyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3639, 0, -38.1398)
+
+[node name="Stinkhorn3" parent="GameplayObjects" instance=ExtResource("13_lrkyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6487, 0, -22.3528)
+
+[node name="Stinkhorn4" parent="GameplayObjects" instance=ExtResource("13_lrkyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3543, 0, -17.9221)
 
 [node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("13_vw3u7")]
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night2.tscn"
 nextDayPath = "res://scenes/days/day3.tscn"
 
-[node name="Calendula" parent="." instance=ExtResource("14_hqtgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19)
+[node name="Calendula" parent="GameplayObjects" instance=ExtResource("14_hqtgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6452, 0, -9.36213)
+
+[node name="Calendula2" parent="GameplayObjects" instance=ExtResource("14_hqtgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4133, 0, -3.75378)
 
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)

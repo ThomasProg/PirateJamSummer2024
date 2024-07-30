@@ -7,5 +7,5 @@
 
 [resource]
 script = ExtResource("1_qesv1")
-ingredients = Array[ExtResource("1_ku4i6")]([ExtResource("1_yt8md")])
+ingredients = Array[ExtResource("1_ku4i6")]([ExtResource("1_yt8md"), ExtResource("1_yt8md")])
 result = ExtResource("2_qfav7")

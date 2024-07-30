@@ -1,5 +1,6 @@
 join tailor (Sad) 1 [animation="Slide In Left" length="1"]
 tailor: A werewolf has attacked!!
+update tailor [animation="Highlight" length="1"]
 join merchant (Worried) 3 [animation="Slide In Right" length="1"]
 merchant: I thought it was simply a wolf.
 join carpenter (Worried) 4 [animation="Slide In Right" length="1"]
@@ -39,3 +40,4 @@ After that, the group continued to talk.
 I don't want to die, and I'll do my best not to.
 I should probably gather some ingredients.\
 I'm sure I can make some useful potions against the werewolf.
+update carpenter
