@@ -1,4 +1,20 @@
-merchant (Default): Here, as a token of our new friendship.
-merchant: Take that, some honey.
+join merchant (Default) 2
+merchant: Oh, my favorite alchemist!
+merchant: How are you doing today?
+- I'm good, what about you?
+# 
+- Were you able to sleep well with the werewolf?
+merchant (Proud): Well, I do trust in my strength.
+merchant: I'm sure I could make it regret attacking me.
+- Then, why don't you beat it down?
+merchant (Worried): I don't want to lose limbs.
+merchant: That would be a bad trade.
+merchant (Default): Oh, before I forget!
+merchant: As a token of our new friendship, take that!
 do GameManager.giveHoney()
-merchant: Take care!
+merchant (Proud): Some honey!
+merchant: I've heard it can be used in alchemy.
+merchant (Default): Even if I suppose you can also just eat it.
+- Thanks! [if {} == ""]
+merchant: It's nothing!
+merchant (Proud): Just consider that as an investment.
