@@ -2,3 +2,4 @@ join priest 2
 priest (Default): Has anyone seen the werewolf?
 priest (Default): No?
 priest (Default): Wohoo!!
+do GameManager.loadWinScene()

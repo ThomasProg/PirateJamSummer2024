@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1e074ljbfwb"]
+
+[ext_resource type="Script" path="res://scripts/day.gd" id="1_etkyv"]
+[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="2_cfn8v"]
+[ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="3_xdy2x"]
+[ext_resource type="Script" path="res://scripts/events/day8LoseEvent.gd" id="10_83sgt"]
+[ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="13_5e8i0"]
+[ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="15_6j47s"]
+[ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="16_xg083"]
+[ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="17_ayq8m"]
+[ext_resource type="PackedScene" uid="uid://bj0jbnlepr72h" path="res://prefabs/actionPointSystem.tscn" id="18_fqlti"]
+[ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="19_mgo7v"]
+
+[node name="Day8lose" type="Node3D"]
+script = ExtResource("1_etkyv")
+metadata/_edit_lock_ = true
+
+[node name="VillageEnvScene" parent="." instance=ExtResource("2_cfn8v")]
+metadata/_edit_lock_ = true
+
+[node name="GameplayObjects" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="GameplayObjects" instance=ExtResource("3_xdy2x")]
+transform = Transform3D(-0.129142, 0, -0.991627, 0, 1, 0, 0.991627, 0, -0.129142, -21, 0.89, -26)
+
+[node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("13_5e8i0")]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
+nextNightPath = "res://scenes/nights/night2.tscn"
+nextDayPath = "res://scenes/days/day3.tscn"
+enabled = false
+
+[node name="woodenCart" type="Node3D" parent="."]
+transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)
+
+[node name="crate" parent="woodenCart" instance=ExtResource("15_6j47s")]
+transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696, 0.414118, 0.115611, -2.12697)
+
+[node name="cart" parent="woodenCart" instance=ExtResource("16_xg083")]
+transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)
+
+[node name="Objectives" parent="." instance=ExtResource("17_ayq8m")]
+
+[node name="ActionPointSystem" parent="." instance=ExtResource("18_fqlti")]
+nbPoints = 1
+
+[node name="DayUI" parent="." instance=ExtResource("19_mgo7v")]
+
+[node name="Day8loseEvent" type="Node" parent="."]
+script = ExtResource("10_83sgt")
+delaybeforeLose = 3.0
+trueGameOverScreen = "res://scenes/trueGameOver.tscn"

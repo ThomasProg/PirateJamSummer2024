@@ -4,3 +4,4 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_0du46")
+trueWinScreen = "res://scenes/trueWin.tscn"

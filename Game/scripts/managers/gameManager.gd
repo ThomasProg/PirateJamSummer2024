@@ -2,9 +2,10 @@ extends Node
 
 @export var currentScene:Node = null
 @export var currentScenePath:String = ""
-@export var dayLoadingScreen:PackedScene = preload("res://prefabs/cinematics/dayLoadingScreen.tscn")
 @export var nightLoadingScreen:PackedScene = preload("res://prefabs/cinematics/nightLoadingScreen.tscn")
+@export var dayLoadingScreen:PackedScene = preload("res://prefabs/cinematics/dayLoadingScreen.tscn")
 @export var gameOverScreen:PackedScene = preload("res://prefabs/cinematics/gameOverScreen.tscn")
+@export_file("*.tscn") var trueWinScreen: String
 
 @export var currentSaveDir = "save0"
 
@@ -174,7 +175,10 @@ var isConsumingDialogue:bool = true
 
 func cancelDialogue():
 	isConsumingDialogue = false
+#
+func loadWinScene():
+	await loadSceneWithLoadingScreen(trueWinScreen, nightLoadingScreen, null)
 
-var hasWerewolfBeenVoted = false
-func voteWerewolf():
-	hasWerewolfBeenVoted = true
+#var hasWerewolfBeenVoted = false
+#func voteWerewolf():
+	#hasWerewolfBeenVoted = true

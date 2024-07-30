@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_87itf"]
 [ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_ld0nk"]
 
-[sub_resource type="Resource" id="Resource_4klju"]
+[sub_resource type="Resource" id="Resource_l2fk4"]
 script = ExtResource("5_wucqg")
 amount = 75
 enabled = true
@@ -23,7 +23,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_kuw1f"]
+[sub_resource type="Resource" id="Resource_1oy6e"]
 script = ExtResource("6_2umrw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -34,7 +34,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_3xleu"]
+[sub_resource type="Resource" id="Resource_xu1xb"]
 script = ExtResource("7_vq54m")
 iterations = 3
 offset_step = 0.2
@@ -46,7 +46,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_j112a"]
+[sub_resource type="Resource" id="Resource_uv71x"]
 script = ExtResource("8_xgkua")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -62,9 +62,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_n72yv"]
+[sub_resource type="Resource" id="Resource_vrmm0"]
 script = ExtResource("3_bk65v")
-stack = Array[ExtResource("4_rgbis")]([SubResource("Resource_4klju"), SubResource("Resource_kuw1f"), SubResource("Resource_3xleu"), SubResource("Resource_j112a")])
+stack = Array[ExtResource("4_rgbis")]([SubResource("Resource_l2fk4"), SubResource("Resource_1oy6e"), SubResource("Resource_xu1xb"), SubResource("Resource_uv71x")])
 
 [node name="Night6Safe" type="Node3D"]
 script = ExtResource("1_cl16g")
@@ -75,7 +75,7 @@ script = ExtResource("1_cl16g")
 visible = false
 
 [node name="trees" parent="VillageEnvScene" index="3"]
-modifier_stack = SubResource("Resource_n72yv")
+modifier_stack = SubResource("Resource_vrmm0")
 
 [node name="ScatterOutput2" type="Marker3D" parent="VillageEnvScene/trees" index="5"]
 
@@ -109,13 +109,13 @@ modifier_stack = SubResource("Resource_n72yv")
 
 [node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput5"]
 
-[node name="ScatterOutput" type="Marker3D" parent="VillageEnvScene/trees" index="9"]
+[node name="ScatterOutput6" type="Marker3D" parent="VillageEnvScene/trees" index="9"]
 
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
+[node name="bushy2" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput" index="3"]
 
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
+[node name="leafless2" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput" index="4"]
 
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
+[node name="leafless-sm2" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput" index="5"]
 
 [node name="Player" parent="." instance=ExtResource("9_0enan")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
