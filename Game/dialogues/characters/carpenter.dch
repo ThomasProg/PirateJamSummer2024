@@ -17,7 +17,34 @@
 "portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://art/characters/Character_Carpenter.png\""
+"image": "\"res://art/characters/Carpenter Sprites/Carpenter_default_happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://art/characters/Carpenter Sprites/Carpenter_default_happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://art/characters/Carpenter Sprites/Carpenter_sad_think.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Worried": {
+"export_overrides": {
+"image": "\"res://art/characters/Carpenter Sprites/Carpenter_worried_anxious.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

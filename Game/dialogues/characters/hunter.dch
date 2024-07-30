@@ -15,9 +15,36 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://art/characters/Hunter Sprites/Hunter_default_angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Default": {
 "export_overrides": {
-"image": "\"res://art/characters/Character_Hunter.png\""
+"image": "\"res://art/characters/Hunter Sprites/Hunter_default_angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://art/characters/Hunter Sprites/Hunter_think_sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Worried": {
+"export_overrides": {
+"image": "\"res://art/characters/Hunter Sprites/Hunter_worried_scared.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

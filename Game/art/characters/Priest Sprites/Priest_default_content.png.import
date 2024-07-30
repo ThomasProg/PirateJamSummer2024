@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lhe3orosqqty"
-path.s3tc="res://.godot/imported/Character_Priest.png-b12a0dca61fbbac5f0e0ca38d8b7db29.s3tc.ctex"
+uid="uid://dcb0nbepvqbgg"
+path.s3tc="res://.godot/imported/Priest_default_content.png-bdf2214f88e9e4e5040b1aee73486e31.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/characters/Character_Priest.png"
-dest_files=["res://.godot/imported/Character_Priest.png-b12a0dca61fbbac5f0e0ca38d8b7db29.s3tc.ctex"]
+source_file="res://art/characters/Priest Sprites/Priest_default_content.png"
+dest_files=["res://.godot/imported/Priest_default_content.png-bdf2214f88e9e4e5040b1aee73486e31.s3tc.ctex"]
 
 [params]
 

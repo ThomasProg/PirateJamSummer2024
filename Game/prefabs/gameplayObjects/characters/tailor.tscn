@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgbo0fg7mpkg0"]
 
 [ext_resource type="PackedScene" uid="uid://5jy22neuhj0m" path="res://prefabs/gameplayObjects/characters/character.tscn" id="1_0ajpf"]
-[ext_resource type="Texture2D" uid="uid://cis4bvp05d6ln" path="res://art/characters/Character_Tailor.png" id="2_t1hio"]
+[ext_resource type="Texture2D" uid="uid://bmg8v5xorrrgy" path="res://art/characters/Tailor Sprites/Tailor_default_shy.png" id="2_gy6o5"]
 
 [node name="Tailor" instance=ExtResource("1_0ajpf")]
 
 [node name="Sprite3D" parent="." index="0"]
-texture = ExtResource("2_t1hio")
+texture = ExtResource("2_gy6o5")
 
 [node name="Interactable" parent="." index="1"]
 interactionName = "[Tailor]Tailor[/Tailor]"
