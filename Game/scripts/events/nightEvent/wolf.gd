@@ -84,6 +84,8 @@ func appear():
 func disappear(hasBeenHit:bool = false):
 	currentPeekAggro = 0.0
 	onAggroUpdated()
+	if (audioPlayer.playing):
+		audioPlayer.stop()
 	if (hasBeenHit):
 		audioPlayer.stream = hitAudios.pick_random()
 	else:
