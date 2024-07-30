@@ -37,6 +37,7 @@ directories/dtl_directory={
 "d1_priest": "res://dialogues/day1/d1_priest.dtl",
 "d1_tailor": "res://dialogues/day1/d1_tailor.dtl",
 "d2_group": "res://dialogues/day2/d2_group.dtl",
+"d6": "res://dialogues/day6/d6.dtl",
 "d6_carpenter": "res://dialogues/day6/d6_carpenter.dtl",
 "d6_hunter": "res://dialogues/day6/d6_hunter.dtl",
 "d6_merchant": "res://dialogues/day6/d6_merchant.dtl",

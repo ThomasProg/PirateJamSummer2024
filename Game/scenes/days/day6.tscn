@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8n4rwnfiove6"]
+[gd_scene load_steps=23 format=3 uid="uid://c8n4rwnfiove6"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1o4bl"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_xuxjc"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bj0jbnlepr72h" path="res://prefabs/actionPointSystem.tscn" id="20_1nwqr"]
 [ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="21_fpfau"]
 [ext_resource type="Script" path="res://scripts/events/day6Event.gd" id="21_w2kw8"]
+[ext_resource type="Resource" path="res://dialogues/day6/d6.dtl" id="22_0v6m0"]
 
 [node name="Day6" type="Node3D"]
 script = ExtResource("1_xuxjc")
@@ -98,8 +99,14 @@ nbPoints = 3
 
 [node name="DayUI" parent="." instance=ExtResource("21_fpfau")]
 
-[node name="Day6Event" type="Node" parent="." node_paths=PackedStringArray("werewolfDialogue", "bed")]
+[node name="Day6Event" type="Node" parent="." node_paths=PackedStringArray("player", "dialogue", "werewolfDialogue", "bed")]
 script = ExtResource("21_w2kw8")
+player = NodePath("../GameplayObjects/Player")
+dialogue = NodePath("../SharedDialogue")
 werewolfDialogue = NodePath("../GameplayObjects/Merchant/MerchantDialogue")
 bed = NodePath("../GameplayObjects/ThatchBed")
 nextNightPathIfTalkedToWerewolf = "res://scenes/nights/night6safe.tscn"
+
+[node name="SharedDialogue" type="Node" parent="."]
+script = ExtResource("4_fera6")
+timeline = ExtResource("22_0v6m0")

@@ -1,5 +1,8 @@
 extends Node
 
+@export var player:Player
+@export var dialogue:SharedDialogue
+
 @export var werewolfDialogue:SharedDialogue
 @export var bed:Bed
 
@@ -12,6 +15,7 @@ func _ready() -> void:
 		bed.rebind()
 		)
 
+	dialogue.play(null, player)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
