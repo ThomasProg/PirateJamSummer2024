@@ -1,37 +1,37 @@
 [gd_scene load_steps=33 format=3 uid="uid://bmotrrb5fci2n"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/player.gd" id="1_0anxm"]
-[ext_resource type="AudioStream" uid="uid://34ft0prj4bte" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_1.wav" id="2_0ggmk"]
+[ext_resource type="AudioStream" uid="uid://bpb7nfco4go8b" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_1.wav" id="2_0ggmk"]
 [ext_resource type="Resource" uid="uid://dgxb1wbqvtlrr" path="res://inventoryAssets/inventories/potionInventory.tres" id="2_i2ovb"]
 [ext_resource type="Texture2D" uid="uid://c2v8s0t48osti" path="res://art/items/Potions/red_dmg_potion.png" id="2_x55jg"]
-[ext_resource type="AudioStream" uid="uid://dj71skycsbtrf" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_2.wav" id="3_lvu3g"]
+[ext_resource type="AudioStream" uid="uid://b8ji0vi4fbggu" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_2.wav" id="3_lvu3g"]
 [ext_resource type="FontFile" uid="uid://bpm3pkttxpjel" path="res://fonts/fontThemes/ABeeZee-Regular.ttf" id="3_o2mgu"]
 [ext_resource type="Script" path="res://scripts/customTextEffects/richTextLabelReplacer.gd" id="3_twm41"]
 [ext_resource type="Texture2D" uid="uid://dg8yvxkhcmvw2" path="res://art/cursors/hit_marker.png" id="3_vhjkl"]
-[ext_resource type="AudioStream" uid="uid://c0dke8iwrqsfc" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_3.wav" id="4_xnyqe"]
+[ext_resource type="AudioStream" uid="uid://s34ophma7los" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_3.wav" id="4_xnyqe"]
 [ext_resource type="PackedScene" uid="uid://fahaah8lfrw0" path="res://prefabs/inventory/craftInventory.tscn" id="5_6xnvm"]
-[ext_resource type="AudioStream" uid="uid://couj6jemxqa88" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_4.wav" id="5_lly5d"]
+[ext_resource type="AudioStream" uid="uid://crftafgcul5g" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_4.wav" id="5_lly5d"]
 [ext_resource type="Script" path="res://scripts/inventory/potionSelector.gd" id="5_qqyfv"]
 [ext_resource type="Script" path="res://scripts/components/alchemyTableInteractor.gd" id="6_bmoqy"]
 [ext_resource type="Script" path="res://scripts/inventory/potionSelectorFeedback.gd" id="6_nuewa"]
-[ext_resource type="AudioStream" uid="uid://8t4xi20k5wcf" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_5.wav" id="6_wmeqs"]
+[ext_resource type="AudioStream" uid="uid://cto1e1f07eocd" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_5.wav" id="6_wmeqs"]
 [ext_resource type="Script" path="res://scripts/components/interactionComponent.gd" id="7_c2x38"]
-[ext_resource type="AudioStream" uid="uid://b1fxor22fwywd" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_6.wav" id="7_gcaa6"]
-[ext_resource type="AudioStream" uid="uid://b6hnku3cbnj70" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_7.wav" id="8_1bj6e"]
+[ext_resource type="AudioStream" uid="uid://b0y5pb0kmts3s" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_6.wav" id="7_gcaa6"]
+[ext_resource type="AudioStream" uid="uid://ywne65tv3o53" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_7.wav" id="8_1bj6e"]
 [ext_resource type="Script" path="res://scripts/components/potionThrowerComponent.gd" id="9_53taj"]
-[ext_resource type="AudioStream" uid="uid://dpmls6ecihx1c" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_1.wav" id="9_66a52"]
+[ext_resource type="AudioStream" uid="uid://dt1h8yikytl6h" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_1.wav" id="9_66a52"]
 [ext_resource type="PackedScene" uid="uid://bbwwhvnoqdo0q" path="res://prefabs/instanced/thrownPotion.tscn" id="10_2ylfs"]
-[ext_resource type="AudioStream" uid="uid://biutujn6cavkr" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_2.wav" id="10_3gg8r"]
-[ext_resource type="AudioStream" uid="uid://c36ppx1sd82vx" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_3.wav" id="11_6pi6b"]
+[ext_resource type="AudioStream" uid="uid://bg50olyb410gf" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_2.wav" id="10_3gg8r"]
+[ext_resource type="AudioStream" uid="uid://is6ua5j3mjpx" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_3.wav" id="11_6pi6b"]
 [ext_resource type="Script" path="res://scripts/inventory/playerInventory.gd" id="11_iayvv"]
-[ext_resource type="AudioStream" uid="uid://bt5ba3kqa61f" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_4.wav" id="12_2cdi6"]
-[ext_resource type="AudioStream" uid="uid://dj8des5xhc2r6" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_5.wav" id="13_losg6"]
-[ext_resource type="AudioStream" uid="uid://dgbiqj67b088v" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_6.wav" id="14_mhsf3"]
+[ext_resource type="AudioStream" uid="uid://crvglirf72nwg" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_4.wav" id="12_2cdi6"]
+[ext_resource type="AudioStream" uid="uid://c4biyq3djsn0h" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_5.wav" id="13_losg6"]
+[ext_resource type="AudioStream" uid="uid://cuko2tupkmhsr" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_6.wav" id="14_mhsf3"]
 [ext_resource type="Resource" uid="uid://cmajo12ucvbyw" path="res://inventoryAssets/inventories/ingredientsInventory.tres" id="14_nsphy"]
-[ext_resource type="AudioStream" uid="uid://b3c08qewuu2bw" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_7.wav" id="15_h3ryq"]
+[ext_resource type="AudioStream" uid="uid://hg8q3hyinpl4" path="res://audio/sfx/player/footsteps/wood/sfx_fs_wood_7.wav" id="15_h3ryq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2mcq"]
-size = Vector3(0.229, 0.323376, 0.229)
+size = Vector3(0.229, 1.67, 0.229)
 
 [sub_resource type="Gradient" id="Gradient_cuc13"]
 offsets = PackedFloat32Array(0, 0.695817, 1)
@@ -57,7 +57,6 @@ stepOnWoodSFX = Array[AudioStream]([ExtResource("9_66a52"), ExtResource("10_3gg8
 invisibilityEffect = NodePath("UI/Vignette")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.688312, 0)
 shape = SubResource("BoxShape3D_n2mcq")
 metadata/_edit_lock_ = true
 
