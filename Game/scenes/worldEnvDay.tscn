@@ -1,12 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0crqwvbsalpy"]
+[gd_scene load_steps=5 format=3 uid="uid://c0crqwvbsalpy"]
+
+[ext_resource type="Texture2D" uid="uid://bh67l5ukc4dng" path="res://art/skybox/kloppenheim_06_puresky_2k.jpg" id="1_ncrxh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ll467"]
+panorama = ExtResource("1_ncrxh")
+
+[sub_resource type="Sky" id="Sky_nm2ak"]
+sky_material = SubResource("PanoramaSkyMaterial_ll467")
 
 [sub_resource type="Environment" id="Environment_rsg07"]
-fog_light_color = Color(0.703482, 0.788036, 0.777639, 1)
-fog_light_energy = 0.59
-fog_density = 0.001
-volumetric_fog_enabled = true
+background_mode = 2
+background_energy_multiplier = 0.8
+sky = SubResource("Sky_nm2ak")
+fog_light_color = Color(0.275192, 0.351196, 0.342504, 1)
+fog_light_energy = 0.34
+fog_density = 0.0522
+fog_sky_affect = 0.78
+adjustment_enabled = true
 adjustment_brightness = 0.65
-adjustment_contrast = 0.9
+adjustment_contrast = 1.27
+adjustment_saturation = 0.54
 
 [node name="WorldEnvDay" type="Node3D"]
 

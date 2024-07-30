@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
 [ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="15_vpmr8"]
 
-[sub_resource type="Resource" id="Resource_6kk8h"]
+[sub_resource type="Resource" id="Resource_3mmm2"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -26,7 +26,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_yg080"]
+[sub_resource type="Resource" id="Resource_r8wpa"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -37,7 +37,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_0uogt"]
+[sub_resource type="Resource" id="Resource_g7yns"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -49,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_wk7b7"]
+[sub_resource type="Resource" id="Resource_03dyb"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -65,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_eaxdh"]
+[sub_resource type="Resource" id="Resource_jo0hk"]
 script = ExtResource("7_f8o2o")
-stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_6kk8h"), SubResource("Resource_yg080"), SubResource("Resource_0uogt"), SubResource("Resource_wk7b7")])
+stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_3mmm2"), SubResource("Resource_r8wpa"), SubResource("Resource_g7yns"), SubResource("Resource_03dyb")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -497,7 +497,7 @@ visible = false
 script = ExtResource("6_kfpls")
 show_output_in_tree = true
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_eaxdh")
+modifier_stack = SubResource("Resource_jo0hk")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -532,275 +532,9 @@ path = "res://prefabs/gameplayObjects/trees/treeLeafless.tscn"
 
 [node name="bushy" type="Node3D" parent="trees/ScatterOutput"]
 
-[node name="MultiMeshInstance3D_0_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9322, -0.095, -26.2921)
-multimesh = SubResource("MultiMesh_e7bdn")
-
-[node name="MultiMeshInstance3D_0_0_2" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3202, -0.0950006, -9.94105)
-multimesh = SubResource("MultiMesh_yius4")
-
-[node name="MultiMeshInstance3D_0_0_3" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7985, -0.0950003, 0.992959)
-multimesh = SubResource("MultiMesh_o7mxx")
-
-[node name="MultiMeshInstance3D_0_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8123, -0.095, 36.2281)
-multimesh = SubResource("MultiMesh_vy2kf")
-
-[node name="MultiMeshInstance3D_1_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7696, -0.0950003, 44.385)
-multimesh = SubResource("MultiMesh_fat1x")
-
-[node name="MultiMeshInstance3D_2_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.097, -0.0950001, -31.7886)
-multimesh = SubResource("MultiMesh_6i7hd")
-
-[node name="MultiMeshInstance3D_3_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10319, -0.095, -47.6236)
-multimesh = SubResource("MultiMesh_s0b1x")
-
-[node name="MultiMeshInstance3D_3_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94259, -0.0950006, -31.0771)
-multimesh = SubResource("MultiMesh_emhwu")
-
-[node name="MultiMeshInstance3D_3_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70136, -0.095, 41.013)
-multimesh = SubResource("MultiMesh_xpq1q")
-
-[node name="MultiMeshInstance3D_4_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2701, -0.0950003, -42.3232)
-multimesh = SubResource("MultiMesh_psyos")
-
-[node name="MultiMeshInstance3D_4_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0392, -0.0950006, -33.9597)
-multimesh = SubResource("MultiMesh_p5ltd")
-
-[node name="MultiMeshInstance3D_5_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3636, -0.0950006, -25.5775)
-multimesh = SubResource("MultiMesh_6yyct")
-
-[node name="MultiMeshInstance3D_5_0_4" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2983, 2.10857, 18.1694)
-multimesh = SubResource("MultiMesh_yo265")
-
-[node name="MultiMeshInstance3D_5_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6529, -0.095, 36.9536)
-multimesh = SubResource("MultiMesh_y03pm")
-
-[node name="MultiMeshInstance3D_6_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6785, -0.095, -25.5956)
-multimesh = SubResource("MultiMesh_2ed3j")
-
-[node name="MultiMeshInstance3D_6_0_3" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6681, -0.0950006, -3.98478)
-multimesh = SubResource("MultiMesh_ukupn")
-
-[node name="MultiMeshInstance3D_6_0_4" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.8333, -0.0950003, 18.8049)
-multimesh = SubResource("MultiMesh_tegeo")
-
-[node name="MultiMeshInstance3D_6_0_5" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3253, -0.0950003, 34.1856)
-multimesh = SubResource("MultiMesh_xgydb")
-
-[node name="MultiMeshInstance3D_6_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/bushy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8166, -0.095, 48.8536)
-multimesh = SubResource("MultiMesh_khmve")
-
 [node name="leafless" type="Node3D" parent="trees/ScatterOutput"]
 
-[node name="MultiMeshInstance3D_0_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8244, -0.0950003, -43.4542)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_oyhww")
-
-[node name="MultiMeshInstance3D_0_0_2" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.7141, -0.0950003, -16.6765)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_5rmtx")
-
-[node name="MultiMeshInstance3D_0_0_5" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.6264, -0.0950006, 31.5281)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_yl2eu")
-
-[node name="MultiMeshInstance3D_0_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.2216, -0.0950001, 36.3199)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_5rknu")
-
-[node name="MultiMeshInstance3D_1_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5793, -0.0950006, -31.9637)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_r4x8k")
-
-[node name="MultiMeshInstance3D_1_0_2" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5615, -0.0950003, -18.6583)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_s6uhb")
-
-[node name="MultiMeshInstance3D_1_0_5" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4467, -0.0950006, 22.9375)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_nkbnv")
-
-[node name="MultiMeshInstance3D_3_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83552, -0.095, 49.3971)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_68xtf")
-
-[node name="MultiMeshInstance3D_4_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9705, -0.0950003, -28.4551)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_jo6ct")
-
-[node name="MultiMeshInstance3D_4_0_5" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7697, -0.0950006, 30.3861)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_rafi8")
-
-[node name="MultiMeshInstance3D_5_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3477, -0.0950003, -46.994)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_j2opv")
-
-[node name="MultiMeshInstance3D_5_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9133, -0.0950006, -30.9135)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_68cc7")
-
-[node name="MultiMeshInstance3D_5_0_2" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.1217, -0.0950003, -20.5467)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_u734c")
-
-[node name="MultiMeshInstance3D_5_0_3" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.515, -0.095, 5.8519)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_4726m")
-
-[node name="MultiMeshInstance3D_5_0_5" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.603, -0.095, 32.8308)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_3h4mq")
-
-[node name="MultiMeshInstance3D_5_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0411, -0.0950003, 38.1822)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_oqums")
-
-[node name="MultiMeshInstance3D_6_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6747, -0.0950003, -45.3991)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_ntnsp")
-
-[node name="MultiMeshInstance3D_6_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.3585, -0.0950003, -26.7878)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_oti03")
-
-[node name="MultiMeshInstance3D_6_0_3" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9167, -0.0950003, -5.67013)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_5n74s")
-
-[node name="MultiMeshInstance3D_6_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5068, -0.095, 39.1961)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_pbsfu")
-
 [node name="leafless-sm" type="Node3D" parent="trees/ScatterOutput"]
-
-[node name="MultiMeshInstance3D_0_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0407, -0.095, -46.5284)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_jsetg")
-
-[node name="MultiMeshInstance3D_0_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.3431, -0.0950003, -22.9688)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_2clfk")
-
-[node name="MultiMeshInstance3D_0_0_2" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.1021, -0.0950003, -19.7206)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_fag2x")
-
-[node name="MultiMeshInstance3D_0_0_5" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6474, -0.095, 31.4994)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_g60ql")
-
-[node name="MultiMeshInstance3D_0_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.0478, -0.0950003, 42.9538)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_d8w5l")
-
-[node name="MultiMeshInstance3D_1_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8878, -0.0950006, -44.3629)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_64xqp")
-
-[node name="MultiMeshInstance3D_1_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.141, -0.0950006, 45.13)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_p7lpk")
-
-[node name="MultiMeshInstance3D_2_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4633, -0.095, 40.0144)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_py6st")
-
-[node name="MultiMeshInstance3D_3_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23718, -0.095, -33.4363)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_iu3jy")
-
-[node name="MultiMeshInstance3D_4_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9185, -0.095, -30.7192)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_y5nd3")
-
-[node name="MultiMeshInstance3D_4_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.518, -0.0950003, 41.9448)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_w2vq4")
-
-[node name="MultiMeshInstance3D_5_0_1" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4677, -0.0950003, -25.3532)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_bx1dq")
-
-[node name="MultiMeshInstance3D_5_0_3" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0961, -0.0950005, 1.65098)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_4dpws")
-
-[node name="MultiMeshInstance3D_5_0_4" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1605, -0.095, 10.6114)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_4rr1m")
-
-[node name="MultiMeshInstance3D_5_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8215, -0.095, 47.0373)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_fehhf")
-
-[node name="MultiMeshInstance3D_6_0_0" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.8333, -0.0950006, -48.3794)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_ebegm")
-
-[node name="MultiMeshInstance3D_6_0_5" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4867, -0.095, 22.5097)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_y82qy")
-
-[node name="MultiMeshInstance3D_6_0_6" type="MultiMeshInstance3D" parent="trees/ScatterOutput/leafless-sm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4372, -0.095, 37.0796)
-material_override = ExtResource("14_kpb12")
-multimesh = SubResource("MultiMesh_vh5if")
 
 [node name="ground-test" parent="." instance=ExtResource("14_qlpan")]
 
