@@ -113,6 +113,7 @@ sfx = ExtResource("2_d0imq")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -163,7 +164,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_oq8rt")
 
 [node name="GameOverSprites" type="Panel" parent="CanvasLayer/GameOverPanel"]
 layout_mode = 1
