@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bsvar2xei4xq0" path="res://audio/sfx/potions/sfx_potions_impact_block .wav" id="3_tqdn8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3dk6w"]
-radius = 1.0
+radius = 2.0
 
 [node name="DeterringPotionEffectPrefab" type="Area3D"]
 script = ExtResource("1_wnfh1")
