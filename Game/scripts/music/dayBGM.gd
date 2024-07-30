@@ -7,13 +7,13 @@ func _ready() -> void:
 	assert(stream is AudioStreamSynchronized)
 	setIntensity0()
 	
-	await get_tree().create_timer(15).timeout
-	
-	setIntensity1()
-	
-	await get_tree().create_timer(7).timeout
-	
-	setIntensity2()
+	#await get_tree().create_timer(15).timeout
+	#
+	#setIntensity1()
+	#
+	#await get_tree().create_timer(7).timeout
+	#
+	#setIntensity2()
 	
 func updateStreamVolume(index:int,delta):
 	# TODO : convert to linear? (not db?)
