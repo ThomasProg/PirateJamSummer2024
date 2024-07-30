@@ -90,6 +90,7 @@ libraries = {
 }
 
 [node name="BlackSprite" type="Sprite2D" parent="CanvasLayer/Panel"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(965.5, 782.875)
 scale = Vector2(1765, 632.25)
