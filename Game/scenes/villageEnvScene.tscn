@@ -13,11 +13,11 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_lgups"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="14_eagwk"]
 [ext_resource type="Material" uid="uid://dyw6tesab7tko" path="res://art/materials/paintedWood008C.tres" id="14_kpb12"]
-[ext_resource type="PackedScene" uid="uid://dxp6uvdf2nhfi" path="res://devs/banzaiMimic/devGameplayObjects/ground_test.tscn" id="14_qlpan"]
+[ext_resource type="PackedScene" uid="uid://dxp6uvdf2nhfi" path="res://prefabs/gameplayObjects/ground_test.tscn" id="14_qlpan"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
 [ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="15_vpmr8"]
 
-[sub_resource type="Resource" id="Resource_75lv7"]
+[sub_resource type="Resource" id="Resource_yfg4t"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -26,7 +26,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_hrfof"]
+[sub_resource type="Resource" id="Resource_4d4rb"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -37,7 +37,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_17mlk"]
+[sub_resource type="Resource" id="Resource_45ldb"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -49,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_psfcv"]
+[sub_resource type="Resource" id="Resource_ghid8"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -65,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_oiru2"]
+[sub_resource type="Resource" id="Resource_c4d54"]
 script = ExtResource("7_f8o2o")
-stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_75lv7"), SubResource("Resource_hrfof"), SubResource("Resource_17mlk"), SubResource("Resource_psfcv")])
+stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_yfg4t"), SubResource("Resource_4d4rb"), SubResource("Resource_45ldb"), SubResource("Resource_ghid8")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -497,7 +497,7 @@ visible = false
 script = ExtResource("6_kfpls")
 show_output_in_tree = true
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_oiru2")
+modifier_stack = SubResource("Resource_c4d54")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
