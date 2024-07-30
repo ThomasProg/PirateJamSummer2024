@@ -1,22 +1,33 @@
-carpenter: You seem to get rather well with the tailor.
+carpenter (Default): You seem to get rather well with the tailor.
 carpenter: What do you think of her?
-- She's a bit too quiet
-	carpenter: Oh, so that's not just me.
-	carpenter: It's been a bit difficult to talk to her.
+- She's a bit too reserved
+	carpenter (Content): Oh, so that's not just me.
+	carpenter (Sad): It's been a bit difficult to talk to her.
 - She's cute
 	carpenter: Right??
-	carpenter: But at the same time, it's a bit difficult to talk to her.	
+	carpenter (Sad): But at the same time, it's a bit difficult to talk to her.
+carpenter: As if she was hiding something.
+- ...
+carpenter (Happy): Oh! I don't mean it that way!!
+carpenter: I'm not saying she's the werewolf or anything!!
+carpenter (Content): I've just been thinking about her, that's all.
+carpenter (Happy): But enough talking about other people, tell me a bit more about you.
 
 carpenter: I've been wondering, what kind of potions can you do?
 - I can make a lot
-carpenter: Hmm...
-carpenter: Do you think you could.. like..
-carpenter: Make a love potion?
+- I have a small repertoire
+carpenter: What about a love potion?
 - What?
+- Uh?
 carpenter: What?
+update carpenter [animation="Shake Y" length="1"]
 carpenter: I mean, it was just an example!
-carpenter: Ordinary people like me just don't know how much you're able to do.
-carpenter: I guess that can make us a bit afraid.
-carpenter: After all, the werewolf appeared just after you moved in too.
-carpenter: And it's not a mystery that werewolves are connected to alchemy or magic.
-
+- I could probably make one if I had the ingredients for.
+# 
+- But you don't come across these ingredients that easily.
+carpenter (Content): I see.
+carpenter (Happy): What about... potions that can transform other people?
+- That would require ingredients too rare for me to have.
+carpenter: I see.
+carpenter (Content): I'm going to continue thinking about the werewolf today, I'm sure I'll be able to find something.
+carpenter: See ya!
