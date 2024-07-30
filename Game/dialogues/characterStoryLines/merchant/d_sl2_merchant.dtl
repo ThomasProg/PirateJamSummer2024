@@ -1,9 +1,11 @@
-merchant (Default): You know, for merchants, information is really important.
+join merchant (Default) 2
+merchant: Oh, hey!
+merchant: You know, for merchants, information is really important.
 merchant: I will tell you who I am suspicious about.
 merchant: But before that, you tell me.
 merchant: Who do you think the werewolf is?
 - The priest
-	merchant: Well, I was thinking the same.
+	merchant: Hmmm, I was thinking the same.
 	merchant: He appears like someone you can trust, but did you see how he tried to make us look away from who the werewolf might be?
 	merchant: It's really suspicious.
 	merchant: Maybe he just gathered people to eat us.
@@ -13,7 +15,7 @@ merchant: Who do you think the werewolf is?
 	merchant: Well.. I guess you can say he looks too innocent.
 	merchant: But personally, I'm way more suspicious of the hunter.
 	merchant: Refusing to hunt the werewolf.
-	merchant: And now, look how tired he is!
+	merchant: And now, look at how tired he is!
 	merchant: I don't think anyone can be more suspicious than him at this point.
 - The tailor
 	merchant: She's really too quiet.
@@ -25,5 +27,5 @@ merchant: Who do you think the werewolf is?
 	merchant: And now, look how tired he is!
 	merchant: I don't think anyone can be more suspicious than him at this point.
 
-merchant: Thanks for the telling me!
+merchant: Anyhow, thanks for the telling me!
 merchant: Take care!

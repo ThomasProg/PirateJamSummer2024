@@ -1,4 +1,12 @@
-merchant (Default): You know, I used to do business in the towns around.
-merchant: People don't want to go into the forest after all, including merchants.
-merchant: So that led to business getting really profitable for me.
-merchant: I don't know how I would do against a werewolf, but I'm pretty confident in myself.
+join merchant (Default) 2
+merchant (Default): Hey, my favorite alchemist!
+- Hey!
+# 
+- I was wondering, what did you do before coming here?
+merchant (Default): Oh, what a sudden question!
+merchant (Proud): I mainly used to do business in the towns around.
+merchant: People don't want to pass through the forest after all, including merchants.
+merchant (Default): So that led to business getting really profitable for me.
+- Were you not afraid of disappearing too?
+merchant: Well. I'm pretty confident in myself after all.
+merchant (Proud): And the deals I got were pretty great, so it was worth it!
