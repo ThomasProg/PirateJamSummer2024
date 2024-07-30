@@ -1,2 +1,10 @@
-join tailor 2
-tailor (Default): I just hurt myself because of my knitting
+join tailor (Default) 2
+tailor: Hello, Mr Evil Alchemist.
+- Hello, miss bandage.
+tailor (Pouting): Bandage?
+- You have bandages on your fingers, how did you get hurt?
+tailor (Default): Oh, that?
+tailor: I just hurt myself when knitting.
+- Does it hurt?
+tailor (Happy): A little, but I'm now used to it.
+- Hmm, I'll try bringing you something next time.
