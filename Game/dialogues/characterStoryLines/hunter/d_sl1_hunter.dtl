@@ -1,11 +1,15 @@
-- Hey
-# break
-- Why did you moved in this village?
+join hunter (Default) 2
+hunter: Hey.
+hunter: Why did you move into this village?
+- I wanted to discover new ingredients
+hunter: Is that all?
+- How about you?
 
-hunter (Default): You know how people sometimes disappear in this forest, right?
-hunter (Default): I've heard it was because of a beast.
-hunter (Default): I want to hunt it down.
+hunter (Sad): You know how people sometimes disappear in this forest, right?
+hunter (Angry): I've heard it was because of a beast.
+hunter (Proud): I want to hunt it down.
 - But isn't that beast the werewolf?
+hunter (Default): ...
 # break
 - Then why do you refuse hunting it?
-hunter (Default): .. I have my reasons.
+hunter: .. I have my reasons.
