@@ -1,3 +1,21 @@
+join merchant (Default) 2
+priest: Greetings, alchemist.
+priest: You look puzzled.
+priest: Are you thinking about the werewolf?
+- Yes
+# 
 priest (Default): We shouldn't assume who's the werewolf.
+- Why are you against suspecting other villagers?
+priest (Proud): It's because History taught us not to do so.
+priest (Default): Do you remember when we were blaming and burning witches because of simple diseases?
+- But it's different!
+priest (Angry): No, it isn't.
 priest: Discord and doubt can only bring us misfortune.
-priest: The werewolf can totally be someone who's not from the village, and just lives in the forest.
+priest (Default): It has been known pilgrims have been disappearing from the forest for a while now.
+priest: It has been a repetitive occurence.
+priest (Proud): Therefore, the werewolf has to be living in the forest, or it couldn't have done that.
+priest (Default): And none of you look like someone who lives in the forest by yourself.
+priest: Don't you agree?
+- I can't counter that, but I don't feel like it is true.
+priest (Proud): So be it.
+priest (Proud): Think about it.
