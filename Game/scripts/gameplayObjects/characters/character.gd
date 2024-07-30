@@ -44,3 +44,7 @@ func _process(delta):
 	var posToLookAt = get_viewport().get_camera_3d().global_position
 	posToLookAt.y = global_position.y
 	look_at(posToLookAt, Vector3.UP, true)
+
+	if interactable != null and GameManager.actionPointSystem.nbPoints == 0:
+		interactable.queue_free()
+		interactable = null
