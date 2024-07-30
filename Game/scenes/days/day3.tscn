@@ -98,28 +98,28 @@ script = ExtResource("5_xixsj")
 dialogue = NodePath("../TailorDialogue")
 baseStoryLine = ExtResource("15_f46kk")
 
-[node name="Calendula" parent="GameplayObjects/Tailor" instance=ExtResource("16_fnvcm")]
-transform = Transform3D(-0.999885, 0, 0.015149, 0, 1, 0, -0.015149, 0, -0.999885, -7.12226, -4.76838e-07, -3.30905)
-
-[node name="Stinkhorn" parent="GameplayObjects/Tailor" instance=ExtResource("17_a8wlb")]
-transform = Transform3D(-0.999885, 0, 0.015149, 0, 1, 0, -0.015149, 0, -0.999885, 11.5404, -1.1921e-07, 25.5634)
-
-[node name="Stinkhorn2" parent="GameplayObjects/Tailor" instance=ExtResource("17_a8wlb")]
-transform = Transform3D(-0.999885, 0, 0.015149, 0, 1, 0, -0.015149, 0, -0.999885, 20.9041, -2.38419e-07, 18.7)
-
-[node name="Stinkhorn3" parent="GameplayObjects/Tailor" instance=ExtResource("17_a8wlb")]
-transform = Transform3D(-0.999885, 0, 0.015149, 0, 1, 0, -0.015149, 0, -0.999885, -7.05295, -2.38419e-07, 28.282)
-
-[node name="Chameleon" parent="GameplayObjects/Tailor" instance=ExtResource("18_wm6td")]
-transform = Transform3D(0.0887567, -0.990393, -0.10604, 0.806403, 0.00895857, 0.591298, -0.584668, -0.137993, 0.799451, -21.7099, 1.86879, 6.13469)
-
-[node name="Chameleon2" parent="GameplayObjects/Tailor" instance=ExtResource("18_wm6td")]
-transform = Transform3D(0.806126, 0.153852, 0.571394, -0.576365, -0.0145644, 0.817062, 0.134029, -0.987987, 0.0769346, 17.8675, 0.339423, 13.1183)
-
 [node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("16_5rn7k")]
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night3.tscn"
 nextDayPath = "res://scenes/days/day4.tscn"
+
+[node name="Calendula" parent="GameplayObjects" instance=ExtResource("16_fnvcm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65917, -2.38419e-07, -7.11842)
+
+[node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("17_a8wlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.757, 1.19209e-07, -35.7048)
+
+[node name="Stinkhorn2" parent="GameplayObjects" instance=ExtResource("17_a8wlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0157, 0, -28.7004)
+
+[node name="Stinkhorn3" parent="GameplayObjects" instance=ExtResource("17_a8wlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20705, 0, -38.7048)
+
+[node name="Chameleon" parent="GameplayObjects" instance=ExtResource("18_wm6td")]
+transform = Transform3D(-0.0798894, 0.992369, 0.0939168, 0.806403, 0.00895857, 0.591298, 0.585945, 0.122973, -0.800966, 12.7837, 1.86879, -16.7821)
+
+[node name="Chameleon2" parent="GameplayObjects" instance=ExtResource("18_wm6td")]
+transform = Transform3D(-0.808064, -0.138868, -0.572494, -0.576365, -0.0145644, 0.817062, -0.121802, 0.990204, -0.0682697, -26.895, 0.339423, -23.1653)
 
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)
