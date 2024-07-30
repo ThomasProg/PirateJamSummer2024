@@ -50,6 +50,8 @@ shape = SubResource("SphereShape3D_7r6gh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0)
+collision_layer = 66
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_83j0p")
@@ -59,7 +61,7 @@ script = ExtResource("2_lwojp")
 interactionName = "Alchemy Table"
 interactionDescription = "Stay close to brew potions"
 
-[node name="Red" type="StaticBody3D" parent="."]
+[node name="Red" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.416131, 0.00734162, 0.27663)
 collision_layer = 2
 collision_mask = 0
@@ -84,7 +86,7 @@ interactionDescription = "Click to brew"
 
 [node name="potionDamageRed" parent="Red" instance=ExtResource("6_kohi7")]
 
-[node name="Yellow" type="StaticBody3D" parent="."]
+[node name="Yellow" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.617637, 0.0149623, -0.0169204)
 collision_layer = 2
 collision_mask = 0
