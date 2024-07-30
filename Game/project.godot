@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Pirate Jam Summer 2024"
+config/name="HiddenClaws"
 run/main_scene="res://scenes/days/day1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
