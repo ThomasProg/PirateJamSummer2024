@@ -1,23 +1,48 @@
-join tailor 2
+join tailor (Default) 2
 do GameManager.updateHasHealingPotion()
 if {hasHealingPotion} == false:
 	I should bring her a healing potion before talking to her.
 	do GameManager.cancelDialogue()
 	[end_timeline]
-tailor (Default): Thank you for the potion!!
+- Hey!
+tailor: Hey, Mr. Evil Alchemist
+- I have something for you.
+tailor: Oh?
+- *Give healing potion*
+do GameManager.consumeHealingPotion()
+tailor: Oh!
+tailor: ...
+tailor: Is that the famous love potion I've heard so much about?
+- No!
+# 
+- It's a healing potion, to heal your injuries
+tailor (Default): Oh!!
+tailor (Happy): Thank you!!
+tailor (Happy): Can I do something for you in exchange?
+- Yes.
+# 
+- I want your opinion  about someone.
 tailor (Default): Who do you want to talk about?
 - Hunter
-	tailor (Default): The hunter? He's scary
-	tailor (Default): He's also been looking really tired recently...
-	tailor (Default): As if he was spending his nights hunting people
+	tailor (Default): The hunter? He's scary.
+	tailor: He's also been looking really tired recently...
+	tailor: As if he was spending his nights hunting people
 - Merchant
-	tailor (Default): I don't know, I haven't really talked to her a lot
+	tailor (Default): Hmmm...
+	tailor: I don't know, I haven't really talked to her a lot.
+	tailor: But she sure looks full of energy.
+	tailor: That must be how merchants are.
 - Priest
 	tailor (Default): Hmmm...
-	tailor (Default): I don't know
+	tailor (Default): I don't know.
 	tailor (Default): He appears like someone we can depend on, since he's the one leading, but
-	tailor (Default): He tells us to not suspect each other
+	tailor (Default): He tells us to not suspect each other.
 	tailor (Default): Under these circumstances, it's a bit weird...
 - Carpenter
-	tailor (Default): He looks sweet
-	tailor (Default): I don't think it's him
+	tailor (Happy): He looks sweet.
+	tailor (Default): Honestly, in my eyes, he's the only one that can't be the werewolf.
+	tailor (Happy): Uhm, with you, of course.
+	tailor (Default): But I don't think it's him.
+tailor (Default): Did that help you?
+- Yeah, thank you.
+tailor (Happy): It was a pleasure!

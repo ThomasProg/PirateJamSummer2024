@@ -159,6 +159,11 @@ func giveHoney():
 	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
 	playerInv.giveItem(honey)
 	
+func consumeHealingPotion():
+	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
+	var requiredItems:Array[InventoryItem] = [healingPotion]
+	playerInv.potionInventory.tryConsumeItems(requiredItems)
+	
 func updateHasHealingPotion():
 	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
 	var requiredItems:Array[InventoryItem] = [healingPotion]
