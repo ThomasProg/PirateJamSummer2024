@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu7oh25dvuelt"]
+[gd_scene load_steps=12 format=3 uid="uid://cu7oh25dvuelt"]
 
 [ext_resource type="Script" path="res://scripts/playerHut.gd" id="1_esc5b"]
 [ext_resource type="PackedScene" uid="uid://dy8qydoxn3cwa" path="res://prefabs/gameplayObjects/buildings/parts/playerHutRoof.tscn" id="1_xbxty"]
@@ -6,7 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://cjgg8s1xbkm67" path="res://prefabs/gameplayObjects/alchemyTable.tscn" id="5_bpya6"]
 [ext_resource type="PackedScene" uid="uid://brlekxwu3frny" path="res://prefabs/gameplayObjects/furnitureAndProps/bookshelf.tscn" id="6_rqajv"]
 [ext_resource type="PackedScene" uid="uid://bk1q3bxr1foxv" path="res://prefabs/gameplayObjects/buildings/parts/doorHinged.tscn" id="7_buuyj"]
+[ext_resource type="Texture2D" uid="uid://cittekbfbyggp" path="res://art/textures/potion_hint_scroll.png" id="8_m6rj3"]
 [ext_resource type="PackedScene" uid="uid://cxs3do68n3jxt" path="res://prefabs/gameplayObjects/furnitureAndProps/thatchBed.tscn" id="8_uwmt1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71e1e"]
+transparency = 1
+albedo_texture = ExtResource("8_m6rj3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3q8qp"]
+albedo_texture = ExtResource("8_m6rj3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_q0p46"]
+material = SubResource("StandardMaterial3D_3q8qp")
 
 [node name="playerHut" type="Node3D" node_paths=PackedStringArray("toResetColliders", "door", "thatch")]
 script = ExtResource("1_esc5b")
@@ -31,3 +42,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.527952, 0.0997328, 3.02751
 
 [node name="thatchBed" parent="." instance=ExtResource("8_uwmt1")]
 transform = Transform3D(-0.447775, 0, -0.894147, 0, 1, 0, 0.894147, 0, -0.447775, 1.7063, -0.121349, -1.61308)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.322595, -0.244863, -1.07033e-08, 0, -1.77031e-08, 0.405, -0.244863, -0.322595, -1.41011e-08, -1.49074, 0.807792, -0.641773)
+material_override = SubResource("StandardMaterial3D_71e1e")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_q0p46")
