@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="15_07kjr"]
 [ext_resource type="Material" uid="uid://ql81k3p72ffn" path="res://art/materials/main.tres" id="15_vpmr8"]
 
-[sub_resource type="Resource" id="Resource_3mmm2"]
+[sub_resource type="Resource" id="Resource_uhka0"]
 script = ExtResource("8_m035n")
 amount = 75
 enabled = true
@@ -26,7 +26,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_r8wpa"]
+[sub_resource type="Resource" id="Resource_0fjqq"]
 script = ExtResource("9_q087c")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(6, 360, 6)
@@ -37,7 +37,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_g7yns"]
+[sub_resource type="Resource" id="Resource_gqlcy"]
 script = ExtResource("10_fvxws")
 iterations = 3
 offset_step = 0.2
@@ -49,7 +49,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_03dyb"]
+[sub_resource type="Resource" id="Resource_2468n"]
 script = ExtResource("11_24bgj")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -65,9 +65,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_jo0hk"]
+[sub_resource type="Resource" id="Resource_bbrw0"]
 script = ExtResource("7_f8o2o")
-stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_3mmm2"), SubResource("Resource_r8wpa"), SubResource("Resource_g7yns"), SubResource("Resource_03dyb")])
+stack = Array[ExtResource("8_07b0c")]([SubResource("Resource_uhka0"), SubResource("Resource_0fjqq"), SubResource("Resource_gqlcy"), SubResource("Resource_2468n")])
 
 [sub_resource type="Resource" id="Resource_tr4wi"]
 script = ExtResource("14_eagwk")
@@ -497,7 +497,7 @@ visible = false
 script = ExtResource("6_kfpls")
 show_output_in_tree = true
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_jo0hk")
+modifier_stack = SubResource("Resource_bbrw0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
