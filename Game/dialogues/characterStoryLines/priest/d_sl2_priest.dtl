@@ -1,1 +1,27 @@
-priest (Default): I will tell you the order of who joined us first.
+join priest (Default) 2
+priest (Default): So, did you think about what I told you last time?
+- Yes.
+# 
+- But I wanted to ask:
+# 
+- In what order did people join the village?
+priest (Angry): I see you still haven't given up.
+priest (Proud): But interesting question.
+priest (Default): As you know, I am the one who led to the construction of this village.
+priest: I invited personally the carpenter, so that he could help constructing the huts.
+priest: Then, the hunter and the merchant both joined us on the same day.
+priest: The tailor joined us a few days later.
+priest (Proud): So, depending on that order, who would be the most suspicious?
+- You
+- The carpenter
+- The merchant
+- The hunter
+- The tailor
+priest: No.
+priest (Default): It is you.
+- !!!
+priest (Proud): None of us ever saw any werewolf before.
+priest (Default): But then, you came.
+priest: Let me ask you the question again.
+priest: Are you sure you want to blame a villager?
+- ...

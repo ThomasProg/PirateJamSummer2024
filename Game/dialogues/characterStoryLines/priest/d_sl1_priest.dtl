@@ -1,4 +1,4 @@
-join merchant (Default) 2
+join priest (Default) 2
 priest: Greetings, alchemist.
 priest: You look puzzled.
 priest: Are you thinking about the werewolf?
@@ -18,4 +18,4 @@ priest (Default): And none of you look like someone who lives in the forest by y
 priest: Don't you agree?
 - I can't counter that, but I don't feel like it is true.
 priest (Proud): So be it.
-priest (Proud): Think about it.
+priest: Think about it.
