@@ -1,10 +1,26 @@
-priest (Default): As you know, Iam a priest.
+join priest (Default) 2
+priest: I can see it in your eyes.
+priest: You're still trying to find who the werewolf is.
+priest (Proud): Fine.
+priest (Default): Let me reveal something to you.
+priest (Default): As you know, I am a priest.
 priest: I have spent all my life listening to both good and bad people.
-priest: And during that time, I have learned how to recognize them.
+priest (Proud): And during that time, I have learned how to recognize them.
 priest: Do you remember how I told you all the villagers to not distrust each other?
-priest: I just wanted time.
-priest: Time to watch everyone.
+- Yes.
+priest (Proud): The truth is, I just wanted time.
+priest (Default): Time to watch everyone.
 priest: Watch their body language. Their microexpressions. Their actions.
 priest: And learn their tells.
-priest: With enough times, everyone ends up betraying themselves.
-priest: I also know how much blaming each other could have sabotaged all of us.
+priest (Proud): That is why I trust you enough to tell you that right now.
+priest (Default): After watching you for the past few days, I can tell you are not the werewolf.
+priest (Proud): I am also sure that with enough time, the werewolf is going to betray itself too.
+priest (Default): I just need more time to read the other villagers.
+priest: As I told you yesterday, you were the most suspicious, so I focused on you first.
+priest (Proud): I can innocent the carpenter too, since I am the one who recruited him.
+priest (Angry): I sense greed in the merchant, but I can't blame her with her profession.
+priest: Meanwhile, the tailor is trying to dodge most of my questions.
+priest: We don't even know why she joind us.
+priest (Default): And to finish, the hunter is definitely suspicious too, because of his lack of action.
+priest: That is all the information I have on my side.
+priest: I wish you good luck for the rest.
