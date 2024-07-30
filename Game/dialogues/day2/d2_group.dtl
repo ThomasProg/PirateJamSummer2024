@@ -1,10 +1,41 @@
-carpenter (Default): The werewolf has attacked!!
-merchant (Default): I thought it was a wolf, I've only heard some noises.
-tailor(Default): *Stares at the hunter*
-hunter(Default): Don't look at me, I won't try to hunt it.
-tailor(Default): But he's probably one of us!!
-priest(Default): Let's not start accusing each other.
+join tailor (Sad) 1 [animation="Slide In Left" length="1"]
+tailor: A werewolf has attacked!!
+join merchant (Worried) 3 [animation="Slide In Right" length="1"]
+merchant: I thought it was simply a wolf.
+join carpenter (Worried) 4 [animation="Slide In Right" length="1"]
+carpenter: I'm glad I didn't step outside.
+join hunter 0 [animation="Slide In Left" length="1"]
+update tailor [ mirrored="true"]
+tailor (Default): *Stares at the hunter*
+update hunter [ mirrored="true"]
+hunter (Default): Don't look at me, I won't try to hunt it.
+update tailor (Pouting) [animation="Shake Y" length="1" repeat="0" mirrored="true"]
+tailor (Default): But he's probably one of us!!
+update tailor [ mirrored="false"]
+update hunter [ mirrored="false"]
+join priest (Angry) 2
+priest: Let's not start accusing each other.
 priest: Distrust will lead us nowhere.
+update priest (Happy) [ mirrored="false"]
 priest: I believe in all of you.
 priest: The werewolf is probably just hiding in the forest during the day.
-
+update carpenter [animation="Shake Y" length="1" repeat="0" mirrored="false"]
+carpenter (Worried): What should we do then?\
+Just stay at home and hope the werewolf doesn't eat us??
+merchant (Default): Maybe we can stay grouped together so we can defend ourselves better.
+update tailor (Sad) [animation="Shake Y" length="1" repeat="0" mirrored="false"]
+tailor: Nooo!
+tailor: What if one of us is the werewolf?!?
+tailor: We're all going to be dead!!
+update priest (Angry)
+priest (Angry): Enough.
+priest: Let's all stay in our individual huts during the night.\
+They should be sturdy enough for now.
+priest (Default): Let's not forget the werewolf is human during the day.
+priest: One of us might encounter it, and we can deal with it at that time.
+priest: Understood?
+- Yes
+After that, the group continued to talk.
+I don't want to die, and I'll do my best not to.
+I should probably gather some ingredients.\
+I'm sure I can make some useful potions against the werewolf.
