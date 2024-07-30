@@ -20,7 +20,6 @@ func updateStreamVolume(index:int,delta):
 	# TODO : convert to linear? (not db?)
 	var newVolume:float = move_toward(stream.get_sync_stream_volume(index), targetVolumes[index], transitionSpeed * delta)
 	stream.set_sync_stream_volume(index, newVolume)
-	print(index, " : ", newVolume)
 	
 func _process(delta: float) -> void:
 	updateStreamVolume(0, delta)
