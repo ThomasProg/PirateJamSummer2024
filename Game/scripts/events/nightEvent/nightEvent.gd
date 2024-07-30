@@ -7,6 +7,8 @@ class_name NightEvent
 @export_file("*.tscn") var nextDayPath: String
 @export var brickBreakSFX:AudioStream
 
+@export var nightBGM:NightBGM
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if OS.is_debug_build():
@@ -36,6 +38,8 @@ func _ready():
 		)
 
 func onPeek():
+	nightBGM.targetVolumes[3] = 0
+	
 	# TODO : opti and precompute
 	var stones = get_parent().find_children("*", "RemovableStone", true, false)
 
@@ -49,7 +53,8 @@ func onPeek():
 		stone.add_child(audioPlayer)
 		audioPlayer.play()
 		audioPlayer.finished.connect(func():
-			audioPlayer.queue_free())
+			audioPlayer.queue_free()
+			nightBGM.targetVolumes[3] = -60)
 		
 		stone.disappear()
 		wolf.global_position = stone.peekingSpot.global_position
@@ -58,4 +63,10 @@ func onPeek():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var ratio = wolf.aggro / wolf.maxAggro
+	if (ratio < 0.3):
+		nightBGM.setIntensity0()
+	elif (ratio < 0.6):
+		nightBGM.setIntensity1()
+	else:
+		nightBGM.setIntensity2()
