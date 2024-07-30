@@ -15,6 +15,15 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"Content": {
+"export_overrides": {
+"image": "\"res://art/characters/Carpenter Sprites/Carpenter_content_peaceful.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Default": {
 "export_overrides": {
 "image": "\"res://art/characters/Carpenter Sprites/Carpenter_default_happy.png\""
