@@ -23,6 +23,10 @@ func removePoint():
 		onNoPoints.emit()
 		
 	updateVisuals()
+	
+func addPoint():
+	nbPoints += 1
+	updateVisuals()
 
 func updateVisuals():
 	label.text = "[center]%d conversations remaining[/center]" % nbPoints

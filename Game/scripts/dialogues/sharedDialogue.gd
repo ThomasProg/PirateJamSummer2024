@@ -5,6 +5,7 @@ class_name SharedDialogue
 var hasDialogueAlreadyPlayed:bool = false
 
 signal onStarted(characterTalkedTo:Character, player:Player)
+signal onCancelled(characterTalkedTo:Character, player:Player)
 signal onFinished(characterTalkedTo:Character, player:Player)
 
 func play(characterTalkedTo:Character, player:Player):
@@ -16,6 +17,7 @@ func play(characterTalkedTo:Character, player:Player):
 		print("Dialogue already played")
 		return
 		
+	GameManager.isConsumingDialogue = true
 	onStarted.emit(characterTalkedTo, player)
 	hasDialogueAlreadyPlayed = true
 	
@@ -34,7 +36,12 @@ func play(characterTalkedTo:Character, player:Player):
 		player.captureMouse = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
+		if not(GameManager.isConsumingDialogue):
+			hasDialogueAlreadyPlayed = false
+			onCancelled.emit(characterTalkedTo, player)
+		
 		await get_tree().process_frame
 		interactComp.enabled = true
+			
 		onFinished.emit(characterTalkedTo, player)
 		, CONNECT_ONE_SHOT)

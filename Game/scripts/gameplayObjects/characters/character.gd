@@ -1,8 +1,12 @@
 extends Area3D
 class_name Character
 
+var previousParent:Node = null
 @export var interactable:Interactable
 @export var sharedDialogue:SharedDialogue
+
+func resetInteractable():
+	previousParent.add_child(interactable)
 
 func _ready():
 	if (sharedDialogue == null):
@@ -11,11 +15,21 @@ func _ready():
 		
 	interactable.onInteracted.connect(func(player: Player):				
 		sharedDialogue.play(self, player)			
-		GameManager.actionPointSystem.removePoint()
 	)
 	
 	sharedDialogue.onStarted.connect(func(characterTalkedTo:Character, player: Player):
-		interactable.queue_free()
+		#interactable.queue_free()
+		previousParent = interactable.get_parent()
+		previousParent.remove_child(interactable)
+		)
+		
+	sharedDialogue.onCancelled.connect(func(characterTalkedTo:Character, player: Player):
+		resetInteractable()
+		GameManager.actionPointSystem.addPoint()
+		)
+		
+	sharedDialogue.onFinished.connect(func(characterTalkedTo:Character, player: Player):
+		GameManager.actionPointSystem.removePoint()
 		)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

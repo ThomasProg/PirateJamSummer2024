@@ -1,3 +1,8 @@
+do GameManager.updateHasHealingPotion()
+if {hasHealingPotion} == false:
+	I should bring her a healing potion before talking to her.
+	do GameManager.cancelDialogue()
+	[end_timeline]
 join tailor 2
 tailor (Default): Thank you for the potion!!
 tailor (Default): Who do you want to talk about?

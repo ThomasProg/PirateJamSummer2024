@@ -16,6 +16,8 @@ extends Node
 @export var saveKey:int = 0
 
 @export var honey:InventoryIngredientItem = preload("res://inventoryAssets/ingredients/honeyIngr.tres")
+@export var healingPotion:InventoryPotionItem = preload("res://inventoryAssets/potions/healingPotion.tres")
+
 
 var isDay:bool = true
 var player:Player
@@ -157,4 +159,13 @@ func giveHoney():
 	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
 	playerInv.giveItem(honey)
 	
-	
+func updateHasHealingPotion():
+	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
+	var requiredItems:Array[InventoryItem] = [healingPotion]
+	if(playerInv.potionInventory.canConsumeItems(requiredItems)):
+		Dialogic.VAR.hasHealingPotion = true
+
+var isConsumingDialogue:bool = true
+
+func cancelDialogue():
+	isConsumingDialogue = false

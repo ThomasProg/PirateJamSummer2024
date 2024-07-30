@@ -10,6 +10,7 @@ func _ready():
 	dialogue.timeline = storyLine.getCurrentTimeline()
 	
 	dialogue.onFinished.connect(func(characterTalkedTo:Character, player:Player):
-		storyLine.currentTimelineIndex += 1
-		storyLine.saveStoryLine()
+		if GameManager.isConsumingDialogue:
+			storyLine.currentTimelineIndex += 1
+			storyLine.saveStoryLine()
 		)
