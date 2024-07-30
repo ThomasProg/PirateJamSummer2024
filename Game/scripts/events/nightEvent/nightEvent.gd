@@ -17,6 +17,11 @@ func _ready():
 			assert(peekAnchor is Node3D)
 
 	nightTimer.onPeek.connect(onPeek)
+	
+	wolf.onWolfDisappears.connect(func():
+		nightBGM.targetVolumes[3] = -60
+		)
+	
 	nightTimer.onNightEnd.connect(func():
 		print("End of the night: you survive")
 		if not(nextDayPath.is_empty()):
@@ -53,8 +58,7 @@ func onPeek():
 		stone.add_child(audioPlayer)
 		audioPlayer.play()
 		audioPlayer.finished.connect(func():
-			audioPlayer.queue_free()
-			nightBGM.targetVolumes[3] = -60)
+			audioPlayer.queue_free())
 		
 		stone.disappear()
 		wolf.global_position = stone.peekingSpot.global_position

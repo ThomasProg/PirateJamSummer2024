@@ -2,7 +2,7 @@ extends AudioStreamPlayer
 class_name NightBGM
 
 var targetVolumes:Array[float] = [0, -60, -60, -60]
-var transitionSpeed:float = 20.0
+var transitionSpeeds:Array[float] = [20.0, 20.0, 20.0, 60]
 
 func _ready() -> void:
 	assert(stream is AudioStreamSynchronized)
@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 func updateStreamVolume(index:int,delta):
 	# TODO : convert to linear? (not db?)
-	var newVolume:float = move_toward(stream.get_sync_stream_volume(index), targetVolumes[index], transitionSpeed * delta)
+	var newVolume:float = move_toward(stream.get_sync_stream_volume(index), targetVolumes[index], transitionSpeeds[index] * delta)
 	stream.set_sync_stream_volume(index, newVolume)
 	
 func _process(delta: float) -> void:
