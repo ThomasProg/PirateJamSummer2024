@@ -25,6 +25,8 @@ enum EyeColor{RED, YELLOW}
 @export var hitAudios:Array[AudioStream]
 @export var audioPlayer:AudioStreamPlayer3D
 
+@export var interactable:Interactable
+
 var raycasts:Array[RayCast3D]
 
 signal onWolfWin()
@@ -50,8 +52,10 @@ func setRandomEyeColor():
 	match eyeColor:
 		EyeColor.RED:
 			sprite.texture = redEyesTex
+			interactable.interactionDescription = "Throw a [b]red[/b] potion against [b]red[/b] eyes"
 		EyeColor.YELLOW:
 			sprite.texture = yellowEyesTex
+			interactable.interactionDescription = "Throw a [b]yellow[/b] potion against [b]yellow[/b] eyes"
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
