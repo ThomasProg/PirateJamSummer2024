@@ -1,5 +1,20 @@
-join tailor 2
-tailor (Default): Well
-tailor (Default): The reason I actually joined this village...
-tailor (Default): It's because my family wanted to marry me.
-tailor (Default): So I ran away, to somewhere they wouldn't find me.
+join tailor (Default) 2
+tailor (Happy): Good morning, Mr Angelic Alchemist!
+- Good morning!
+tailor: I thought about it a little, and there is something I'd like to share with you.
+tailor: Do you remember when you asked me why I moved in?
+- Yes.
+tailor: Actually, the reason I joined this village...
+tailor (Sad): is because I ran away from my family.
+tailor (Default): They have always been very controlling,
+tailor (Sad): and recently, they tried to force me to marry someone even worse.
+tailor (Default): That's why I ran.
+tailor (Happy): I ran to a place no one would be able to find me.
+tailor (Default): A village with 6 villagers?
+tailor (Default): In a forest where people are afraid to disappear?
+tailor (Happy): Couldn't wish for more.
+tailor: Perfect to start a new life.
+tailor (Default): But even though I've finally be freed... here I am, trapped by a werewolf.
+tailor (Sad): Tell me, can't you do anything about it?
+tailor (Sad): Find the werewolf please!!
+- I will  try my best.
