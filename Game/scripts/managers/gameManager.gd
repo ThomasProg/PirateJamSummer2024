@@ -174,3 +174,7 @@ var isConsumingDialogue:bool = true
 
 func cancelDialogue():
 	isConsumingDialogue = false
+
+var hasWerewolfBeenVoted = false
+func voteWerewolf():
+	hasWerewolfBeenVoted = true

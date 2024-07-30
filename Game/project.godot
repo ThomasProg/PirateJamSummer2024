@@ -37,6 +37,7 @@ directories/dtl_directory={
 "d1_priest": "res://dialogues/day1/d1_priest.dtl",
 "d1_tailor": "res://dialogues/day1/d1_tailor.dtl",
 "d2_group": "res://dialogues/day2/d2_group.dtl",
+"d6_carpenter": "res://dialogues/day6/d6_carpenter.dtl",
 "d6_hunter": "res://dialogues/day6/d6_hunter.dtl",
 "d6_merchant": "res://dialogues/day6/d6_merchant.dtl",
 "d6_priest": "res://dialogues/day6/d6_priest.dtl",
@@ -61,7 +62,8 @@ directories/dtl_directory={
 "welcome": "res://dialogues/welcome.dtl"
 }
 variables={
-"hasHealingPotion": false
+"hasHealingPotion": false,
+"vote": ""
 }
 layout/style_list=["res://VNStyle/style.tres"]
 layout/default_style="res://VNStyle/style.tres"
