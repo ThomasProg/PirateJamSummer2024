@@ -106,10 +106,10 @@ func updatePeek(delta):
 		raycasts[i].global_position = eyeAnchors[i].global_position
 		
 		var globalTargetPos:Vector3 = target.global_position
-		var capsule = target.collider.shape as CapsuleShape3D
-		if (capsule != null):
-			var min = globalTargetPos.y - capsule.height / 2.0
-			var max = globalTargetPos.y + capsule.height / 2.0
+		var box = target.collider.shape as BoxShape3D
+		if (box != null):
+			var min = globalTargetPos.y - box.size.y / 2.0
+			var max = globalTargetPos.y + box.size.y / 2.0
 			globalTargetPos.y = clampf(raycasts[i].global_position.y, min, max)
 		
 		raycasts[i].target_position = globalTargetPos - raycasts[i].global_position
