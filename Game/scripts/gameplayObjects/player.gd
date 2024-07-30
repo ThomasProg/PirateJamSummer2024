@@ -169,8 +169,10 @@ func _physics_process(delta):
 			
 		
 	else:
-		velocity.x = move_toward(velocity.x, 0, usedSpeed)
-		velocity.z = move_toward(velocity.z, 0, usedSpeed)
+		#velocity.x = move_toward(velocity.x, 0, usedSpeed)
+		#velocity.z = move_toward(velocity.z, 0, usedSpeed)
+		velocity.x = 0
+		velocity.z = 0
 
 	move_and_slide()
 
