@@ -5,22 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_p0ynu"]
 [ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="3_ox2fn"]
 [ext_resource type="Script" path="res://scripts/dialogues/sharedDialogue.gd" id="4_fera6"]
-[ext_resource type="Script" path="res://scripts/dialogues/storyLineDialogue.gd" id="5_tbo1o"]
-[ext_resource type="Resource" uid="uid://yg8ipgo6cwlj" path="res://dialogues/characterStoryLines/priest/priestStoryLine.tres" id="6_k2mlh"]
+[ext_resource type="Resource" path="res://dialogues/day6/d6_priest.dtl" id="6_44wrj"]
 [ext_resource type="PackedScene" uid="uid://bdxtlyav7kf57" path="res://prefabs/gameplayObjects/characters/hunter.tscn" id="7_5gbqq"]
-[ext_resource type="Resource" uid="uid://cw0i06hasv30g" path="res://dialogues/characterStoryLines/hunter/hunterStoryLine.tres" id="8_gplma"]
+[ext_resource type="Resource" path="res://dialogues/day6/d6_hunter.dtl" id="8_85un5"]
 [ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="9_pgqoy"]
-[ext_resource type="Resource" uid="uid://ciqnku1od2nx2" path="res://dialogues/characterStoryLines/merchant/merchantStoryLine.tres" id="10_oil0p"]
+[ext_resource type="Resource" path="res://dialogues/day6/d6_merchant.dtl" id="10_246w2"]
 [ext_resource type="PackedScene" uid="uid://cgbo0fg7mpkg0" path="res://prefabs/gameplayObjects/characters/tailor.tscn" id="11_yntmb"]
-[ext_resource type="Resource" uid="uid://c8w2vkdxqrsk2" path="res://dialogues/characterStoryLines/tailor/tailorStoryLine.tres" id="12_olo4k"]
+[ext_resource type="Resource" path="res://dialogues/day6/d6_tailor.dtl" id="12_7kl7s"]
 [ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="13_8slbb"]
-[ext_resource type="Resource" uid="uid://cwt1qmyu68dah" path="res://dialogues/characterStoryLines/carpenter/carpenterStoryLine.tres" id="14_yvwag"]
+[ext_resource type="Resource" path="res://dialogues/day6/d6_carpenter.dtl" id="14_msj8j"]
 [ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="16_ygq6v"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="17_sr44w"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="18_a5778"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="19_wffsl"]
 [ext_resource type="PackedScene" uid="uid://bj0jbnlepr72h" path="res://prefabs/actionPointSystem.tscn" id="20_1nwqr"]
 [ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="21_fpfau"]
+[ext_resource type="Script" path="res://scripts/events/day6Event.gd" id="21_w2kw8"]
 
 [node name="Day6" type="Node3D"]
 script = ExtResource("1_xuxjc")
@@ -41,11 +41,7 @@ sharedDialogue = NodePath("PriestDialogue")
 
 [node name="PriestDialogue" type="Node" parent="GameplayObjects/Priest"]
 script = ExtResource("4_fera6")
-
-[node name="StoryLineDialogue" type="Node" parent="GameplayObjects/Priest" node_paths=PackedStringArray("dialogue")]
-script = ExtResource("5_tbo1o")
-dialogue = NodePath("../PriestDialogue")
-baseStoryLine = ExtResource("6_k2mlh")
+timeline = ExtResource("6_44wrj")
 
 [node name="Hunter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("7_5gbqq")]
 transform = Transform3D(0.475286, 0, -0.879831, 0, 1, 0, 0.879831, 0, 0.475286, 6.93689, 0, -33.5308)
@@ -53,11 +49,7 @@ sharedDialogue = NodePath("HunterDialogue")
 
 [node name="HunterDialogue" type="Node" parent="GameplayObjects/Hunter"]
 script = ExtResource("4_fera6")
-
-[node name="StoryLineDialogue" type="Node" parent="GameplayObjects/Hunter" node_paths=PackedStringArray("dialogue")]
-script = ExtResource("5_tbo1o")
-dialogue = NodePath("../HunterDialogue")
-baseStoryLine = ExtResource("8_gplma")
+timeline = ExtResource("8_85un5")
 
 [node name="Merchant" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("9_pgqoy")]
 transform = Transform3D(0.980029, 0, 0.198855, 0, 1, 0, -0.198855, 0, 0.980029, -14.3206, 0, -29.9573)
@@ -65,11 +57,7 @@ sharedDialogue = NodePath("MerchantDialogue")
 
 [node name="MerchantDialogue" type="Node" parent="GameplayObjects/Merchant"]
 script = ExtResource("4_fera6")
-
-[node name="StoryLineDialogue" type="Node" parent="GameplayObjects/Merchant" node_paths=PackedStringArray("dialogue")]
-script = ExtResource("5_tbo1o")
-dialogue = NodePath("../MerchantDialogue")
-baseStoryLine = ExtResource("10_oil0p")
+timeline = ExtResource("10_246w2")
 
 [node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("11_yntmb")]
 transform = Transform3D(-0.994565, 0, -0.104112, 0, 1, 0, 0.104112, 0, -0.994565, -8.87064, 0, -10.6179)
@@ -77,11 +65,7 @@ sharedDialogue = NodePath("TailorDialogue")
 
 [node name="TailorDialogue" type="Node" parent="GameplayObjects/Tailor"]
 script = ExtResource("4_fera6")
-
-[node name="StoryLineDialogue" type="Node" parent="GameplayObjects/Tailor" node_paths=PackedStringArray("dialogue")]
-script = ExtResource("5_tbo1o")
-dialogue = NodePath("../TailorDialogue")
-baseStoryLine = ExtResource("12_olo4k")
+timeline = ExtResource("12_7kl7s")
 
 [node name="Carpenter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("13_8slbb")]
 transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, 3.99921, 0, -9.32232)
@@ -89,11 +73,7 @@ sharedDialogue = NodePath("CarpenterDialogue")
 
 [node name="CarpenterDialogue" type="Node" parent="GameplayObjects/Carpenter"]
 script = ExtResource("4_fera6")
-
-[node name="StoryLineDialogue" type="Node" parent="GameplayObjects/Carpenter" node_paths=PackedStringArray("dialogue")]
-script = ExtResource("5_tbo1o")
-dialogue = NodePath("../CarpenterDialogue")
-baseStoryLine = ExtResource("14_yvwag")
+timeline = ExtResource("14_msj8j")
 
 [node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("16_ygq6v")]
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
@@ -114,5 +94,12 @@ objectives = Array[String](["- Trick some villagers into thinking you made a pot
 hiddenObjectives = Array[int]([])
 
 [node name="ActionPointSystem" parent="." instance=ExtResource("20_1nwqr")]
+nbPoints = 3
 
 [node name="DayUI" parent="." instance=ExtResource("21_fpfau")]
+
+[node name="Day6Event" type="Node" parent="." node_paths=PackedStringArray("werewolfDialogue", "bed")]
+script = ExtResource("21_w2kw8")
+werewolfDialogue = NodePath("../GameplayObjects/Merchant/MerchantDialogue")
+bed = NodePath("../GameplayObjects/ThatchBed")
+nextNightPathIfTalkedToWerewolf = "res://scenes/nights/night6safe.tscn"

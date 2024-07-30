@@ -159,6 +159,11 @@ func giveHoney():
 	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
 	playerInv.giveItem(honey)
 	
+func consumeHealingPotion():
+	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
+	var requiredItems:Array[InventoryItem] = [healingPotion]
+	playerInv.potionInventory.tryConsumeItems(requiredItems)
+	
 func updateHasHealingPotion():
 	var playerInv = Utilities.findComponentByType(player, PlayerInventory) as PlayerInventory
 	var requiredItems:Array[InventoryItem] = [healingPotion]
@@ -169,3 +174,7 @@ var isConsumingDialogue:bool = true
 
 func cancelDialogue():
 	isConsumingDialogue = false
+
+var hasWerewolfBeenVoted = false
+func voteWerewolf():
+	hasWerewolfBeenVoted = true
