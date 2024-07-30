@@ -12,6 +12,11 @@ func _ready() -> void:
 	GameManager.actionPointSystem = self
 	updateVisuals()
 
+func _input(event: InputEvent) -> void:
+	if (Input.is_action_just_pressed("AddActionPoint")):
+		nbPoints += 1
+		updateVisuals()
+
 func removePoint():
 	nbPoints -= 1
 	if (nbPoints == 0):
