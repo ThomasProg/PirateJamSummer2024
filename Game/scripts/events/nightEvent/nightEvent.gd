@@ -38,6 +38,11 @@ func _ready():
 		print("Game Over")
 		nightTimer.queue_free()	
 		wolf.queue_free()
+		wolf = null
+		
+		nightBGM.queue_free()
+		#for i in range(4):
+			#nightBGM.targetVolumes[i] = 0
 		
 		GameManager.loadGameOver()
 		)
