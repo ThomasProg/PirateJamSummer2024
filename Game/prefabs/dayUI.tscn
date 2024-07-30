@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://6qyvtyy4jjuo"]
+[gd_scene load_steps=7 format=3 uid="uid://6qyvtyy4jjuo"]
 
 [ext_resource type="Texture2D" uid="uid://cuf07pdtcoixx" path="res://art/ui/ui_day_icon.png" id="1_if8uv"]
 [ext_resource type="FontFile" uid="uid://bpm3pkttxpjel" path="res://fonts/fontThemes/ABeeZee-Regular.ttf" id="2_c1kaq"]
 [ext_resource type="Script" path="res://scripts/music/dayBGM.gd" id="3_pymr8"]
 [ext_resource type="AudioStream" uid="uid://bdltnxwr7kudm" path="res://audio/music/mx_day_village.ogg" id="3_utg5e"]
+[ext_resource type="AudioStream" uid="uid://bpjh1lwhp8fgm" path="res://audio/sfx/amb/amb_outside.ogg" id="5_ai0e4"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_50cp5"]
 stream_count = 3
@@ -35,3 +36,7 @@ fit_content = true
 stream = SubResource("AudioStreamSynchronized_50cp5")
 autoplay = true
 script = ExtResource("3_pymr8")
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ai0e4")
+autoplay = true

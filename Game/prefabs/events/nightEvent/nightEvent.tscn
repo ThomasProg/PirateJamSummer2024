@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cacg3rg6rfwit"]
+[gd_scene load_steps=11 format=3 uid="uid://cacg3rg6rfwit"]
 
 [ext_resource type="Script" path="res://scripts/events/nightEvent/nightEvent.gd" id="1_gbiwh"]
 [ext_resource type="Script" path="res://scripts/events/nightEvent/nightTimer.gd" id="2_3ulpj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/music/nightBGM.gd" id="5_xnlgv"]
 [ext_resource type="AudioStream" uid="uid://c6v0ge5h2hqgb" path="res://audio/music/mx_night_layer3.ogg" id="6_bvq8v"]
 [ext_resource type="AudioStream" uid="uid://d2hpyha6argy2" path="res://audio/music/mx_night_layer_fear.ogg" id="7_syqf7"]
+[ext_resource type="AudioStream" uid="uid://cbm3su1wrs3ng" path="res://audio/sfx/amb/amb_inside_night.ogg" id="9_rvl1h"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_5340u"]
 stream_count = 4
@@ -34,3 +35,7 @@ peekTimes = Array[float]([5.0])
 stream = SubResource("AudioStreamSynchronized_5340u")
 autoplay = true
 script = ExtResource("5_xnlgv")
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_rvl1h")
+autoplay = true
