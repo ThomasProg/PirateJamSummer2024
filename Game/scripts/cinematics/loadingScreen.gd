@@ -26,6 +26,7 @@ var animationPlayer: AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Loading screen loaded")
 	content.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	fromSprite = $CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode/FromSprite
 	toSprite = $CanvasLayer/Panel/DayNightSpritesPanel/DayNightSpritesNode/ToSprite
@@ -54,6 +55,7 @@ func _process(delta):
 					if !isItGameOver:
 						dayNightAnimation()
 					onFadeInFinished.emit()
+					print("onFadeInFinished")
 					mode = Mode.Visible
 		
 			Mode.FadeOut:
