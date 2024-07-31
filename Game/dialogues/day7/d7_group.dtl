@@ -103,7 +103,7 @@ tailor: Who do you think the werewolf is?
 	But the merchant is stronger.
 	You suddenly hear the sound of an arrow.
 	merchant (Angry): ARGHH!!
-	join hunter 1
+	join hunter 0
 	hunter (Default): I heard your screams.
 	hunter (Proud): And it seems the werewolf is too.
 	merchant (Angry): DON'T COME CLOSER!
