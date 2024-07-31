@@ -27,6 +27,8 @@ enum EyeColor{RED, YELLOW}
 
 @export var interactable:Interactable
 
+@export var animPlayer:AnimationPlayer
+
 var raycasts:Array[RayCast3D]
 
 signal onWolfWin()
@@ -74,6 +76,7 @@ func appear():
 		
 	audioPlayer.stream = peekAudio
 	audioPlayer.play()
+	animPlayer.play("move")
 	visible = true
 	for raycast in raycasts:
 		raycast.enabled = true
