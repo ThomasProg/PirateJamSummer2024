@@ -34,3 +34,5 @@ func _process(delta):
 		progressBarText.text = "[center]" + str + "[/center]"
 	else:
 		progressBar.visible = false
+		if table != null and table.audioPlayer.playing:
+			table.audioPlayer.stop()
