@@ -39,7 +39,7 @@ func _ready():
 	
 	var audioPlayer = AudioStreamPlayer.new()
 	audioPlayer.stream = sfx
-	add_child(audioPlayer)
+	get_parent().add_child(audioPlayer)
 	audioPlayer.play()
 	audioPlayer.finished.connect(func():
 		audioPlayer.queue_free())
