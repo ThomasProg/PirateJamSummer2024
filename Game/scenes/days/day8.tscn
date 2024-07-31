@@ -1,13 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://c2cbevuyvr7fn"]
+[gd_scene load_steps=18 format=3 uid="uid://c2cbevuyvr7fn"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_83ftn"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_e1eas"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_e7q4a"]
 [ext_resource type="PackedScene" uid="uid://bq7rn46ilrthd" path="res://prefabs/gameplayObjects/characters/priest.tscn" id="3_gyebx"]
 [ext_resource type="PackedScene" uid="uid://bdxtlyav7kf57" path="res://prefabs/gameplayObjects/characters/hunter.tscn" id="4_qqqmy"]
-[ext_resource type="PackedScene" uid="uid://caralmujwdn3h" path="res://prefabs/gameplayObjects/characters/merchant.tscn" id="5_0trnn"]
 [ext_resource type="PackedScene" uid="uid://cgbo0fg7mpkg0" path="res://prefabs/gameplayObjects/characters/tailor.tscn" id="6_c426k"]
-[ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="7_rbo54"]
 [ext_resource type="Script" path="res://scripts/dialogues/sharedDialogue.gd" id="8_txfji"]
 [ext_resource type="Resource" path="res://dialogues/day8/d8_group.dtl" id="9_tq8r5"]
 [ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="10_teh3m"]
@@ -41,16 +39,8 @@ sharedDialogue = NodePath("../GroupDialogue")
 transform = Transform3D(0.830022, 0, -0.557731, 0, 1, 0, 0.557731, 0, 0.830022, -0.774402, 0, -25.9667)
 sharedDialogue = NodePath("../GroupDialogue")
 
-[node name="Merchant" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("5_0trnn")]
-transform = Transform3D(0.944284, 0, 0.32913, 0, 1, 0, -0.32913, 0, 0.944284, -2.49643, 0, -25.624)
-sharedDialogue = NodePath("../GroupDialogue")
-
 [node name="Tailor" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("6_c426k")]
-transform = Transform3D(-0.985166, 0, 0.171602, 0, 1, 0, -0.171602, 0, -0.985166, -2.1736, 0, -21.0007)
-sharedDialogue = NodePath("../GroupDialogue")
-
-[node name="Carpenter" parent="GameplayObjects" node_paths=PackedStringArray("sharedDialogue") instance=ExtResource("7_rbo54")]
-transform = Transform3D(-0.700025, 0, -0.714118, 0, 1, 0, 0.714118, 0, -0.700025, -0.818804, 0, -21.3722)
+transform = Transform3D(-0.985166, 0, 0.171602, 0, 1, 0, -0.171602, 0, -0.985166, -0.673427, 0, -21.6989)
 sharedDialogue = NodePath("../GroupDialogue")
 
 [node name="GroupDialogue" type="Node" parent="GameplayObjects"]

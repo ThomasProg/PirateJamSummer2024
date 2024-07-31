@@ -1,5 +1,11 @@
-join priest 2
-priest (Default): Has anyone seen the werewolf?
-priest (Default): No?
-priest (Default): Wohoo!!
+join priest (Default) 2
+join hunter (Default) 0
+join tailor (Default) 4 [ mirrored="true"]
+priest: Has anyone seen or heard the werewolf tonight?
+- No
+tailor (Happy): No!
+hunter (Proud): Not after I killed it.
+priest (Proud): It seems like it is finally over.
+priest (Default): Thank you, alchemist.
+priest: We wouldn't have made it without you.
 do GameManager.loadWinScene()
