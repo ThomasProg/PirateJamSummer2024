@@ -271,6 +271,7 @@ func _apply_sounds_settings() -> void:
 	else:
 		type_sounds.end_sound = null
 
+	print(typing_sounds_every_nths_character)
 	type_sounds.play_every_character = typing_sounds_every_nths_character
 	type_sounds.base_pitch = typing_sounds_pitch
 	type_sounds.base_volume = typing_sounds_volume
