@@ -1,2 +1,11 @@
-join priest 2
-priest (Default): What?? You made a potion that can kill the werewolf??
+join priest (Default) 2
+priest: Greetings.
+- I have something important to tell you.
+priest (Default): Something important, you say?
+- I made a potion to kill the werewolf.
+priest (Proud): That's.. that's  incedible!!
+- Keep it for yourself though.
+priest (Default): Understood.
+
+priest (Proud): But thanks god.
+priest: I'll pray for things to go well.

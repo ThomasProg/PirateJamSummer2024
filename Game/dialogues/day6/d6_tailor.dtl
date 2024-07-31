@@ -1,2 +1,15 @@
-join tailor 2
-tailor (Default): What?? You made a potion that can kill the werewolf??
+join tailor (Default) 2
+tailor (Default): Hey!
+tailor: You look proud of yourself.
+tailor: Did anything happen?
+- I finally made the potion I wanted.
+tailor: The potion you wanted?
+- A potion to kill the werewolf.
+tailor (Sad): What?? You made a potion that can kill the werewolf??
+- Eh? Why are you crying?
+tailor (Happy): Thank you.
+tailor: I don't know how I'll ever be able to return the favor.
+- You don't have to!
+- Just keep it a secret for now, ok?
+tailor (Default): Ok!
+tailor: Hoping it's gonna work!

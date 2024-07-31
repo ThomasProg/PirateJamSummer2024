@@ -1,2 +1,14 @@
-join merchant 2
-merchant (Default): What?? You made a potion that can kill the werewolf??
+join merchant (Default) 2
+merchant: Hey!
+merchant: What's up?
+- Remember the honey you gave me on the 1st day?
+# 
+- I wanted to give back to you somehow.
+merchant (Proud): Oh?
+- I'm going to share with you a secret.
+merchant (Default): A secret?
+- I made a possible able to kill the werewolf.
+# 
+- I am going to use it next time the werewolf shows up at my hut.
+merchant (Proud): Wow, way to do it!
+merchant: I knew you were a good alchemist!

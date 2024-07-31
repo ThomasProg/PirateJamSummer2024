@@ -1,2 +1,13 @@
-join hunter 2
-hunter (Default): What?? You made a potion that can kill the werewolf??
+join hunter (Tired) 2
+The hunter looks awfully tired.
+- Hey.
+# 
+- Keep it a secret, but I made a potion that can kill the werewolf.
+# 
+- I'm going to use it tonight, when the werewolf comes close to my hut.
+hunter (Default): ...
+hunter (Angry): What?? Really?
+hunter: Guess I won't get any credit then.
+hunter (Proud): But good.
+hunter (Default): Staying alive is the most important after all.
+

@@ -1,2 +1,11 @@
-join tailor 2
-tailor (Default): What?? You made a potion that can kill the werewolf??
+join carpenter (Default) 2
+tailor: Hello!
+- Hey!
+# 
+- Can I ask you to keep a secret?
+carpenter (Default): Sure, what is it?
+- I made a potion to kill the werewolf.
+# 
+- I am planning to use it tonight, when the werewolf comes to  attack me.
+carpenter (Default): Woah! That's amazing!!!
+carpenter: I hope it's gonna work!
