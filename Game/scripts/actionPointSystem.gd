@@ -18,11 +18,12 @@ func _input(event: InputEvent) -> void:
 		updateVisuals()
 
 func removePoint():
-	nbPoints -= 1
-	if (nbPoints == 0):
-		onNoPoints.emit()
-		
-	updateVisuals()
+	if (nbPoints > 0):
+		nbPoints -= 1
+		if (nbPoints == 0):
+			onNoPoints.emit()
+			
+		updateVisuals()
 	
 func addPoint():
 	nbPoints += 1
