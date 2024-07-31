@@ -52,6 +52,7 @@ content = NodePath("CanvasLayer/Panel")
 sfx = ExtResource("2_llm0k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15

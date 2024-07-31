@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="2_5041r"]
 [ext_resource type="AudioStream" uid="uid://bgs82f0qedas3" path="res://audio/sfx/ui/sfx_ui_wwolfgameover.wav" id="2_d0imq"]
 [ext_resource type="Texture2D" uid="uid://bdfsy11wfxxp5" path="res://art/ui/ui_day_icon_transition.png" id="3_s6f2q"]
-[ext_resource type="Texture2D" uid="uid://pn1si50tqkvm" path="res://art/ui/gameover/ui_game_over_top.png" id="5_h030c"]
-[ext_resource type="Texture2D" uid="uid://6cayg4lbwace" path="res://art/ui/gameover/ui_game_over_bottom.png" id="6_y7cgc"]
-[ext_resource type="Texture2D" uid="uid://bfyfx8efeeucq" path="res://art/ui/gameover/ui_game_over_blood01.png" id="7_lf07n"]
-[ext_resource type="Texture2D" uid="uid://c4su2t1s5v0l8" path="res://art/ui/gameover/ui_game_over_blood02.png" id="8_qk1n1"]
-[ext_resource type="Texture2D" uid="uid://c1m7iy55cfny3" path="res://art/ui/gameover/ui_game_over_blood04.png" id="9_4hhm1"]
+[ext_resource type="Texture2D" uid="uid://b06kyagsk8g1s" path="res://art/ui/gameover/ui_game_over_top.png" id="5_h030c"]
+[ext_resource type="Texture2D" uid="uid://c3kmq6dh6keav" path="res://art/ui/gameover/ui_game_over_bottom.png" id="6_y7cgc"]
+[ext_resource type="Texture2D" uid="uid://c7nl1eb7yqysk" path="res://art/ui/gameover/ui_game_over_blood01.png" id="7_lf07n"]
+[ext_resource type="Texture2D" uid="uid://bp0j2em0upgpp" path="res://art/ui/gameover/ui_game_over_blood02.png" id="8_qk1n1"]
+[ext_resource type="Texture2D" uid="uid://5f7801wpbpw8" path="res://art/ui/gameover/ui_game_over_blood04.png" id="9_4hhm1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq8rt"]
 bg_color = Color(0, 0, 0, 1)
@@ -111,6 +111,7 @@ isItGameOver = true
 sfx = ExtResource("2_d0imq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 visible = false
