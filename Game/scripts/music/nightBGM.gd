@@ -35,12 +35,12 @@ func setIntensity0():
 
 func setIntensity1():
 	if (stream is AudioStreamSynchronized):
-		targetVolumes[0] = -20.0
+		targetVolumes[0] = -60.0
 		targetVolumes[1] = 0.0
 		targetVolumes[2] = -60.0
 		
 func setIntensity2():
 	if (stream is AudioStreamSynchronized):
-		targetVolumes[0] = -20.0
-		targetVolumes[1] = -20.0
+		targetVolumes[0] = -60.0
+		targetVolumes[1] = -60.0
 		targetVolumes[2] = 0.0
