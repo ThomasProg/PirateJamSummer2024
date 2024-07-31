@@ -1,16 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://rj0gs5dnv0mj"]
+[gd_scene load_steps=9 format=3 uid="uid://rj0gs5dnv0mj"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_4g165"]
 [ext_resource type="Script" path="res://scripts/night.gd" id="1_dxrap"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="2_a3oyh"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="2_vedc3"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="3_qo4fm"]
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="3_reu50"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="3_xu67b"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="4_xg8r6"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="4_ymt8p"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_4h4ay"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_foyvl"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_tca7t"]
 [ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_r4ups"]
 
@@ -36,58 +30,6 @@ volumetric_fog_enabled = true
 adjustment_brightness = 0.65
 adjustment_contrast = 0.9
 
-[sub_resource type="Resource" id="Resource_ugipv"]
-script = ExtResource("3_qo4fm")
-amount = 75
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_yg0g6"]
-script = ExtResource("4_xg8r6")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(6, 360, 6)
-scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_5snbt"]
-script = ExtResource("5_4h4ay")
-iterations = 3
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_eoesa"]
-script = ExtResource("6_foyvl")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_k7cj6"]
-script = ExtResource("2_a3oyh")
-stack = Array[ExtResource("3_xu67b")]([SubResource("Resource_ugipv"), SubResource("Resource_yg0g6"), SubResource("Resource_5snbt"), SubResource("Resource_eoesa")])
-
 [node name="Night1" type="Node3D"]
 script = ExtResource("1_dxrap")
 
@@ -99,8 +41,17 @@ visible = false
 [node name="WorldEnvironment" parent="VillageEnvScene/WorldEnvDay" index="0"]
 environment = SubResource("Environment_dw1s4")
 
-[node name="trees" parent="VillageEnvScene" index="4"]
-modifier_stack = SubResource("Resource_k7cj6")
+[node name="ScatterOutput2" type="Marker3D" parent="VillageEnvScene/trees" index="3"]
+
+[node name="ScatterOutput3" type="Marker3D" parent="VillageEnvScene/trees" index="4"]
+
+[node name="ScatterOutput" type="Marker3D" parent="VillageEnvScene/trees" index="5"]
+
+[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
+
+[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
+
+[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
 
 [node name="Player" parent="." instance=ExtResource("2_vedc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)

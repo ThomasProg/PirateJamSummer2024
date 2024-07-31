@@ -1,91 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvm3j670ll3l8"]
+[gd_scene load_steps=8 format=3 uid="uid://cvm3j670ll3l8"]
 
 [ext_resource type="Script" path="res://scripts/night.gd" id="1_n15jf"]
-[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="2_axd4d"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="3_vbnke"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="4_dpike"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="5_vkhep"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="6_81k7p"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="7_7581e"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="8_hu50r"]
+[ext_resource type="PackedScene" uid="uid://5y1dr4giigeg" path="res://scenes/villageEnvNightScene.tscn" id="7_mhaj7"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="9_54qek"]
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="10_r1p8j"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="11_r2ppa"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_fvkg8"]
 [ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_5o1a4"]
 
-[sub_resource type="Resource" id="Resource_vvxnp"]
-script = ExtResource("5_vkhep")
-amount = 75
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_5orw2"]
-script = ExtResource("6_81k7p")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(6, 360, 6)
-scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_dc5yi"]
-script = ExtResource("7_7581e")
-iterations = 3
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_dgn7i"]
-script = ExtResource("8_hu50r")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_xphbt"]
-script = ExtResource("3_vbnke")
-stack = Array[ExtResource("4_dpike")]([SubResource("Resource_vvxnp"), SubResource("Resource_5orw2"), SubResource("Resource_dc5yi"), SubResource("Resource_dgn7i")])
-
 [node name="Night7" type="Node3D"]
 script = ExtResource("1_n15jf")
-
-[node name="VillageEnvScene" parent="." instance=ExtResource("2_axd4d")]
-
-[node name="DirectionalLight3D" parent="VillageEnvScene" index="0"]
-visible = false
-
-[node name="trees" parent="VillageEnvScene" index="3"]
-modifier_stack = SubResource("Resource_xphbt")
-
-[node name="ScatterOutput2" type="Marker3D" parent="VillageEnvScene/trees" index="5"]
-
-[node name="ScatterOutput" type="Marker3D" parent="VillageEnvScene/trees" index="6"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
 
 [node name="Player" parent="." instance=ExtResource("9_54qek")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
@@ -114,6 +38,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064702, 1.19209e-07, 0.001
 peekingDuration = 5.0
 target = NodePath("../Player")
 
+[node name="Objectives" parent="." instance=ExtResource("12_fvkg8")]
+objectives = Array[String](["- Escape the gaze of the werewolf", "- Brew damage potions (at the table)", "- Use your potions (right click)", "- Survive the night"])
+hiddenObjectives = Array[float]([])
+
+[node name="NightUI" parent="." instance=ExtResource("13_5o1a4")]
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2256, 2.10578, -19.0393)
 light_energy = 0.135
@@ -121,11 +51,6 @@ distance_fade_length = 245.85
 omni_range = 5.002
 omni_attenuation = 0.0136023
 
-[node name="Objectives" parent="." instance=ExtResource("12_fvkg8")]
-objectives = Array[String](["- Escape the gaze of the werewolf", "- Brew damage potions (at the table)", "- Use your potions (right click)", "- Survive the night"])
-hiddenObjectives = Array[float]([])
+[node name="VillageEnvNightScene" parent="." instance=ExtResource("7_mhaj7")]
 
-[node name="NightUI" parent="." instance=ExtResource("13_5o1a4")]
-
-[editable path="VillageEnvScene"]
 [editable path="NightEvent"]

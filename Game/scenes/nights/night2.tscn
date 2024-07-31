@@ -1,137 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://crmkeo1y177pj"]
+[gd_scene load_steps=8 format=3 uid="uid://crmkeo1y177pj"]
 
-[ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_hh6k6"]
 [ext_resource type="Script" path="res://scripts/night.gd" id="1_psyoj"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="2_7de4c"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="3_lnm5u"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="4_bguu4"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="4_otpvx"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="5_3bldi"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_lnxgp"]
+[ext_resource type="PackedScene" uid="uid://5y1dr4giigeg" path="res://scenes/villageEnvNightScene.tscn" id="7_j3xi0"]
 [ext_resource type="PackedScene" uid="uid://bmotrrb5fci2n" path="res://prefabs/gameplayObjects/player.tscn" id="7_ns111"]
 [ext_resource type="PackedScene" uid="uid://cacg3rg6rfwit" path="res://prefabs/events/nightEvent/nightEvent.tscn" id="8_h6qw4"]
 [ext_resource type="PackedScene" uid="uid://cs0cbrtxk55a8" path="res://prefabs/events/nightEvent/wolf.tscn" id="9_mcif6"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="12_kap2j"]
 [ext_resource type="PackedScene" uid="uid://boe8ayyomb35j" path="res://prefabs/nightUI.tscn" id="13_uvjsl"]
 
-[sub_resource type="Resource" id="Resource_wrv7s"]
-script = ExtResource("3_lnm5u")
-amount = 75
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_ahcsf"]
-script = ExtResource("4_otpvx")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(6, 360, 6)
-scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_bnwvv"]
-script = ExtResource("5_3bldi")
-iterations = 3
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_e2ri7"]
-script = ExtResource("6_lnxgp")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_8giui"]
-script = ExtResource("2_7de4c")
-stack = Array[ExtResource("4_bguu4")]([SubResource("Resource_wrv7s"), SubResource("Resource_ahcsf"), SubResource("Resource_bnwvv"), SubResource("Resource_e2ri7")])
-
 [node name="Night2" type="Node3D"]
 script = ExtResource("1_psyoj")
-
-[node name="VillageEnvScene" parent="." instance=ExtResource("1_hh6k6")]
-
-[node name="DirectionalLight3D" parent="VillageEnvScene" index="0"]
-visible = false
-
-[node name="trees" parent="VillageEnvScene" index="3"]
-modifier_stack = SubResource("Resource_8giui")
-
-[node name="ScatterOutput2" type="Marker3D" parent="VillageEnvScene/trees" index="5"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput2"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput2"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput2"]
-
-[node name="ScatterOutput3" type="Marker3D" parent="VillageEnvScene/trees" index="6"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput3"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput3"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput3"]
-
-[node name="ScatterOutput4" type="Marker3D" parent="VillageEnvScene/trees" index="7"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput4"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput4"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput4"]
-
-[node name="ScatterOutput5" type="Marker3D" parent="VillageEnvScene/trees" index="8"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput5"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput5"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput5"]
-
-[node name="ScatterOutput6" type="Marker3D" parent="VillageEnvScene/trees" index="9"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput6"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput6"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput6"]
-
-[node name="ScatterOutput7" type="Marker3D" parent="VillageEnvScene/trees" index="10"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput7"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput7"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput7"]
-
-[node name="ScatterOutput" type="Marker3D" parent="VillageEnvScene/trees" index="11"]
-
-[node name="bushy" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
-
-[node name="leafless" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
-
-[node name="leafless-sm" type="Node3D" parent="VillageEnvScene/trees/ScatterOutput"]
 
 [node name="Player" parent="." instance=ExtResource("7_ns111")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
@@ -175,5 +53,6 @@ hiddenObjectives = Array[int]([])
 
 [node name="NightUI" parent="." instance=ExtResource("13_uvjsl")]
 
-[editable path="VillageEnvScene"]
+[node name="VillageEnvNightScene" parent="." instance=ExtResource("7_j3xi0")]
+
 [editable path="NightEvent"]
