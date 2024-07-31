@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://ubsc74jwbkvp"]
+
+[sub_resource type="Environment" id="Environment_brfqk"]
+glow_enabled = true
+glow_levels/1 = 10.9
+glow_levels/2 = 7.85
+glow_levels/3 = 7.85
+glow_levels/4 = 9.15
+glow_levels/5 = 20.2
+glow_levels/6 = 37.75
+glow_levels/7 = 40.95
+glow_strength = 0.55
+glow_bloom = 1.0
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 88.9
+glow_map_strength = 0.0
+fog_light_color = Color(0.703482, 0.788036, 0.777639, 1)
+fog_light_energy = 0.59
+fog_density = 0.001
+volumetric_fog_enabled = true
+adjustment_brightness = 0.65
+adjustment_contrast = 0.9
+
+[node name="WorldEnvNight" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_brfqk")
