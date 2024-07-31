@@ -1,7 +1,31 @@
-join priest 2
-priest (Default): The carpenter is dead!!
-priest (Default): We have to vote!
-priest (Default): Alchemist, who do you want to vote for?
+join priest (Worried) 2
+priest: ...
+join tailor (Sad) 1
+tailor: ...
+join merchant (Angry) 3
+tailor: ...
+- What happened?
+priest: The carpenter is...
+merchant: dead.
+- Eh?
+tailor (Default): The werewolf attacked him...
+- Where is the hunter?
+priest: He's sleeping.
+priest: I didn't want to do that, but...
+priest: We have to vote on who the werewolf is.
+priest (Angry): And put an end to that.
+priest (Default): I will go first.
+priest: I think the werewolf is the hunter.
+priest: And we should take care of him while he's still sleeping.
+merchant: I was thinking the same.
+merchant (Proud): He's supposed to be the hunter, but he doesn't hunt the werewolf.
+merchant: And look at what happened now.
+merchant: And he's so tired even though he's not doing anything...
+tailor: ...
+tailor: I do agree he's the most suspicious...
+tailor: But I have a bad feeling about it.
+tailor: But what do you think, Mr Alchemist?
+tailor: Who do you think the werewolf is?
 - The priest
 	set {vote} = "priest"
 - The tailor
