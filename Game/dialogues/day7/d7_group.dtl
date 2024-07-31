@@ -70,8 +70,46 @@ tailor: Who do you think the werewolf is?
 	tailor: ...!!!
 	On that day, we ended up killing the tailor.
 - The merchant
-	priest (Default): Why is that?
-	priest (Default): Well, fine! Let's vote her!
+	merchant (Proud): Nice joke.
+	- Think about it.
+	# 
+	- Why would a werewolf attack us in the first place?
+	priest (Default): Wouldn't that be because of its lust for blood?
+	- This is probably one of the reasons, but not the only one.
+	# 
+	- If it was entirely because of bloodlust, would the werewolf be patient and sane enough to trick us during the day?
+	update merchant (Worried)
+	tailor (Default): Are you saying there is another reason?
+	priest (Proud): I understand.
+	priest (Default): If the werewolf is sane enough to stay among us without becoming unnoticed,
+	priest: That means we should consider the werewolf to have human values and goals.
+	merchant (Angry): And? What does that change?
+	merchant: Why are you accusing me?
+	merchant: Do I have anything to earn by killing people??
+	- Yes.
+	# 
+	- You're a merchant.
+	# 
+	- The more you make people afraid of going through the forest, the better it is for your business.
+	merchant: ...
+	merchant (Proud): Fine.
+	merchant (Happy): I'm glad the hunter is sleeping.
+	merchant: Because I won't go down without a fight.
+	merchant (Proud): And you know you can't win.
+	The merchant rushes and pushes you to the ground.
+	tailor (Sad): NOOOOOOOOOOOOOOOOOO!!!!!!!!
+	priest (Angry): GET OUT OF HIM!
+	The merchant starts struggling you up, while the priest and the tailor are trying to restrain her.
+	But the merchant is stronger.
+	You suddenly hear the sound of an arrow.
+	merchant (Angry): ARGHH!!
+	join hunter 1
+	hunter (Default): I heard your screams.
+	hunter (Proud): And it seems the werewolf is too.
+	merchant (Angry): DON'T COME CLOSER!
+	update hunter (Worried)
+	The hunter ran towards the merchant.
+	And cut through her with his axe.
 	set {vote} = "merchant"
 - The hunter
 	set {vote} = "hunter"
