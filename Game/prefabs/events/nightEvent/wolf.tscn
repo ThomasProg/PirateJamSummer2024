@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cs0cbrtxk55a8"]
+[gd_scene load_steps=15 format=3 uid="uid://cs0cbrtxk55a8"]
 
 [ext_resource type="Script" path="res://scripts/events/nightEvent/wolf.gd" id="1_d22c8"]
 [ext_resource type="Texture2D" uid="uid://c4a0afm6f2vym" path="res://art/characters/Character_Werewolf_dmg_yellow.png" id="2_2ex3s"]
@@ -13,7 +13,41 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ndqh"]
 
-[node name="Wolf" type="Area3D" node_paths=PackedStringArray("sprite", "aggroProgressBar", "eyeAnchors", "audioPlayer", "interactable")]
+[sub_resource type="Animation" id="Animation_76u1w"]
+resource_name = "move"
+length = 5.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.566667, 1, 0.1, 0.02, 0, 1.16667, 1, 0, 0.005, 0, 1.76667, 1, -0.02, -0.03, 0, 2.3, 1, 0.04, -0.015, 0, 2.86667, 1, 0.04, 0.04, 0, 3.33333, 1, -0.01, -0.02, 0, 3.86667, 1, 0.09, 0.069, 0, 4.33333, 1, 0.04, -0.021, 0, 4.73333, 1, 0.045, 0, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WolfFace")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.566667, 1, 0.1, 0.02, 0, 1.16667, 1, 0, 0.005, 0, 1.76667, 1, -0.02, -0.03, 0, 2.3, 1, 0.04, -0.015, 0, 2.86667, 1, 0.04, 0.04, 0, 3.33333, 1, -0.01, -0.02, 0, 3.86667, 1, 0.09, 0.069, 0, 4.33333, 1, 0.04, -0.021, 0, 4.73333, 1, 0.045, 0, 0)
+
+[sub_resource type="Animation" id="Animation_e7x8q"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4jq5"]
+_data = {
+"RESET": SubResource("Animation_e7x8q"),
+"move": SubResource("Animation_76u1w")
+}
+
+[node name="Wolf" type="Area3D" node_paths=PackedStringArray("sprite", "aggroProgressBar", "eyeAnchors", "audioPlayer", "interactable", "animPlayer")]
 collision_layer = 3
 script = ExtResource("1_d22c8")
 sprite = NodePath("WolfFace")
@@ -26,6 +60,7 @@ peekEndAudio = ExtResource("5_5mhva")
 hitAudios = Array[AudioStream]([ExtResource("6_fd7py"), ExtResource("7_2pw62"), ExtResource("8_3wxaw")])
 audioPlayer = NodePath("PeekPlayer")
 interactable = NodePath("Interactable")
+animPlayer = NodePath("AnimationPlayer")
 
 [node name="WolfFace" type="Sprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
@@ -63,3 +98,8 @@ max_db = 0.0
 script = ExtResource("10_nrtmn")
 interactionName = "Werewolf"
 interactionDescription = "Throw a yellow potion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a4jq5")
+}
