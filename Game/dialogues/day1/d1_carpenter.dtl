@@ -1,16 +1,16 @@
 join carpenter 2
 carpenter (Default): Ah, you must be the new resident!
 carpenter: Welcome, welcome!
-carpenter: Is the village to your liking?
+carpenter (Happy): Is the village to your liking?
 - Hard to say, I just got here. Doesn't seem bad, though.
 carpenter: It's fairly new. The church gave us the order to establish it not so long ago.
 - The church?
 carpenter: In a few months, a lot of pilgrims will travel to the cathedral. Happens every year.
-carpenter: The shortest path for some pilgrims is to go through this forest, but...
+carpenter (Sad): The shortest path for some pilgrims is to go through this forest, but...
 - But...?
 carpenter: ...they keep disappearing.
-carpenter: Probably some wild beasts.
-carpenter: That’s why the church decided to build a village, to keep the pilgrims safe.
-carpenter: The church sent the priest to take charge of managing the settlement. I love building so I'm just here doing my part.
-carpenter: I had to build a few of them rather quickly, so if you notice any problem, just tell me!
+carpenter (Worried): Probably some wild beasts.
+carpenter (Content): That’s why the church decided to build a village, to keep the pilgrims safe.
+carpenter (Default): The church sent the priest to take charge of managing the settlement. I love building so I'm just here doing my part.
+carpenter: I built these huts rather quickly, so if you notice any problem, just tell me!
 - I will, thanks!
