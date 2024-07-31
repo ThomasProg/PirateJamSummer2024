@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cacg3rg6rfwit"]
+[gd_scene load_steps=13 format=3 uid="uid://cacg3rg6rfwit"]
 
 [ext_resource type="Script" path="res://scripts/events/nightEvent/nightEvent.gd" id="1_gbiwh"]
 [ext_resource type="Script" path="res://scripts/events/nightEvent/nightTimer.gd" id="2_3ulpj"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://d2hpyha6argy2" path="res://audio/music/mx_night_layer_fear.ogg" id="7_syqf7"]
 [ext_resource type="AudioStream" uid="uid://godsq2jga0qu" path="res://audio/music/mx_night_base.ogg" id="8_kdqfp"]
 [ext_resource type="AudioStream" uid="uid://cbm3su1wrs3ng" path="res://audio/sfx/amb/amb_inside_night.ogg" id="9_rvl1h"]
+[ext_resource type="AudioStream" uid="uid://b3xm72nt20qaf" path="res://audio/sfx/werewolf/sfx_wwolf_peekstab.wav" id="11_ew7t4"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_5340u"]
 stream_count = 5
@@ -24,11 +25,12 @@ stream_3/volume = -60.0
 stream_4/stream = ExtResource("8_kdqfp")
 stream_4/volume = 0.0
 
-[node name="NightEvent" type="Node" node_paths=PackedStringArray("nightTimer", "nightBGM")]
+[node name="NightEvent" type="Node" node_paths=PackedStringArray("nightTimer", "nightBGM", "wolfStab")]
 script = ExtResource("1_gbiwh")
 nightTimer = NodePath("NightTimer")
 brickBreakSFX = ExtResource("2_xghkw")
 nightBGM = NodePath("AudioStreamPlayer")
+wolfStab = NodePath("WolfStab")
 
 [node name="NightTimer" type="Node" parent="."]
 script = ExtResource("2_3ulpj")
@@ -42,3 +44,6 @@ script = ExtResource("5_xnlgv")
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_rvl1h")
 autoplay = true
+
+[node name="WolfStab" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ew7t4")

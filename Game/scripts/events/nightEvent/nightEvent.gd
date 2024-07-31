@@ -8,6 +8,7 @@ class_name NightEvent
 @export var brickBreakSFX:AudioStream
 
 @export var nightBGM:NightBGM
+@export var wolfStab:AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -69,6 +70,7 @@ func onPeek():
 		wolf.global_position = stone.peekingSpot.global_position
 		wolf.lookAt = stone
 		wolf.appear()
+		wolfStab.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
