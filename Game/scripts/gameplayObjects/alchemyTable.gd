@@ -72,3 +72,7 @@ func _on_body_exited(body):
 func _exit_tree() -> void:
 	if audioPlayer.playing:
 		audioPlayer.stop()
+
+func _process(delta: float) -> void:
+	if selectedInteractible != null and player != null and audioPlayer.playing:
+		audioPlayer.stop()
