@@ -28,6 +28,26 @@ tailor: But what do you think, Mr Alchemist?
 tailor: Who do you think the werewolf is?
 - The priest
 	set {vote} = "priest"
+	priest (Default): Me?
+	priest (Angry): Stop joking around.
+	- You're the one who organized all of that.
+	# 
+	- You're the one who brought us here.
+	priest: It doesn't mean anything!
+	- No matter what you say, you're the one who didn't want to "distrust" each other on the first day.
+	# 
+	update priest (Worried)
+	- And now, you wanna kill a villager?
+	# 
+	- Don't make me laugh!
+	priest: The situation is different!!
+	merchant (Proud): But he has a point.
+	priest: Tailor, tell them!!
+	tailor (Sad): ...
+	priest: TAILOR!!!
+	merchant (Angry): It's the end, priest.
+	merchant: Or should I say, [b]werewolf[/b].
+	The merchant jumped on the priest, and strangled him to death.
 - The tailor
 	set {vote} = "tailor"
 - The merchant
@@ -36,4 +56,7 @@ tailor: Who do you think the werewolf is?
 	set {vote} = "merchant"
 - The hunter
 	set {vote} = "hunter"
-The person you voted for got burned into ashes
+	priest (Default): It seems like we all agree.
+	priest (Default): I am gonna take care of him myself then.
+	The priest silently took the hunter's head off with his own weapon during his sleep.
+set {endDay} = true

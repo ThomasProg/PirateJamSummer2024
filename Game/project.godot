@@ -63,6 +63,7 @@ directories/dtl_directory={
 "welcome": "res://dialogues/welcome.dtl"
 }
 variables={
+"endDay": false,
 "hasHealingPotion": false,
 "vote": ""
 }

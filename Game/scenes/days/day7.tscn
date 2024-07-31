@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://j17h368goe2n"]
+[gd_scene load_steps=18 format=3 uid="uid://j17h368goe2n"]
 
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_nd6u6"]
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_ykvvp"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="10_0vw0u"]
 [ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="11_1005b"]
 [ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="13_om2h7"]
-[ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="14_vwjpg"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="15_ag7ug"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="16_1jaq1"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="17_huqkb"]
@@ -60,9 +59,6 @@ nextNightPath = "res://scenes/nights/night7.tscn"
 nextDayPath = "res://scenes/days/day8lose.tscn"
 enabled = false
 
-[node name="Calendula" parent="." instance=ExtResource("14_vwjpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19)
-
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)
 
@@ -79,7 +75,8 @@ nbPoints = 1
 
 [node name="DayUI" parent="." instance=ExtResource("19_fsydm")]
 
-[node name="Day7Event" type="Node" parent="." node_paths=PackedStringArray("bed")]
+[node name="Day7Event" type="Node" parent="." node_paths=PackedStringArray("bed", "player")]
 script = ExtResource("20_lm7du")
 bed = NodePath("../GameplayObjects/ThatchBed")
 nextDayPathCorrect = "res://scenes/days/day8.tscn"
+player = NodePath("../GameplayObjects/Player")
