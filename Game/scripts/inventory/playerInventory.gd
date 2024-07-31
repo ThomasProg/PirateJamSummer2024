@@ -13,6 +13,8 @@ func playGetSFX(item:InventoryItem):
 		player.queue_free())
 
 func giveItem(item:InventoryItem)->int:
+	potionInventory.items.resize(10)
+	ingredientInventory.items.resize(10)
 	playGetSFX(item)
 	match item.type:
 		InventoryItem.ItemType.POTION:
@@ -21,22 +23,35 @@ func giveItem(item:InventoryItem)->int:
 			return ingredientInventory.addItem(item)
 			
 	return -1
+	
+func forceGiveItem(item:InventoryItem):
+	var v:int = giveItem(item)
+	
+	if v == -1:
+		match item.type:
+			InventoryItem.ItemType.POTION:
+				potionInventory.items[0] = item
+			InventoryItem.ItemType.INGREDIENT:
+				ingredientInventory.items[0] = item
+				
+			
+	
 
 func _input(event: InputEvent) -> void:
 	if (Input.is_action_pressed("GiveDeterringPotion")):
-		giveItem(load("res://inventoryAssets/potions/deterringPotion.tres"))
+		forceGiveItem(load("res://inventoryAssets/potions/deterringPotion.tres"))
 	if (Input.is_action_pressed("GiveInvisibilityPotion")):
-		giveItem(load("res://inventoryAssets/potions/invisibilityPotion.tres"))		
+		forceGiveItem(load("res://inventoryAssets/potions/invisibilityPotion.tres"))		
 	if (Input.is_action_pressed("GiveRedPotion")):
-		giveItem(load("res://inventoryAssets/potions/redPotion.tres"))
+		forceGiveItem(load("res://inventoryAssets/potions/redPotion.tres"))
 	if (Input.is_action_pressed("GiveYellowPotion")):
-		giveItem(load("res://inventoryAssets/potions/yellowPotion.tres"))
+		forceGiveItem(load("res://inventoryAssets/potions/yellowPotion.tres"))
 		
 	if (Input.is_action_pressed("GiveChameleon")):
-		giveItem(load("res://inventoryAssets/ingredients/chameleonIngr.tres"))
+		forceGiveItem(load("res://inventoryAssets/ingredients/chameleonIngr.tres"))
 	if (Input.is_action_pressed("GiveStinkhorn")):
-		giveItem(load("res://inventoryAssets/ingredients/stinkhornIngr.tres"))
+		forceGiveItem(load("res://inventoryAssets/ingredients/stinkhornIngr.tres"))
 	if (Input.is_action_pressed("GiveCalendula")):
-		giveItem(load("res://inventoryAssets/ingredients/calendulaIngr.tres"))
+		forceGiveItem(load("res://inventoryAssets/ingredients/calendulaIngr.tres"))
 	if (Input.is_action_pressed("GiveHoney")):
-		giveItem(load("res://inventoryAssets/ingredients/honeyIngr.tres"))
+		forceGiveItem(load("res://inventoryAssets/ingredients/honeyIngr.tres"))
