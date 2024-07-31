@@ -19,6 +19,11 @@ static func bindInteractable(interactable:Interactable, nextNightPath, nextDayPa
 			)
 		)
 
+func _input(event: InputEvent) -> void:
+	if (Input.is_action_pressed("SkipNight")):
+		if (interactable != null):
+			interactable.onInteracted.emit(GameManager.player)
+			interactable = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
