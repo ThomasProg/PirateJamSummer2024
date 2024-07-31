@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cy8u56ullhoqr"]
+[gd_scene load_steps=19 format=3 uid="uid://cy8u56ullhoqr"]
 
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_0rold"]
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_lg165"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://duvm7dnivxel8" path="res://prefabs/gameplayObjects/characters/carpenter.tscn" id="11_mmmfm"]
 [ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="13_lrkyk"]
 [ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="13_vw3u7"]
-[ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="14_hqtgx"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="15_mjudl"]
 [ext_resource type="PackedScene" uid="uid://cd2sokl2hqfxm" path="res://prefabs/gameplayObjects/furnitureAndProps/cart.tscn" id="16_mx6qv"]
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="17_i7kp2"]
@@ -79,12 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3543, 0, -17.9221)
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night2.tscn"
 nextDayPath = "res://scenes/days/day3.tscn"
-
-[node name="Calendula" parent="GameplayObjects" instance=ExtResource("14_hqtgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6452, 0, -9.36213)
-
-[node name="Calendula2" parent="GameplayObjects" instance=ExtResource("14_hqtgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4133, 0, -3.75378)
 
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c4jqhy4013i3t"]
+[gd_scene load_steps=24 format=3 uid="uid://c4jqhy4013i3t"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_232fl"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_tgg84"]
@@ -16,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://cwt1qmyu68dah" path="res://dialogues/characterStoryLines/carpenter/carpenterStoryLine.tres" id="14_2g0xd"]
 [ext_resource type="Resource" uid="uid://c8w2vkdxqrsk2" path="res://dialogues/characterStoryLines/tailor/tailorStoryLine.tres" id="15_f46kk"]
 [ext_resource type="PackedScene" uid="uid://i60ugjjvc7xr" path="res://prefabs/gameplayObjects/bed.tscn" id="16_5rn7k"]
-[ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="16_fnvcm"]
 [ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="17_a8wlb"]
 [ext_resource type="PackedScene" uid="uid://tc161yn6qy2g" path="res://prefabs/gameplayObjects/furnitureAndProps/crate.tscn" id="17_ubib6"]
 [ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="18_wm6td"]
@@ -102,9 +101,6 @@ baseStoryLine = ExtResource("15_f46kk")
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night3.tscn"
 nextDayPath = "res://scenes/days/day4.tscn"
-
-[node name="Calendula" parent="GameplayObjects" instance=ExtResource("16_fnvcm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65917, -2.38419e-07, -7.11842)
 
 [node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("17_a8wlb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.757, 1.19209e-07, -35.7048)

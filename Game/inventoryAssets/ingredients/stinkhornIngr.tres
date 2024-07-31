@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryIngredientItem" load_steps=4 format=3 uid="uid://dnq68duvypcvo"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventoryIngredientItem.gd" id="1_r8ekf"]
-[ext_resource type="AudioStream" uid="uid://41yfg61unab6" path="res://audio/sfx/ingredients/sfx_ingredients_pickup_fungi.wav" id="1_wf28b"]
+[ext_resource type="AudioStream" uid="uid://cmp02wkruvisq" path="res://audio/sfx/ingredients/sfx_ingredients_pickup_fungi.wav" id="1_wf28b"]
 [ext_resource type="Texture2D" uid="uid://culsvw7tlohv3" path="res://art/items/Ingredients/fungi_ingredient_inventory.png" id="2_uvsu7"]
 
 [resource]

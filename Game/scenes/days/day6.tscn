@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c8n4rwnfiove6"]
+[gd_scene load_steps=25 format=3 uid="uid://c8n4rwnfiove6"]
 
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_1o4bl"]
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_xuxjc"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="21_fpfau"]
 [ext_resource type="Script" path="res://scripts/events/day6Event.gd" id="21_w2kw8"]
 [ext_resource type="Resource" path="res://dialogues/day6/d6.dtl" id="22_0v6m0"]
+[ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="23_gd2dg"]
+[ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="24_ciacm"]
 
 [node name="Day6" type="Node3D"]
 script = ExtResource("1_xuxjc")
@@ -80,6 +82,21 @@ timeline = ExtResource("14_msj8j")
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night6.tscn"
 nextDayPath = "res://scenes/days/day7.tscn"
+
+[node name="Chameleon" parent="GameplayObjects" instance=ExtResource("23_gd2dg")]
+transform = Transform3D(-0.0633275, 0.985771, -0.155708, -0.60465, 0.0862267, 0.79181, 0.79397, 0.144292, 0.590586, -22.8762, 1.3008, -24.3792)
+
+[node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("24_ciacm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3028, -0.0949997, -29.1332)
+
+[node name="Stinkhorn2" parent="GameplayObjects" instance=ExtResource("24_ciacm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4513, -0.0949994, -30.1708)
+
+[node name="Stinkhorn3" parent="GameplayObjects" instance=ExtResource("24_ciacm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5779, -0.095, -5.19297)
+
+[node name="Chameleon2" parent="GameplayObjects" instance=ExtResource("23_gd2dg")]
+transform = Transform3D(-0.0699574, 0.994586, 0.0768421, 0.292678, -0.0531765, 0.954731, 0.953648, 0.0892806, -0.287374, 28.3272, 1.17356, -22.8762)
 
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)

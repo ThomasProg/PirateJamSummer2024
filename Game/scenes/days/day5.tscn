@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://6giwoxpd8a18"]
+[gd_scene load_steps=25 format=3 uid="uid://6giwoxpd8a18"]
 
 [ext_resource type="Script" path="res://scripts/day.gd" id="1_w7vph"]
 [ext_resource type="PackedScene" uid="uid://j7nagwydbbem" path="res://scenes/villageEnvScene.tscn" id="1_x6bgo"]
@@ -21,6 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://bwqa40li7tflu" path="res://prefabs/gameplayObjects/objectivesTab.tscn" id="19_1kpuj"]
 [ext_resource type="PackedScene" uid="uid://bj0jbnlepr72h" path="res://prefabs/actionPointSystem.tscn" id="20_takkq"]
 [ext_resource type="PackedScene" uid="uid://6qyvtyy4jjuo" path="res://prefabs/dayUI.tscn" id="21_p3xsq"]
+[ext_resource type="PackedScene" uid="uid://74n8babo727e" path="res://prefabs/gameplayObjects/pickupItems/calendula.tscn" id="22_av064"]
+[ext_resource type="PackedScene" uid="uid://b1y0vkje6yxua" path="res://prefabs/gameplayObjects/pickupItems/stinkhorn.tscn" id="23_vn0q2"]
+[ext_resource type="PackedScene" uid="uid://dyaiymo2seaqv" path="res://prefabs/gameplayObjects/pickupItems/chameleon.tscn" id="24_ii0tb"]
 
 [node name="Day5" type="Node3D"]
 script = ExtResource("1_w7vph")
@@ -99,6 +102,27 @@ baseStoryLine = ExtResource("14_1xemx")
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
 nextNightPath = "res://scenes/nights/night5.tscn"
 nextDayPath = "res://scenes/days/day6.tscn"
+
+[node name="Calendula" parent="GameplayObjects" instance=ExtResource("22_av064")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69865, -0.095, -37.736)
+
+[node name="Stinkhorn" parent="GameplayObjects" instance=ExtResource("23_vn0q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87072, -0.095, -1.02178)
+
+[node name="Stinkhorn2" parent="GameplayObjects" instance=ExtResource("23_vn0q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07961, -0.095, -26.9829)
+
+[node name="Stinkhorn3" parent="GameplayObjects" instance=ExtResource("23_vn0q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8308, -0.095, -29.9003)
+
+[node name="Stinkhorn4" parent="GameplayObjects" instance=ExtResource("23_vn0q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45576, -0.0950003, -43.6433)
+
+[node name="Chameleon" parent="GameplayObjects" instance=ExtResource("24_ii0tb")]
+transform = Transform3D(-0.860445, 0.405493, -0.308562, -0.330031, 0.0178738, 0.943801, 0.38822, 0.913923, 0.118446, -6.29014, 0.494952, -2.72603)
+
+[node name="Chameleon2" parent="GameplayObjects" instance=ExtResource("24_ii0tb")]
+transform = Transform3D(-0.497543, -0.0725791, 0.864397, 0.866644, 0.00105365, 0.498925, -0.0371223, 0.997362, 0.062376, 16.1567, 1.336, -13.9395)
 
 [node name="woodenCart" type="Node3D" parent="."]
 transform = Transform3D(0.890308, 0, 0.455358, 0, 1, 0, -0.455358, 0, 0.890308, -17.463, 0, -30.988)
