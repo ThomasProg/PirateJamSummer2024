@@ -134,7 +134,7 @@ transform = Transform3D(0.245696, 0, -0.547389, 0, 0.6, 0, 0.547389, 0, 0.245696
 transform = Transform3D(0.377761, 0, -0.925905, 0, 1, 0, 0.925905, 0, 0.377761, 0.519151, 0, 0.104183)
 
 [node name="Objectives" parent="." instance=ExtResource("19_1kpuj")]
-objectives = Array[String](["- Learn more about the villagers", "- Go to bed", "- Collect ingredients", "- Craft Potions (E)"])
+objectives = Array[String](["- Learn more about the villagers", "- Go to bed", "- Collect ingredients", "- Craft Potions (R)"])
 
 [node name="ActionPointSystem" parent="." instance=ExtResource("20_takkq")]
 nbPoints = 3
