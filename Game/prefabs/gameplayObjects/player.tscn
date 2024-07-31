@@ -144,6 +144,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="PrevItem" parent="UI/InfoBox/VBoxContainer/Control" instance=ExtResource("21_fqukd")]
+visible = false
 modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 anchors_preset = 0
@@ -157,6 +158,7 @@ offset_right = -48.0
 offset_bottom = 74.0
 
 [node name="CurrentItem" parent="UI/InfoBox/VBoxContainer/Control" instance=ExtResource("21_fqukd")]
+visible = false
 layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
@@ -167,6 +169,7 @@ offset_top = 0.0
 offset_bottom = 64.0
 
 [node name="NextItem" parent="UI/InfoBox/VBoxContainer/Control" instance=ExtResource("21_fqukd")]
+visible = false
 modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 anchors_preset = 0
