@@ -1,5 +1,5 @@
 join tailor 2
-tailor (Default): He..hey.
+tailor (Default): H-hey.
 - Hey hey!
 tailor: Are you new?
 - I am new!
@@ -17,7 +17,7 @@ tailor (Default): I'm a tailor, and I just moved in some days ago.
 	tailor: Not really.
 tailor: What about you?
 - I came to find you.
-	tailor (Sad): ..
+	tailor (Sad): !??
 	- I'm joking!! Don't cry!
 	tailor: Really?
 	- Yes!
@@ -30,5 +30,5 @@ tailor: An evil alchemist?
 - Yes.
 - Yeah.
 - Yep.
-tailor: I knew it.
-tailor: Have a nice day, Mr Evil Alchemist.
+tailor (Pouting): I knew it!
+tailor (Shy): Have a nice day, Mr Evil Alchemist!
