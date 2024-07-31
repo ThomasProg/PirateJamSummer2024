@@ -6,7 +6,7 @@ class_name Player
 @export var mouseSensitivity:float = 0.002
 
 @export var speed:float = 5.0
-@export var sprintSpeed:float = 15.0
+@export var sprintSpeed:float = 10.0
 @export var jumpVelocity:float = 4.5
 @export var invertMouseY:bool = false;
 
@@ -134,7 +134,12 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	var usedSpeed = sprintSpeed if Input.is_action_pressed("Sprint") else speed
+	var usedSpeed = speed 
+	if Input.is_action_pressed("Sprint") and GameManager.isDay:
+		usedSpeed = sprintSpeed	
+	else:
+		usedSpeed = speed
+	
 	if direction:
 		velocity.x = direction.x * usedSpeed
 		velocity.z = direction.z * usedSpeed
@@ -142,7 +147,7 @@ func _physics_process(delta):
 		var currentMoveTime = Time.get_ticks_usec()
 		
 		var stepDelay:float
-		if (Input.is_action_pressed("Sprint")):
+		if (Input.is_action_pressed("Sprint") and GameManager.isDay):
 			stepDelay = 0.2*1000*1000
 		else:
 			stepDelay = 0.4 * 1000 * 1000
