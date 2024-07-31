@@ -34,3 +34,29 @@ func tryConsumeItems(itemsToConsume:Array[InventoryItem]) -> bool:
 		
 	items = itemsCopy
 	return true
+
+func ensureValidIndex(itemIndex:int) -> int:
+	var nbItems = items.size()
+	return (itemIndex % nbItems + nbItems) % nbItems
+
+func getNextItemIndex(currentItemIndex:int):
+	assert(not(isEmpty()))
+	currentItemIndex += 1
+	currentItemIndex = ensureValidIndex(currentItemIndex)
+	
+	while (items[currentItemIndex] == null):
+		currentItemIndex += 1
+		currentItemIndex = ensureValidIndex(currentItemIndex)
+		
+	return currentItemIndex
+		
+func getPreviousItemIndex(currentItemIndex:int):
+	assert(not(isEmpty()))
+	currentItemIndex -= 1
+	currentItemIndex = ensureValidIndex(currentItemIndex)
+	
+	while (items[currentItemIndex] == null):
+		currentItemIndex -= 1
+		currentItemIndex = ensureValidIndex(currentItemIndex)
+				
+	return currentItemIndex

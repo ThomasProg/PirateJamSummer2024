@@ -21,17 +21,10 @@ func popCurrentItem()->InventoryItem:
 	return item
 
 func ensureValidIndex():
-	var nbItems = playerInv.potionInventory.items.size()
-	currentlySelectedItemIndex = (currentlySelectedItemIndex % nbItems + nbItems) % nbItems
+	currentlySelectedItemIndex = playerInv.potionInventory.ensureValidIndex(currentlySelectedItemIndex)
 
 func selectNextValidItem():
-	assert(not(playerInv.potionInventory.isEmpty()))
-	currentlySelectedItemIndex += 1
-	ensureValidIndex()
-	
-	while (getCurrentItem() == null):
-		currentlySelectedItemIndex += 1
-		ensureValidIndex()
+	currentlySelectedItemIndex = playerInv.potionInventory.getNextItemIndex(currentlySelectedItemIndex)
 		
 	onNewItemSelected.emit(getCurrentItem())
 		
@@ -41,13 +34,7 @@ func selectItemAtIndex(index:int):
 	onNewItemSelected.emit(getCurrentItem())
 		
 func selectPreviousValidItem():
-	assert(not(playerInv.potionInventory.isEmpty()))
-	currentlySelectedItemIndex -= 1
-	ensureValidIndex()
-	
-	while (getCurrentItem() == null):
-		currentlySelectedItemIndex -= 1
-		ensureValidIndex()
+	currentlySelectedItemIndex = playerInv.potionInventory.getPreviousItemIndex(currentlySelectedItemIndex)
 		
 	onNewItemSelected.emit(getCurrentItem())
 
