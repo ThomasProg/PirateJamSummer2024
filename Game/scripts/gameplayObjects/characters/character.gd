@@ -45,6 +45,6 @@ func _process(delta):
 	posToLookAt.y = global_position.y
 	look_at(posToLookAt, Vector3.UP, true)
 
-	if interactable != null and GameManager.actionPointSystem.nbPoints == 0:
+	if interactable != null and GameManager.actionPointSystem != null and GameManager.actionPointSystem.nbPoints == 0:
 		interactable.queue_free()
 		interactable = null
