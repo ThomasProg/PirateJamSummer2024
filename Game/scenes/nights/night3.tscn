@@ -17,6 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
 [node name="NightEvent" parent="." node_paths=PackedStringArray("peekAnchorGroup", "wolf") instance=ExtResource("8_36oyd")]
 peekAnchorGroup = NodePath("../PeekAnchorGroup")
 wolf = NodePath("../Wolf")
+nextDayPath = "res://scenes/days/day4.tscn"
 
 [node name="NightTimer" parent="NightEvent" index="0"]
 nightDuration = 95.0
