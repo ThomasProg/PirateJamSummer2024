@@ -48,5 +48,5 @@ nbPoints = 1
 
 [node name="Day8loseEvent" type="Node" parent="."]
 script = ExtResource("10_83sgt")
-delaybeforeLose = 3.0
+delaybeforeLose = 10.0
 trueGameOverScreen = "res://scenes/trueGameOver.tscn"
