@@ -66,7 +66,7 @@ func _ready():
 		raycasts.push_back(raycast)
 		get_parent().add_child.call_deferred(raycast)
 		
-	disappear()
+	disappear(false, false)
 
 func appear():
 	currentPeekAggro = 0.0
@@ -85,16 +85,19 @@ func appear():
 	if (visible == true):
 		disappear(false)
 
-func disappear(hasBeenHit:bool = false):
+func disappear(hasBeenHit:bool = false, playAudio:bool = true):
 	currentPeekAggro = 0.0
 	onAggroUpdated()
 	if (audioPlayer.playing):
 		audioPlayer.stop()
-	if (hasBeenHit):
-		audioPlayer.stream = hitAudios.pick_random()
-	else:
-		audioPlayer.stream = peekEndAudio
-	audioPlayer.play()
+		
+	if (playAudio):
+		if (hasBeenHit):
+			audioPlayer.stream = hitAudios.pick_random()
+		else:
+			audioPlayer.stream = peekEndAudio
+		audioPlayer.play()
+		
 	visible = false
 	for raycast in raycasts:
 		raycast.enabled = false
