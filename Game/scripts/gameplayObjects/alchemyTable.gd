@@ -68,3 +68,7 @@ func _on_body_exited(body):
 			tableInteractor.onAreaExited(self)
 
 	interactor = null
+
+func _exit_tree() -> void:
+	if audioPlayer.playing:
+		audioPlayer.stop()
