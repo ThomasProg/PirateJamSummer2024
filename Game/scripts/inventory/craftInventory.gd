@@ -18,6 +18,8 @@ class_name CraftInventory
 
 @export var craftButton:Button
 
+@export var potionChangePlayer:AudioStreamPlayer
+
 func getCurrentRecipe() -> CraftRecipe:
 	return availableRecipes[currentRecipeIndex]
 
@@ -72,11 +74,13 @@ func _ready():
 	craftNextRecipeButton.pressed.connect(func():
 		currentRecipeIndex = (currentRecipeIndex + 1) % availableRecipes.size()
 		onRecipeUpdated()
+		potionChangePlayer.play()
 		)
 
 	craftPreviousRecipeButton.pressed.connect(func():
 		currentRecipeIndex = (currentRecipeIndex - 1 + availableRecipes.size()) % availableRecipes.size()
 		onRecipeUpdated()
+		potionChangePlayer.play()
 		)
 
 	craftButton.pressed.connect(func():

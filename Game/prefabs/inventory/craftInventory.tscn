@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://fahaah8lfrw0"]
+[gd_scene load_steps=38 format=3 uid="uid://fahaah8lfrw0"]
 
 [ext_resource type="Script" path="res://scripts/inventory/craftInventory.gd" id="1_sqmg8"]
 [ext_resource type="Script" path="res://scripts/inventory/craftRecipe.gd" id="2_7lp3y"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c56ul2bhdstv" path="res://art/ui/ui_alchemy_arrow_left.png" id="7_w55br"]
 [ext_resource type="Texture2D" uid="uid://2wgm0dwj46r3" path="res://art/ui/ui_alchemy_arrow_right_hover.png" id="8_jedha"]
 [ext_resource type="Texture2D" uid="uid://c20phfdixt66d" path="res://art/ui/ui_alchemy_arrow_right.png" id="8_m7bak"]
+[ext_resource type="AudioStream" uid="uid://67h4yi8x6yo4" path="res://audio/sfx/potions/sfx_potions_craft_select.wav" id="13_tkql4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
 bg_color = Color(0, 0, 0, 1)
@@ -64,7 +65,7 @@ texture = ExtResource("8_jedha")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_arvwb"]
 
-[node name="CraftInventory" type="Panel" node_paths=PackedStringArray("craftInParent", "craftOutTexture", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton")]
+[node name="CraftInventory" type="Panel" node_paths=PackedStringArray("craftInParent", "craftOutTexture", "craftOutName", "craftOutDescription", "craftNextRecipeButton", "craftPreviousRecipeButton", "playerIngredientsContainer", "playerPotionsContainer", "craftButton", "potionChangePlayer")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -82,6 +83,7 @@ craftPreviousRecipeButton = NodePath("MarginContainer/Panel/HBoxContainer/Contro
 playerIngredientsContainer = NodePath("MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer/IngredientSlotContainer")
 playerPotionsContainer = NodePath("MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer/PotionSlotContainer")
 craftButton = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer/CraftButton")
+potionChangePlayer = NodePath("AudioStreamPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -449,3 +451,6 @@ bbcode_enabled = true
 text = "[center]A potion that heals small injuries.[/center]"
 fit_content = true
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_tkql4")
