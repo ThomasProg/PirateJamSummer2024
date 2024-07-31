@@ -50,6 +50,25 @@ tailor: Who do you think the werewolf is?
 	The merchant jumped on the priest, and strangled him to death.
 - The tailor
 	set {vote} = "tailor"
+	tailor: ...
+	tailor (Pouting): ...Me?
+	- No one actually knows anything about you.
+	# 
+	update tailor (Sad)
+	- You're the type of person that's gonna stay furtive.
+	# 
+	- And lie when necessary.
+	tailor: It's.. it's not me!!!
+	- Your tears aren't going to deceive anyone.
+	tailor: Priest!!!
+	priest (Worried): ...
+	tailor (Worried): Merchant!
+	merchant (Worried): He's right...
+	merchant: We know nothing about you.
+	merchant: The fact you moved in this village in the first place is weird.
+	priest (Worried): And on top of that, you are also the latest person joining the village, excluding the alchemist.
+	tailor: ...!!!
+	On that day, we ended up killing the tailor.
 - The merchant
 	priest (Default): Why is that?
 	priest (Default): Well, fine! Let's vote her!
