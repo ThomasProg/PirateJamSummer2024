@@ -68,7 +68,10 @@ func onPeek():
 		
 		stone.disappear()
 		wolf.global_position = stone.peekingSpot.global_position
-		wolf.lookAt = stone
+		if (stone.peekingAtSpot == null):
+			wolf.lookAt = stone
+		else:
+			wolf.lookAt = stone.peekingAtSpot
 		wolf.appear()
 		wolfStab.play()
 

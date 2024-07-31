@@ -3,6 +3,7 @@ class_name RemovableStone
 
 @export var body:StaticBody3D
 @export var peekingSpot:Node3D
+@export var peekingAtSpot:Node3D
 @export var fadeInDelay:float = 7.5
 
 var timer:SceneTreeTimer = null

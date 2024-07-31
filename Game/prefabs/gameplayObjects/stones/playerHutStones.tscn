@@ -528,14 +528,18 @@ surface_material_override/0 = ExtResource("2_mfttd")
 [node name="stone_166" parent="." index="165"]
 surface_material_override/0 = ExtResource("2_mfttd")
 
-[node name="stone_167" parent="." index="166" node_paths=PackedStringArray("body", "peekingSpot")]
+[node name="stone_167" parent="." index="166" node_paths=PackedStringArray("body", "peekingSpot", "peekingAtSpot")]
 surface_material_override/0 = ExtResource("2_mfttd")
 script = ExtResource("4_0cr66")
 body = NodePath("../stone_336")
 peekingSpot = NodePath("Node3D")
+peekingAtSpot = NodePath("Node3DAt")
 
 [node name="Node3D" type="Node3D" parent="stone_167" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299999, 0, 0.375835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299999, 0, 0.26718)
+
+[node name="Node3DAt" type="Node3D" parent="stone_167" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299999, 0, 0.190746)
 
 [node name="stone_168" parent="." index="167"]
 surface_material_override/0 = ExtResource("2_mfttd")
