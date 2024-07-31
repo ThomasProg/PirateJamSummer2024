@@ -35,6 +35,7 @@ func _ready():
 		
 	onPotionPrepared.connect(func():
 		audioPlayer.stop()
+		print("stop3")
 		var potionSelector = Utilities.findComponentByType(player, PotionSelector)
 		if (potionSelector != null):
 			var potion = null
@@ -72,7 +73,13 @@ func _on_body_exited(body):
 func _exit_tree() -> void:
 	if audioPlayer.playing:
 		audioPlayer.stop()
+		print("stop1")
 
 func _process(delta: float) -> void:
-	if selectedInteractible != null and player != null and audioPlayer.playing:
+	if selectedInteractible == null and player != null and audioPlayer.playing:
 		audioPlayer.stop()
+		print("stop2")
+
+	if selectedInteractible != null and player == null and audioPlayer.playing:
+		audioPlayer.stop()
+		print("stop7")

@@ -13,6 +13,7 @@ func onAreaEntered(newTable):
 func onAreaExited(newTable):
 	if (newTable.audioPlayer.playing):
 		newTable.audioPlayer.stop()
+		print("stop4")
 
 	table = null	
 
@@ -20,6 +21,7 @@ func _process(delta):
 	if (table != null and table.selectedInteractible != null):
 		if not(table.audioPlayer.playing):
 			table.audioPlayer.play()
+			print("play")
 		
 		table.addProgress(delta)
 		progressBar.value = table.currentProgress
@@ -36,3 +38,4 @@ func _process(delta):
 		progressBar.visible = false
 		if table != null and table.audioPlayer.playing:
 			table.audioPlayer.stop()
+			print("stop5")
