@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw8tl4ahjxkl8"]
+[gd_scene load_steps=3 format=3 uid="uid://bw8tl4ahjxkl8"]
 
 [ext_resource type="Script" path="res://scripts/inventory/slotTooltip.gd" id="1_dig7t"]
+[ext_resource type="FontFile" uid="uid://bpm3pkttxpjel" path="res://fonts/fontThemes/ABeeZee-Regular.ttf" id="2_4d1ki"]
 
 [node name="SlotTooltip" type="Control" node_paths=PackedStringArray("nameLabel", "descriptionLabel")]
 layout_mode = 3
@@ -35,6 +36,7 @@ mouse_filter = 2
 [node name="NameRichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_4d1ki")
 text = "Item name"
 fit_content = true
 autowrap_mode = 0
@@ -44,6 +46,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.720467, 0.720468, 0.720467, 1)
+theme_override_fonts/normal_font = ExtResource("2_4d1ki")
 theme_override_font_sizes/normal_font_size = 15
 text = "item descriptio ng dtfgjyt rdrdgfg"
 fit_content = true

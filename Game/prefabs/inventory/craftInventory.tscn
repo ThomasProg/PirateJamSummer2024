@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://fahaah8lfrw0"]
+[gd_scene load_steps=37 format=3 uid="uid://fahaah8lfrw0"]
 
 [ext_resource type="Script" path="res://scripts/inventory/craftInventory.gd" id="1_sqmg8"]
 [ext_resource type="Script" path="res://scripts/inventory/craftRecipe.gd" id="2_7lp3y"]
@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://icsl0d0gpxhh" path="res://inventoryAssets/recipes/invisibilityPotionCraft.tres" id="3_3s3pe"]
 [ext_resource type="Resource" uid="uid://dc8q45svxh6on" path="res://inventoryAssets/recipes/healingPotionCraft.tres" id="4_358wx"]
 [ext_resource type="PackedScene" uid="uid://c65547vh7twcy" path="res://prefabs/inventory/inventorySlot.tscn" id="4_hgh1y"]
-[ext_resource type="Texture2D" uid="uid://8qhon3n4chha" path="res://art/ui/ui_alchemy_arrow_left_hover.png" id="7_0nsqd"]
-[ext_resource type="Texture2D" uid="uid://ifi72nteif2g" path="res://art/ui/ui_alchemy_arrow_left.png" id="7_w55br"]
-[ext_resource type="Texture2D" uid="uid://bo0tyd0nhby0e" path="res://art/ui/ui_alchemy_arrow_right_hover.png" id="8_jedha"]
-[ext_resource type="Texture2D" uid="uid://ek7xgg3hljio" path="res://art/ui/ui_alchemy_arrow_right.png" id="8_m7bak"]
+[ext_resource type="Texture2D" uid="uid://b6arrcf6tk0fb" path="res://art/ui/ui_alchemy_arrow_left_hover.png" id="7_0nsqd"]
+[ext_resource type="FontFile" uid="uid://bpm3pkttxpjel" path="res://fonts/fontThemes/ABeeZee-Regular.ttf" id="7_bt7en"]
+[ext_resource type="Texture2D" uid="uid://c56ul2bhdstv" path="res://art/ui/ui_alchemy_arrow_left.png" id="7_w55br"]
+[ext_resource type="Texture2D" uid="uid://2wgm0dwj46r3" path="res://art/ui/ui_alchemy_arrow_right_hover.png" id="8_jedha"]
+[ext_resource type="Texture2D" uid="uid://c20phfdixt66d" path="res://art/ui/ui_alchemy_arrow_right.png" id="8_m7bak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tf7"]
 bg_color = Color(0, 0, 0, 1)
@@ -142,6 +143,7 @@ theme_override_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer2/Potions/NinePatchRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("7_bt7en")
 bbcode_enabled = true
 text = "[center]Ingredients[/center]"
 fit_content = true
@@ -214,6 +216,7 @@ theme_override_constants/separation = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/Ingredients/NinePatchRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("7_bt7en")
 bbcode_enabled = true
 text = "[center]Potions[/center]"
 fit_content = true
@@ -376,6 +379,7 @@ flat = true
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.454524, 0.454524, 0.454524, 1)
+theme_override_fonts/normal_font = ExtResource("7_bt7en")
 bbcode_enabled = true
 text = "[center]Click to craft[/center]"
 fit_content = true
@@ -404,6 +408,7 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("7_bt7en")
 bbcode_enabled = true
 text = "[center]Required[/center]"
 fit_content = true
@@ -426,6 +431,7 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer2"]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("7_bt7en")
 bbcode_enabled = true
 text = "[center]Healing potion[/center]"
 fit_content = true
@@ -437,6 +443,7 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/PanelContainer3"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.737193, 0.737193, 0.737193, 1)
+theme_override_fonts/normal_font = ExtResource("7_bt7en")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]A potion that heals small injuries.[/center]"
