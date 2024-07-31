@@ -172,7 +172,10 @@ transform = Transform3D(-0.926535, 0, -0.376208, 0, 1, 0, 0.376208, 0, -0.926535
 transform = Transform3D(-0.995364, 0, -0.0961758, 0, 1, 0, 0.0961758, 0, -0.995364, 1.07959, -2.38419e-07, -45.3468)
 
 [node name="fenceLeft65" parent="fenceEnclosure" instance=ExtResource("5_ndppl")]
-transform = Transform3D(-0.746928, 0, 0.664905, 0, 1, 0, -0.664905, 0, -0.746928, -2.07748, -4.76837e-07, -44.8207)
+transform = Transform3D(-0.641771, 0, 0.766897, 0, 1, 0, -0.766897, 0, -0.641771, -2.07748, -4.76837e-07, -44.8207)
+
+[node name="fenceLeft66" parent="fenceEnclosure" instance=ExtResource("5_ndppl")]
+transform = Transform3D(-0.996882, 0, 0.0789122, 0, 1, 0, -0.0789122, 0, -0.996882, -4.00873, -9.53674e-07, -47.2742)
 
 [node name="fenceLeft32" parent="fenceEnclosure" instance=ExtResource("5_ndppl")]
 transform = Transform3D(-0.999906, 0, -0.0137178, 0, 1, 0, 0.0137178, 0, -0.999906, -8.85681, -2.38419e-07, -44.8823)
@@ -265,10 +268,13 @@ transform = Transform3D(0.996474, 0, 0.0839038, 0, 1, 0, -0.0839038, 0, 0.996474
 transform = Transform3D(0.954912, 0, 0.296892, 0, 1, 0, -0.296892, 0, 0.954912, -11.255, -2.38419e-07, 12.1753)
 
 [node name="fenceLeft61" parent="fenceEnclosure" instance=ExtResource("5_ndppl")]
-transform = Transform3D(0.854359, 0, 0.519683, 0, 1, 0, -0.519683, 0, 0.854359, -8.19064, -2.38419e-07, 11.2427)
+transform = Transform3D(0.98725, 0, -0.159175, 0, 1, 0, 0.159175, 0, 0.98725, -8.19064, -2.38419e-07, 11.2427)
 
 [node name="fenceLeft62" parent="fenceEnclosure" instance=ExtResource("5_ndppl")]
-transform = Transform3D(0.707872, 0, -0.706342, 0, 1, 0, 0.706342, 0, 0.707872, -5.45933, -2.38419e-07, 9.57726)
+transform = Transform3D(0.968218, 0, 0.25011, 0, 1, 0, -0.25011, 0, 0.968218, -5.05585, -2.38419e-07, 11.8551)
+
+[node name="fenceLeft67" parent="fenceEnclosure" instance=ExtResource("5_ndppl")]
+transform = Transform3D(0.640285, 0, 0.768139, 0, 1, 0, -0.768139, 0, 0.640285, -1.98521, -2.38419e-07, 11.3838)
 
 [node name="lampPosts" type="Node3D" parent="."]
 
