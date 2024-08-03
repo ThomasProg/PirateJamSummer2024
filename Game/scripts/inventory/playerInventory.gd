@@ -38,20 +38,20 @@ func forceGiveItem(item:InventoryItem):
 	
 
 func _input(event: InputEvent) -> void:
-	if (Input.is_action_pressed("GiveDeterringPotion")):
+	if (Input.is_action_just_pressed("GiveDeterringPotion")):
 		forceGiveItem(load("res://inventoryAssets/potions/deterringPotion.tres"))
-	if (Input.is_action_pressed("GiveInvisibilityPotion")):
+	if (Input.is_action_just_pressed("GiveInvisibilityPotion")):
 		forceGiveItem(load("res://inventoryAssets/potions/invisibilityPotion.tres"))		
-	if (Input.is_action_pressed("GiveRedPotion")):
+	if (Input.is_action_just_pressed("GiveRedPotion")):
 		forceGiveItem(load("res://inventoryAssets/potions/redPotion.tres"))
-	if (Input.is_action_pressed("GiveYellowPotion")):
+	if (Input.is_action_just_pressed("GiveYellowPotion")):
 		forceGiveItem(load("res://inventoryAssets/potions/yellowPotion.tres"))
 		
-	if (Input.is_action_pressed("GiveChameleon")):
+	if (Input.is_action_just_pressed("GiveChameleon")):
 		forceGiveItem(load("res://inventoryAssets/ingredients/chameleonIngr.tres"))
-	if (Input.is_action_pressed("GiveStinkhorn")):
+	if (Input.is_action_just_pressed("GiveStinkhorn")):
 		forceGiveItem(load("res://inventoryAssets/ingredients/stinkhornIngr.tres"))
-	if (Input.is_action_pressed("GiveCalendula")):
+	if (Input.is_action_just_pressed("GiveCalendula")):
 		forceGiveItem(load("res://inventoryAssets/ingredients/calendulaIngr.tres"))
-	if (Input.is_action_pressed("GiveHoney")):
+	if (Input.is_action_just_pressed("GiveHoney")):
 		forceGiveItem(load("res://inventoryAssets/ingredients/honeyIngr.tres"))

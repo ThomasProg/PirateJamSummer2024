@@ -24,6 +24,10 @@ func ensureValidIndex():
 	currentlySelectedItemIndex = playerInv.potionInventory.ensureValidIndex(currentlySelectedItemIndex)
 
 func selectNextValidItem():
+	if (playerInv.potionInventory.isEmpty()):
+		onNewItemSelected.emit(null)
+		return
+		
 	currentlySelectedItemIndex = playerInv.potionInventory.getNextItemIndex(currentlySelectedItemIndex)
 		
 	onNewItemSelected.emit(getCurrentItem())
@@ -34,6 +38,11 @@ func selectItemAtIndex(index:int):
 	onNewItemSelected.emit(getCurrentItem())
 		
 func selectPreviousValidItem():
+	if (playerInv.potionInventory.isEmpty()):
+		onNewItemSelected.emit(null)
+		return
+		
+	
 	currentlySelectedItemIndex = playerInv.potionInventory.getPreviousItemIndex(currentlySelectedItemIndex)
 		
 	onNewItemSelected.emit(getCurrentItem())

@@ -3,6 +3,8 @@ class_name Inventory
 
 @export var items:Array[InventoryItem]
 
+signal onUpdated()
+
 func isEmpty()->bool:
 	return items.all(func(item): return item == null)
 
@@ -10,6 +12,7 @@ func addItem(newItem:InventoryItem) -> int:
 	for i in range(items.size()):
 		if (items[i] == null):
 			items[i] = newItem
+			onUpdated.emit()
 			return i
 
 	return -1

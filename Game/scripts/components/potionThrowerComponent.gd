@@ -17,6 +17,7 @@ func _input(event):
 	
 	if (Input.is_action_just_pressed("ThrowPotion")):
 		var item = potionSelector.popCurrentItem()
+		potionSelector.selectNextValidItem()
 		if item is InventoryPotionItem:
 			if not(item.isThrowable):
 				var effect = item.effectPrefab.instantiate() as PotionEffect
@@ -38,3 +39,4 @@ func _input(event):
 					effect.skillOwner = get_parent()
 					effect.runEffect()
 					)
+		

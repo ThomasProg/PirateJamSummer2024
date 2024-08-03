@@ -20,11 +20,15 @@ func _ready():
 	currentItemSlot.visible = true
 	nextItemSlot.visible = true
 	
+	potionSelector.playerInv.potionInventory.onUpdated.connect(refresh)
+	
 	potionSelector.onNewItemSelected.connect(func(item:InventoryItem):
 		if (item == null):
 			itemNameText.visible = false
 			itemDescText.visible = false
 			potionSprite.visible = false
+			
+			refresh()
 			return
 		
 		print("new item: ", item.name)
@@ -36,15 +40,24 @@ func _ready():
 		itemNameText.text = "[center] %s [/center]" % [item.name]
 		itemDescText.text = "[center] %s [/center]" % [item.description]	
 		
-		var inv = potionSelector.playerInv.potionInventory
-		var prevPotion = inv.items[inv.getPreviousItemIndex(potionSelector.currentlySelectedItemIndex)]
-		var currentPotion = inv.items[potionSelector.currentlySelectedItemIndex]
-		var nextPotion = inv.items[inv.getNextItemIndex(potionSelector.currentlySelectedItemIndex)]
-		
-		prevItemSlot.setItem(prevPotion)
-		currentItemSlot.setItem(currentPotion)
-		nextItemSlot.setItem(nextPotion)
+		refresh()
 		)
+
+func refresh():
+	if (potionSelector.playerInv.potionInventory.isEmpty()):	
+		prevItemSlot.setItem(null)
+		currentItemSlot.setItem(null)
+		nextItemSlot.setItem(null)
+		return
+		
+	var inv = potionSelector.playerInv.potionInventory
+	var prevPotion = inv.items[inv.getPreviousItemIndex(potionSelector.currentlySelectedItemIndex)]
+	var currentPotion = inv.items[potionSelector.currentlySelectedItemIndex]
+	var nextPotion = inv.items[inv.getNextItemIndex(potionSelector.currentlySelectedItemIndex)]
+	
+	prevItemSlot.setItem(prevPotion)
+	currentItemSlot.setItem(currentPotion)
+	nextItemSlot.setItem(nextPotion)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
