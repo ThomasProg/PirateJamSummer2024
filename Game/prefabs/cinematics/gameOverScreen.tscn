@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cp0146bk3x36r"]
+[gd_scene load_steps=15 format=3 uid="uid://cp0146bk3x36r"]
 
 [ext_resource type="Script" path="res://scripts/cinematics/loadingScreen.gd" id="1_pt8rt"]
 [ext_resource type="Texture2D" uid="uid://hh4ot261dqgl" path="res://art/ui/ui_night_icon.png" id="2_5041r"]
@@ -18,19 +18,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("../../../GameOverPanel/GameOverSprites2/Top:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../../GameOverPanel/GameOverSprites/GameOverTopSprite:position")
+tracks/1/path = NodePath("../../../GameOverPanel/GameOverSprites2/Bottom:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,41 +39,14 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../GameOverPanel/GameOverSprites/GameOverBottomSprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_rf2bp"]
-resource_name = "day_to_night_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 3.14159]
-}
 
 [sub_resource type="Animation" id="Animation_l1ech"]
 resource_name = "game_over_animation"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../../GameOverPanel/GameOverSprites/GameOverTopSprite:position")
+tracks/0/enabled = false
+tracks/0/path = NodePath("../../../GameOverPanel/GameOverSprites2/Top:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,8 +57,8 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../../GameOverPanel/GameOverSprites/GameOverBottomSprite:position")
+tracks/1/enabled = false
+tracks/1/path = NodePath("../../../GameOverPanel/GameOverSprites2/Bottom:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -94,17 +67,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 690), Vector2(0, 0), Vector2(0, 150), Vector2(0, 0)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"runGameOverAnim"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b810d"]
 _data = {
 "RESET": SubResource("Animation_mtlb3"),
-"day_to_night_animation": SubResource("Animation_rf2bp"),
 "game_over_animation": SubResource("Animation_l1ech")
 }
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q1ksx"]
 
-[node name="DayLoadingScreen" type="Node" node_paths=PackedStringArray("content")]
+[node name="GameOverScreen" type="Node" node_paths=PackedStringArray("content")]
 script = ExtResource("1_pt8rt")
 content = NodePath("CanvasLayer/GameOverPanel/RichTextLabel")
 isItGameOver = true
@@ -160,72 +146,84 @@ scale = Vector2(1765, 632.25)
 texture = SubResource("PlaceholderTexture2D_q1ksx")
 
 [node name="GameOverPanel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameOverSprites" type="Panel" parent="CanvasLayer/GameOverPanel"]
+[node name="GameOverSprites2" type="Control" parent="CanvasLayer/GameOverPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameOverTopSprite" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites"]
+[node name="Top" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -690.0
+offset_bottom = 390.0
+grow_horizontal = 2
 texture = ExtResource("5_h030c")
 
-[node name="GameOverBottomSprite" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites"]
+[node name="Bottom" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_y7cgc")
 
-[node name="BloodSpritesNode01" type="Node2D" parent="CanvasLayer/GameOverPanel/GameOverSprites"]
-visible = false
+[node name="BloodSpritesNode01" type="Node2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
+position = Vector2(960, 0)
 
-[node name="BloodSprite01" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode01"]
+[node name="BloodSprite01" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
 position = Vector2(-678, -55)
 texture = ExtResource("7_lf07n")
 
-[node name="BloodSprite02" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode01"]
+[node name="BloodSprite02" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
 position = Vector2(-784, 74)
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSprite03" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode01"]
+[node name="BloodSprite03" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
 position = Vector2(737, 70)
 texture = ExtResource("9_4hhm1")
 
-[node name="BloodSprite04" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode01"]
+[node name="BloodSprite04" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
 position = Vector2(566, -115)
 rotation = -2.1557
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSpritesNode02" type="Node2D" parent="CanvasLayer/GameOverPanel/GameOverSprites"]
-visible = false
+[node name="BloodSpritesNode02" type="Node2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
+position = Vector2(960, 0)
 
-[node name="BloodSprite01" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode02"]
+[node name="BloodSprite01" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
 position = Vector2(-683.101, 352.899)
 rotation = 2.05503
 texture = ExtResource("7_lf07n")
 
-[node name="BloodSprite02" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode02"]
+[node name="BloodSprite02" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
 position = Vector2(-601.101, 276.899)
 rotation = 2.05503
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSprite03" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode02"]
+[node name="BloodSprite03" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
 position = Vector2(-809, 274)
 rotation = 1.93178
 texture = ExtResource("9_4hhm1")
 
-[node name="BloodSprite04" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode02"]
+[node name="BloodSprite04" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
 position = Vector2(778, -144)
 rotation = -0.223917
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSprite05" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode02"]
+[node name="BloodSprite05" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
 position = Vector2(663, -318)
 rotation = 2.05503
 texture = ExtResource("7_lf07n")

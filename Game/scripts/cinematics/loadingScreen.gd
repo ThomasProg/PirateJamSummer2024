@@ -34,8 +34,8 @@ func _ready():
 	toSprite.visible = false
 	if isItGameOver:
 		fromSprite.visible = false
-		bloodSprites1 = $CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode01
-		bloodSprites2 = $CanvasLayer/GameOverPanel/GameOverSprites/BloodSpritesNode02
+		bloodSprites1 = $CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01
+		bloodSprites2 = $CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02
 		gameOverAnimation()
 	
 	var audioPlayer = AudioStreamPlayer.new()
@@ -70,10 +70,15 @@ func dayNightAnimation():
 	animationPlayer.play("day_to_night_animation")
 	
 func gameOverAnimation():
-	animationPlayer.play("game_over_animation")
-	await get_tree().create_timer(0.3).timeout
+	#animationPlayer.play("game_over_animation")
+	bloodSprites1.visible = false
+	bloodSprites2.visible = false
+	runGameOverAnim()
+	await get_tree().create_timer(0.25).timeout
+	bloodSprites1.position = get_viewport().size / 2.0
 	bloodSprites1.visible = true
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.35).timeout
+	bloodSprites2.position = get_viewport().size / 2.0
 	bloodSprites2.visible = true
 	
 
@@ -83,3 +88,45 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		$CanvasLayer/Panel/BlackSprite.visible = false
 	if anim_name == "game_over_animation":
 		gameOverAnimFinished = true
+		
+func runGameOverAnim():
+	var top = $CanvasLayer/GameOverPanel/GameOverSprites2/Top as Control
+	var bot = $CanvasLayer/GameOverPanel/GameOverSprites2/Bottom as Control
+	var viewport = get_viewport()
+	
+	top.position.y = 0
+	bot.position.y = 0
+	top.size.y = viewport.size.y 
+	bot.size.y = viewport.size.y 
+	#return
+	
+	top.position.y = -690.0/1080.0 * viewport.size.y
+	bot.position.y = 690.0/1080.0 * viewport.size.y + viewport.size.y /2.0
+	
+	print(bot.position.y)
+
+	var topTween = get_tree().create_tween()
+	topTween.tween_property(top, "position", Vector2.ZERO, 0.1)
+	topTween.tween_callback(func():
+		var topTween2 = get_tree().create_tween()
+		#topTween2.set_trans(Tween.TRANS_SINE)
+		topTween2.tween_property(top, "position", Vector2(0, -150.0/1080.0 * viewport.size.y), 0.2)
+		topTween2.tween_callback(func():
+			var topTween3 = get_tree().create_tween()
+			#topTween3.set_trans(Tween.TRANS_SINE)
+			topTween3.tween_property(top, "position", Vector2.ZERO, 0.2)
+			).set_delay(0.0)
+		).set_delay(0.1)
+	
+	var botTween = get_tree().create_tween()
+	botTween.tween_property(bot, "position", Vector2.ZERO, 0.1)
+	botTween.tween_callback(func():
+		var botTween2 = get_tree().create_tween()
+		#botTween2.set_trans(Tween.TRANS_SINE)
+		botTween2.tween_property(bot, "position", Vector2(0, 150.0/1080.0 * viewport.size.y), 0.2)
+		botTween2.tween_callback(func():
+			var botTween3 = get_tree().create_tween()
+			#botTween3.set_trans(Tween.TRANS_SINE)
+			botTween3.tween_property(bot, "position", Vector2.ZERO, 0.2)
+			).set_delay(0.0)
+		).set_delay(0.1)
