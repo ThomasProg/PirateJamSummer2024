@@ -55,8 +55,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22664, 0, -16.4974)
 
 [node name="ThatchBed" parent="GameplayObjects" instance=ExtResource("13_6r5iq")]
 transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, -26.915, -0.121, -28.019)
-nextNightPath = "res://scenes/nights/night2.tscn"
-nextDayPath = "res://scenes/days/day3.tscn"
 enabled = false
 
 [node name="Calendula" parent="." instance=ExtResource("14_l0was")]

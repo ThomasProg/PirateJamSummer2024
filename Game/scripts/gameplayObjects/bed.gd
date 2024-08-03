@@ -20,7 +20,7 @@ static func bindInteractable(interactable:Interactable, nextNightPath, nextDayPa
 		)
 
 func _input(event: InputEvent) -> void:
-	if (Input.is_action_pressed("SkipNight")):
+	if (Input.is_action_pressed("SkipNight") and enabled):
 		if (interactable != null):
 			interactable.onInteracted.emit(GameManager.player)
 			interactable = null
@@ -36,6 +36,7 @@ func unbindInteractableAll():
 			interactable.onInteracted.disconnect(connection.callable)
 
 func rebind():
+	enabled = true
 	unbindInteractableAll()
 	if (interactable != null):
 		bindInteractable(interactable, nextNightPath, nextDayPath)
