@@ -10,6 +10,9 @@ func getCurrentItem()->InventoryItem:
 	return playerInv.potionInventory.items[currentlySelectedItemIndex].item
 	
 func popCurrentItem()->Stack:
+	if currentlySelectedItemIndex == -1:
+		return null
+		
 	var stack:Stack = playerInv.potionInventory.items[currentlySelectedItemIndex]
 	if (stack == null):
 		return null

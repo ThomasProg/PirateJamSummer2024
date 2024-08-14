@@ -17,6 +17,9 @@ func _input(event):
 	
 	if (Input.is_action_just_pressed("ThrowPotion")):
 		var stack:Stack = potionSelector.popCurrentItem()
+		if stack == null:
+			return
+			
 		var item = stack.item
 		#if (stack.count == 0):
 			#potionSelector.selectNextValidItem()
