@@ -21,23 +21,49 @@ class_name Player
 
 @export var isOnDirt:bool = true
 
+var isAttacked:bool = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var captureMouse = false
 var blockMouseCapture = false
 
 @export var invisibilityEffect:Control
+@export var vignetteAnimPlayer:AnimationPlayer
+
 var nbInvisibleEffects = 0
+
 func updateInvisibility():
-	if nbInvisibleEffects == 0:
+	updateVignette()
+
+static func tryPlay(animPlayer:AnimationPlayer, animName:String):
+	if (animPlayer.current_animation != animName):
+		animPlayer.play(animName)
+
+func updateVignette():
+	if (GameManager.isDay):
 		invisibilityEffect.visible = false
-	else:
-		invisibilityEffect.visible = true
+		return
+		
+	invisibilityEffect.visible = true
+	if nbInvisibleEffects != 0:
+		tryPlay(vignetteAnimPlayer, "invisible")
+		return
+		
+	if isAttacked:
+		tryPlay(vignetteAnimPlayer, "danger")
+		return
+		
+	tryPlay(vignetteAnimPlayer, "default")
 
 func _ready():
 	GameManager.player = self
 	captureMouse = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	await get_tree().process_frame
+	updateVignette()
+			
 	
 var rotInput:float = 0.0
 var tiltInput:float = 0.0

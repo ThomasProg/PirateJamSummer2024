@@ -89,6 +89,10 @@ func appear():
 		disappear(false)
 
 func disappear(hasBeenHit:bool = false, playAudio:bool = true):
+	if target != null:
+		target.isAttacked = false
+		target.updateVignette()
+	
 	currentPeekAggro = 0.0
 	onAggroUpdated()
 	if (audioPlayer.playing):
@@ -138,7 +142,12 @@ func updatePeek(delta):
 		# TODO : curve ?
 		currentPeekAggro += delta * currentPeekAggroMult
 		aggro += delta * aggroMultWhenPeeking
+		target.isAttacked = true
+		target.updateVignette()
 		onAggroUpdated()
+	else:
+		target.isAttacked = false
+		target.updateVignette()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

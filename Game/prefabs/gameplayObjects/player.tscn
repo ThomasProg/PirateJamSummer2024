@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bmotrrb5fci2n"]
+[gd_scene load_steps=38 format=3 uid="uid://bmotrrb5fci2n"]
 
 [ext_resource type="Script" path="res://scripts/gameplayObjects/player.gd" id="1_0anxm"]
 [ext_resource type="AudioStream" uid="uid://bpb7nfco4go8b" path="res://audio/sfx/player/footsteps/dirt/sfx_fs_dirt_1.wav" id="2_0ggmk"]
@@ -35,7 +35,7 @@ size = Vector3(0.229, 1.67, 0.229)
 
 [sub_resource type="Gradient" id="Gradient_cuc13"]
 offsets = PackedFloat32Array(0, 0.695817, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.196078, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.196078, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r5i61"]
 gradient = SubResource("Gradient_cuc13")
@@ -45,7 +45,81 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "collider", "ingameMenu", "audioStreamPlayerStep", "invisibilityEffect")]
+[sub_resource type="Animation" id="Animation_3xahw"]
+resource_name = "danger"
+length = 0.1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Color(0.07, 0, 0, 0.941176)]
+}
+
+[sub_resource type="Animation" id="Animation_hhcw2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.588235)]
+}
+
+[sub_resource type="Animation" id="Animation_22q0f"]
+resource_name = "invisible"
+length = 0.1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Color(0, 0, 0, 0.392157)]
+}
+
+[sub_resource type="Animation" id="Animation_ujrbe"]
+resource_name = "default"
+length = 0.5
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Color(0, 0, 0, 0.666667)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxtbc"]
+_data = {
+"RESET": SubResource("Animation_hhcw2"),
+"danger": SubResource("Animation_3xahw"),
+"default": SubResource("Animation_ujrbe"),
+"invisible": SubResource("Animation_22q0f")
+}
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "collider", "ingameMenu", "audioStreamPlayerStep", "invisibilityEffect", "vignetteAnimPlayer")]
 collision_mask = 33
 script = ExtResource("1_0anxm")
 camera = NodePath("Camera3D")
@@ -54,7 +128,8 @@ ingameMenu = NodePath("CanvasLayer/CraftInventory")
 audioStreamPlayerStep = NodePath("AudioStreamPlayerStep")
 stepOnDirtSFX = Array[AudioStream]([ExtResource("2_0ggmk"), ExtResource("3_lvu3g"), ExtResource("4_xnyqe"), ExtResource("5_lly5d"), ExtResource("6_wmeqs"), ExtResource("7_gcaa6"), ExtResource("8_1bj6e")])
 stepOnWoodSFX = Array[AudioStream]([ExtResource("9_66a52"), ExtResource("10_3gg8r"), ExtResource("11_6pi6b"), ExtResource("12_2cdi6"), ExtResource("13_losg6"), ExtResource("14_mhsf3"), ExtResource("15_h3ryq")])
-invisibilityEffect = NodePath("UI/Vignette")
+invisibilityEffect = NodePath("VignetteLayer/Vignette")
+vignetteAnimPlayer = NodePath("VignetteLayer/Vignette/VignetteAnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_n2mcq")
@@ -78,6 +153,24 @@ collision_mask = 2
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0, 0, 0)
 
+[node name="VignetteLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Vignette" type="TextureRect" parent="VignetteLayer"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.588235)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r5i61")
+
+[node name="VignetteAnimationPlayer" type="AnimationPlayer" parent="VignetteLayer/Vignette"]
+libraries = {
+"": SubResource("AnimationLibrary_kxtbc")
+}
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -86,15 +179,6 @@ visible = false
 playerInv = NodePath("../../PlayerInventory")
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Vignette" type="TextureRect" parent="UI"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_r5i61")
 
 [node name="InfoBox" type="MarginContainer" parent="UI"]
 anchors_preset = 12
