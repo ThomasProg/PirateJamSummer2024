@@ -9,8 +9,8 @@ class_name CraftInventory
 @export var craftOutTexture:TextureRect
 @export var craftOutName:RichTextLabel
 @export var craftOutDescription:RichTextLabel
-@export var craftNextRecipeButton:Button
-@export var craftPreviousRecipeButton:Button
+@export var craftNextRecipeButton:BaseButton
+@export var craftPreviousRecipeButton:BaseButton
 
 @export var playerInv:PlayerInventory
 @export var playerIngredientsContainer:Control
