@@ -4,6 +4,7 @@ if {hasHealingPotion} == false:
 	I should bring her a healing potion before talking to her.
 	do GameManager.cancelDialogue()
 	[end_timeline]
+# 
 - Hey!
 tailor: Hey, Mr. Evil Alchemist
 - I have something for you.
