@@ -5,9 +5,8 @@ extends Node
 @export var itemNameText:RichTextLabel
 @export var itemDescText:RichTextLabel
 
-@export var prevItemSlot:InventorySlot
-@export var currentItemSlot:InventorySlot
-@export var nextItemSlot:InventorySlot
+@export var slotBar:HBoxContainer
+@export var slotPrefab:PackedScene = preload("res://prefabs/inventory/inventorySlot.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,10 +14,6 @@ func _ready():
 	
 	if (GameManager.isDay):
 		return
-	
-	prevItemSlot.visible = true
-	currentItemSlot.visible = true
-	nextItemSlot.visible = true
 	
 	potionSelector.playerInv.potionInventory.onUpdated.connect(refresh)
 	
@@ -44,21 +39,14 @@ func _ready():
 		)
 
 func refresh():
-	if (potionSelector.playerInv.potionInventory.isEmpty()):	
-		prevItemSlot.setStack(null)
-		currentItemSlot.setStack(null)
-		nextItemSlot.setStack(null)
-		return
-		
-	var inv = potionSelector.playerInv.potionInventory
-	var prevPotion = inv.items[inv.getPreviousItemIndex(potionSelector.currentlySelectedItemIndex)]
-	var currentPotion = inv.items[potionSelector.currentlySelectedItemIndex]
-	var nextPotion = inv.items[inv.getNextItemIndex(potionSelector.currentlySelectedItemIndex)]
+	for child in slotBar.get_children():
+		child.queue_free()
 	
-	prevItemSlot.setStack(prevPotion)
-	currentItemSlot.setStack(currentPotion)
-	nextItemSlot.setStack(nextPotion)
+	if (potionSelector.playerInv.potionInventory.isEmpty()):
+		return
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	for potionStack in potionSelector.playerInv.potionInventory.items:
+		if (potionStack != null):
+			var slot:InventorySlot = slotPrefab.instantiate()
+			slot.setStack(potionStack)
+			slotBar.add_child(slot)
