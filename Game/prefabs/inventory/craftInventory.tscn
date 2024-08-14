@@ -27,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sqmg8")
 availableRecipes = Array[ExtResource("2_7lp3y")]([ExtResource("2_q0r66"), ExtResource("3_3s3pe"), ExtResource("4_358wx")])
+currentRecipeIndex = null
 slotPrefab = ExtResource("4_hgh1y")
 craftInParent = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer/RequiredItemsSlots")
 craftOutTexture = NodePath("MarginContainer/Panel/HBoxContainer/Control/TextureRect/VBoxContainer/MiddlePanel/VBoxContainer2/PanelContainer/CraftOutTextureRect")

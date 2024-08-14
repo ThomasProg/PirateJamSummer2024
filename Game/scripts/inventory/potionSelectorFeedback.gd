@@ -45,9 +45,9 @@ func _ready():
 
 func refresh():
 	if (potionSelector.playerInv.potionInventory.isEmpty()):	
-		prevItemSlot.setItem(null)
-		currentItemSlot.setItem(null)
-		nextItemSlot.setItem(null)
+		prevItemSlot.setStack(null)
+		currentItemSlot.setStack(null)
+		nextItemSlot.setStack(null)
 		return
 		
 	var inv = potionSelector.playerInv.potionInventory
@@ -55,9 +55,9 @@ func refresh():
 	var currentPotion = inv.items[potionSelector.currentlySelectedItemIndex]
 	var nextPotion = inv.items[inv.getNextItemIndex(potionSelector.currentlySelectedItemIndex)]
 	
-	prevItemSlot.setItem(prevPotion)
-	currentItemSlot.setItem(currentPotion)
-	nextItemSlot.setItem(nextPotion)
+	prevItemSlot.setStack(prevPotion)
+	currentItemSlot.setStack(currentPotion)
+	nextItemSlot.setStack(nextPotion)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

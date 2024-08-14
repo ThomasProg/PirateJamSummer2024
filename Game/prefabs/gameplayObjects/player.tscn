@@ -84,6 +84,7 @@ layer = 2
 
 [node name="CraftInventory" parent="CanvasLayer" node_paths=PackedStringArray("playerInv") instance=ExtResource("5_6xnvm")]
 visible = false
+currentRecipeIndex = null
 playerInv = NodePath("../../PlayerInventory")
 
 [node name="UI" type="CanvasLayer" parent="."]

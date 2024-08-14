@@ -29,14 +29,17 @@ func onRecipeUpdated():
 	craftOutName.text = currentRecipe.result.name
 	craftOutDescription.text = currentRecipe.result.description
 	
-	for ingr in craftInParent.get_children():
-		ingr.queue_free()
+	for stack in craftInParent.get_children():
+		stack.queue_free()
 		
 	for ingr in currentRecipe.ingredients:
 		var slot = slotPrefab.instantiate() as InventorySlot
 		slot.canBeDragged = false
 		slot.dragGroup = 2
-		slot.setItem(ingr)
+		var stack = Stack.new()
+		stack.item = ingr
+		stack.count = 1
+		slot.setStack(stack)
 		craftInParent.add_child(slot)
 		
 func updatePlayerInventory():
@@ -44,26 +47,26 @@ func updatePlayerInventory():
 		push_error("Player inv is null!")
 		return null
 	
-	var ingredients = playerInv.ingredientInventory.items
+	var ingredients:Array[Stack] = playerInv.ingredientInventory.items
 	for i in range(ingredients.size()):
-		var ingr = ingredients[i]
+		var stack = ingredients[i]
 		var slot = playerIngredientsContainer.get_children()[i] as InventorySlot
-		slot.setItem(ingr)
+		slot.setStack(stack)
 		for connection in slot.onItemSet.get_connections():
 			slot.onItemSet.disconnect(connection.callable)
-		slot.onItemSet.connect(func(newItem:InventoryItem):
-			ingredients[i] = newItem
+		slot.onItemSet.connect(func(newStack:Stack):
+			ingredients[i] = newStack
 			)
 		
 	var potions = playerInv.potionInventory.items
 	for i in range(potions.size()):
 		var potion = potions[i]
 		var slot = playerPotionsContainer.get_children()[i] as InventorySlot
-		slot.setItem(potion)
+		slot.setStack(potion)
 		for connection in slot.onItemSet.get_connections():
 			slot.onItemSet.disconnect(connection.callable)
-		slot.onItemSet.connect(func(newItem:InventoryItem):
-			potions[i] = newItem
+		slot.onItemSet.connect(func(newStack:Stack):
+			potions[i] = newStack
 			)
 
 # Called when the node enters the scene tree for the first time.

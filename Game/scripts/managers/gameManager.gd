@@ -170,6 +170,8 @@ func updateHasHealingPotion():
 	var requiredItems:Array[InventoryItem] = [healingPotion]
 	if(playerInv.potionInventory.canConsumeItems(requiredItems)):
 		Dialogic.VAR.hasHealingPotion = true
+	else:
+		Dialogic.VAR.hasHealingPotion = false
 
 var isConsumingDialogue:bool = true
 

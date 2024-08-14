@@ -28,11 +28,12 @@ func forceGiveItem(item:InventoryItem):
 	var v:int = giveItem(item)
 	
 	if v == -1:
+		potionInventory.items[0] = Stack.new()
 		match item.type:
 			InventoryItem.ItemType.POTION:
-				potionInventory.items[0] = item
+				potionInventory.items[0].item = item
 			InventoryItem.ItemType.INGREDIENT:
-				ingredientInventory.items[0] = item
+				ingredientInventory.items[0].item = item
 				
 			
 	

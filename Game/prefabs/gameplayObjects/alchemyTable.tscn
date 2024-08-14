@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://scripts/components/interactable.gd" id="2_lwojp"]
 [ext_resource type="Resource" uid="uid://cnnujc7uicalb" path="res://inventoryAssets/potions/yellowPotion.tres" id="3_b6h32"]
 [ext_resource type="PackedScene" uid="uid://djqghbv7n0e3o" path="res://prefabs/gameplayObjects/furnitureAndProps/alchemyTable.tscn" id="4_xgx07"]
-[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageRed.tscn" id="6_kohi7"]
-[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/mortarAndPestle.tscn" id="6_t15fu"]
-[ext_resource type="PackedScene" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageYellow.tscn" id="7_2o3ac"]
+[ext_resource type="PackedScene" uid="uid://bqv2lq5gh7ysb" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageRed.tscn" id="6_kohi7"]
+[ext_resource type="PackedScene" uid="uid://qem08rnfgusn" path="res://prefabs/gameplayObjects/furnitureAndProps/mortarAndPestle.tscn" id="6_t15fu"]
+[ext_resource type="PackedScene" uid="uid://dvncl57b8xow6" path="res://prefabs/gameplayObjects/furnitureAndProps/potions/potionDamageYellow.tscn" id="7_2o3ac"]
 [ext_resource type="AudioStream" uid="uid://cggl40v31hqy" path="res://audio/sfx/potions/sfx_potions_craft_damage_timer.ogg" id="9_am67a"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7r6gh"]

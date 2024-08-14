@@ -7,18 +7,24 @@ class_name PotionSelector
 signal onNewItemSelected(InventoryItem)
 
 func getCurrentItem()->InventoryItem:
-	return playerInv.potionInventory.items[currentlySelectedItemIndex]
+	return playerInv.potionInventory.items[currentlySelectedItemIndex].item
 	
 func popCurrentItem()->InventoryItem:
-	var item = playerInv.potionInventory.items[currentlySelectedItemIndex]
-	playerInv.potionInventory.items[currentlySelectedItemIndex] = null
+	var stack:Stack = playerInv.potionInventory.items[currentlySelectedItemIndex]
+	if (stack == null):
+		return null
+		
+	if (stack.count <= 1):
+		playerInv.potionInventory.items[currentlySelectedItemIndex] = null
+	else:
+		stack.count -= 1
 	
 	if not(playerInv.potionInventory.isEmpty()):
 		selectNextValidItem()
 	else:
 		onNewItemSelected.emit(null)
 	
-	return item
+	return stack.item
 
 func ensureValidIndex():
 	currentlySelectedItemIndex = playerInv.potionInventory.ensureValidIndex(currentlySelectedItemIndex)
