@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cxs3do68n3jxt" path="res://prefabs/gameplayObjects/furnitureAndProps/thatchBed.tscn" id="8_uwmt1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71e1e"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("8_m6rj3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3q8qp"]
