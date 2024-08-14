@@ -45,8 +45,14 @@ func refresh():
 	if (potionSelector.playerInv.potionInventory.isEmpty()):
 		return
 
-	for potionStack in potionSelector.playerInv.potionInventory.items:
+	var items = potionSelector.playerInv.potionInventory.items
+	for i in range(items.size()):
+		var potionStack = items[i]
+	#for potionStack in potionSelector.playerInv.potionInventory.items:
 		if (potionStack != null):
 			var slot:InventorySlot = slotPrefab.instantiate()
 			slot.setStack(potionStack)
 			slotBar.add_child(slot)
+			
+			if i == potionSelector.currentlySelectedItemIndex:
+				slot.highlight()

@@ -9,22 +9,23 @@ signal onNewItemSelected(InventoryItem)
 func getCurrentItem()->InventoryItem:
 	return playerInv.potionInventory.items[currentlySelectedItemIndex].item
 	
-func popCurrentItem()->InventoryItem:
+func popCurrentItem()->Stack:
 	var stack:Stack = playerInv.potionInventory.items[currentlySelectedItemIndex]
 	if (stack == null):
 		return null
 		
 	if (stack.count <= 1):
 		playerInv.potionInventory.items[currentlySelectedItemIndex] = null
+		
+		if not(playerInv.potionInventory.isEmpty()):
+			selectNextValidItem()
+		else:
+			onNewItemSelected.emit(null)
 	else:
 		stack.count -= 1
-	
-	if not(playerInv.potionInventory.isEmpty()):
-		selectNextValidItem()
-	else:
-		onNewItemSelected.emit(null)
-	
-	return stack.item
+		onNewItemSelected.emit(stack.item)
+
+	return stack
 
 func ensureValidIndex():
 	currentlySelectedItemIndex = playerInv.potionInventory.ensureValidIndex(currentlySelectedItemIndex)

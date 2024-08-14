@@ -8,6 +8,7 @@ class_name InventorySlot
 @export var tooltipPrefab:PackedScene
 @export var dragGroup:int = 0
 @export var canBeDragged:bool = true
+@export var animPlayer:AnimationPlayer
 var tooltip:Control
 var isHovering
 
@@ -83,3 +84,10 @@ func _ready():
 func _process(delta):
 	if tooltip != null:
 		updateTooltipLocation()
+
+func highlight():
+	animPlayer.play("highlight")
+	
+func unhighlight():
+	animPlayer.play_backwards("highlight")
+	

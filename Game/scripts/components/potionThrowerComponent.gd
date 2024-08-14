@@ -16,8 +16,10 @@ func _input(event):
 		return
 	
 	if (Input.is_action_just_pressed("ThrowPotion")):
-		var item = potionSelector.popCurrentItem()
-		potionSelector.selectNextValidItem()
+		var stack:Stack = potionSelector.popCurrentItem()
+		var item = stack.item
+		#if (stack.count == 0):
+			#potionSelector.selectNextValidItem()
 		if item is InventoryPotionItem:
 			if not(item.isThrowable):
 				var effect = item.effectPrefab.instantiate() as PotionEffect
