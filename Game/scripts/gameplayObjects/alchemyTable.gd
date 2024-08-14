@@ -24,13 +24,15 @@ func addProgress(progress:float):
 
 func _ready():
 	redPotionInteractible.onInteracted.connect(func(player:Player):
-		selectedInteractible = redPotionInteractible
-		currentProgress = 0.0
+		if (selectedInteractible != redPotionInteractible):
+			selectedInteractible = redPotionInteractible
+			currentProgress = 0.0
 		)
 		
 	yellowPotionInteractible.onInteracted.connect(func(player:Player):
-		selectedInteractible = yellowPotionInteractible
-		currentProgress = 0.0
+		if (selectedInteractible != yellowPotionInteractible):
+			selectedInteractible = yellowPotionInteractible
+			currentProgress = 0.0
 		)
 		
 	onPotionPrepared.connect(func():
