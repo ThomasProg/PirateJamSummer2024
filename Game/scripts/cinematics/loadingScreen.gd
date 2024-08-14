@@ -65,7 +65,7 @@ func _process(delta):
 					queue_free()
 
 func dayNightAnimation():
-	$CanvasLayer/Panel/BlackSprite.visible = true
+	#$CanvasLayer/Panel/BlackSprite.visible = true
 	toSprite.visible = true
 	animationPlayer.play("day_to_night_animation")
 	
@@ -85,7 +85,7 @@ func gameOverAnimation():
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "day_to_night_animation":
 		fromSprite.visible = false
-		$CanvasLayer/Panel/BlackSprite.visible = false
+		#$CanvasLayer/Panel/BlackSprite.visible = false
 	if anim_name == "game_over_animation":
 		gameOverAnimFinished = true
 		
