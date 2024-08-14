@@ -16,11 +16,16 @@ surface_material_override/0 = ExtResource("2_72gfx")
 surface_material_override/1 = ExtResource("3_uvgom")
 
 [node name="potionDamageRed" parent="alchemyTable" index="0" instance=ExtResource("4_ljv5l")]
+visible = false
 
 [node name="potionDamageYellow" parent="alchemyTable" index="1" instance=ExtResource("5_4wl72")]
+visible = false
 
 [node name="potionDeterring" parent="alchemyTable" index="2" instance=ExtResource("6_ns6a7")]
+visible = false
 
 [node name="potionHealing" parent="alchemyTable" index="3" instance=ExtResource("7_31bgb")]
+visible = false
 
 [node name="potionInvisibility" parent="alchemyTable" index="4" instance=ExtResource("8_opbcd")]
+visible = false
