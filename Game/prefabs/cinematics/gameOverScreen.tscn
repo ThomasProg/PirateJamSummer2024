@@ -166,8 +166,7 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = -690.0
-offset_bottom = 390.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 texture = ExtResource("5_h030c")
 
@@ -180,52 +179,143 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_y7cgc")
 
-[node name="BloodSpritesNode01" type="Node2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
-position = Vector2(960, 0)
+[node name="BloodSprites1" type="Control" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BloodSprite01" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
-position = Vector2(-678, -55)
+[node name="BloodSprite01" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 86.0
+offset_top = -485.0
+offset_right = 616.0
+offset_bottom = 45.0
+grow_vertical = 2
 texture = ExtResource("7_lf07n")
 
-[node name="BloodSprite02" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
-position = Vector2(-784, 74)
+[node name="BloodSprite02" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -354.0
+offset_right = 510.0
+offset_bottom = 176.0
+grow_vertical = 2
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSprite03" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
-position = Vector2(737, 70)
+[node name="BloodSprite03" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -92.0
+offset_right = 12.0
+offset_bottom = 438.0
+grow_horizontal = 0
+grow_vertical = 2
 texture = ExtResource("9_4hhm1")
 
-[node name="BloodSprite04" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01"]
-position = Vector2(566, -115)
-rotation = -2.1557
+[node name="BloodSprite04" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -494.0
+offset_top = 343.0
+offset_right = 36.0
+offset_bottom = 873.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -2.15548
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSpritesNode02" type="Node2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
-position = Vector2(960, 0)
+[node name="BloodSprites2" type="Control" parent="CanvasLayer/GameOverPanel/GameOverSprites2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BloodSprite01" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
-position = Vector2(-683.101, 352.899)
-rotation = 2.05503
+[node name="BloodSprite06" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 701.0
+offset_top = 178.0
+offset_right = 1231.0
+offset_bottom = 708.0
+grow_vertical = 2
+rotation = 2.05425
 texture = ExtResource("7_lf07n")
 
-[node name="BloodSprite02" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
-position = Vector2(-601.101, 276.899)
-rotation = 2.05503
+[node name="BloodSprite07" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 778.0
+offset_top = 105.0
+offset_right = 1308.0
+offset_bottom = 635.0
+grow_vertical = 2
+rotation = 2.05425
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSprite03" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
-position = Vector2(-809, 274)
-rotation = 1.93178
+[node name="BloodSprite08" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 576.0
+offset_top = 98.0
+offset_right = 1106.0
+offset_bottom = 628.0
+grow_vertical = 2
+rotation = 2.05425
 texture = ExtResource("9_4hhm1")
 
-[node name="BloodSprite04" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
-position = Vector2(778, -144)
-rotation = -0.223917
+[node name="BloodSprite04" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -341.0
+offset_right = 28.0
+offset_bottom = 189.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.223402
 texture = ExtResource("8_qk1n1")
 
-[node name="BloodSprite05" type="Sprite2D" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02"]
-position = Vector2(663, -318)
-rotation = 2.05503
+[node name="BloodSprite05" type="TextureRect" parent="CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 58.0
+offset_top = 110.0
+offset_right = 588.0
+offset_bottom = 640.0
+grow_horizontal = 0
+rotation = 2.05425
 texture = ExtResource("7_lf07n")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GameOverPanel"]

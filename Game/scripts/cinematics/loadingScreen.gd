@@ -9,8 +9,8 @@ class_name LoadingScreen
 
 @export var isItGameOver: bool = false
 var gameOverAnimFinished: bool = false
-var bloodSprites1: Node2D
-var bloodSprites2: Node2D
+var bloodSprites1: Control
+var bloodSprites2: Control
 
 enum Mode {FadeIn, Visible, FadeOut}
 var mode:Mode = Mode.FadeIn
@@ -34,8 +34,8 @@ func _ready():
 	toSprite.visible = false
 	if isItGameOver:
 		fromSprite.visible = false
-		bloodSprites1 = $CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01
-		bloodSprites2 = $CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode02
+		bloodSprites1 = $CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites1 # $CanvasLayer/GameOverPanel/GameOverSprites2/BloodSpritesNode01
+		bloodSprites2 = $CanvasLayer/GameOverPanel/GameOverSprites2/BloodSprites2
 		gameOverAnimation()
 	
 	var audioPlayer = AudioStreamPlayer.new()
@@ -75,10 +75,8 @@ func gameOverAnimation():
 	bloodSprites2.visible = false
 	runGameOverAnim()
 	await get_tree().create_timer(0.25).timeout
-	bloodSprites1.position = get_viewport().size / 2.0
 	bloodSprites1.visible = true
 	await get_tree().create_timer(0.35).timeout
-	bloodSprites2.position = get_viewport().size / 2.0
 	bloodSprites2.visible = true
 	
 
