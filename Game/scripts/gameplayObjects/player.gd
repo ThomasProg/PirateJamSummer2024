@@ -31,6 +31,8 @@ var blockMouseCapture = false
 @export var invisibilityEffect:Control
 @export var vignetteAnimPlayer:AnimationPlayer
 
+@export var cursorTex:TextureRect
+
 var nbInvisibleEffects = 0
 
 func updateInvisibility():
@@ -139,6 +141,9 @@ func _input(event: InputEvent):
 		
 
 var lastStepTime:float = 0
+
+func _process(delta: float) -> void:
+	cursorTex.visible = captureMouse
 
 func _physics_process(delta):
 	updateCamera(delta)
