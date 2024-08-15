@@ -130,3 +130,6 @@ func runGameOverAnim():
 			botTween3.tween_property(bot, "position", Vector2.ZERO, 0.2)
 			).set_delay(0.0)
 		).set_delay(0.1)
+
+	await get_tree().create_timer(0.5).timeout
+	gameOverAnimFinished = true
